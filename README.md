@@ -2,10 +2,11 @@
 
 Kuroshio Athletics（黑潮運動）官網。靜態站，單一 HTML，零建置，GitHub Pages 從 main 根目錄發布。
 
-正式站：https://kuroshio.pinchengco.com/（DNS 生效前備援：https://pinwang0705.github.io/kuroshio-site/）
+正式站：https://kuroshio.pinchengco.com/
 
 - `index.html`：整站，唯一來源。受眾是家長與選手。方案編號 A 到 F，價格依 2026-09-06 定版（決定 4.5）。
 - `CNAME`：自訂網域 kuroshio.pinchengco.com。刪掉會退回 github.io 網址。
+- 對外聯絡：support@pinchengcaptain.com。統編 95435096。改在 `index.html` 最底的兩個常數。
 - `assets/`：logo PNG 五張加 `og-1200x630.png`（LINE / FB 分享預覽圖，Abyss 底加 lockup）。
 - `CLAUDE.md`：品牌硬規則與文案紅線，改站前先讀。
 
