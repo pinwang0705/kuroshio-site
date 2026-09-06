@@ -174,19 +174,48 @@ br.m{display:none}
 @media(max-width:760px){.story{grid-template-columns:1fr}.story .quote{position:static}}
 
 /* plans */
+/* funnel */
+.funnel{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair)}
+.fn{background:var(--paper);padding:24px 24px 26px;position:relative}
+.fn.last{background:var(--sand)}
+.fn-n{font-size:13px;color:var(--tide);font-weight:500}
+.fn h3{font-size:21px;margin:2px 0 10px}
+.fn-p{font-family:var(--mono);font-size:20px;color:var(--abyss);font-weight:500;letter-spacing:-.01em}
+.fn p{font-size:14.5px;color:var(--muted);line-height:1.8;margin-top:12px;padding-top:12px;border-top:1px solid var(--hair)}
+@media(max-width:760px){.funnel{grid-template-columns:1fr}}
+.fn-note{max-width:none;margin-top:16px;padding:14px 18px;background:var(--sand);border-left:3px solid var(--brass);font-size:15px;line-height:1.8}
+
+/* two services */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,32px);margin-top:44px}
+.s{border:1px solid var(--hair);background:var(--paper);padding:26px 28px 28px;display:flex;flex-direction:column}
+.s.core{border-color:var(--abyss);box-shadow:inset 0 0 0 1px var(--abyss)}
+.s-top{padding-bottom:16px;border-bottom:1px solid var(--hair);margin-bottom:16px}
+.s-tag{font-size:13px;color:var(--tide);font-weight:500}
+.s h3{font-size:clamp(22px,2.6vw,27px);margin:2px 0 12px}
+.s-p{font-family:var(--mono);font-size:23px;font-weight:500;color:var(--abyss);letter-spacing:-.01em;line-height:1.25}
+.s-p small{display:block;font-family:var(--body);font-size:13.5px;color:var(--muted);font-weight:400;margin-top:6px;line-height:1.6}
+.s ul{list-style:none;flex:1}
+.s li{padding:7px 0 7px 20px;position:relative;font-size:15px;line-height:1.75}
+.s li::before{content:"";position:absolute;left:0;top:18px;width:9px;height:2px;background:var(--tide)}
+.s.core li::before{background:var(--brass)}
+.s-why{font-size:13.5px;color:var(--muted);line-height:1.8;margin-top:16px;padding-top:14px;border-top:1px solid var(--hair)}
+@media(max-width:760px){.svc{grid-template-columns:1fr}}
+.two-note{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,32px);margin-top:18px;font-size:15px;color:var(--muted)}
+.two-note b{color:var(--ink)}
+@media(max-width:760px){.two-note{grid-template-columns:1fr;gap:6px}}
+
 /* price builder */
-.calc{border:1px solid var(--hair);background:var(--paper);margin-bottom:44px}
+.calc{border:1px solid var(--hair);background:var(--paper);margin-top:44px}
 .calc-q{padding:20px 24px 0;font-weight:700;font-size:17px}
 .calc-g{display:flex;flex-wrap:wrap;gap:8px;padding:12px 24px 20px}
 .calc-g button{font:inherit;font-size:15px;font-weight:700;padding:9px 16px;border:1px solid var(--hair);background:var(--paper);color:var(--muted);cursor:pointer;border-radius:3px}
 .calc-g button:hover{border-color:var(--tide);color:var(--ink)}
 .calc-g button[aria-pressed="true"]{background:var(--abyss);border-color:var(--abyss);color:#fff}
 .calc-rows{border-top:1px solid var(--hair)}
-.row{display:grid;grid-template-columns:26px minmax(0,1fr) 150px 130px;gap:16px;align-items:center;padding:14px 24px;border-bottom:1px solid var(--hair)}
+.row{display:grid;grid-template-columns:26px minmax(0,1fr) 150px 140px;gap:16px;align-items:center;padding:14px 24px;border-bottom:1px solid var(--hair)}
 .row:has(input:checked){background:var(--sand)}
 .row input[type=checkbox]{width:19px;height:19px;accent-color:var(--abyss);cursor:pointer;margin:0}
 .row label{cursor:pointer;font-weight:700;font-size:16px}
-.row label .k{font-family:var(--mono);color:var(--brass);margin-right:8px;font-weight:500}
 .row label small{display:block;font-weight:400;font-size:13.5px;color:var(--muted);margin-top:1px;line-height:1.55}
 .row .qty{font-size:14px;color:var(--muted)}
 .row .qty select{font:inherit;font-size:14px;padding:5px 8px;border:1px solid var(--hair);background:var(--paper);color:var(--ink);border-radius:3px;max-width:100%}
@@ -198,7 +227,7 @@ br.m{display:none}
 .calc-sum .big{font-family:var(--mono);font-size:clamp(26px,3.4vw,34px);font-weight:500;letter-spacing:-.02em;line-height:1.1;margin-top:4px}
 .calc-sum .per{text-align:right;font-size:14px;color:rgba(255,255,255,.85);line-height:1.7}
 .calc-sum .per b{font-family:var(--mono);font-size:17px;font-weight:500;color:#fff}
-.calc-note{padding:14px 24px;font-size:13.5px;color:var(--muted);line-height:1.75;border-top:1px solid var(--hair)}
+.calc-note{padding:14px 24px;font-size:13.5px;color:var(--muted);line-height:1.75;border-top:1px solid var(--hair);max-width:none}
 @media(max-width:760px){
   .row{grid-template-columns:24px minmax(0,1fr);gap:6px 14px;padding:14px 18px}
   .row .qty,.row .amt{grid-column:2}
@@ -207,32 +236,7 @@ br.m{display:none}
   .calc-sum{grid-template-columns:1fr}
   .calc-sum .per{text-align:left}
 }
-.plans{border-top:2px solid var(--abyss)}
-.phead{display:grid;grid-template-columns:var(--pcol);gap:var(--pgap);padding:10px 0;border-bottom:1px solid var(--hair);font-size:13px;color:var(--tide);font-weight:500}
-.plan{--pcol:200px 150px 200px minmax(0,1fr);--pgap:clamp(14px,2.4vw,32px);display:grid;grid-template-columns:var(--pcol);gap:var(--pgap);padding:24px 0;border-bottom:1px solid var(--hair);align-items:start}
-.phead{--pcol:200px 150px 200px minmax(0,1fr);--pgap:clamp(14px,2.4vw,32px)}
-.plan.core{background:var(--sand);border-left:4px solid var(--brass);padding-left:22px;margin-left:-26px;padding-right:22px;margin-right:-22px}
-.plan .nm{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:baseline}
-.plan .k{font-family:var(--mono);font-size:20px;color:var(--brass);font-weight:500;line-height:1.1}
-.plan .st{font-size:13px;color:var(--tide);font-weight:500}
-.plan h3{font-size:19px;margin:1px 0 0}
-.plan .fit{font-size:15px;font-weight:700;color:var(--ink);padding-top:2px;line-height:1.6}
-.plan .fit small{display:block;font-weight:400;font-size:13.5px;color:var(--muted);margin-top:2px}
-.plan .price{font-family:var(--mono);font-size:21px;font-weight:500;color:var(--abyss);letter-spacing:-.01em;line-height:1.2;padding-top:2px}
-.plan .price small{display:block;font-family:var(--body);font-size:13.5px;color:var(--muted);font-weight:400;margin-top:6px;line-height:1.6}
-.plan p{font-size:14.5px;color:var(--muted);line-height:1.8;padding-top:3px;max-width:none}
-@media(max-width:960px){
-  .phead{display:none}
-  .plan{--pcol:minmax(0,1fr) minmax(0,1fr);gap:14px clamp(14px,2.4vw,32px)}
-  .plan .nm{grid-column:1/-1}
-  .plan p{grid-column:1/-1;padding-top:0}
-  .plan .fit::before{content:"適合年級 ";color:var(--tide);font-weight:500;font-size:13px}
-}
-@media(max-width:560px){
-  .plan{--pcol:1fr;gap:10px}
-  .plan.core{margin-left:calc(-1*var(--gut));margin-right:calc(-1*var(--gut));padding-left:calc(var(--gut) - 4px);padding-right:var(--gut)}
-}
-.fine{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
+.fine{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
 .fine div{font-size:15px;color:var(--muted)}
 .fine h3{font-size:16px;color:var(--ink);margin-bottom:6px}
 .fine table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin-top:8px}
@@ -241,13 +245,14 @@ br.m{display:none}
 @media(max-width:720px){.fine{grid-template-columns:1fr}}
 
 /* assessment steps */
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:s;border-top:2px solid var(--abyss)}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:0;counter-reset:s;border-top:2px solid var(--abyss)}
 .step{padding:22px 18px 0 0;position:relative}
 .step::before{counter-increment:s;content:counter(s);font-family:var(--mono);color:var(--brass);font-size:14px;display:block;margin-bottom:8px}
 .step h3{font-size:18px;margin-bottom:4px}
 .step .w{font-size:13.5px;color:var(--tide);font-weight:500;margin-bottom:8px}
-.step p{font-size:15px;color:var(--muted);line-height:1.75}
-@media(max-width:820px){.steps{grid-template-columns:1fr;border-top:0}.step{border-top:1px solid var(--hair);padding:18px 0}}
+.step p{font-size:15px;color:var(--muted);line-height:1.75;max-width:none}
+@media(max-width:1000px){.steps{grid-template-columns:repeat(3,1fr);gap:0 22px}}
+@media(max-width:640px){.steps{grid-template-columns:1fr;border-top:0}.step{border-top:1px solid var(--hair);padding:18px 0}}
 
 /* faq */
 .faq{max-width:46em}
@@ -333,7 +338,7 @@ footer .legal p+p{margin-top:4px}
       <a href="#faq">常見問題</a>
       <a href="#form">問卷</a>
     </div>
-    <a class="btn primary cta" href="#book">預約體檢</a>
+    <a class="btn primary cta" href="#book">預約諮詢</a>
   </div>
 </nav>
 
@@ -344,12 +349,12 @@ footer .legal p+p{margin-top:4px}
       <h1><span>代辦只幫你送件。</span><span>我們讓他在送件之前</span><span>就準備好。</span></h1>
       <p class="sub">台灣網球選手赴美大學的準備服務。從國二的課表開始，到抵美第一年結束。文件我們一起做，路他自己走。</p>
       <div class="acts">
-        <a class="btn primary" href="#book">預約體檢</a>
+        <a class="btn primary" href="#book">預約諮詢</a>
         <a class="btn ghost" href="#timeline">先看六個階段</a>
       </div>
       <div class="facts">
+        <span>一個月 <b>一萬</b>，到他大一結束</span>
         <span>招募階段同時最多 <b>8 位</b></span>
-        <span>價格<b>全部公開</b></span>
         <span><b>不保證</b>錄取或獎學金</span>
       </div>
     </div>
@@ -381,7 +386,7 @@ footer .legal p+p{margin-top:4px}
         <p>這一年沒有硬日期，所以最容易被浪費。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>A 體檢，然後 B 地基會員<small>走 A 到 D 全程約 NT$60 萬，分五年付</small></dd>
+        <dt>從哪裡接</dt><dd>地基會員 3 學年，高二加招募專案<small>全程 66 萬，一個月一萬</small></dd>
         <dt>下一個硬日期</dt><dd>國三：成績開始算進 NCAA 核心 GPA<small>距今約一年</small></dd>
       </dl>
     </div>
@@ -392,7 +397,7 @@ footer .legal p+p{margin-top:4px}
         <p>從這裡進場走全程，地基階段照常，只是壓縮一些。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>A 體檢，然後 B 地基會員<small>剩三個學年加大一</small></dd>
+        <dt>從哪裡接</dt><dd>地基會員 2 學年，高二加招募專案<small>全程 54 萬，一個月一萬</small></dd>
         <dt>下一個硬日期</dt><dd>高一 6 月 15 日：D1 教練可以直接聯絡他<small>之前要備妥影片、Resume、名單</small></dd>
       </dl>
     </div>
@@ -400,10 +405,10 @@ footer .legal p+p{margin-top:4px}
       <div class="now">
         <h3>關鍵的一年。6 月 15 日是分水嶺。</h3>
         <p>高一結束的那個 6 月 15 日起，NCAA D1 教練可以直接聯絡選手、給口頭 offer。那一天之前要備妥的東西：Verified UTR 的曲線、比賽影片、Resume、長名單、第一批 15 到 20 封信。</p>
-        <p>高一進場從階段 2 資料包接，地基壓縮成前三個月補課。來得及，但要立刻開始。</p>
+        <p>高一進場一樣先當地基會員，那一年的重點全部壓在 6 月 15 日之前。來得及，但要立刻開始。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>A 體檢，然後 C 資料包年<small>B 地基壓縮成前三個月補課</small></dd>
+        <dt>從哪裡接</dt><dd>地基會員 1 學年，高二加招募專案<small>全程 42 萬，一個月一萬</small></dd>
         <dt>下一個硬日期</dt><dd>6 月 15 日：教練可以聯絡他<small>問他那天有幾位教練會主動找他</small></dd>
       </dl>
     </div>
@@ -411,21 +416,21 @@ footer .legal p+p{margin-top:4px}
       <div class="now">
         <h3>招募年。這一年決定手上有幾個真的機會。</h3>
         <p>8 月 1 日起可以 official visit，9 到 11 月是教練聯繫的高峰，同時要把成績單做認證翻譯送件。高二上進場先體檢，從階段 3 招募接。</p>
-        <p>高二下進場走的是救火線：先付費體檢，體檢說條件夠我們才接，合約會明寫成功率低、時間壓縮、要補課。條件不夠我們會直接說，不接。</p>
+        <p>這個階段進場直接買招募專案，不再走會員。要先做體檢，說條件夠我們才接，合約會明寫成功率、時間壓縮與要補的課。條件不夠我們會直接說，不接。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>A 體檢，然後 D 招募與落地<small>高二下起改走 E 救火案</small></dd>
+        <dt>從哪裡接</dt><dd>體檢，通過才進招募專案<small>30 萬，落地段錄取後才付</small></dd>
         <dt>下一個硬日期</dt><dd>高三 11 月：簽約期<small>之前要有口頭 offer 與獎學金條件</small></dd>
       </dl>
     </div>
     <div class="gpanel" id="g5" role="tabpanel" aria-labelledby="t5" data-label="高三">
       <div class="now">
         <h3>時間很緊。我們只接體檢說可以的。</h3>
-        <p>11 月是簽約期，畢業到入學中間只有 8 到 10 週要跑完 NCAA 最終認證、I‑20、簽證、役男。高三進場全部走救火線，先體檢。體檢報告會誠實寫他的落點，以及如果不加入也能自己做的版本。</p>
+        <p>11 月是簽約期，畢業到入學中間只有 8 到 10 週要跑完 NCAA 最終認證、I‑20、簽證、役男。高三進場一定要先體檢，我們每年最多接 3 到 4 件這種時間壓縮的案子。體檢報告會誠實寫他的落點，以及如果不加入也能自己做的版本。</p>
         <p>另一條路是先申請入學再走 walk-on 或轉學，體檢報告的時間可行性會把四條路徑一起列出來。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>A 體檢，通過才進 E 救火案<small>單一價，明寫成功率與不接標準</small></dd>
+        <dt>從哪裡接</dt><dd>體檢，通過才進招募專案<small>每年最多接 3 到 4 件</small></dd>
         <dt>下一個硬日期</dt><dd>11 月簽約期，6 到 8 月最後一哩<small>役男狀態確認在 2 月</small></dd>
       </dl>
     </div>
@@ -437,15 +442,15 @@ footer .legal p+p{margin-top:4px}
     <div class="head">
       <div class="lead">六個階段，以台灣學年排</div>
       <h2>硬日期釘死，<br>每一段結束都要能回答一個問題</h2>
-      <p>NCAA 招募日曆的 sophomore 是台灣的高一，junior 是高二。大多數家庭晚一年才發現這件事。</p>
+      <p>NCAA 招募日曆的 sophomore 是台灣的高一，junior 是高二。大多數家庭晚一年才發現這件事。階段 1 到 2 是地基會員，階段 3 到 5 是招募專案。</p>
     </div>
     <div class="tl">
       <div class="stage">
-        <div class="when"><b>任何年級</b>約兩週</div><div class="rail"></div>
+        <div class="when"><b>任何年級</b>諮詢 2,800<br>體檢 15,000</div><div class="rail"></div>
         <div>
-          <h3>體檢 <small>階段 0</small></h3>
-          <p>該不該啟動？從哪一段接？用 Verified UTR、成績單、比賽影片講真話。不加入也拿得到一份能自己用的報告。</p>
-          <p class="ask">現在適合啟動嗎？</p>
+          <h3>諮詢與體檢 <small>階段 0</small></h3>
+          <p>先 60 分鐘諮詢認識我們，再決定要不要做體檢。體檢用 Verified UTR、成績單、比賽影片講真話，不加入也拿得到一份能自己用的報告。</p>
+          <p class="ask">現在適合啟動嗎？從哪一段接？</p>
         </div>
       </div>
       <div class="stage">
@@ -537,7 +542,7 @@ footer .legal p+p{margin-top:4px}
           <li>不代寫教練信、essay、自我介紹。他寫，我們改</li>
           <li>不保證錄取，不保證獎學金金額</li>
           <li>不用「保證」「100%」「最少幾個 offer」這些字</li>
-          <li>不接體檢說條件不夠的救火案，不接的標準公開</li>
+          <li>時間來不及又條件不夠的案子不接，不接的標準公開</li>
           <li>不隱藏價格與退費表</li>
           <li>不做 TOEFL 補習</li>
         </ul>
@@ -592,85 +597,106 @@ footer .legal p+p{margin-top:4px}
 <section id="plans">
   <div class="wrap">
     <div class="head">
-      <div class="lead">價格全部公開</div>
-      <h2>先算你會付多少</h2>
-      <p>單季代辦公開價通常是 8 到 15 萬，多年期顧問沒有人公開價格。我們把每一段拆開標價，你可以自己加減看總額。選一個年級當起點，方案會自動勾好，再依你的情況加或拿掉。</p>
+      <div class="lead">價格全部公開，不打折不議價</div>
+      <h2>從你加入到他大一結束，<br>一個月一萬</h2>
+      <p>單季代辦公開價通常是 8 到 15 萬，多年期顧問沒有人公開價格。我們把每一段都標出來，你自己加減。</p>
     </div>
+
+    <div class="funnel">
+      <div class="fn">
+        <div class="fn-n">先認識</div>
+        <h3>諮詢</h3>
+        <div class="fn-p">NT$2,800</div>
+        <p>一份短問卷，60 分鐘線上會談。我們說明服務怎麼運作，你判斷要不要往下走。不推銷。</p>
+      </div>
+      <div class="fn">
+        <div class="fn-n">再判斷</div>
+        <h3>體檢</h3>
+        <div class="fn-p">NT$15,000</div>
+        <p>長問卷、90 分鐘面談、書面報告家長版與選手版、60 分鐘一起讀報告。不適合啟動我們會直接說。</p>
+      </div>
+      <div class="fn last">
+        <div class="fn-n">才開始</div>
+        <h3>服務</h3>
+        <div class="fn-p">兩個，可以疊加</div>
+        <p>地基會員是平常的準備，招募專案是送件那一段。體檢報告會告訴你該從哪裡接。</p>
+      </div>
+    </div>
+    <p class="fn-note"><b>前面付過的都折抵。</b>諮詢的 2,800 折進體檢，體檢的 15,000 折進服務。走完全程，前面兩層等於沒有多收。</p>
+
+    <div class="svc">
+      <div class="s">
+        <div class="s-top">
+          <div class="s-tag">訂閱，國二到高一</div>
+          <h3>地基會員</h3>
+          <div class="s-p">一個月一萬<small>年費 NT$120,000，每學期收 60,000</small></div>
+        </div>
+        <ul>
+          <li>每月一對一、月報、季會談</li>
+          <li>課表與 NCAA 核心課程稽核</li>
+          <li>訓練日誌檢視、mentor 配對</li>
+          <li>家長工作坊，每年兩次</li>
+          <li>高一那年：比賽影片、Resume、長名單、第一批信、Certification 升級、四堂面談英文演練</li>
+        </ul>
+        <p class="s-why">高一那年做的事最多，但年費一樣。早進場的理由不是省錢，是國三的課表和核心 GPA 決定了之後三年的資格風險，那個過了補不回來。</p>
+      </div>
+      <div class="s core">
+        <div class="s-top">
+          <div class="s-tag">一次性，高二到大一結束</div>
+          <h3>招募專案</h3>
+          <div class="s-p">NT$300,000<small>招募段 200,000，落地段 100,000 錄取後才付</small></div>
+        </div>
+        <ul>
+          <li>代辦幫你做的事，這裡都有</li>
+          <li>名單收斂三層、教練聯繫追蹤、Zoom 演練</li>
+          <li>認證翻譯品管、Offer 淨額比較、獎學金談判</li>
+          <li>役男、NCAA 最終認證、I‑20 與簽證、行前</li>
+          <li>大一整年支援，包在裡面不另賣</li>
+        </ul>
+        <p class="s-why">高二下或高三才進場的人也是買這個，但要先做體檢，說條件夠我們才接。每年最多接 3 到 4 件，合約明寫成功率與不接的標準。</p>
+      </div>
+    </div>
+
+    <div class="two-note">
+      <div><b>早鳥</b>先當會員，國二到高一，高二再加招募專案。</div>
+      <div><b>晚鳥</b>直接買招募專案。沒有時間做準備了，體檢會誠實說。</div>
+    </div>
+
     <div class="calc">
       <div class="calc-q">你的孩子現在幾年級？</div>
       <div class="calc-g" role="group" aria-label="進場年級">
         <button type="button" data-g="g8" aria-pressed="true">國二</button>
         <button type="button" data-g="g9" aria-pressed="false">國三</button>
         <button type="button" data-g="h1" aria-pressed="false">高一</button>
-        <button type="button" data-g="h2" aria-pressed="false">高二上</button>
-        <button type="button" data-g="h3" aria-pressed="false">高二下或高三</button>
+        <button type="button" data-g="h2" aria-pressed="false">高二</button>
+        <button type="button" data-g="h3" aria-pressed="false">高三</button>
       </div>
       <div class="calc-rows">
-        <div class="row"><input type="checkbox" id="cA" data-p="A" checked><label for="cA"><span class="k">A</span>體檢<small>第一步，每個人都要。加入任一方案後全額折抵</small></label><div class="qty">單次</div><div class="amt" data-amt="A">NT$15,000</div></div>
-        <div class="row"><input type="checkbox" id="cB" data-p="B" checked><label for="cB"><span class="k">B</span>地基會員<small>課表、帳戶、日誌與英文習慣、身分工作</small></label><div class="qty"><select id="qB" aria-label="地基會員學年數" data-q="B"><option value="0">不加</option><option value="1">1 學年</option><option value="2" selected>2 學年</option><option value="3">3 學年</option></select></div><div class="amt" data-amt="B">NT$160,000</div></div>
-        <div class="row"><input type="checkbox" id="cC" data-p="C" checked><label for="cC"><span class="k">C</span>資料包年<small>高一那年。影片、Resume、名單、第一批信</small></label><div class="qty">1 學年</div><div class="amt" data-amt="C">NT$140,000</div></div>
-        <div class="row"><input type="checkbox" id="cD" data-p="D" checked><label for="cD"><span class="k">D</span>招募與落地<small>高二到大一結束。招募段 200,000，落地段 100,000 錄取後才付</small></label><div class="qty">約 30 個月</div><div class="amt" data-amt="D">NT$300,000</div></div>
-        <div class="row"><input type="checkbox" id="cE" data-p="E"><label for="cE"><span class="k">E</span>救火案<small>高二下或高三進場走這個，取代 D</small></label><div class="qty">單一價</div><div class="amt" data-amt="E">NT$300,000</div></div>
-        <div class="row"><input type="checkbox" id="cF" data-p="F"><label for="cF"><span class="k">F</span>招募英文<small>加價購。會員綑綁折 10%</small></label><div class="qty"><select id="qF" data-q="F" aria-label="招募英文堂數"><option value="10">10 堂</option><option value="20">20 堂</option><option value="30">30 堂</option></select></div><div class="amt" data-amt="F">NT$13,500</div></div>
+        <div class="row"><input type="checkbox" id="cQ" data-p="Q" checked><label for="cQ">諮詢<small>60 分鐘會談。往下走的話折抵</small></label><div class="qty">單次</div><div class="amt" data-amt="Q">NT$2,800</div></div>
+        <div class="row"><input type="checkbox" id="cX" data-p="X" checked><label for="cX">體檢<small>報告加 debrief。加入服務的話折抵</small></label><div class="qty">單次</div><div class="amt" data-amt="X">NT$15,000</div></div>
+        <div class="row"><input type="checkbox" id="cM" data-p="M" checked><label for="cM">地基會員<small>一個月一萬</small></label><div class="qty"><select id="qM" aria-label="會員學年數"><option value="1">1 學年</option><option value="2">2 學年</option><option value="3" selected>3 學年</option><option value="4">4 學年</option></select></div><div class="amt" data-amt="M">NT$360,000</div></div>
+        <div class="row"><input type="checkbox" id="cP" data-p="P" checked><label for="cP">招募專案<small>高二到大一結束</small></label><div class="qty">約 30 個月</div><div class="amt" data-amt="P">NT$300,000</div></div>
+        <div class="row"><input type="checkbox" id="cE" data-p="E"><label for="cE">招募英文<small>加價購。會員綑綁折 10%</small></label><div class="qty"><select id="qE" aria-label="英文課堂數"><option value="10">10 堂</option><option value="20">20 堂</option><option value="30">30 堂</option></select></div><div class="amt" data-amt="E">NT$13,500</div></div>
       </div>
       <div class="calc-sum">
-        <div><div class="lab">你會付的總額</div><div class="big" id="calcTotal">NT$600,000</div></div>
-        <div class="per">分 <b id="calcYears">5</b> 年付<br>平均每年 <b id="calcPer">NT$120,000</b></div>
+        <div><div class="lab">你會付的總額</div><div class="big" id="calcTotal">NT$660,000</div></div>
+        <div class="per">陪 <b id="calcMonths">66</b> 個月<br>平均每月 <b id="calcPer">NT$10,000</b></div>
       </div>
       <p class="calc-note" id="calcNote"></p>
     </div>
 
-    <h3 style="font-size:19px;margin-bottom:14px">六個方案的完整對照</h3>
-    <div class="phead"><div>方案</div><div>適合年級</div><div>價格</div><div>包含什麼</div></div>
-    <div class="plans">
-      <div class="plan">
-        <div class="nm"><div class="k">A</div><div><div class="st">階段 0</div><h3>體檢</h3></div></div>
-        <div class="fit">任何年級<small>國二到高三，第一步都是這個</small></div>
-        <div class="price">NT$15,000<small>單次。加入任一方案全額折抵</small></div>
-        <p>問卷、預研究、90 分鐘線上面談、書面報告家長版與選手版、60 分鐘回饋會議。</p>
-      </div>
-      <div class="plan">
-        <div class="nm"><div class="k">B</div><div><div class="st">階段 1</div><h3>地基會員</h3></div></div>
-        <div class="fit">國二下到國三<small>高一進場則壓縮成前三個月補課</small></div>
-        <div class="price">NT$80,000<small>每學年，每學期收 40,000</small></div>
-        <p>每月一對一、月報、季會談、家長工作坊、教材、訓練日誌檢視、mentor 配對。</p>
-      </div>
-      <div class="plan">
-        <div class="nm"><div class="k">C</div><div><div class="st">階段 2</div><h3>資料包年</h3></div></div>
-        <div class="fit">高一<small>目標是 6 月 15 日那天備妥</small></div>
-        <div class="price">NT$140,000<small>每學年</small></div>
-        <p>地基會員的全部，加影片、Resume、長名單、第一批信、Certification 升級、四堂面談英文演練。</p>
-      </div>
-      <div class="plan core">
-        <div class="nm"><div class="k">D</div><div><div class="st">階段 3 到 5</div><h3>招募與落地</h3></div></div>
-        <div class="fit">高二、高三、大一<small>約 30 個月，服務到大一結束</small></div>
-        <div class="price">NT$300,000<small>招募段 200,000，落地段 100,000 錄取後才付</small></div>
-        <p>名單三層、教練聯繫追蹤、Zoom 演練、翻譯品管、談判、簽證、役男、最後一哩，加大一整年支援。依教育部海外留學定型化契約六階段收費與退費。</p>
-      </div>
-      <div class="plan">
-        <div class="nm"><div class="k">E</div><div><div class="st">壓縮版</div><h3>救火案</h3></div></div>
-        <div class="fit">高二下或高三<small>先做 A 體檢，說條件夠才接</small></div>
-        <div class="price">NT$300,000<small>單一價。體檢通過才收</small></div>
-        <p>招募與落地的壓縮版加補課。合約明寫成功率、時間壓縮與不接的標準。每年最多接 3 到 4 件。</p>
-      </div>
-      <div class="plan">
-        <div class="nm"><div class="k">F</div><div><div class="st">加價購</div><h3>招募英文</h3></div></div>
-        <div class="fit">任何年級<small>C 已含四堂，D 含 Zoom 面談前模擬</small></div>
-        <div class="price">NT$15,000 起<small>10 堂 15,000、20 堂 28,000、30 堂 40,000。每 10 堂一期，會員綑綁折 10%</small></div>
-        <p>一對一，兩條線：學術英文（essay、大學課堂與寫作）和網球英文加自我介紹加面談。目標是準備他面對大學，不做 TOEFL。</p>
-      </div>
-    </div>
     <div class="fine">
       <div>
         <h3>退費與過程保證</h3>
-        D 招募與落地的六期對齊定型化契約六階段：諮詢選校 15%、文件 15%、送件 25%、錄取 20%、簽證 15%、行前與第一年 10%，退費照法規階梯。另外兩個我們自己加的退費觸發點：學校名單每一所都附個別理由，抓到公版名單全退該期；送件後 90 天內零封教練書面回覆，退送件期的一半。
+        招募專案的六期對齊教育部海外留學定型化契約六階段：諮詢選校 15%、文件 15%、送件 25%、錄取 20%、簽證 15%、行前與第一年 10%，退費照法規階梯。另外兩個我們自己加的退費觸發點：學校名單每一所都附個別理由，抓到公版名單全退該期；送件後 90 天內零封教練書面回覆，退送件期的一半。
       </div>
       <div>
-        <h3>走完全程要多少</h3>
-        國二進場走 A 到 D 全程約 NT$60 萬，分五年付。這不含美國的學費與生活費，那一段在體檢報告的預算可行性裡算。
+        <h3>招募英文，加價購</h3>
+        一對一，兩條線：學術英文（essay、大學課堂與寫作）和網球英文加自我介紹加面談。目標是準備他面對大學，不做 TOEFL。每 10 堂為一期收，會員綑綁折 10%。
         <table>
-          <tr><td>國二進場走完全程</td><td>約 NT$600,000</td></tr>
-          <tr><td>分五年付</td><td>每年約 NT$120,000</td></tr>
+          <tr><td>10 堂</td><td>NT$15,000</td></tr>
+          <tr><td>20 堂</td><td>NT$28,000</td></tr>
+          <tr><td>30 堂</td><td>NT$40,000</td></tr>
         </table>
       </div>
     </div>
@@ -680,11 +706,12 @@ footer .legal p+p{margin-top:4px}
 <section class="sand" id="exam">
   <div class="wrap">
     <div class="head">
-      <div class="lead">第一步永遠是體檢</div>
-      <h2>五個步驟，約兩週，<br>不用先決定要不要加入</h2>
-      <p>如果我們判斷現在不適合啟動，會直接說，報告裡也會附一份不加入也能自己做的版本。</p>
+      <div class="lead">怎麼開始</div>
+      <h2>先 60 分鐘諮詢，<br>再決定要不要做體檢</h2>
+      <p>諮詢 NT$2,800，體檢 NT$15,000，前面付過的都往下折抵。如果我們判斷現在不適合啟動，會直接說，報告裡也會附一份不加入也能自己做的版本。</p>
     </div>
     <div class="steps">
+      <div class="step"><h3>諮詢</h3><div class="w">60 分鐘線上，NT$2,800</div><p>短問卷加一次會談。我們說明服務怎麼運作、你的孩子大概在哪個位置，你判斷要不要做體檢。不推銷。</p></div>
       <div class="step"><h3>問卷</h3><div class="w">面談前 7 天，家庭填</div><p>逐科成績單、班別、出生年月、UTR 檔案連結，加一場完整比賽影片。沒有影片的話附拍攝說明，7 天內錄一場。</p></div>
       <div class="step"><h3>預研究</h3><div class="w">面談前 2 天</div><p>NCAA 資格試算、UTR 落點、初步選校方向 6 到 9 所、影片初看、面談問題清單。</p></div>
       <div class="step"><h3>面談</h3><div class="w">90 分鐘線上</div><p>一起看影片、十分鐘英文、選手與家長分開談、制度小測。有些真話只有分開談才會出現。</p></div>
@@ -711,11 +738,11 @@ footer .legal p+p{margin-top:4px}
       </details>
       <details>
         <summary>什麼時候開始最好？</summary>
-        <div class="a"><p>國二下到高一。因為 NCAA 的招募日曆比台灣早一年：高一結束的 6 月 15 日教練就可以聯絡他，那天之前要備妥影片、Resume 和名單，而國三的成績已經算進核心 GPA。高二下之後進場走的是救火線，先體檢，只接條件夠的。</p></div>
+        <div class="a"><p>國二下到高一。因為 NCAA 的招募日曆比台灣早一年：高一結束的 6 月 15 日教練就可以聯絡他，那天之前要備妥影片、Resume 和名單，而國三的成績已經算進核心 GPA。高二之後進場就沒有準備期了，直接買招募專案，而且要先體檢過。</p></div>
       </details>
       <details>
         <summary>總共要花多少錢？</summary>
-        <div class="a"><p>國二進場走 A 到 D 全程約 NT$60 萬，分五年付，每一段的價格都在上面的方案表。這不含美國的學費與生活費：一年在美國的花費依學校與獎學金差很多，體檢報告的預算可行性會用 I‑20 差額算出三個層級的四年台幣區間。</p></div>
+        <div class="a"><p>一個月一萬，從加入到他大一結束。國二進場是 66 個月共 66 萬，高一進場 42 萬，高二以後只買招募專案是 30 萬。上面的計算器可以自己加減。</p><p>這不含美國的學費與生活費：一年在美國的花費依學校與獎學金差很多，體檢報告的預算可行性會用 I‑20 差額算出三個層級的四年台幣區間。</p></div>
       </details>
       <details>
         <summary>你們保證錄取嗎？</summary>
@@ -727,7 +754,7 @@ footer .legal p+p{margin-top:4px}
       </details>
       <details>
         <summary>英文要多好？要考 TOEFL 嗎？</summary>
-        <div class="a"><p>TOEFL 或 Duolingo 之類的檢定通常是學校入學的要求，我們不做這個補習。我們做的英文是兩件事：課堂聽得懂、寫得出來，以及跟教練視訊的時候答得出來。C 資料包年含四堂面談英文演練，D 含 Zoom 面談前的模擬，不夠的話有 F 招募英文可以加購。</p></div>
+        <div class="a"><p>TOEFL 或 Duolingo 之類的檢定通常是學校入學的要求，我們不做這個補習。我們做的英文是兩件事：課堂聽得懂、寫得出來，以及跟教練視訊的時候答得出來。地基會員在高一那年含四堂面談英文演練，招募專案含 Zoom 面談前的模擬，不夠的話可以加購招募英文。</p></div>
       </details>
       <details>
         <summary>男生的兵役怎麼辦？</summary>
@@ -749,30 +776,29 @@ footer .legal p+p{margin-top:4px}
   <div class="wrap">
     <div>
       <div class="lead">第一步</div>
-      <h2>先做一次誠實的體檢</h2>
-      <p class="sub">NT$15,000，加入任一方案全額折抵。填一份問卷，一週後 90 分鐘線上面談，48 小時內拿到書面報告，再用 60 分鐘一起讀。</p>
+      <h2>先花 60 分鐘認識我們</h2>
+      <p class="sub">諮詢 NT$2,800。一份短問卷加 60 分鐘線上會談，我們說明服務怎麼運作、你的孩子大概在哪個位置。往下走的話這筆錢折抵體檢，體檢再折抵服務。</p>
       <div class="acts">
-        <a class="btn primary" href="#form">填寫體檢問卷</a>
-        <span class="mail" data-email hidden>或寫信到 <a href="#" data-email-link></a></span>
+        <a class="btn primary" href="mailto:support@pinchengcaptain.com?subject=%E9%A0%90%E7%B4%84%E8%AB%AE%E8%A9%A2&amp;body=%E5%AD%A9%E5%AD%90%E5%A7%93%E5%90%8D%EF%BC%9A%0A%E7%9B%AE%E5%89%8D%E5%B9%B4%E7%B4%9A%EF%BC%9A%0AUTR%20%E6%88%96%E6%8E%92%E5%90%8D%EF%BC%9A%0A%E6%96%B9%E4%BE%BF%E7%9A%84%E6%99%82%E6%AE%B5%EF%BC%9A%0A">寫信預約諮詢</a>
+        <a class="btn ghost" href="#form">已經決定了，直接做體檢</a>
       </div>
     </div>
     <ol>
-      <li>填問卷，附成績單與一場完整比賽影片</li>
-      <li>我們做預研究，你收到面談時間</li>
-      <li>90 分鐘線上面談，選手與家長分開談</li>
+      <li>諮詢 2,800，60 分鐘認識我們</li>
+      <li>體檢 15,000，長問卷加 90 分鐘面談</li>
       <li>48 小時內收到報告，家長版與選手版</li>
-      <li>60 分鐘回饋會議，決定要不要啟動</li>
+      <li>60 分鐘一起讀報告，決定要不要啟動</li>
+      <li>加入服務，前面付過的都折抵</li>
     </ol>
   </div>
 </section>
-
 
 <section class="sand" id="form" style="scroll-margin-top:64px">
   <div class="wrap">
     <div class="head">
       <div class="lead">體檢問卷</div>
-      <h2>從這裡開始</h2>
-      <p>約 15 分鐘。可以中途離開，用同一個連結回來繼續。填完我們會在 2 個工作天內寄信給你安排面談。</p>
+      <h2>已經決定要做體檢</h2>
+      <p>約 15 分鐘。可以中途離開，用同一個連結回來繼續。填完我們會在 2 個工作天內寄信給你安排 90 分鐘面談。還沒決定的話，先<a href="#book">預約 60 分鐘諮詢</a>就好。</p>
     </div>
     <div class="form">
       <div class="form-top"><b>Kuroshio 體檢問卷</b><span>需要成績單與一場完整比賽影片</span></div>
@@ -830,73 +856,73 @@ var TAX_ID = "95435096";
   select(tabs[0]);
 
   // 價格樂高
-  var PRICE={A:15000,B:80000,C:140000,D:300000,E:300000};
+  var P={Q:2800,X:15000,M:120000,P:300000};
   var ENG={10:15000,20:28000,30:40000};
   var PRESET={
-    g8:{B:2,on:['A','B','C','D'],years:5},
-    g9:{B:1,on:['A','B','C','D'],years:4},
-    h1:{B:0,on:['A','C','D'],years:3},
-    h2:{B:0,on:['A','D'],years:2},
-    h3:{B:0,on:['A','E'],years:1}
+    g8:{M:3,on:['Q','X','M','P']},
+    g9:{M:2,on:['Q','X','M','P']},
+    h1:{M:1,on:['Q','X','M','P']},
+    h2:{M:0,on:['Q','X','P']},
+    h3:{M:0,on:['Q','X','P']}
   };
-  var years=5;
   var nf=function(n){return 'NT$'+n.toLocaleString('en-US');};
   var box=function(k){return document.querySelector('[data-p="'+k+'"]');};
   var amt=function(k){return document.querySelector('[data-amt="'+k+'"]');};
-  var qB=document.getElementById('qB'), qF=document.getElementById('qF');
+  var qM=document.getElementById('qM'), qE=document.getElementById('qE');
 
   function calc(){
-    var joined=['B','C','D','E'].some(function(k){return box(k).checked;});
-    var total=0, lines=[];
-    // A
-    var aOn=box('A').checked;
-    amt('A').textContent = aOn ? (joined?'折抵後 NT$0':nf(PRICE.A)) : nf(0);
-    if(aOn && !joined) total+=PRICE.A;
-    // B
-    var bn=parseInt(qB.value,10);
-    if(box('B').checked && bn===0){qB.value='1';bn=1;}
-    var bAmt=box('B').checked?PRICE.B*bn:0;
-    amt('B').textContent=nf(bAmt); total+=bAmt;
-    if(bAmt) lines.push('B 地基會員 '+bn+' 學年');
-    // C D E
-    ['C','D','E'].forEach(function(k){
-      var v=box(k).checked?PRICE[k]:0;
-      amt(k).textContent=nf(v); total+=v;
-    });
-    // F
-    var fn=qF.value, fBase=ENG[fn], fAmt=box('F').checked?Math.round(fBase*(joined?0.9:1)):0;
-    amt('F').textContent=nf(fAmt); total+=fAmt;
+    var mOn=box('M').checked, pOn=box('P').checked, joined=mOn||pOn;
+    var my=parseInt(qM.value,10), total=0;
 
-    ['A','B','C','D','E','F'].forEach(function(k){
-      box(k).closest('.row').classList.toggle('off',!box(k).checked);
+    // 諮詢與體檢：加入服務就全額折抵
+    ['Q','X'].forEach(function(k){
+      var on=box(k).checked;
+      amt(k).textContent = on ? (joined?'折抵後 NT$0':nf(P[k])) : nf(0);
+      if(on && !joined) total += P[k];
+    });
+    // 只做體檢沒做諮詢時體檢全額；有諮詢時 2,800 折進體檢，合計仍是 15,000
+    if(!joined && box('Q').checked && box('X').checked){
+      total = P.X;
+      amt('X').textContent = nf(P.X - P.Q) + ' 折抵後';
+    }
+
+    var mAmt = mOn ? P.M*my : 0;
+    amt('M').textContent = nf(mAmt); total += mAmt;
+    var pAmt = pOn ? P.P : 0;
+    amt('P').textContent = nf(pAmt); total += pAmt;
+
+    var eBase = ENG[qE.value];
+    var eAmt = box('E').checked ? Math.round(eBase*(joined?0.9:1)) : 0;
+    amt('E').textContent = nf(eAmt); total += eAmt;
+
+    ['Q','X','M','P','E'].forEach(function(k){
+      box(k).closest('.row').classList.toggle('off', !box(k).checked);
     });
 
-    document.getElementById('calcTotal').textContent=nf(total);
-    document.getElementById('calcYears').textContent=years;
-    document.getElementById('calcPer').textContent=nf(Math.round(total/years/1000)*1000);
+    var months = (mOn?my*12:0) + (pOn?30:0);
+    document.getElementById('calcTotal').textContent = nf(total);
+    document.getElementById('calcMonths').textContent = months;
+    document.getElementById('calcPer').textContent = months ? nf(Math.round(total/months/100)*100) : '不適用';
 
     var note=[];
-    if(aOn&&joined) note.push('A 體檢先付 NT$15,000，加入方案後全額折抵，所以總額裡是 0。');
-    if(box('D').checked&&box('E').checked) note.push('D 和 E 是兩條路，通常只會走其中一條。高二下之後進場走 E。');
-    if(box('F').checked&&joined) note.push('F 已套用會員綑綁 9 折。');
-    if(box('D').checked) note.push('D 的 NT$300,000 分兩段：招募段 200,000，落地段 100,000 錄取後才付。');
+    if(joined && (box('Q').checked||box('X').checked)) note.push('諮詢與體檢的錢往下折抵，所以總額裡是 0。');
+    if(pOn) note.push('招募專案的 NT$300,000 分兩段：招募段 200,000，落地段 100,000 錄取後才付。');
+    if(box('E').checked && joined) note.push('招募英文已套用會員綑綁 9 折。');
+    if(!joined) note.push('還沒加入服務，所以諮詢與體檢是實際要付的錢。');
     note.push('以上不含美國的學費與生活費。那一段依學校與獎學金差很多，體檢報告會用 I‑20 差額算出四年的台幣區間。');
-    document.getElementById('calcNote').textContent=note.join(' ');
+    document.getElementById('calcNote').textContent = note.join(' ');
   }
 
   document.querySelectorAll('.calc-g button').forEach(function(b){
     b.addEventListener('click',function(){
-      var p=PRESET[b.dataset.g];
+      var pre=PRESET[b.dataset.g];
       document.querySelectorAll('.calc-g button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
-      ['A','B','C','D','E'].forEach(function(k){box(k).checked=p.on.indexOf(k)>-1;});
-      qB.value=String(p.B);
-      years=p.years;
+      ['Q','X','M','P'].forEach(function(k){box(k).checked=pre.on.indexOf(k)>-1;});
+      if(pre.M) qM.value=String(pre.M);
       calc();
     });
   });
-  document.querySelectorAll('.calc input,.calc select').forEach(function(el){
-    el.addEventListener('change',calc);
-  });
+  document.querySelectorAll('.calc input,.calc select').forEach(function(el){el.addEventListener('change',calc);});
   calc();
 
   // 手機選單
