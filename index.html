@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kuroshio Athletics 黑潮運動｜台灣網球選手赴美大學的準備</title>
 <meta name="description" content="代辦只幫你送件。我們讓他在送件之前就準備好。台灣網球選手赴美大學的準備服務，從國二的課表開始，到抵美第一年結束。價格全部公開，不保證錄取。">
-<link rel="canonical" href="https://pinwang0705.github.io/kuroshio-site/">
+<link rel="canonical" href="https://kuroshio.pinchengco.com/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:site_name" content="Kuroshio Athletics 黑潮運動">
 <meta property="og:title" content="代辦只幫你送件。我們讓他在送件之前就準備好。">
 <meta property="og:description" content="台灣網球選手赴美大學的準備服務。從國二的課表開始，到抵美第一年結束。價格全部公開，不保證錄取。">
-<meta property="og:url" content="https://pinwang0705.github.io/kuroshio-site/">
-<meta property="og:image" content="https://pinwang0705.github.io/kuroshio-site/assets/og-1200x630.png">
+<meta property="og:url" content="https://kuroshio.pinchengco.com/">
+<meta property="og:image" content="https://kuroshio.pinchengco.com/assets/og-1200x630.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -175,15 +175,30 @@ br.m{display:none}
 
 /* plans */
 .plans{border-top:2px solid var(--abyss)}
-.plan{display:grid;grid-template-columns:200px 220px minmax(0,1fr);gap:clamp(16px,3vw,44px);padding:26px 0;border-bottom:1px solid var(--hair);align-items:start}
+.phead{display:grid;grid-template-columns:var(--pcol);gap:var(--pgap);padding:10px 0;border-bottom:1px solid var(--hair);font-size:13px;color:var(--tide);font-weight:500}
+.plan{--pcol:200px 150px 200px minmax(0,1fr);--pgap:clamp(14px,2.4vw,32px);display:grid;grid-template-columns:var(--pcol);gap:var(--pgap);padding:24px 0;border-bottom:1px solid var(--hair);align-items:start}
+.phead{--pcol:200px 150px 200px minmax(0,1fr);--pgap:clamp(14px,2.4vw,32px)}
 .plan.core{background:var(--sand);border-left:4px solid var(--brass);padding-left:22px;margin-left:-26px;padding-right:22px;margin-right:-22px}
-.plan .st{font-size:13.5px;color:var(--tide);font-weight:500}
-.plan h3{font-size:20px;margin:2px 0 0}
-.plan .price{font-family:var(--mono);font-size:22px;font-weight:500;color:var(--abyss);letter-spacing:-.01em;line-height:1.2;padding-top:4px}
+.plan .nm{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:baseline}
+.plan .k{font-family:var(--mono);font-size:20px;color:var(--brass);font-weight:500;line-height:1.1}
+.plan .st{font-size:13px;color:var(--tide);font-weight:500}
+.plan h3{font-size:19px;margin:1px 0 0}
+.plan .fit{font-size:15px;font-weight:700;color:var(--ink);padding-top:2px;line-height:1.6}
+.plan .fit small{display:block;font-weight:400;font-size:13.5px;color:var(--muted);margin-top:2px}
+.plan .price{font-family:var(--mono);font-size:21px;font-weight:500;color:var(--abyss);letter-spacing:-.01em;line-height:1.2;padding-top:2px}
 .plan .price small{display:block;font-family:var(--body);font-size:13.5px;color:var(--muted);font-weight:400;margin-top:6px;line-height:1.6}
-.plan p{font-size:15px;color:var(--muted);line-height:1.8;padding-top:4px;max-width:none}
-@media(max-width:860px){.plan{grid-template-columns:1fr 1fr}.plan p{grid-column:1/-1;padding-top:0}}
-@media(max-width:560px){.plan{grid-template-columns:1fr;gap:10px}.plan.core{margin-left:calc(-1*var(--gut));margin-right:calc(-1*var(--gut));padding-left:calc(var(--gut) - 4px);padding-right:var(--gut)}}
+.plan p{font-size:14.5px;color:var(--muted);line-height:1.8;padding-top:3px;max-width:none}
+@media(max-width:960px){
+  .phead{display:none}
+  .plan{--pcol:minmax(0,1fr) minmax(0,1fr);gap:14px clamp(14px,2.4vw,32px)}
+  .plan .nm{grid-column:1/-1}
+  .plan p{grid-column:1/-1;padding-top:0}
+  .plan .fit::before{content:"適合年級 ";color:var(--tide);font-weight:500;font-size:13px}
+}
+@media(max-width:560px){
+  .plan{--pcol:1fr;gap:10px}
+  .plan.core{margin-left:calc(-1*var(--gut));margin-right:calc(-1*var(--gut));padding-left:calc(var(--gut) - 4px);padding-right:var(--gut)}
+}
 .fine{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
 .fine div{font-size:15px;color:var(--muted)}
 .fine h3{font-size:16px;color:var(--ink);margin-bottom:6px}
@@ -317,7 +332,7 @@ footer .legal p+p{margin-top:4px}
         <p>這一年沒有硬日期，所以最容易被浪費。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>體檢，然後階段 1 地基<small>全程約 NT$60 萬，分五年付</small></dd>
+        <dt>從哪裡接</dt><dd>A 體檢，然後 B 地基會員<small>走 A 到 D 全程約 NT$60 萬，分五年付</small></dd>
         <dt>下一個硬日期</dt><dd>國三：成績開始算進 NCAA 核心 GPA<small>距今約一年</small></dd>
       </dl>
     </div>
@@ -328,7 +343,7 @@ footer .legal p+p{margin-top:4px}
         <p>從這裡進場走全程，地基階段照常，只是壓縮一些。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>體檢，然後階段 1 地基<small>剩三個學年加大一</small></dd>
+        <dt>從哪裡接</dt><dd>A 體檢，然後 B 地基會員<small>剩三個學年加大一</small></dd>
         <dt>下一個硬日期</dt><dd>高一 6 月 15 日：D1 教練可以直接聯絡他<small>之前要備妥影片、Resume、名單</small></dd>
       </dl>
     </div>
@@ -339,7 +354,7 @@ footer .legal p+p{margin-top:4px}
         <p>高一進場從階段 2 資料包接，地基壓縮成前三個月補課。來得及，但要立刻開始。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>體檢，然後階段 2 資料包<small>地基壓縮成前三個月</small></dd>
+        <dt>從哪裡接</dt><dd>A 體檢，然後 C 資料包年<small>B 地基壓縮成前三個月補課</small></dd>
         <dt>下一個硬日期</dt><dd>6 月 15 日：教練可以聯絡他<small>問他那天有幾位教練會主動找他</small></dd>
       </dl>
     </div>
@@ -350,7 +365,7 @@ footer .legal p+p{margin-top:4px}
         <p>高二下進場走的是救火線：先付費體檢，體檢說條件夠我們才接，合約會明寫成功率低、時間壓縮、要補課。條件不夠我們會直接說，不接。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>體檢，然後階段 3 招募<small>高二下起為救火線，先體檢</small></dd>
+        <dt>從哪裡接</dt><dd>A 體檢，然後 D 招募與落地<small>高二下起改走 E 救火案</small></dd>
         <dt>下一個硬日期</dt><dd>高三 11 月：簽約期<small>之前要有口頭 offer 與獎學金條件</small></dd>
       </dl>
     </div>
@@ -361,7 +376,7 @@ footer .legal p+p{margin-top:4px}
         <p>另一條路是先申請入學再走 walk-on 或轉學，體檢報告的時間可行性會把四條路徑一起列出來。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>體檢，通過才進救火案<small>單一價，明寫成功率與不接標準</small></dd>
+        <dt>從哪裡接</dt><dd>A 體檢，通過才進 E 救火案<small>單一價，明寫成功率與不接標準</small></dd>
         <dt>下一個硬日期</dt><dd>11 月簽約期，6 到 8 月最後一哩<small>役男狀態確認在 2 月</small></dd>
       </dl>
     </div>
@@ -509,12 +524,13 @@ footer .legal p+p{margin-top:4px}
     <div class="head">
       <div class="lead">為什麼是我們</div>
       <h2>創辦人自己走過這條路，<br>而且走得很吃力</h2>
+      <p>Paul Wang，Vanderbilt University 網球校隊出身，NCAA Division I。</p>
     </div>
     <div class="story">
-      <blockquote class="quote">「我聯絡了大概 20 所學校，都是自己寫的 cold email，回覆率不高。我非常理解現在選手的那種無助。」<cite>Paul Wang，Kuroshio Athletics 創辦人</cite></blockquote>
+      <blockquote class="quote">「我聯絡了大概 20 所學校，都是自己寫的 cold email，回覆率不高。我非常理解現在選手的那種無助。」<cite>Paul Wang，Kuroshio Athletics 創辦人。Vanderbilt University 網球校隊，NCAA Division I</cite></blockquote>
       <div class="text">
         <p>Paul 從體育班一路打上來，看到學長的路只有一條：打球，然後當教練。高中有一陣子不想打球，去做了世界學者盃、模擬聯合國、機器人比賽，才發現世界很大，而網球可以是通往它的一條路，不是終點。</p>
-        <p>那時候台灣沒有 UTR Verified 賽事，他和家人用兩個暑假飛美國比賽，花了超過 80 萬台幣。在一場比賽被 NCAA D1 大學的教練看到，UTR 12 左右，教練看中的是他踩在線上攻擊的打法。最後談到 40% 的獎學金，幾年後才知道其實可以談得更好。</p>
+        <p>那時候台灣沒有 UTR Verified 賽事，他和家人用兩個暑假飛美國比賽，花了超過 80 萬台幣。在一場比賽被 Vanderbilt 的教練看到，UTR 12 左右，教練看中的是他踩在線上攻擊的打法。最後談到 40% 的獎學金，幾年後才知道其實可以談得更好。</p>
         <p>全中運第二，到了美國打第六單、第二雙。教育學院大三要去公立高中實習，需要大一大二就選好的課，沒有人告訴他。學校的獎學金、交換、社團資源，他前三年不知道存在。大二手肘疲勞性骨折，大三換了教練，他選擇退出球隊，把最後一年留給學校本身。</p>
         <p><strong>「這些其實都可以被避免。這是為什麼我想做這件事。」</strong></p>
         <p>他對留學代辦最不滿的一件事：不在乎學生要什麼。把你送進一所學校，說「這所不錯」或「你的實力就在這裡」，有時候甚至壓低你的能力，好把你送進比較好處理的學校。送進去之後就不聞不問。</p>
@@ -527,50 +543,57 @@ footer .legal p+p{margin-top:4px}
 <section id="plans">
   <div class="wrap">
     <div class="head">
-      <div class="lead">五個方案，價格全部公開</div>
-      <h2>因為市場上沒有人這麼做</h2>
-      <p>單季代辦公開價通常是 8 到 15 萬，多年期顧問沒有人公開價格。我們把每一段的價格、分期、退費表都寫在這裡。</p>
+      <div class="lead">價格全部公開</div>
+      <h2>六個方案，A 到 F</h2>
+      <p>單季代辦公開價通常是 8 到 15 萬，多年期顧問沒有人公開價格。我們把每一段的價格、分期、退費表都寫在這裡。先看你孩子的年級，那一列就是你要看的。</p>
     </div>
+    <div class="phead"><div>方案</div><div>適合年級</div><div>價格</div><div>包含什麼</div></div>
     <div class="plans">
       <div class="plan">
-        <div class="nm"><div class="st">階段 0</div><h3>體檢</h3></div>
+        <div class="nm"><div class="k">A</div><div><div class="st">階段 0</div><h3>體檢</h3></div></div>
+        <div class="fit">任何年級<small>國二到高三，第一步都是這個</small></div>
         <div class="price">NT$15,000<small>單次。加入任一方案全額折抵</small></div>
         <p>問卷、預研究、90 分鐘線上面談、書面報告家長版與選手版、60 分鐘回饋會議。</p>
       </div>
       <div class="plan">
-        <div class="nm"><div class="st">階段 1</div><h3>地基會員</h3></div>
+        <div class="nm"><div class="k">B</div><div><div class="st">階段 1</div><h3>地基會員</h3></div></div>
+        <div class="fit">國二下到國三<small>高一進場則壓縮成前三個月補課</small></div>
         <div class="price">NT$80,000<small>每學年，每學期收 40,000</small></div>
         <p>每月一對一、月報、季會談、家長工作坊、教材、訓練日誌檢視、mentor 配對。</p>
       </div>
       <div class="plan">
-        <div class="nm"><div class="st">階段 2</div><h3>資料包年</h3></div>
+        <div class="nm"><div class="k">C</div><div><div class="st">階段 2</div><h3>資料包年</h3></div></div>
+        <div class="fit">高一<small>目標是 6 月 15 日那天備妥</small></div>
         <div class="price">NT$140,000<small>每學年</small></div>
         <p>地基會員的全部，加影片、Resume、長名單、第一批信、Certification 升級、四堂面談英文演練。</p>
       </div>
       <div class="plan core">
-        <div class="nm"><div class="st">階段 3 到 5</div><h3>招募與落地</h3></div>
+        <div class="nm"><div class="k">D</div><div><div class="st">階段 3 到 5</div><h3>招募與落地</h3></div></div>
+        <div class="fit">高二、高三、大一<small>約 30 個月，服務到大一結束</small></div>
         <div class="price">NT$300,000<small>招募段 200,000，落地段 100,000 錄取後才付</small></div>
         <p>名單三層、教練聯繫追蹤、Zoom 演練、翻譯品管、談判、簽證、役男、最後一哩，加大一整年支援。依教育部海外留學定型化契約六階段收費與退費。</p>
       </div>
       <div class="plan">
-        <div class="nm"><div class="st">高二下或高三進場</div><h3>救火案</h3></div>
+        <div class="nm"><div class="k">E</div><div><div class="st">壓縮版</div><h3>救火案</h3></div></div>
+        <div class="fit">高二下或高三<small>先做 A 體檢，說條件夠才接</small></div>
         <div class="price">NT$300,000<small>單一價。體檢通過才收</small></div>
         <p>招募與落地的壓縮版加補課。合約明寫成功率、時間壓縮與不接的標準。每年最多接 3 到 4 件。</p>
+      </div>
+      <div class="plan">
+        <div class="nm"><div class="k">F</div><div><div class="st">加價購</div><h3>招募英文</h3></div></div>
+        <div class="fit">任何年級<small>C 已含四堂，D 含 Zoom 面談前模擬</small></div>
+        <div class="price">NT$15,000 起<small>10 堂 15,000、20 堂 28,000、30 堂 40,000。每 10 堂一期，會員綑綁折 10%</small></div>
+        <p>一對一，兩條線：學術英文（essay、大學課堂與寫作）和網球英文加自我介紹加面談。目標是準備他面對大學，不做 TOEFL。</p>
       </div>
     </div>
     <div class="fine">
       <div>
-        <h3>招募英文，加價購</h3>
-        一對一，兩條線：學術英文（essay、大學課堂與寫作）和網球英文加自我介紹加面談。目標是準備他面對大學，不做 TOEFL。每 10 堂為一期收，會員綑綁折 10%。
-        <table>
-          <tr><td>10 堂</td><td>NT$15,000</td></tr>
-          <tr><td>20 堂</td><td>NT$28,000</td></tr>
-          <tr><td>30 堂</td><td>NT$40,000</td></tr>
-        </table>
+        <h3>退費與過程保證</h3>
+        D 招募與落地的六期對齊定型化契約六階段：諮詢選校 15%、文件 15%、送件 25%、錄取 20%、簽證 15%、行前與第一年 10%，退費照法規階梯。另外兩個我們自己加的退費觸發點：學校名單每一所都附個別理由，抓到公版名單全退該期；送件後 90 天內零封教練書面回覆，退送件期的一半。
       </div>
       <div>
-        <h3>退費與過程保證</h3>
-        招募與落地方案的六期對齊定型化契約六階段：諮詢選校 15%、文件 15%、送件 25%、錄取 20%、簽證 15%、行前與第一年 10%，退費照法規階梯。另外兩個我們自己加的退費觸發點：學校名單每一所都附個別理由，抓到公版名單全退該期；送件後 90 天內零封教練書面回覆，退送件期的一半。
+        <h3>走完全程要多少</h3>
+        國二進場走 A 到 D 全程約 NT$60 萬，分五年付。這不含美國的學費與生活費，那一段在體檢報告的預算可行性裡算。
         <table>
           <tr><td>國二進場走完全程</td><td>約 NT$600,000</td></tr>
           <tr><td>分五年付</td><td>每年約 NT$120,000</td></tr>
@@ -618,7 +641,7 @@ footer .legal p+p{margin-top:4px}
       </details>
       <details>
         <summary>總共要花多少錢？</summary>
-        <div class="a"><p>國二進場走完全程約 NT$60 萬，分五年付，每一段的價格都在上面的方案表。這不含美國的學費與生活費：一年在美國的花費依學校與獎學金差很多，體檢報告的預算可行性會用 I‑20 差額算出三個層級的四年台幣區間。</p></div>
+        <div class="a"><p>國二進場走 A 到 D 全程約 NT$60 萬，分五年付，每一段的價格都在上面的方案表。這不含美國的學費與生活費：一年在美國的花費依學校與獎學金差很多，體檢報告的預算可行性會用 I‑20 差額算出三個層級的四年台幣區間。</p></div>
       </details>
       <details>
         <summary>你們保證錄取嗎？</summary>
@@ -630,7 +653,7 @@ footer .legal p+p{margin-top:4px}
       </details>
       <details>
         <summary>英文要多好？要考 TOEFL 嗎？</summary>
-        <div class="a"><p>TOEFL 或 Duolingo 之類的檢定通常是學校入學的要求，我們不做這個補習。我們做的英文是兩件事：課堂聽得懂、寫得出來，以及跟教練視訊的時候答得出來。方案裡含面談英文演練，另有 10 堂一期的加價購。</p></div>
+        <div class="a"><p>TOEFL 或 Duolingo 之類的檢定通常是學校入學的要求，我們不做這個補習。我們做的英文是兩件事：課堂聽得懂、寫得出來，以及跟教練視訊的時候答得出來。C 資料包年含四堂面談英文演練，D 含 Zoom 面談前的模擬，不夠的話有 F 招募英文可以加購。</p></div>
       </details>
       <details>
         <summary>男生的兵役怎麼辦？</summary>
