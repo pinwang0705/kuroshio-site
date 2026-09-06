@@ -260,6 +260,15 @@ br.m{display:none}
 .faq .a{padding:0 0 22px;color:var(--ink);max-width:40em}
 .faq .a p+p{margin-top:10px}
 
+/* embedded questionnaire */
+.form{border:1px solid var(--hair);background:var(--paper);margin-top:8px}
+.form-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding:16px 22px;border-bottom:1px solid var(--hair)}
+.form-top b{font-family:var(--disp);font-size:17px}
+.form-top span{font-size:13.5px;color:var(--muted)}
+.form iframe{display:block;width:100%;border:0;min-height:640px}
+.form-fb{padding:22px;font-size:15px;color:var(--muted)}
+@media(max-width:560px){.form-top{padding:14px 16px}}
+
 /* final cta */
 .cta .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
 .cta h2{font-size:clamp(28px,3.8vw,44px)}
@@ -296,6 +305,7 @@ footer .legal p+p{margin-top:4px}
   .grades{display:none}
   .gpanel::before{content:attr(data-label);font-weight:700;grid-column:1/-1}
   .faq details{break-inside:avoid}
+  #form{display:none}
   .calc-g,.calc-sum .per{display:none}
   .calc{border:1px solid #ccc}
   .calc-sum{background:#f2f2f2!important;color:#000!important}
@@ -321,6 +331,7 @@ footer .legal p+p{margin-top:4px}
       <a href="#why">為什麼是我們</a>
       <a href="#plans">方案與價格</a>
       <a href="#faq">常見問題</a>
+      <a href="#form">問卷</a>
     </div>
     <a class="btn primary cta" href="#book">預約體檢</a>
   </div>
@@ -741,7 +752,7 @@ footer .legal p+p{margin-top:4px}
       <h2>先做一次誠實的體檢</h2>
       <p class="sub">NT$15,000，加入任一方案全額折抵。填一份問卷，一週後 90 分鐘線上面談，48 小時內拿到書面報告，再用 60 分鐘一起讀。</p>
       <div class="acts">
-        <a class="btn primary" href="https://tally.so/r/Mepoqk" target="_blank" rel="noopener">填寫體檢問卷</a>
+        <a class="btn primary" href="#form">填寫體檢問卷</a>
         <span class="mail" data-email hidden>或寫信到 <a href="#" data-email-link></a></span>
       </div>
     </div>
@@ -752,6 +763,25 @@ footer .legal p+p{margin-top:4px}
       <li>48 小時內收到報告，家長版與選手版</li>
       <li>60 分鐘回饋會議，決定要不要啟動</li>
     </ol>
+  </div>
+</section>
+
+
+<section class="sand" id="form" style="scroll-margin-top:64px">
+  <div class="wrap">
+    <div class="head">
+      <div class="lead">體檢問卷</div>
+      <h2>從這裡開始</h2>
+      <p>約 15 分鐘。可以中途離開，用同一個連結回來繼續。填完我們會在 2 個工作天內寄信給你安排面談。</p>
+    </div>
+    <div class="form">
+      <div class="form-top"><b>Kuroshio 體檢問卷</b><span>需要成績單與一場完整比賽影片</span></div>
+      <iframe data-tally-src="https://tally.so/embed/Y56ZQ5?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+              src="https://tally.so/embed/Y56ZQ5?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+              loading="lazy" height="720" title="Kuroshio 體檢問卷"></iframe>
+      <noscript><p class="form-fb">問卷需要開啟 JavaScript。或者<a href="https://tally.so/r/Y56ZQ5" target="_blank" rel="noopener">在新分頁開啟問卷</a>。</p></noscript>
+    </div>
+    <p class="mut" style="margin-top:14px;font-size:14px">表單開不起來的話，<a href="https://tally.so/r/Y56ZQ5" target="_blank" rel="noopener">在新分頁開啟</a>。</p>
   </div>
 </section>
 
@@ -877,5 +907,6 @@ var TAX_ID = "95435096";
   links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='選單';}});
 })();
 </script>
+<script async src="https://tally.so/widgets/embed.js"></script>
 </body>
 </html>
