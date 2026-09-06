@@ -19,3 +19,8 @@
 - 改文案直接改 index.html，它是唯一來源。
 - 每完成一件看得到的事就 commit 並 push，main 就是正式站。
 - 價格與方案內容的真相在 ~/Anson/projects/kuroshio/service-design/workshop-notes.md，改價先改那裡再改這裡。
+
+# 來自 Anson（second brain，~/Anson）的 context，開場自動載入
+@~/Anson/projects/kuroshio/README.md
+@~/Anson/.claude/rules/brand-voice.md
+Anson 的 README 有進度、Paul 丟過的想法、給程式端的待辦。做完功能改 docs 或 README，Anson 那邊說「同步程式碼文件」就會收到。
