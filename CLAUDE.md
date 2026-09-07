@@ -16,6 +16,8 @@
 
 ## 做法
 - 單一 HTML 加原生 CSS，不引框架，不加 build step。
+- 例外：GSAP（2026-09-06 Paul 同意）。從 cdnjs 載固定版號，只做動態與捲動觸發，不拿它管狀態或畫版面。CDN 掛掉時網站要照樣可讀，所以動畫一律用 `.from()`，初始狀態不寫進 CSS。除此之外不再加第二個外部依賴。
+- 動態的原則：動起來的理由必須是「它在工作」，不是「它想好看」。計算中的數字、捲到才算的東西可以動；純裝飾的淡入滑動不要。一律包在 `gsap.matchMedia()` 的 `prefers-reduced-motion` 判斷裡。
 - 改文案直接改 index.html，它是唯一來源。
 - 每完成一件看得到的事就 commit 並 push，main 就是正式站。
 - 價格與方案內容的真相在 ~/Anson/projects/kuroshio/service-design/workshop-notes.md，改價先改那裡再改這裡。
