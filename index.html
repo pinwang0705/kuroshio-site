@@ -178,7 +178,7 @@ br.m{display:none}
 /* plans */
 /* ---- 創辦人照片 ---- */
 .shot{margin:0 0 clamp(28px,4vw,44px)}
-.shot img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;object-position:center 38%}
+.shot img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;object-position:center 45%}
 .shot-ph{aspect-ratio:16/9;background:var(--abyss);display:grid;place-content:center;gap:6px;text-align:center;color:var(--foam)}
 .shot-ph span{font-family:var(--disp);font-size:20px;font-weight:600}
 .shot-ph small{font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.5)}
@@ -795,14 +795,17 @@ footer .legal p+p{margin-top:4px}
       <p>Paul Wang，Vanderbilt University 網球校隊出身，NCAA Division I。</p>
     </div>
     <figure class="shot">
-      <img src="assets/paul-vanderbilt.jpg" alt="Paul 在 Vanderbilt 球場上正手擊球"
-           loading="lazy" decoding="async"
+      <img src="assets/paul-vanderbilt.jpg"
+           srcset="assets/paul-vanderbilt-900.jpg 900w, assets/paul-vanderbilt.jpg 1800w"
+           sizes="(max-width: 760px) 100vw, 1080px"
+           width="1800" height="1013"
+           alt="Paul 在 Vanderbilt 球場上正手擊球" loading="lazy" decoding="async"
            onerror="this.style.display='none';this.nextElementSibling.hidden=false">
       <div class="shot-ph" hidden>
         <span>照片待放</span>
         <small>把檔案存成 assets/paul-vanderbilt.jpg 就會自動出現</small>
       </div>
-      <figcaption>Vanderbilt University，NCAA Division I。</figcaption>
+      <figcaption>Vanderbilt University，NCAA Division I</figcaption>
     </figure>
     <div class="story">
       <blockquote class="quote">「我聯絡了大概 20 所學校，都是自己寫的 cold email，回覆率不高。我非常理解現在選手的那種無助。」<cite>Paul Wang，Kuroshio Athletics 創辦人。Vanderbilt University 網球校隊，NCAA Division I</cite></blockquote>
