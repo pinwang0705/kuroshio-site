@@ -266,12 +266,19 @@ br.m{display:none}
 .faq .a p+p{margin-top:10px}
 
 /* embedded questionnaire */
+.fpick{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.fpick button{text-align:left;font:inherit;background:var(--paper);border:1px solid var(--hair);padding:16px 18px;cursor:pointer;border-radius:3px;color:var(--ink)}
+.fpick button:hover{border-color:var(--tide)}
+.fpick button[aria-selected="true"]{border-color:var(--abyss);box-shadow:inset 0 0 0 1px var(--abyss)}
+.fpick b{display:block;font-size:17px;margin-bottom:4px}
+.fpick span{display:block;font-size:13.5px;color:var(--muted);line-height:1.6}
+@media(max-width:600px){.fpick{grid-template-columns:1fr}}
 .form{border:1px solid var(--hair);background:var(--paper);margin-top:8px}
 .form-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding:16px 22px;border-bottom:1px solid var(--hair)}
 .form-top b{font-family:var(--disp);font-size:17px}
 .form-top span{font-size:13.5px;color:var(--muted)}
 .form iframe{display:block;width:100%;border:0;min-height:640px}
-.form-fb{padding:22px;font-size:15px;color:var(--muted)}
+.form-fb{padding:12px 22px 16px;font-size:14px;color:var(--muted);border-top:1px solid var(--hair)}
 @media(max-width:560px){.form-top{padding:14px 16px}}
 
 /* final cta */
@@ -779,8 +786,8 @@ footer .legal p+p{margin-top:4px}
       <h2>先花 60 分鐘認識我們</h2>
       <p class="sub">諮詢 NT$2,800。一份短問卷加 60 分鐘線上會談，我們說明服務怎麼運作、你的孩子大概在哪個位置。往下走的話這筆錢折抵體檢，體檢再折抵服務。</p>
       <div class="acts">
-        <a class="btn primary" href="mailto:support@pinchengcaptain.com?subject=%E9%A0%90%E7%B4%84%E8%AB%AE%E8%A9%A2&amp;body=%E5%AD%A9%E5%AD%90%E5%A7%93%E5%90%8D%EF%BC%9A%0A%E7%9B%AE%E5%89%8D%E5%B9%B4%E7%B4%9A%EF%BC%9A%0AUTR%20%E6%88%96%E6%8E%92%E5%90%8D%EF%BC%9A%0A%E6%96%B9%E4%BE%BF%E7%9A%84%E6%99%82%E6%AE%B5%EF%BC%9A%0A">寫信預約諮詢</a>
-        <a class="btn ghost" href="#form">已經決定了，直接做體檢</a>
+        <a class="btn primary" href="#form" data-open="q">填諮詢問卷</a>
+        <a class="btn ghost" href="#form" data-open="x">已經決定了，直接做體檢</a>
       </div>
     </div>
     <ol>
@@ -796,18 +803,32 @@ footer .legal p+p{margin-top:4px}
 <section class="sand" id="form" style="scroll-margin-top:64px">
   <div class="wrap">
     <div class="head">
-      <div class="lead">體檢問卷</div>
-      <h2>已經決定要做體檢</h2>
-      <p>約 15 分鐘。可以中途離開，用同一個連結回來繼續。填完我們會在 2 個工作天內寄信給你安排 90 分鐘面談。還沒決定的話，先<a href="#book">預約 60 分鐘諮詢</a>就好。</p>
+      <div class="lead">從這裡開始</div>
+      <h2>先預約諮詢，<br>或者直接做體檢</h2>
+      <p>兩份問卷都在這裡。第一次接觸的話填諮詢那份，5 分鐘。已經決定要做體檢的話填體檢那份，15 分鐘，需要成績單與一場完整比賽影片。</p>
     </div>
-    <div class="form">
+    <div class="fpick" role="tablist" aria-label="選擇問卷">
+      <button type="button" role="tab" id="ft-q" aria-selected="true" aria-controls="fp-q" data-f="q">
+        <b>預約諮詢</b><span>NT$2,800，60 分鐘會談。5 分鐘問卷，不用附任何檔案</span>
+      </button>
+      <button type="button" role="tab" id="ft-x" aria-selected="false" aria-controls="fp-x" data-f="x">
+        <b>直接做體檢</b><span>NT$15,000，含報告與 debrief。15 分鐘問卷，附成績單與比賽影片</span>
+      </button>
+    </div>
+    <div class="form" id="fp-q" role="tabpanel" aria-labelledby="ft-q">
+      <div class="form-top"><b>Kuroshio 諮詢問卷</b><span>填完 2 個工作天內回信安排時間</span></div>
+      <iframe data-tally-src="https://tally.so/embed/LZrGDz?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+              src="https://tally.so/embed/LZrGDz?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+              loading="lazy" height="640" title="Kuroshio 諮詢問卷"></iframe>
+      <p class="form-fb">表單開不起來的話，<a href="https://tally.so/r/LZrGDz" target="_blank" rel="noopener">在新分頁開啟諮詢問卷</a>。</p>
+    </div>
+    <div class="form" id="fp-x" role="tabpanel" aria-labelledby="ft-x" hidden>
       <div class="form-top"><b>Kuroshio 體檢問卷</b><span>需要成績單與一場完整比賽影片</span></div>
       <iframe data-tally-src="https://tally.so/embed/Y56ZQ5?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
-              src="https://tally.so/embed/Y56ZQ5?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+              data-lazy-src="https://tally.so/embed/Y56ZQ5?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
               loading="lazy" height="720" title="Kuroshio 體檢問卷"></iframe>
-      <noscript><p class="form-fb">問卷需要開啟 JavaScript。或者<a href="https://tally.so/r/Y56ZQ5" target="_blank" rel="noopener">在新分頁開啟問卷</a>。</p></noscript>
+      <p class="form-fb">表單開不起來的話，<a href="https://tally.so/r/Y56ZQ5" target="_blank" rel="noopener">在新分頁開啟體檢問卷</a>。</p>
     </div>
-    <p class="mut" style="margin-top:14px;font-size:14px">表單開不起來的話，<a href="https://tally.so/r/Y56ZQ5" target="_blank" rel="noopener">在新分頁開啟</a>。</p>
   </div>
 </section>
 
@@ -924,6 +945,17 @@ var TAX_ID = "95435096";
   });
   document.querySelectorAll('.calc input,.calc select').forEach(function(el){el.addEventListener('change',calc);});
   calc();
+
+  // 問卷切換
+  var ftabs=document.querySelectorAll('.fpick [role=tab]');
+  function openForm(k){
+    ftabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.f===k?'true':'false');});
+    ['q','x'].forEach(function(id){document.getElementById('fp-'+id).hidden=(id!==k);});
+    var fr=document.querySelector('#fp-'+k+' iframe');
+    if(fr && !fr.getAttribute('src') && fr.dataset.lazySrc){fr.src=fr.dataset.lazySrc;}
+  }
+  ftabs.forEach(function(t){t.addEventListener('click',function(){openForm(t.dataset.f);});});
+  document.querySelectorAll('[data-open]').forEach(function(a){a.addEventListener('click',function(){openForm(a.dataset.open);});});
 
   // 手機選單
   var btn=document.querySelector('.nav .menu'),links=document.getElementById('navlinks');
