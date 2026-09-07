@@ -188,7 +188,7 @@ br.m{display:none}
 .stepper{border:1px solid var(--hair);background:var(--paper)}
 .strip{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-bottom:1px solid var(--hair)}
 .strip button{position:relative;font:inherit;text-align:left;background:none;border:0;border-right:1px solid var(--hair);
-  padding:18px 18px 20px;cursor:pointer;color:var(--muted);display:grid;gap:2px;transition:background .2s,color .2s}
+  padding:16px 15px 18px;cursor:pointer;color:var(--muted);display:grid;gap:3px;align-content:start;transition:background .2s,color .2s}
 .strip button:last-child{border-right:0}
 .strip button:not(:last-child) .arw{position:absolute;right:-7px;top:50%;transform:translateY(-50%);
   width:13px;height:13px;border-top:1.5px solid var(--hair);border-right:1.5px solid var(--hair);
@@ -201,7 +201,7 @@ br.m{display:none}
 .strip button[aria-selected="true"]::after{background:var(--brass)}
 .strip .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--tide)}
 .strip button[aria-selected="true"] .k{color:var(--brass)}
-.strip .t{font-family:var(--disp);font-size:18px;font-weight:700;letter-spacing:-.01em;color:inherit}
+.strip .t{font-family:var(--disp);font-size:16.5px;font-weight:700;letter-spacing:-.02em;color:inherit;line-height:1.35;text-wrap:balance}
 .strip .w{font-size:12.5px;color:var(--muted)}
 @media(max-width:900px){
   .strip{grid-template-columns:repeat(3,1fr)}
@@ -954,11 +954,11 @@ footer .legal p+p{margin-top:4px}
     <div class="stepper" id="stepper">
       <div class="strip" role="tablist" aria-label="體檢流程六個步驟">
         <button role="tab" aria-selected="true"  data-i="0"><span class="k">01</span><span class="arw"></span><span class="t">諮詢</span><span class="w">60 分鐘</span></button>
-        <button role="tab" aria-selected="false" data-i="1"><span class="k">02</span><span class="arw"></span><span class="t">問卷</span><span class="w">面談前 7 天</span></button>
-        <button role="tab" aria-selected="false" data-i="2"><span class="k">03</span><span class="arw"></span><span class="t">預研究</span><span class="w">面談前 2 天</span></button>
-        <button role="tab" aria-selected="false" data-i="3"><span class="k">04</span><span class="arw"></span><span class="t">面談</span><span class="w">90 分鐘</span></button>
-        <button role="tab" aria-selected="false" data-i="4"><span class="k">05</span><span class="arw"></span><span class="t">報告</span><span class="w">48 小時內</span></button>
-        <button role="tab" aria-selected="false" data-i="5"><span class="k">06</span><span class="arw"></span><span class="t">回饋會議</span><span class="w">60 分鐘</span></button>
+        <button role="tab" aria-selected="false" data-i="1"><span class="k">02</span><span class="arw"></span><span class="t">填寫體檢問卷</span><span class="w">面談前 7 天</span></button>
+        <button role="tab" aria-selected="false" data-i="2"><span class="k">03</span><span class="arw"></span><span class="t">體檢報告準備</span><span class="w">面談前 2 天</span></button>
+        <button role="tab" aria-selected="false" data-i="3"><span class="k">04</span><span class="arw"></span><span class="t">體檢面談</span><span class="w">90 分鐘</span></button>
+        <button role="tab" aria-selected="false" data-i="4"><span class="k">05</span><span class="arw"></span><span class="t">體檢報告出爐</span><span class="w">48 小時內</span></button>
+        <button role="tab" aria-selected="false" data-i="5"><span class="k">06</span><span class="arw"></span><span class="t">體檢報告回饋會議</span><span class="w">60 分鐘</span></button>
       </div>
       <div class="stage-panel" id="stepPanel" aria-live="polite"></div>
     </div>
@@ -1179,19 +1179,19 @@ var TAX_ID = "95435096";
     ['諮詢','60 分鐘線上','NT$2,800，往下走全額折抵',
      '一份 5 分鐘的短問卷，加一次 60 分鐘的線上會談。我們說明服務怎麼運作、你的孩子大概在哪個位置，然後你判斷要不要做體檢。不推銷，講完就停。',
      '會談結束，如果你決定做體檢，我們當天把體檢問卷和匯款資訊寄給你。'],
-    ['問卷','面談前 7 天','體檢從這裡開始',
+    ['填寫體檢問卷','面談前 7 天','體檢從這裡開始',
      '國三起每學期的逐科成績單、班別、出生年月、UTR 檔案連結，加一場完整的比賽影片。沒有影片的話問卷裡附拍攝說明，手機架著錄一場就行。',
      '這四樣到齊，我們才排面談時間。沒到齊不排，因為缺了它們面談會變成問基本資料。'],
-    ['預研究','面談前 2 天','你不用做事',
+    ['體檢報告準備','面談前 2 天','你不用做事',
      '我們拿你交的資料先算過一遍：NCAA 資格試算、UTR 落在哪一層、初步選校方向 6 到 9 所、把那場比賽影片看完、列出面談要問的問題。',
      '這一段大約四小時，你看不到。做完，面談那 90 分鐘才用得上。'],
-    ['面談','90 分鐘線上','選手與家長都要到',
+    ['體檢面談','90 分鐘線上','選手與家長都要到',
      '一起看那場完整比賽的影片、十分鐘英文、選手單獨談、家長單獨談、制度小測。分開談是刻意的，有些真話只有在爸媽不在的時候才會出現。',
      '面談一結束就開始寫報告。48 小時內寄到你信箱。'],
-    ['報告','面談後 48 小時內','家長版與選手版各一份',
+    ['體檢報告出爐','面談後 48 小時內','家長版與選手版各一份',
      '九件事加兩個判定欄。選手版先講強項，弱項寫成練習。時間可行性會把四條路徑一起列，預算可行性會用 I‑20 差額算出四年的台幣區間。',
      '寄出之後我們約 60 分鐘一起讀。不是寄一份 PDF 就結束。'],
-    ['回饋會議','60 分鐘線上','體檢到這裡結束',
+    ['體檢報告回饋會議','60 分鐘線上','體檢到這裡結束',
      '一起把報告讀完，講三個月內要做的三件事，說明如果啟動要從哪一段接。如果我們判斷現在不適合，會在這裡直接說，並給你一份不加入也能自己做的版本。',
      '要不要加入服務，你回家再決定。我們不當場問。']
   ];
