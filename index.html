@@ -190,6 +190,11 @@ br.m{display:none}
 .strip button{position:relative;font:inherit;text-align:left;background:none;border:0;border-right:1px solid var(--hair);
   padding:18px 18px 20px;cursor:pointer;color:var(--muted);display:grid;gap:2px;transition:background .2s,color .2s}
 .strip button:last-child{border-right:0}
+.strip button:not(:last-child) .arw{position:absolute;right:-7px;top:50%;transform:translateY(-50%);
+  width:13px;height:13px;border-top:1.5px solid var(--hair);border-right:1.5px solid var(--hair);
+  rotate:45deg;background:var(--paper);z-index:2;transition:border-color .2s,background .2s}
+.strip button:hover .arw,.strip button[aria-selected="true"] .arw{background:var(--sand)}
+@media(max-width:900px){.strip .arw{display:none}}
 .strip button::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:transparent;transition:background .2s}
 .strip button:hover{background:var(--sand);color:var(--ink)}
 .strip button[aria-selected="true"]{background:var(--sand);color:var(--ink)}
@@ -206,17 +211,23 @@ br.m{display:none}
 }
 @media(max-width:520px){.strip{grid-template-columns:1fr 1fr}.strip button:nth-child(3n){border-right:1px solid var(--hair)}
   .strip button:nth-child(2n){border-right:0}}
-.stage-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(20px,3vw,44px);
+.stage-panel{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:clamp(20px,3vw,40px);
   padding:clamp(24px,3.5vw,36px) clamp(22px,3vw,34px)}
 @media(max-width:760px){.stage-panel{grid-template-columns:1fr;gap:16px}}
 .stage-panel .lhs .when{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--tide)}
 .stage-panel .lhs h3{font-family:var(--disp);font-size:clamp(24px,3vw,32px);font-weight:700;margin:6px 0 0;letter-spacing:-.015em}
 .stage-panel .lhs .cost{font-family:var(--mono);font-size:14px;color:var(--muted);margin-top:10px}
 .stage-panel .rhs p{font-size:16px;line-height:1.9;color:var(--muted);max-width:38em}
-.stage-panel .rhs .who{margin-top:16px;padding-top:14px;border-top:1px solid var(--hair);display:flex;gap:26px;flex-wrap:wrap;font-size:14px}
-.stage-panel .rhs .who div{display:grid;gap:2px}
-.stage-panel .rhs .who b{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--tide);font-weight:400}
-.stage-panel .rhs .who span{color:var(--ink)}
+.stage-panel .rhs .next{margin-top:18px;padding-top:16px;border-top:1px solid var(--hair);
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start}
+.stage-panel .rhs .next .ico{width:20px;height:20px;border-radius:50%;background:var(--brass);position:relative;margin-top:3px}
+.stage-panel .rhs .next .ico::after{content:"";position:absolute;left:6px;top:6px;width:6px;height:6px;
+  border-top:1.5px solid #fff;border-right:1.5px solid #fff;rotate:45deg}
+.stage-panel .rhs .next b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--tide);font-weight:400;margin-bottom:3px}
+.stage-panel .rhs .next p{font-size:15px;color:var(--ink);line-height:1.8;max-width:36em}
+.stage-panel .rhs .last .ico{background:var(--abyss)}
+.stage-panel .rhs .last .ico::after{rotate:135deg;top:5px;left:6px}
 
 /* ---- 九邊形 ---- */
 .nona{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr);gap:clamp(20px,3vw,44px);align-items:center;margin-top:8px}
@@ -231,8 +242,10 @@ br.m{display:none}
 .nona-dot[aria-pressed="true"] circle{fill:var(--brass);stroke:var(--brass);r:13}
 .nona-dot[aria-pressed="true"] .num{fill:#fff}
 .nona-dot[aria-pressed="true"] text{fill:var(--abyss);font-weight:700}
-.nona-dot:focus-visible{outline:none}
-.nona-dot:focus-visible circle{stroke:var(--brass);stroke-width:4}
+.nona-dot{outline:none}
+.nona-dot:focus{outline:none}
+.nona-dot:focus-visible circle{stroke:var(--brass);stroke-width:3.5}
+.nona-dot:focus-visible text{fill:var(--ink)}
 .nona-panel{border-left:3px solid var(--brass);padding:4px 0 4px 24px;min-height:190px}
 .nona-panel .n{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--tide)}
 .nona-panel h3{font-family:var(--disp);font-size:clamp(23px,3vw,30px);font-weight:700;margin:6px 0 12px;letter-spacing:-.01em}
@@ -940,12 +953,12 @@ footer .legal p+p{margin-top:4px}
 
     <div class="stepper" id="stepper">
       <div class="strip" role="tablist" aria-label="體檢流程六個步驟">
-        <button role="tab" aria-selected="true"  data-i="0"><span class="k">01</span><span class="t">諮詢</span><span class="w">60 分鐘</span></button>
-        <button role="tab" aria-selected="false" data-i="1"><span class="k">02</span><span class="t">問卷</span><span class="w">面談前 7 天</span></button>
-        <button role="tab" aria-selected="false" data-i="2"><span class="k">03</span><span class="t">預研究</span><span class="w">面談前 2 天</span></button>
-        <button role="tab" aria-selected="false" data-i="3"><span class="k">04</span><span class="t">面談</span><span class="w">90 分鐘</span></button>
-        <button role="tab" aria-selected="false" data-i="4"><span class="k">05</span><span class="t">報告</span><span class="w">48 小時內</span></button>
-        <button role="tab" aria-selected="false" data-i="5"><span class="k">06</span><span class="t">回饋會議</span><span class="w">60 分鐘</span></button>
+        <button role="tab" aria-selected="true"  data-i="0"><span class="k">01</span><span class="arw"></span><span class="t">諮詢</span><span class="w">60 分鐘</span></button>
+        <button role="tab" aria-selected="false" data-i="1"><span class="k">02</span><span class="arw"></span><span class="t">問卷</span><span class="w">面談前 7 天</span></button>
+        <button role="tab" aria-selected="false" data-i="2"><span class="k">03</span><span class="arw"></span><span class="t">預研究</span><span class="w">面談前 2 天</span></button>
+        <button role="tab" aria-selected="false" data-i="3"><span class="k">04</span><span class="arw"></span><span class="t">面談</span><span class="w">90 分鐘</span></button>
+        <button role="tab" aria-selected="false" data-i="4"><span class="k">05</span><span class="arw"></span><span class="t">報告</span><span class="w">48 小時內</span></button>
+        <button role="tab" aria-selected="false" data-i="5"><span class="k">06</span><span class="arw"></span><span class="t">回饋會議</span><span class="w">60 分鐘</span></button>
       </div>
       <div class="stage-panel" id="stepPanel" aria-live="polite"></div>
     </div>
@@ -1165,22 +1178,22 @@ var TAX_ID = "95435096";
   var STEPS=[
     ['諮詢','60 分鐘線上','NT$2,800，往下走全額折抵',
      '一份 5 分鐘的短問卷，加一次 60 分鐘的線上會談。我們說明服務怎麼運作、你的孩子大概在哪個位置，然後你判斷要不要做體檢。不推銷，講完就停。',
-     '家庭','短問卷','我們','60 分鐘會談'],
-    ['問卷','面談前 7 天','體檢啟動',
-     '國三起每學期的逐科成績單、班別、出生年月、UTR 檔案連結，加一場完整的比賽影片。沒有影片的話問卷裡附拍攝說明，7 天內錄一場就行。這四樣沒到齊，我們不排面談。',
-     '家庭','43 題加成績單與影片','我們','檢查資料到齊'],
-    ['預研究','面談前 2 天','',
-     'NCAA 資格試算、UTR 落點、初步選校方向 6 到 9 所、影片初看、面談問題清單。這一段你看不到，但它決定了面談 90 分鐘的品質。',
-     '家庭','不用做事','我們','約 4 小時的研究'],
-    ['面談','90 分鐘線上','',
-     '一起看那場完整比賽的影片、十分鐘英文、選手與家長分開談、制度小測。分開談是刻意的，有些真話只有在爸媽不在的時候才會出現。',
-     '家庭','選手與家長都要到','我們','用面談紀錄表逐項記'],
-    ['報告','面談後 48 小時內','',
-     '九件事加兩個判定欄，家長版與選手版各一份。選手版先講強項，弱項寫成練習。時間可行性會把四條路徑一起列，預算可行性會用 I‑20 差額算出四年的台幣區間。',
-     '家庭','不用做事','我們','書面報告兩版'],
-    ['回饋會議','60 分鐘線上','',
+     '會談結束，如果你決定做體檢，我們當天把體檢問卷和匯款資訊寄給你。'],
+    ['問卷','面談前 7 天','體檢從這裡開始',
+     '國三起每學期的逐科成績單、班別、出生年月、UTR 檔案連結，加一場完整的比賽影片。沒有影片的話問卷裡附拍攝說明，手機架著錄一場就行。',
+     '這四樣到齊，我們才排面談時間。沒到齊不排，因為缺了它們面談會變成問基本資料。'],
+    ['預研究','面談前 2 天','你不用做事',
+     '我們拿你交的資料先算過一遍：NCAA 資格試算、UTR 落在哪一層、初步選校方向 6 到 9 所、把那場比賽影片看完、列出面談要問的問題。',
+     '這一段大約四小時，你看不到。做完，面談那 90 分鐘才用得上。'],
+    ['面談','90 分鐘線上','選手與家長都要到',
+     '一起看那場完整比賽的影片、十分鐘英文、選手單獨談、家長單獨談、制度小測。分開談是刻意的，有些真話只有在爸媽不在的時候才會出現。',
+     '面談一結束就開始寫報告。48 小時內寄到你信箱。'],
+    ['報告','面談後 48 小時內','家長版與選手版各一份',
+     '九件事加兩個判定欄。選手版先講強項，弱項寫成練習。時間可行性會把四條路徑一起列，預算可行性會用 I‑20 差額算出四年的台幣區間。',
+     '寄出之後我們約 60 分鐘一起讀。不是寄一份 PDF 就結束。'],
+    ['回饋會議','60 分鐘線上','體檢到這裡結束',
      '一起把報告讀完，講三個月內要做的三件事，說明如果啟動要從哪一段接。如果我們判斷現在不適合，會在這裡直接說，並給你一份不加入也能自己做的版本。',
-     '家庭','選手與家長都要到','我們','三件事驗收表']
+     '要不要加入服務，你回家再決定。我們不當場問。']
   ];
   (function(){
     var strip=document.querySelector('#stepper .strip'), panel=document.getElementById('stepPanel');
@@ -1189,12 +1202,12 @@ var TAX_ID = "95435096";
     function show(i,focus){
       btns.forEach(function(b,k){b.setAttribute('aria-selected',k===i?'true':'false');});
       if(focus) btns[i].focus();
-      var d=STEPS[i];
+      var d=STEPS[i], last=(i===STEPS.length-1);
       panel.innerHTML='<div class="lhs"><div class="when">'+d[1]+'</div><h3>'+d[0]+'</h3>'
         + (d[2]?'<div class="cost">'+d[2]+'</div>':'') + '</div>'
-        + '<div class="rhs"><p>'+d[3]+'</p><div class="who">'
-        + '<div><b>'+d[4]+'</b><span>'+d[5]+'</span></div>'
-        + '<div><b>'+d[6]+'</b><span>'+d[7]+'</span></div></div></div>';
+        + '<div class="rhs"><p>'+d[3]+'</p>'
+        + '<div class="next'+(last?' last':'')+'"><div class="ico"></div><div>'
+        + '<b>'+(last?'然後呢':'接下來')+'</b><p>'+d[4]+'</p></div></div></div>';
       if(window.gsap) gsap.from(panel.querySelectorAll('.lhs > *, .rhs > *'),
         {autoAlpha:0,y:10,duration:.4,stagger:.05,overwrite:true});
     }
