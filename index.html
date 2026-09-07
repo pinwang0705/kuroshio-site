@@ -248,6 +248,8 @@ br.m{display:none}
 .nona-dot:focus-visible text{fill:var(--ink)}
 .nona-panel{border-left:3px solid var(--brass);padding:4px 0 4px 24px;min-height:190px}
 .nona-panel .n{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--tide)}
+.nona-panel .own{font-family:var(--body);letter-spacing:0;font-size:12px;color:var(--paper);background:var(--tide);
+  padding:2px 9px;border-radius:2px;margin-left:4px}
 .nona-panel h3{font-family:var(--disp);font-size:clamp(23px,3vw,30px);font-weight:700;margin:6px 0 12px;letter-spacing:-.01em}
 .nona-panel p{font-size:16px;line-height:1.9;color:var(--muted);max-width:34em}
 .nona-panel .ask{margin-top:14px;padding-top:14px;border-top:1px solid var(--hair);font-size:14.5px;color:var(--ink)}
@@ -305,6 +307,22 @@ br.m{display:none}
 .ubig .l2{font-size:15px;line-height:1.9;color:rgba(255,255,255,.75);max-width:none;align-self:end}
 @media(max-width:760px){.ubig{grid-template-columns:1fr;gap:16px}}
 
+/* 晚來加價 */
+.late{margin-top:40px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(22px,3vw,44px);
+  align-items:start;background:var(--paper);border:1px solid var(--hair);padding:clamp(24px,3vw,32px)}
+@media(max-width:820px){.late{grid-template-columns:1fr;gap:20px}}
+.late-h h3{font-family:var(--disp);font-size:clamp(20px,2.4vw,25px);font-weight:700;margin:6px 0 12px}
+.late-h p{font-size:15px;color:var(--muted);line-height:1.85}
+.late-rule{margin-top:14px;padding:14px 18px;background:var(--sand);border-left:3px solid var(--brass);
+  color:var(--ink)!important;font-size:15.5px;font-weight:500}
+.late-t{width:100%;border-collapse:collapse;font-size:14.5px;font-variant-numeric:tabular-nums}
+.late-t th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tide);font-weight:500;padding:9px 12px 9px 0;border-bottom:1.5px solid var(--abyss)}
+.late-t td{padding:11px 12px 11px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+.late-t td:nth-child(2){font-family:var(--mono);color:var(--muted);text-align:center}
+.late-t td:last-child{font-family:var(--mono);text-align:right;padding-right:0;white-space:nowrap}
+.late-t tr:last-child td{border-bottom:0;color:var(--abyss);font-weight:500}
+
 /* funnel */
 .funnel{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair)}
 .fn{background:var(--paper);padding:24px 24px 26px;position:relative}
@@ -346,6 +364,7 @@ br.m{display:none}
 .row .qty{font-size:14px;color:var(--muted)}
 .row .qty select{font:inherit;font-size:14px;padding:5px 8px;border:1px solid var(--hair);background:var(--paper);color:var(--ink);border-radius:3px;max-width:100%}
 .row .amt{font-family:var(--mono);font-size:16px;text-align:right;color:var(--ink);font-variant-numeric:tabular-nums}
+.row .amt small{display:block;font-family:var(--body);font-size:11.5px;color:var(--muted);margin-top:2px}
 .row.off{opacity:.45}
 .row.off .amt{color:var(--muted)}
 .calc-sum{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;padding:20px 24px;background:var(--abyss);color:#fff}
@@ -512,7 +531,7 @@ footer .legal p+p{margin-top:4px}
         <p>這一年沒有什麼非做不可的期限，所以最容易被浪費掉。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>地基會員 3 學年，高二加招募專案<small>全程 66 萬，一個月一萬</small></dd>
+        <dt>從哪裡接</dt><dd>招募專案高一 3 月簽，30 萬基準價<small>加地基會員 5 學年共 90 萬，會員可自己決定買幾年</small></dd>
         <dt>接下來盯這個</dt><dd>國三：成績開始算進 NCAA 核心 GPA<small>距今約一年</small></dd>
       </dl>
     </div>
@@ -523,18 +542,18 @@ footer .legal p+p{margin-top:4px}
         <p>從這裡進場走全程，地基階段照常，只是壓縮一些。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>地基會員 2 學年，高二加招募專案<small>全程 54 萬，一個月一萬</small></dd>
-        <dt>接下來盯這個</dt><dd>高一 6 月 15 日：D1 教練可以直接聯絡他<small>之前要備妥影片、Resume、名單</small></dd>
+        <dt>從哪裡接</dt><dd>招募專案高一 3 月簽，30 萬基準價<small>加地基會員 4 學年共 78 萬</small></dd>
+        <dt>接下來盯這個</dt><dd>高一 3 月 15 日：招募專案該簽了<small>之後每晚三個月加一萬</small></dd>
       </dl>
     </div>
     <div class="gpanel" id="g3" role="tabpanel" aria-labelledby="t3" data-label="高一">
       <div class="now">
         <h3>關鍵的一年。全部壓在六月十五。</h3>
         <p>高一結束的那個 6 月 15 日起，NCAA D1 教練可以直接聯絡選手、給口頭 offer。那一天之前要備妥的東西：Verified UTR 的曲線、比賽影片、Resume、長名單、第一批 15 到 20 封信。</p>
-        <p>高一進場一樣先當地基會員，那一年的重點全部壓在 6 月 15 日之前。來得及，但要立刻開始。</p>
+        <p>三月十五那天就該簽招募專案，因為六月十五教練就會開始聯絡他，我們需要那三個月把影片、Resume、名單、第一批信做好。晚簽不是不行，是要加價，因為同樣的東西要壓在更短的時間裡。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>地基會員 1 學年，高二加招募專案<small>全程 42 萬，一個月一萬</small></dd>
+        <dt>從哪裡接</dt><dd>招募專案現在就該簽，30 萬基準價<small>加地基會員 3 學年共 66 萬</small></dd>
         <dt>接下來盯這個</dt><dd>6 月 15 日：教練可以聯絡他<small>問他那天有幾位教練會主動找他</small></dd>
       </dl>
     </div>
@@ -545,7 +564,7 @@ footer .legal p+p{margin-top:4px}
         <p>這個階段進場直接買招募專案，不再走會員。要先做體檢，說條件夠我們才接，合約會明寫成功率、時間壓縮與要補的課。條件不夠我們會直接說，不接。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>體檢，通過才進招募專案<small>30 萬，落地段錄取後才付</small></dd>
+        <dt>從哪裡接</dt><dd>體檢，通過才進招募專案<small>晚 18 個月簽，36 萬。加地基會員 2 學年共 60 萬</small></dd>
         <dt>接下來盯這個</dt><dd>高三 11 月：簽約期<small>之前要有口頭 offer 與獎學金條件</small></dd>
       </dl>
     </div>
@@ -556,7 +575,7 @@ footer .legal p+p{margin-top:4px}
         <p>另一條路是先申請入學再走 walk-on 或轉學，體檢報告的時間可行性會把四條路徑一起列出來。</p>
       </div>
       <dl class="go">
-        <dt>從哪裡接</dt><dd>體檢，通過才進招募專案<small>每年最多接 3 到 4 件</small></dd>
+        <dt>從哪裡接</dt><dd>體檢，通過才進招募專案<small>加價封頂 40 萬。每年最多接 3 到 4 件</small></dd>
         <dt>接下來盯這個</dt><dd>11 月簽約期，6 到 8 月最後一哩<small>役男狀態確認在 2 月</small></dd>
       </dl>
     </div>
@@ -636,7 +655,7 @@ footer .legal p+p{margin-top:4px}
         <div class="when"><b>高二</b>一個學年</div><div class="rail"></div>
         <div>
           <h3>招募 <small>階段 3</small></h3>
-          <p>名單收斂到三層，安排 Zoom 訪校與驗證性賽事，成績單做認證翻譯送件，收到口頭 offer 幫他讀懂。信還是他自己寫，我們只改。從六月十五起家長不接觸教練。</p>
+          <p>名單收斂到三層，安排 Zoom 訪校與驗證性賽事，成績單做認證翻譯送件，收到口頭 offer 幫他讀懂。信是他自己寫的，我們改完用他的帳號寄出去。</p>
           <ul class="dates">
             <li><span>8 月 1 日</span>official visit 開放</li>
             <li><span>9 到 11 月</span>教練聯繫高峰</li>
@@ -694,7 +713,7 @@ footer .legal p+p{margin-top:4px}
       <div class="no">
         <h3>我們不做</h3>
         <ul>
-          <li>不代寫教練信、essay、自我介紹。他寫，我們改</li>
+          <li>教練信、essay、自我介紹他寫，我們改，改完用他的帳號寄</li>
           <li>不保證錄取，不保證獎學金金額</li>
           <li>不用「保證」「100%」「最少幾個 offer」這些字</li>
           <li>時間來不及又條件不夠的案子不接，不接的標準公開</li>
@@ -766,9 +785,9 @@ footer .legal p+p{margin-top:4px}
 <section id="plans">
   <div class="wrap">
     <div class="head">
-      <div class="lead">價格全部公開，不打折不議價</div>
-      <h2>從你加入到他大一結束，<br>一個月一萬</h2>
-      <p>單季代辦公開價通常是 8 到 15 萬，多年期顧問沒有人公開價格。我們把每一段都標出來，你自己加減。</p>
+      <div class="lead">價格公式公開，不個案議價</div>
+      <h2>招募專案 30 萬起，<br>地基會員一個月一萬</h2>
+      <p>單季代辦公開價通常是 8 到 15 萬，多年期顧問沒有人公開價格。我們把公式寫出來，任何人算得出同一個數字。</p>
     </div>
 
     <div class="funnel">
@@ -788,7 +807,7 @@ footer .legal p+p{margin-top:4px}
         <div class="fn-n">才開始</div>
         <h3>服務</h3>
         <div class="fn-p">兩個，可以疊加</div>
-        <p>地基會員是平常的準備，招募專案是送件那一段。體檢報告會告訴你該從哪裡接。</p>
+        <p>招募專案讓他進得去，地基會員讓他進去之後活得下來。兩個獨立，都可以單買。體檢報告會告訴你他缺哪一邊。</p>
       </div>
     </div>
     <p class="fn-note"><b>前面付過的都折抵。</b>諮詢的 2,800 折進體檢，體檢的 15,000 折進服務。走完全程，前面兩層等於沒有多收。</p>
@@ -796,37 +815,63 @@ footer .legal p+p{margin-top:4px}
     <div class="svc">
       <div class="s">
         <div class="s-top">
-          <div class="s-tag">訂閱，國二到高一</div>
-          <h3>地基會員</h3>
-          <div class="s-p">一個月一萬<small>年費 NT$120,000，每學期收 60,000</small></div>
-        </div>
-        <ul>
-          <li>每月一對一、月報、季會談</li>
-          <li>課表與 NCAA 核心課程稽核</li>
-          <li>訓練日誌檢視、mentor 配對</li>
-          <li>家長工作坊，每年兩次</li>
-          <li>高一那年：比賽影片、Resume、長名單、第一批信、Certification 升級、四堂面談英文演練</li>
-        </ul>
-        <p class="s-why">高一那年做的事最多，但年費一樣。早進場的理由不是省錢，是國三的課表和核心 GPA 決定了之後三年的資格風險，那個過了補不回來。</p>
-      </div>
-      <div class="s">
-        <div class="s-top">
-          <div class="s-tag">一次性，高二到大一結束</div>
+          <div class="s-tag">讓他進得去</div>
           <h3>招募專案</h3>
-          <div class="s-p">NT$300,000<small>招募段 200,000，落地段 100,000 錄取後才付</small></div>
+          <div class="s-p">NT$300,000 起<small>高一 3 月 15 日前簽約是基準價。晚一點簽會加價，公式在下面</small></div>
         </div>
         <ul>
           <li>代辦幫你做的事，這裡都有</li>
-          <li>名單收斂三層、教練聯繫追蹤、Zoom 演練</li>
+          <li>幫他開一組自己的 Gmail、Drive、Calendar，之後所有往來都從這裡出去</li>
+          <li>essay、教練信、自我介紹：他寫，我們改，改完用他的帳號寄</li>
+          <li>學校名單三層、教練聯繫與追蹤、教練視訊面談準備</li>
+          <li>比賽影片拍攝與剪輯，接平誠的 UTR 認證賽事</li>
           <li>認證翻譯品管、Offer 淨額比較、獎學金談判</li>
           <li>役男、NCAA 最終認證、I‑20 與簽證、行前</li>
           <li>大一整年支援，包在裡面不另賣</li>
         </ul>
         <p class="s-why">高二下或高三才進場的人也是買這個，但要先做體檢，說條件夠我們才接。每年最多接 3 到 4 件，合約明寫成功率與不接的標準。</p>
       </div>
+      <div class="s">
+        <div class="s-top">
+          <div class="s-tag">讓他活得下來</div>
+          <h3>地基會員</h3>
+          <div class="s-p">一個月一萬<small>年費 NT$120,000，每學期收 60,000。國二到大一任何年級都能加，買幾年自己決定</small></div>
+        </div>
+        <ul>
+          <li>英文：SAT、TOEFL、寫作</li>
+          <li>職場英文與大學課堂英文</li>
+          <li>大學先修準備，把大一會撞到的東西提前撞</li>
+          <li>做專案的能力：拆解、排程、交件</li>
+          <li>網球訓練日誌，寫目標與結果不寫流水帳</li>
+          <li>Time management</li>
+          <li>面試演練</li>
+          <li>家長工作坊，每年兩次</li>
+          <li>有機會的話，實習</li>
+        </ul>
+        <p class="s-why">完全 optional，不買也能走招募專案。但這些是進了學校之後每天要用的東西，而失敗集中在第一年。</p>
+      </div>
     </div>
 
-    <p class="both">兩個一樣重要。招募專案決定他手上有幾個機會，地基會員決定那些機會的品質。六月十五那天有幾位教練主動找他，是前面兩年決定的，不是那一年決定的。</p>
+    <p class="both">兩個一樣重要，但做的是不同的事。招募專案讓他進得去，地基會員讓他進去之後活得下來、知道什麼該做什麼不該做。兩個都買的話，地基會員有折扣。</p>
+
+    <div class="late">
+      <div class="late-h">
+        <div class="lead">為什麼早簽比較便宜</div>
+        <h3>招募專案的價格跟著時間走</h3>
+        <p>六月十五那天教練就可以直接聯絡他，我們需要三個月把資料包做好，所以高一 3 月 15 日是最舒服的簽約時間。晚一點來，同樣的東西要壓在更短的時間裡做完，價格反映的是那個壓縮。</p>
+        <p class="late-rule">基準價 30 萬。以高一 3 月 15 日為準，每晚三個月加 1 萬，最多加到 10 萬。</p>
+      </div>
+      <table class="late-t">
+        <thead><tr><th>什麼時候簽約</th><th>晚幾個月</th><th>招募專案</th></tr></thead>
+        <tbody>
+          <tr><td>高一 3 月 15 日前</td><td>基準</td><td>NT$300,000</td></tr>
+          <tr><td>高一 6 月</td><td>3</td><td>NT$310,000</td></tr>
+          <tr><td>高二 9 月</td><td>18</td><td>NT$360,000</td></tr>
+          <tr><td>高三 3 月</td><td>24</td><td>NT$380,000</td></tr>
+          <tr><td>高三 9 月以後</td><td>30 以上</td><td>NT$400,000 封頂</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="calc">
       <div class="calc-q">你的孩子現在幾年級？</div>
@@ -840,8 +885,8 @@ footer .legal p+p{margin-top:4px}
       <div class="calc-rows">
         <div class="row"><input type="checkbox" id="cQ" data-p="Q" checked><label for="cQ">諮詢<small>60 分鐘會談。往下走的話折抵</small></label><div class="qty">單次</div><div class="amt" data-amt="Q">NT$2,800</div></div>
         <div class="row"><input type="checkbox" id="cX" data-p="X" checked><label for="cX">體檢<small>報告加 debrief。加入服務的話折抵</small></label><div class="qty">單次</div><div class="amt" data-amt="X">NT$15,000</div></div>
-        <div class="row"><input type="checkbox" id="cM" data-p="M" checked><label for="cM">地基會員<small>一個月一萬</small></label><div class="qty"><select id="qM" aria-label="會員學年數"><option value="1">1 學年</option><option value="2">2 學年</option><option value="3" selected>3 學年</option><option value="4">4 學年</option></select></div><div class="amt" data-amt="M">NT$360,000</div></div>
-        <div class="row"><input type="checkbox" id="cP" data-p="P" checked><label for="cP">招募專案<small>高二到大一結束</small></label><div class="qty">約 30 個月</div><div class="amt" data-amt="P">NT$300,000</div></div>
+        <div class="row"><input type="checkbox" id="cM" data-p="M" checked><label for="cM">地基會員<small>一個月一萬，任何年級都能加</small></label><div class="qty"><select id="qM" aria-label="會員學年數"><option value="1">1 學年</option><option value="2">2 學年</option><option value="3" selected>3 學年</option><option value="4">4 學年</option><option value="5">5 學年</option><option value="6">6 學年</option></select></div><div class="amt" data-amt="M">NT$360,000</div></div>
+        <div class="row"><input type="checkbox" id="cP" data-p="P" checked><label for="cP">招募專案<small>高二到大一結束。基準 30 萬，晚簽加價</small></label><div class="qty">約 30 個月</div><div class="amt" data-amt="P">NT$300,000</div></div>
         <div class="row"><input type="checkbox" id="cE" data-p="E"><label for="cE">招募英文<small>加價購。會員綑綁折 10%</small></label><div class="qty"><select id="qE" aria-label="英文課堂數"><option value="10">10 堂</option><option value="20">20 堂</option><option value="30">30 堂</option></select></div><div class="amt" data-amt="E">NT$13,500</div></div>
       </div>
       <div class="calc-sum">
@@ -911,7 +956,7 @@ footer .legal p+p{margin-top:4px}
       </details>
       <details>
         <summary>總共要花多少錢？</summary>
-        <div class="a"><p>一個月一萬，從加入到他大一結束。國二進場是 66 個月共 66 萬，高一進場 42 萬，高二以後只買招募專案是 30 萬。上面的計算器可以自己加減。</p><p>這不含美國的學費與生活費：一年在美國的花費依學校與獎學金差很多，體檢報告的預算可行性會用 I‑20 差額算出三個層級的四年台幣區間。</p></div>
+        <div class="a"><p>兩個分開算。招募專案基準價 30 萬，高一 3 月 15 日以後每晚三個月加 1 萬，最多加到 10 萬，所以最貴 40 萬。地基會員一個月一萬，年費 12 萬，買幾年自己決定。</p><p>兩個都買的話：高一簽是 66 萬（會員 3 學年加專案 30 萬），高三才來是 52 萬（會員 1 學年加專案 40 萬）。上面的計算器可以自己加減。</p><p>這不含美國的學費與生活費：一年在美國的花費依學校與獎學金差很多，體檢報告的預算可行性會用 I‑20 差額算出三個層級的四年台幣區間。</p></div>
       </details>
       <details>
         <summary>你們保證錄取嗎？</summary>
@@ -931,7 +976,7 @@ footer .legal p+p{margin-top:4px}
       </details>
       <details>
         <summary>家長要做什麼？</summary>
-        <div class="a"><p>地基與資料包階段每年有兩次家長工作坊，月報和季會談家長都在。從高一 6 月 15 日起，家長不接觸教練，因為教練要看的是選手本人。體檢報告有家長版，第九件事「支持系統」也會誠實寫家長的回饋方式對他的影響。</p></div>
+        <div class="a"><p>地基會員每年有兩次家長工作坊，那裡會講清楚一件事：教練要看的是選手本人，所以聯絡教練的每一步都由他出面。工作坊會教你怎麼在旁邊支持而不是代替他。</p><p>體檢報告有家長版，第九軸「支持系統」也會誠實寫家長的回饋方式對他的影響。</p></div>
       </details>
       <details>
         <summary>到了美國之後呢？</summary>
@@ -1025,13 +1070,14 @@ var TAX_ID = "95435096";
 
   // 價格樂高
   var P={Q:2800,X:15000,M:120000,P:300000};
+  var lateNow=0;  // 晚簽加價，封頂 10 萬
   var ENG={10:15000,20:28000,30:40000};
-  var PRESET={
-    g8:{M:3,on:['Q','X','M','P']},
-    g9:{M:2,on:['Q','X','M','P']},
-    h1:{M:1,on:['Q','X','M','P']},
-    h2:{M:0,on:['Q','X','P']},
-    h3:{M:0,on:['Q','X','P']}
+  var PRESET={                                  // 學年數是「還剩幾年到高三結束」，可自己調
+    g8:{M:5,on:['Q','X','M','P'],late:0},
+    g9:{M:4,on:['Q','X','M','P'],late:0},
+    h1:{M:3,on:['Q','X','M','P'],late:0},
+    h2:{M:2,on:['Q','X','M','P'],late:60000},   // 高二 9 月簽，晚 18 個月
+    h3:{M:1,on:['Q','X','M','P'],late:100000}   // 高三 9 月以後，封頂
   };
   var nf=function(n){return 'NT$'+n.toLocaleString('en-US');};
   var box=function(k){return document.querySelector('[data-p="'+k+'"]');};
@@ -1056,8 +1102,10 @@ var TAX_ID = "95435096";
 
     var mAmt = mOn ? P.M*my : 0;
     amt('M').textContent = nf(mAmt); total += mAmt;
-    var pAmt = pOn ? P.P : 0;
-    amt('P').textContent = nf(pAmt); total += pAmt;
+    var pAmt = pOn ? P.P + lateNow : 0;
+    if(pOn && lateNow) amt('P').innerHTML = nf(pAmt) + '<small>含晚簽加價 ' + nf(lateNow) + '</small>';
+    else amt('P').textContent = nf(pAmt);
+    total += pAmt;
 
     var eBase = ENG[qE.value];
     var eAmt = box('E').checked ? Math.round(eBase*(joined?0.9:1)) : 0;
@@ -1093,6 +1141,7 @@ var TAX_ID = "95435096";
       document.querySelectorAll('.calc-g button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
       ['Q','X','M','P'].forEach(function(k){box(k).checked=pre.on.indexOf(k)>-1;});
       if(pre.M) qM.value=String(pre.M);
+      lateNow=pre.late||0;
       calc();
     });
   });
@@ -1149,15 +1198,15 @@ var TAX_ID = "95435096";
 
   // ---- 九邊形：九條能力軸 ----
   var AXES=[
-    ['網球競技','Verified UTR 與 WTN 的曲線、一年打幾場、對手挑得對不對、雙打。','他打得進哪一層？往上還是停住？'],
-    ['身體與球技','武器與弱點、戰術判斷、體能、成熟度、傷病。資料來源是他自己的訓練日誌。','他的技術到十八歲還來得及改嗎？'],
-    ['學業與 NCAA 資格','核心課程數、核心 GPA、課表風險、大學程度的讀書習慣。','他的課表湊得到 16 門核心課嗎？'],
-    ['英文','課堂聽得懂、視訊面談答得出來、檢定的曲線。','教練打來的時候，他答得出來嗎？'],
-    ['心理韌性與求助','壓力下怎麼表現、輸了怎麼處理、知道找誰、真的會不會開口。','他撐不住的時候，會不會開口？'],
-    ['身分與生涯','不打球的時候他是誰、網球以外長期投入的事、五年後的答案。','球以外，他是誰？'],
-    ['自我管理與自我倡議','時間、身體、錢自己管。信自己寫、自己追、自己決定。','沒有人推他的時候，他還會動嗎？'],
-    ['制度知識與落地準備','NCAA、役男、獎學金的規則；招募日程的執行力；抵美前六個月的準備。','他知道自己在跟什麼制度打交道嗎？'],
-    ['支持系統','家長怎麼回饋與參與、mentor、同儕、現任教練。含家長版。','他身邊有幾個真的幫得上忙的人？']
+    ['網球競技','招募','Verified UTR 與 WTN 的曲線、一年打幾場、對手挑得對不對、雙打。','他打得進哪一層？往上還是停住？'],
+    ['身體與球技','招募｜地基也推','武器與弱點、戰術判斷、體能、成熟度、傷病。影片與教練評估看的是這一軸，但訓練日誌的習慣是地基在養。','他的技術到十八歲還來得及改嗎？'],
+    ['學業與 NCAA 資格','招募','核心課程數、核心 GPA、課表風險、大學程度的讀書習慣。','他的課表湊得到 16 門核心課嗎？'],
+    ['英文','地基','課堂聽得懂、寫得出來、視訊面談答得出來。SAT、TOEFL、寫作都在這裡。','教練打來的時候，他答得出來嗎？'],
+    ['心理韌性與求助','地基','壓力下怎麼表現、輸了怎麼處理、知道找誰、真的會不會開口。','他撐不住的時候，會不會開口？'],
+    ['身分與生涯','地基','不打球的時候他是誰、網球以外長期投入的事、五年後的答案。','球以外，他是誰？'],
+    ['自我管理與自我倡議','招募｜地基也推','自己寫信、自己追教練、自己決定 offer，那是招募執行力；time management 與做專案的能力是地基在教。','沒有人推他的時候，他還會動嗎？'],
+    ['制度知識與落地準備','招募','NCAA、役男、獎學金的規則；招募日程的執行力；抵美前六個月的準備。','他知道自己在跟什麼制度打交道嗎？'],
+    ['支持系統','地基','家長工作坊、mentor、同儕、現任教練。含家長版。','他身邊有幾個真的幫得上忙的人？']
   ];
   (function(){
     var svg=document.querySelector('.nona-fig svg');
@@ -1202,9 +1251,9 @@ var TAX_ID = "95435096";
       gs.forEach(function(g,k){g.setAttribute('aria-pressed',k===i?'true':'false');});
       if(focus) gs[i].focus();
       var ax=AXES[i];
-      panel.innerHTML='<div class="n">'+String(i+1).padStart(2,'0')+' 　九條之一</div>'
-        + '<h3>'+ax[0]+'</h3><p>'+ax[1]+'</p>'
-        + '<div class="ask"><b>這一項要回答的</b>'+ax[2]+'</div>';
+      panel.innerHTML='<div class="n">'+String(i+1).padStart(2,'0')+'　<span class="own">'+ax[1]+'</span></div>'
+        + '<h3>'+ax[0]+'</h3><p>'+ax[2]+'</p>'
+        + '<div class="ask"><b>這一軸要回答的</b>'+ax[3]+'</div>';
       if(window.gsap) gsap.from(panel.children,{autoAlpha:0,y:10,duration:.4,stagger:.05,overwrite:true});
     }
     pick(0);
