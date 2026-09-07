@@ -330,6 +330,38 @@ br.m{display:none}
 @media(max-width:760px){.svc{grid-template-columns:1fr}}
 .both{margin-top:20px;padding:18px 22px;background:var(--sand);border-left:3px solid var(--tide);font-size:15.5px;line-height:1.85;max-width:none}
 
+/* price builder */
+.calc{border:1px solid var(--hair);background:var(--paper);margin-top:44px}
+.calc-q{padding:20px 24px 0;font-weight:700;font-size:17px}
+.calc-g{display:flex;flex-wrap:wrap;gap:8px;padding:12px 24px 20px}
+.calc-g button{font:inherit;font-size:15px;font-weight:700;padding:9px 16px;border:1px solid var(--hair);background:var(--paper);color:var(--muted);cursor:pointer;border-radius:3px}
+.calc-g button:hover{border-color:var(--tide);color:var(--ink)}
+.calc-g button[aria-pressed="true"]{background:var(--abyss);border-color:var(--abyss);color:#fff}
+.calc-rows{border-top:1px solid var(--hair)}
+.row{display:grid;grid-template-columns:26px minmax(0,1fr) 150px 140px;gap:16px;align-items:center;padding:14px 24px;border-bottom:1px solid var(--hair)}
+.row:has(input:checked){background:var(--sand)}
+.row input[type=checkbox]{width:19px;height:19px;accent-color:var(--abyss);cursor:pointer;margin:0}
+.row label{cursor:pointer;font-weight:700;font-size:16px}
+.row label small{display:block;font-weight:400;font-size:13.5px;color:var(--muted);margin-top:1px;line-height:1.55}
+.row .qty{font-size:14px;color:var(--muted)}
+.row .qty select{font:inherit;font-size:14px;padding:5px 8px;border:1px solid var(--hair);background:var(--paper);color:var(--ink);border-radius:3px;max-width:100%}
+.row .amt{font-family:var(--mono);font-size:16px;text-align:right;color:var(--ink);font-variant-numeric:tabular-nums}
+.row.off{opacity:.45}
+.row.off .amt{color:var(--muted)}
+.calc-sum{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;padding:20px 24px;background:var(--abyss);color:#fff}
+.calc-sum .lab{font-size:14px;color:var(--foam)}
+.calc-sum .big{font-family:var(--mono);font-size:clamp(26px,3.4vw,34px);font-weight:500;letter-spacing:-.02em;line-height:1.1;margin-top:4px}
+.calc-sum .per{text-align:right;font-size:14px;color:rgba(255,255,255,.85);line-height:1.7}
+.calc-sum .per b{font-family:var(--mono);font-size:17px;font-weight:500;color:#fff}
+.calc-note{padding:14px 24px;font-size:13.5px;color:var(--muted);line-height:1.75;border-top:1px solid var(--hair);max-width:none}
+@media(max-width:760px){
+  .row{grid-template-columns:24px minmax(0,1fr);gap:6px 14px;padding:14px 18px}
+  .row .qty,.row .amt{grid-column:2}
+  .row .amt{text-align:left;font-size:17px}
+  .calc-q,.calc-g,.calc-sum,.calc-note{padding-left:18px;padding-right:18px}
+  .calc-sum{grid-template-columns:1fr}
+  .calc-sum .per{text-align:left}
+}
 .fine{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
 .fine div{font-size:15px;color:var(--muted)}
 .fine h3{font-size:16px;color:var(--ink);margin-bottom:6px}
@@ -406,6 +438,8 @@ footer .legal p+p{margin-top:4px}
   .faq details{break-inside:avoid}
   #form{display:none}
   .strip .arw{display:none}
+  .calc-g,.calc-sum .per{display:none}
+  .row.off{display:none}
   .stepper,.nona-panel,.ubig{break-inside:avoid}
   .faq details:not([open]) .a{display:block}
   .faq summary::after{display:none}
@@ -794,6 +828,29 @@ footer .legal p+p{margin-top:4px}
 
     <p class="both">兩個一樣重要。招募專案決定他手上有幾個機會，地基會員決定那些機會的品質。六月十五那天有幾位教練主動找他，是前面兩年決定的，不是那一年決定的。</p>
 
+    <div class="calc">
+      <div class="calc-q">你的孩子現在幾年級？</div>
+      <div class="calc-g" role="group" aria-label="進場年級">
+        <button type="button" data-g="g8" aria-pressed="true">國二</button>
+        <button type="button" data-g="g9" aria-pressed="false">國三</button>
+        <button type="button" data-g="h1" aria-pressed="false">高一</button>
+        <button type="button" data-g="h2" aria-pressed="false">高二</button>
+        <button type="button" data-g="h3" aria-pressed="false">高三</button>
+      </div>
+      <div class="calc-rows">
+        <div class="row"><input type="checkbox" id="cQ" data-p="Q" checked><label for="cQ">諮詢<small>60 分鐘會談。往下走的話折抵</small></label><div class="qty">單次</div><div class="amt" data-amt="Q">NT$2,800</div></div>
+        <div class="row"><input type="checkbox" id="cX" data-p="X" checked><label for="cX">體檢<small>報告加 debrief。加入服務的話折抵</small></label><div class="qty">單次</div><div class="amt" data-amt="X">NT$15,000</div></div>
+        <div class="row"><input type="checkbox" id="cM" data-p="M" checked><label for="cM">地基會員<small>一個月一萬</small></label><div class="qty"><select id="qM" aria-label="會員學年數"><option value="1">1 學年</option><option value="2">2 學年</option><option value="3" selected>3 學年</option><option value="4">4 學年</option></select></div><div class="amt" data-amt="M">NT$360,000</div></div>
+        <div class="row"><input type="checkbox" id="cP" data-p="P" checked><label for="cP">招募專案<small>高二到大一結束</small></label><div class="qty">約 30 個月</div><div class="amt" data-amt="P">NT$300,000</div></div>
+        <div class="row"><input type="checkbox" id="cE" data-p="E"><label for="cE">招募英文<small>加價購。會員綑綁折 10%</small></label><div class="qty"><select id="qE" aria-label="英文課堂數"><option value="10">10 堂</option><option value="20">20 堂</option><option value="30">30 堂</option></select></div><div class="amt" data-amt="E">NT$13,500</div></div>
+      </div>
+      <div class="calc-sum">
+        <div><div class="lab">你會付的總額</div><div class="big" id="calcTotal">NT$660,000</div></div>
+        <div class="per">陪 <b id="calcMonths">66</b> 個月<br>平均每月 <b id="calcPer">NT$10,000</b></div>
+      </div>
+      <p class="calc-note" id="calcNote"></p>
+    </div>
+
     <div class="fine">
       <div>
         <h3>退費與過程保證</h3>
@@ -965,6 +1022,82 @@ var TAX_ID = "95435096";
     });
   });
   select(tabs[0]);
+
+  // 價格樂高
+  var P={Q:2800,X:15000,M:120000,P:300000};
+  var ENG={10:15000,20:28000,30:40000};
+  var PRESET={
+    g8:{M:3,on:['Q','X','M','P']},
+    g9:{M:2,on:['Q','X','M','P']},
+    h1:{M:1,on:['Q','X','M','P']},
+    h2:{M:0,on:['Q','X','P']},
+    h3:{M:0,on:['Q','X','P']}
+  };
+  var nf=function(n){return 'NT$'+n.toLocaleString('en-US');};
+  var box=function(k){return document.querySelector('[data-p="'+k+'"]');};
+  var amt=function(k){return document.querySelector('[data-amt="'+k+'"]');};
+  var qM=document.getElementById('qM'), qE=document.getElementById('qE');
+
+  function calc(){
+    var mOn=box('M').checked, pOn=box('P').checked, joined=mOn||pOn;
+    var my=parseInt(qM.value,10), total=0;
+
+    // 諮詢與體檢：加入服務就全額折抵
+    ['Q','X'].forEach(function(k){
+      var on=box(k).checked;
+      amt(k).textContent = on ? (joined?'折抵後 NT$0':nf(P[k])) : nf(0);
+      if(on && !joined) total += P[k];
+    });
+    // 只做體檢沒做諮詢時體檢全額；有諮詢時 2,800 折進體檢，合計仍是 15,000
+    if(!joined && box('Q').checked && box('X').checked){
+      total = P.X;
+      amt('X').textContent = nf(P.X - P.Q) + ' 折抵後';
+    }
+
+    var mAmt = mOn ? P.M*my : 0;
+    amt('M').textContent = nf(mAmt); total += mAmt;
+    var pAmt = pOn ? P.P : 0;
+    amt('P').textContent = nf(pAmt); total += pAmt;
+
+    var eBase = ENG[qE.value];
+    var eAmt = box('E').checked ? Math.round(eBase*(joined?0.9:1)) : 0;
+    amt('E').textContent = nf(eAmt); total += eAmt;
+
+    ['Q','X','M','P','E'].forEach(function(k){
+      box(k).closest('.row').classList.toggle('off', !box(k).checked);
+    });
+
+    var months = (mOn?my*12:0) + (pOn?30:0);
+    var perM = months ? Math.round(total/months/100)*100 : 0;
+    if(window.__roll && months){
+      window.__roll(total, perM, months);
+    } else {
+      document.getElementById('calcTotal').textContent = nf(total);
+      document.getElementById('calcMonths').textContent = months;
+      document.getElementById('calcPer').textContent = months ? nf(perM) : '不適用';
+    }
+    if(!months) document.getElementById('calcPer').textContent = '不適用';
+
+    var note=[];
+    if(joined && (box('Q').checked||box('X').checked)) note.push('諮詢與體檢的錢往下折抵，所以總額裡是 0。');
+    if(pOn) note.push('招募專案的 NT$300,000 分兩段：招募段 200,000，落地段 100,000 錄取後才付。');
+    if(box('E').checked && joined) note.push('招募英文已套用會員綑綁 9 折。');
+    if(!joined) note.push('還沒加入服務，所以諮詢與體檢是實際要付的錢。');
+    note.push('以上不含美國的學費與生活費。那一段依學校與獎學金差很多，體檢報告會用 I‑20 差額算出四年的台幣區間。');
+    document.getElementById('calcNote').textContent = note.join(' ');
+  }
+
+  document.querySelectorAll('.calc-g button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var pre=PRESET[b.dataset.g];
+      document.querySelectorAll('.calc-g button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      ['Q','X','M','P'].forEach(function(k){box(k).checked=pre.on.indexOf(k)>-1;});
+      if(pre.M) qM.value=String(pre.M);
+      calc();
+    });
+  });
+  document.querySelectorAll('.calc input,.calc select').forEach(function(el){el.addEventListener('change',calc);});
+  calc();
 
   // ---- 六步驟 stepper ----
   var STEPS=[
@@ -1195,9 +1328,31 @@ var TAX_ID = "95435096";
       });
 
     // 引言與計算器
-    ScrollTrigger.batch('.story .quote, .both, .fn-note, .ubig',{start:'top 88%',once:true,
+    ScrollTrigger.batch('.story .quote, .both, .calc, .fn-note, .ubig',{start:'top 88%',once:true,
       onEnter:function(els){gsap.from(els,{autoAlpha:0,y:20,duration:.7,stagger:.1,overwrite:true});}});
   });
+
+  // 價格計算器：數字用滾的，不是直接跳
+  var money=document.getElementById('calcTotal'), per=document.getElementById('calcPer'),
+      mons=document.getElementById('calcMonths');
+  function rollNum(el,to,step){
+    if(!el) return;
+    var from=parseInt((el.textContent||'0').replace(/[^0-9]/g,''),10)||0;
+    if(from===to){return;}
+    var o={v:from}, pre=(el.textContent||'').indexOf('NT$')===0?'NT$':'';
+    gsap.to(o,{v:to,duration:.55,ease:'power2.out',
+      onUpdate:function(){
+        var n=Math.round(o.v/step)*step;
+        el.textContent=pre+n.toLocaleString('en-US');
+      },
+      onComplete:function(){el.textContent=pre+to.toLocaleString('en-US');}});
+  }
+  window.__roll=function(total,perMonth,months){
+    rollNum(money,total,1000); rollNum(per,perMonth,100);
+    if(mons){var o={v:parseInt(mons.textContent,10)||0};
+      gsap.to(o,{v:months,duration:.5,onUpdate:function(){mons.textContent=Math.round(o.v);},
+        onComplete:function(){mons.textContent=months;}});}
+  };
 
   // UTR 滑桿：大數字微微跳一下，確認有在動
   var uval=document.getElementById('uval');
