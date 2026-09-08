@@ -241,9 +241,20 @@ html[lang="en"] .stage .ask::before{content:"By the end of this stage, you shoul
 .two li{padding:8px 0 8px 22px;position:relative;color:var(--ink)}
 .two li::before{content:"";position:absolute;left:0;top:19px;width:10px;height:2px;background:var(--tide)}
 .two .no li::before{background:var(--brass)}
-.two.three{grid-template-columns:repeat(3,1fr)}
-.two .own li::before{background:var(--abyss)}
-@media(max-width:980px){.two.three{grid-template-columns:1fr}}
+.split{margin-top:8px;border-top:1px solid var(--hair)}
+.sp{display:grid;grid-template-columns:190px minmax(0,1fr);gap:clamp(14px,3vw,44px);
+  padding:clamp(20px,3vw,28px) 0;border-bottom:1px solid var(--hair);align-items:start}
+.sp h3{margin:0;font-size:19px;line-height:1.5;padding-top:5px}
+.sp ul{list-style:none;margin:0;columns:2;column-gap:40px}
+.sp li{padding:5px 0 5px 20px;position:relative;color:var(--ink);line-height:1.8;break-inside:avoid}
+.sp li::before{content:"";position:absolute;left:0;top:17px;width:10px;height:2px;background:var(--tide)}
+.sp.own li::before{background:var(--abyss)}
+.sp.no li::before{background:var(--brass)}
+@media(max-width:860px){
+  .sp{grid-template-columns:1fr;gap:6px}
+  .sp h3{padding-top:0}
+  .sp ul{columns:1}
+}
 .scope-end{margin:clamp(22px,3vw,32px) auto 0;max-width:44em;text-align:center;
   font-size:clamp(17px,2vw,20px);font-weight:500;line-height:1.8;color:var(--abyss)}
 @media(max-width:720px){.two{grid-template-columns:1fr}}
@@ -958,8 +969,8 @@ footer .legal p+p{margin-top:4px}
       <h2 data-en="We do the paperwork together.&lt;br class=&quot;m&quot;&gt;He walks the road himself.">文件我們一起做，<br class="m">路要選手自己走</h2>
       <p data-en="We do what agencies do. What agencies do not necessarily do is what this service is actually about.">代辦會做的，我們做。但代辦不一定做的，才是這個服務真正的主體。</p>
     </div>
-    <div class="two three">
-      <div>
+    <div class="split">
+      <div class="sp">
         <h3 data-en="What we do together">我們一起做</h3>
         <ul>
           <li data-en="Judge where the player really stands from Verified UTR, grades and match film. No flattering.">用 Verified UTR、成績、比賽影片，判斷選手真正的位置，不美化</li>
@@ -969,7 +980,7 @@ footer .legal p+p{margin-top:4px}
           <li data-en="From preparation through recruiting to arriving in the US, we are still there through freshman year.">從準備、Recruiting 到赴美，大一第一年我們都還在</li>
         </ul>
       </div>
-      <div class="own">
+      <div class="sp own">
         <h3 data-en="These he does himself">這些事，他要自己做</h3>
         <ul>
           <li data-en="Coach letters, essays and self-introductions. He writes them; we sit with him and edit.">教練信、Essay、自我介紹，他寫，我們陪他改</li>
@@ -977,7 +988,7 @@ footer .legal p+p{margin-top:4px}
           <li data-en="He has to know why he chose that school. We do not pick a life for him.">他要知道自己為什麼選這間學校，而不是我們替他選人生</li>
         </ul>
       </div>
-      <div class="no">
+      <div class="sp no">
         <h3 data-en="What we do not do">我們不做</h3>
         <ul>
           <li data-en="No ghostwriting, and no packaging him as somebody else.">不代寫、不包裝成另一個人</li>
