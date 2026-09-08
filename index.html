@@ -87,6 +87,7 @@ p{max-width:38em}
 .hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
 .hero .facts{margin-top:38px;padding-top:22px;border-top:1px solid rgba(143,192,201,.3);display:flex;gap:28px;flex-wrap:wrap;font-size:14.5px;color:rgba(255,255,255,.7)}
 .hero .facts b{color:#fff;font-weight:700}
+.hero .disc{margin-top:12px;font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.7}
 .hero .mark{justify-self:end;width:min(100%,400px)}
 @media(max-width:820px){
   .hero .wrap{grid-template-columns:1fr}
@@ -108,16 +109,66 @@ br.m{display:none}
 .grades button{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;padding:12px 18px;font:inherit;font-weight:700;color:var(--muted);cursor:pointer;font-size:17px}
 .grades button:hover{color:var(--ink)}
 .grades button[aria-selected="true"]{color:var(--abyss);border-bottom-color:var(--brass)}
-.gpanel{display:none;padding-top:30px;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
-.gpanel.on{display:grid}
-.gpanel h3{font-size:clamp(22px,2.6vw,28px);margin-bottom:12px}
-.gpanel .now p+p{margin-top:12px}
-.gpanel .go{border-left:3px solid var(--tide);padding:4px 0 4px 22px;align-self:start}
-.gpanel .go dt{color:var(--tide);font-size:14px;font-weight:500}
-.gpanel .go dd{font-weight:700;font-size:18px;margin-bottom:16px}
-.gpanel .go dd small{display:block;font-weight:400;font-size:15px;color:var(--muted);margin-top:2px}
-.gpanel .go dd:last-child{margin-bottom:0}
-@media(max-width:760px){.gpanel{grid-template-columns:1fr}.grades button{padding:10px 12px;font-size:16px}}
+
+/* 年級時間軸 */
+.gtl{position:relative;height:118px;margin:38px 0 6px}
+.gtl-track{position:absolute;left:0;right:0;top:38px;height:2px;background:var(--hair)}
+.gtl-fill{position:absolute;left:0;top:38px;height:2px;background:var(--tide);width:0;
+  transform-origin:left center}
+.gtl-cur{position:absolute;top:32px;left:0;width:14px;height:14px;margin-left:-7px;border-radius:50%;
+  background:var(--brass);box-shadow:0 0 0 4px var(--paper),0 0 0 5px var(--brass)}
+.gtl-g{position:absolute;top:8px;left:var(--x);transform:translateX(-50%);font-size:13.5px;
+  color:var(--muted);white-space:nowrap;font-weight:500;transition:color .25s}
+.gtl-g.on{color:var(--abyss);font-weight:700}
+.gtl-g:first-of-type{transform:none}
+.gtl-m{position:absolute;top:38px;left:var(--x);width:1px;padding-top:14px;white-space:nowrap}
+.gtl-m::before{content:"";position:absolute;left:0;top:0;width:1px;height:11px;background:var(--brass)}
+.gtl-m span{position:absolute;left:0;top:13px;transform:translateX(-50%);text-align:center;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--brass);line-height:1.5}
+.gtl-m span b{display:block;font-weight:500;color:var(--abyss);font-size:11.5px}
+.gtl-m.r span{transform:none;left:auto;right:0;text-align:right}
+@media(max-width:760px){
+  .gtl{height:158px}
+  .gtl-m span{font-size:10px}.gtl-m span b{font-size:11px}
+  .gtl-g{font-size:12px}
+  .gtl-m.lo::before{height:44px}          /* 窄螢幕標籤會撞，隔一個往下錯開 */
+  .gtl-m.lo span{top:46px}
+}
+
+/* 年級面板 */
+.gpanel{display:none}
+.gpanel.on{display:block}
+.gnow{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);
+  gap:clamp(22px,4vw,52px);align-items:start;padding-top:14px}
+.gnow h3{font-size:clamp(21px,2.6vw,27px);margin-bottom:12px}
+.gnow p+p{margin-top:12px}
+.gcount{border-left:3px solid var(--tide);padding:2px 0 2px 22px}
+.gcount .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--tide)}
+.gcount .v{font-size:16px;font-weight:700;margin:2px 0 18px;line-height:1.5}
+.gcount .v em{font-style:normal;font-family:var(--mono);font-size:30px;font-weight:500;
+  letter-spacing:-.02em;margin-right:3px}
+.gcount .v:last-child{margin-bottom:0}
+.gcount .v small{display:block;font-weight:400;font-size:14.5px;color:var(--muted);margin-top:3px}
+@media(max-width:760px){.gnow{grid-template-columns:1fr}}
+
+/* 四條軸線 */
+.lanes{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);
+  border:1px solid var(--hair);margin-top:30px}
+.lane{background:var(--paper);padding:18px 18px 20px}
+.lane .lk{font-size:14px;font-weight:700;color:var(--tide);margin-bottom:7px;
+  padding-bottom:7px;border-bottom:1px solid var(--hair)}
+.lane p{font-size:14.5px;line-height:1.75;color:var(--muted);margin:0}
+@media(max-width:860px){.lanes{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.lanes{grid-template-columns:1fr}}
+
+/* 建議方案 */
+.gplan{margin-top:22px;background:var(--sand);border-left:3px solid var(--brass);
+  padding:18px 22px 20px;display:grid;grid-template-columns:auto 1fr;gap:6px 26px;align-items:baseline}
+.gplan .pk{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--brass);white-space:nowrap;padding-top:3px}
+.gplan .pv{font-size:17px;font-weight:700;line-height:1.6}
+.gplan .pv small{display:block;font-weight:400;font-size:14.5px;color:var(--muted);margin-top:4px}
+@media(max-width:620px){.gplan{grid-template-columns:1fr;gap:4px}}
 
 /* timeline: the current */
 .tl{position:relative;margin-top:16px;padding-left:0}
@@ -301,11 +352,37 @@ br.m{display:none}
   .uaxis .ticks{grid-column:2}
 }
 
+.utr-disc{margin-top:10px;font-size:14px;line-height:1.8;color:var(--muted);
+  padding-left:14px;border-left:2px solid var(--brass)}
 .ubig{margin-top:22px;background:var(--abyss);color:#fff;padding:clamp(26px,4vw,38px) clamp(24px,4vw,40px);
   display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(20px,4vw,44px);align-items:start}
 .ubig .l1{font-family:var(--disp);font-size:clamp(21px,2.7vw,29px);font-weight:600;line-height:1.5;color:#fff;max-width:none}
 .ubig .l2{font-size:15px;line-height:1.9;color:rgba(255,255,255,.75);max-width:none;align-self:end}
 @media(max-width:760px){.ubig{grid-template-columns:1fr;gap:16px}}
+
+/* 我們的優勢 */
+.edge{display:grid;gap:clamp(30px,5vw,54px);margin-top:38px}
+.ed{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(22px,4vw,50px);align-items:start}
+.ed-n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--foam)}
+.ed h3{font-size:clamp(21px,2.5vw,27px);margin:6px 0 0;line-height:1.4;color:#fff}
+.ed p{font-size:15.5px;line-height:1.9;color:rgba(255,255,255,.76);margin-top:14px;max-width:40em}
+.ed .kick{color:#fff;font-weight:500}
+.ed ul{list-style:none;margin:16px 0 0}
+.ed li{padding:6px 0 6px 20px;position:relative;font-size:15px;line-height:1.8;color:rgba(255,255,255,.82)}
+.ed li::before{content:"";position:absolute;left:0;top:17px;width:9px;height:2px;background:var(--brass)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(143,192,201,.24);margin-top:22px;
+  border:1px solid rgba(143,192,201,.24)}
+.stat{background:var(--deep);padding:22px 22px 24px}
+.stat .sk{font-size:13.5px;font-weight:700;color:var(--foam);line-height:1.5;margin-bottom:14px;
+  padding-bottom:12px;border-bottom:1px solid rgba(143,192,201,.24)}
+.stat .sv{font-family:var(--mono);font-size:clamp(24px,3.4vw,32px);font-weight:500;color:#fff;
+  letter-spacing:-.02em;line-height:1.2}
+.stat .sv small{display:block;font-family:var(--body);font-size:13.5px;font-weight:400;
+  color:rgba(255,255,255,.62);letter-spacing:0;margin-top:8px;line-height:1.75}
+.stat p{font-size:13.5px;line-height:1.8;color:rgba(255,255,255,.62);margin-top:14px}
+.edge-note{margin-top:30px;padding:14px 18px;border:1px solid rgba(143,192,201,.3);
+  font-size:13.5px;line-height:1.8;color:rgba(255,255,255,.6)}
+@media(max-width:820px){.ed{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
 
 /* 晚來加價 */
 .late{margin-top:40px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(22px,3vw,44px);
@@ -449,10 +526,11 @@ footer .legal p+p{margin-top:4px}
   .clocks{background:#f2f2f2!important}
   .hero .mark{display:none}
   .hero .facts{color:#333}.hero .facts b{color:#000}
+  .hero .disc{color:#444!important}
   section{padding:18pt 0}
   .stage,.plan,.gpanel,.step,.nine div,.two>div,.clocks{break-inside:avoid}
-  .gpanel{display:grid!important;border-top:1px solid #ccc;padding:14pt 0}
-  .grades{display:none}
+  .gpanel{display:block!important;border-top:1px solid #ccc;padding:14pt 0}
+  .grades,.gtl{display:none}
   .gpanel::before{content:attr(data-label);font-weight:700;grid-column:1/-1}
   .faq details{break-inside:avoid}
   #form{display:none}
@@ -492,16 +570,17 @@ footer .legal p+p{margin-top:4px}
       <div class="lead">Kuroshio Athletics 黑潮運動</div>
       <h1><span>你要走的路，</span><span>我都走過。</span></h1>
       <p class="who">Paul Wang　Vanderbilt 網球校隊　NCAA Division I</p>
-      <p class="sub">台灣網球選手赴美大學的準備服務。從國二的課表開始，到抵美第一年結束。代辦只幫你送件，我們讓他在送件之前就準備好。</p>
+      <p class="sub">台灣網球選手赴美大學的準備服務。從國二的課表開始，到抵美第一年結束。代辦幫你把申請送出去，我們更在意的是送出去以前，選手準備好了沒有。</p>
       <div class="acts">
         <a class="btn primary" href="#book">預約諮詢</a>
         <a class="btn ghost" href="#timeline">先看六個階段</a>
       </div>
       <div class="facts">
-        <span>一個月 <b>一萬</b>，到他大一結束</span>
-        <span>招募階段同時最多 <b>8 位</b></span>
-        <span><b>不保證</b>錄取或獎學金</span>
+        <span>從國二的課表到抵美<b>第一年</b>結束</span>
+        <span>價格公式<b>公開</b>，不個案議價</span>
+        <span><b>不保證</b>錄取、Offer 數量或獎學金金額</span>
       </div>
+      <p class="disc">因為最終決定權，始終在學校與教練手上。</p>
     </div>
     <img class="mark" src="assets/lockup-on-dark-1600.png" alt="Kuroshio 黑潮的狼" width="1600" height="1202" fetchpriority="high">
   </div>
@@ -512,9 +591,9 @@ footer .legal p+p{margin-top:4px}
 <section id="grade">
   <div class="wrap">
     <div class="head">
-      <div class="lead">美國的時鐘比台灣早一年</div>
-      <h2>你的孩子現在幾年級？</h2>
-      <p>選一個年級，看他現在站在哪裡、還剩多少時間、從哪裡開始。</p>
+      <div class="lead">美國的時鐘，比台灣早一年</div>
+      <h2>選手現在幾年級？</h2>
+      <p>選一個年級，我們告訴你三件事：現在站在哪裡、還剩多少時間、現在最該做什麼。</p>
     </div>
     <div class="grades" role="tablist" aria-label="年級">
       <button role="tab" aria-selected="true" aria-controls="g1" id="t1">國二</button>
@@ -524,60 +603,150 @@ footer .legal p+p{margin-top:4px}
       <button role="tab" aria-selected="false" aria-controls="g5" id="t5">高三</button>
     </div>
 
+    <div class="gtl" aria-hidden="true">
+      <div class="gtl-track"></div>
+      <div class="gtl-fill" id="gtlFill"></div>
+      <span class="gtl-g" style="--x:0%" data-g="1">國二</span>
+      <span class="gtl-g" style="--x:17.1%" data-g="2">國三</span>
+      <span class="gtl-g" style="--x:34.3%" data-g="3">高一</span>
+      <span class="gtl-g" style="--x:51.4%" data-g="4">高二</span>
+      <span class="gtl-g" style="--x:68.6%" data-g="5">高三</span>
+      <span class="gtl-g" style="--x:85.7%">大一</span>
+      <span class="gtl-m" style="--x:17.1%"><span><b>國三</b>成績開始算</span></span>
+      <span class="gtl-m lo" style="--x:47.1%"><span><b>6 / 15</b>教練可以聯絡他</span></span>
+      <span class="gtl-m" style="--x:71.4%"><span><b>11 月</b>簽約期</span></span>
+      <span class="gtl-m r lo" style="--x:84.3%"><span><b>8 月</b>站在校園裡</span></span>
+      <span class="gtl-cur" id="gtlCur"></span>
+    </div>
+
     <div class="gpanel on" id="g1" role="tabpanel" aria-labelledby="t1" data-label="國二">
-      <div class="now">
-        <h3>最好的起點。時間還很多。</h3>
-        <p>從這裡開始可以走完整條路，三到四年。現在該做的不是找學校，是把地基打好：高中課表要對得上 NCAA 的 16 門核心課，英文與訓練日誌的習慣現在養，以及回答一個問題：不打球的時候，他是誰。</p>
-        <p>這一年沒有什麼非做不可的期限，所以最容易被浪費掉。</p>
+      <div class="gnow">
+        <div>
+          <h3>現在開始，完整走三到四年。</h3>
+          <p>這個階段不用急著找學校，最重要的是把地基打好。這一年沒有太多迫在眉睫的期限，卻也是最容易被浪費的一年。</p>
+          <p>越早開始，不是越早決定學校，而是讓三、四年後的自己有更多選擇。</p>
+        </div>
+        <div class="gcount">
+          <div class="k">到大一結束還剩</div>
+          <div class="v"><em class="gcm">70</em>個月</div>
+          <div class="k">下一個硬日期</div>
+          <div class="v">國三 9 月<small>成績開始算進 NCAA 核心 GPA，<em class="gcd" style="font-size:16px">12</em> 個月後</small></div>
+        </div>
       </div>
-      <dl class="go">
-        <dt>從哪裡接</dt><dd>招募專案高一 3 月簽，30 萬基準價<small>加地基會員 5 學年共 90 萬，會員可自己決定買幾年</small></dd>
-        <dt>接下來盯這個</dt><dd>國三：成績開始算進 NCAA 核心 GPA<small>距今約一年</small></dd>
-      </dl>
+      <div class="lanes">
+        <div class="lane"><div class="lk">學業</div><p>提前規劃高中課程，確認 NCAA 16 門核心課的方向。</p></div>
+        <div class="lane"><div class="lk">英文</div><p>提早累積語言能力，不等到申請前才準備。</p></div>
+        <div class="lane"><div class="lk">網球</div><p>建立訓練、比賽與 UTR 的成長紀錄。</p></div>
+        <div class="lane"><div class="lk">個人</div><p>開始探索「除了網球之外，我是誰」。</p></div>
+      </div>
+      <div class="gplan">
+        <div class="pk">建議方案</div>
+        <div class="pv">地基會員先跑，招募專案高一 3 月簽<small>招募專案 30 萬基準價，加地基會員 5 學年共 90 萬。會員買幾年自己決定。</small></div>
+      </div>
     </div>
+
     <div class="gpanel" id="g2" role="tabpanel" aria-labelledby="t2" data-label="國三">
-      <div class="now">
-        <h3>還很早，但這一年開始算分了。</h3>
-        <p>國三的成績會進 NCAA 的核心 GPA，每一科都算。9 月可以免費開 Eligibility Center 帳戶。高中選組與課表決定接下來三年的資格風險，這是國三最重要的一個決定。</p>
-        <p>從這裡進場走全程，地基階段照常，只是壓縮一些。</p>
+      <div class="gnow">
+        <div>
+          <h3>還很早，但這一年已經開始算分了。</h3>
+          <p>國三是整條路上第一個真正要注意「資格」的階段。從這一年開始，符合 NCAA 規範的核心課程與成績，就會正式進入未來核心 GPA 的計算。</p>
+          <p>從國三進場依然可以走完整條路，地基階段該做的一樣都會做，只是探索與準備的時間會稍微壓縮。現在還不用急著決定去哪裡，但從這一年開始，每一個選擇都會慢慢影響三年後手上有多少選擇。</p>
+        </div>
+        <div class="gcount">
+          <div class="k">到大一結束還剩</div>
+          <div class="v"><em class="gcm">58</em>個月</div>
+          <div class="k">下一個硬日期</div>
+          <div class="v">高一 3 月 15 日<small>招募專案的簽約基準日，<em class="gcd" style="font-size:16px">18</em> 個月後</small></div>
+        </div>
       </div>
-      <dl class="go">
-        <dt>從哪裡接</dt><dd>招募專案高一 3 月簽，30 萬基準價<small>加地基會員 4 學年共 78 萬</small></dd>
-        <dt>接下來盯這個</dt><dd>高一 3 月 15 日：招募專案該簽了<small>之後每晚三個月加一萬</small></dd>
-      </dl>
+      <div class="lanes">
+        <div class="lane"><div class="lk">學業</div><p>這一年的成績每一科都算進核心 GPA。高中選組與課表決定接下來三年的資格風險。</p></div>
+        <div class="lane"><div class="lk">英文</div><p>從用開始，不從考試開始。先養成習慣，分數晚一點再說。</p></div>
+        <div class="lane"><div class="lk">網球</div><p>比賽、UTR、訓練紀錄與比賽影片開始有系統地保存。</p></div>
+        <div class="lane"><div class="lk">個人</div><p>九月可以免費開 Eligibility Center 帳戶，第一次擁有自己的資格紀錄。</p></div>
+      </div>
+      <div class="gplan">
+        <div class="pk">建議方案</div>
+        <div class="pv">地基會員先跑，招募專案高一 3 月簽<small>招募專案 30 萬基準價，加地基會員 4 學年共 78 萬。</small></div>
+      </div>
     </div>
+
     <div class="gpanel" id="g3" role="tabpanel" aria-labelledby="t3" data-label="高一">
-      <div class="now">
-        <h3>關鍵的一年。全部壓在六月十五。</h3>
-        <p>高一結束的那個 6 月 15 日起，NCAA D1 教練可以直接聯絡選手、給口頭 offer。那一天之前要備妥的東西：Verified UTR 的曲線、比賽影片、Resume、長名單、第一批 15 到 20 封信。</p>
-        <p>三月十五那天就該簽招募專案，因為六月十五教練就會開始聯絡他，我們需要那三個月把影片、Resume、名單、第一批信做好。晚簽不是不行，是要加價，因為同樣的東西要壓在更短的時間裡。</p>
+      <div class="gnow">
+        <div>
+          <h3>關鍵的一年。目標很清楚：六月十五。</h3>
+          <p>高中二年級（台灣的高一）結束後的 6 月 15 日起，依 NCAA Division I 的招募規則，大學教練可以開始用電話、Email、訊息直接跟選手溝通。</p>
+          <p>所以真正重要的不是等到 6 月 15 日才開始，而是到了那一天，他已經準備好被教練看見。三月十五那天就該簽招募專案，因為我們需要那三個月，把影片、Resume、名單、第一批信做好。</p>
+        </div>
+        <div class="gcount">
+          <div class="k">到大一結束還剩</div>
+          <div class="v"><em class="gcm">46</em>個月</div>
+          <div class="k">下一個硬日期</div>
+          <div class="v">高一 3 月 15 日<small>招募專案的簽約基準日，<em class="gcd" style="font-size:16px">6</em> 個月後</small></div>
+        </div>
       </div>
-      <dl class="go">
-        <dt>從哪裡接</dt><dd>招募專案現在就該簽，30 萬基準價<small>加地基會員 3 學年共 66 萬</small></dd>
-        <dt>接下來盯這個</dt><dd>6 月 15 日：教練可以聯絡他<small>問他那天有幾位教練會主動找他</small></dd>
-      </dl>
+      <div class="lanes">
+        <div class="lane"><div class="lk">學業</div><p>核心課程與核心 GPA 進入實質累積，高二的選課要在這一年談好。</p></div>
+        <div class="lane"><div class="lk">英文</div><p>教練打來要答得出來。四堂視訊面談英文演練排在這一年。</p></div>
+        <div class="lane"><div class="lk">網球</div><p>Verified UTR 的成長曲線與比賽影片第一版，六月十五之前要備妥。</p></div>
+        <div class="lane"><div class="lk">個人</div><p>學校長名單、Tennis Resume、第一批 15 到 20 封信，都是他自己寫。</p></div>
+      </div>
+      <div class="gplan">
+        <div class="pk">建議方案</div>
+        <div class="pv">招募專案現在就該簽<small>30 萬基準價，加地基會員 3 學年共 66 萬。三月十五之後每晚三個月加一萬。</small></div>
+      </div>
     </div>
+
     <div class="gpanel" id="g4" role="tabpanel" aria-labelledby="t4" data-label="高二">
-      <div class="now">
-        <h3>招募年。這一年決定手上有幾個真的機會。</h3>
-        <p>8 月 1 日起可以 official visit，9 到 11 月是教練聯繫的高峰，同時要把成績單做認證翻譯送件。這個階段進場一樣先做體檢。</p>
-        <p>體檢說條件夠我們才接，合約會明寫時間壓縮與要補的課。條件不夠我們會直接說，不接。地基會員這個年級一樣可以加，兩條線是並行的。</p>
+      <div class="gnow">
+        <div>
+          <h3>招募年。這一年決定手上有多少真正的機會。</h3>
+          <p>到了高二，Recruiting 不再只是準備，而是正式進入執行。前一階段建立的 UTR、比賽影片、Resume 與學校名單，會在這一年真正開始轉化成教練回覆、持續對話、校園訪問，以及實際的招募機會。</p>
+          <p>這個階段進場一樣先做體檢。體檢說條件夠我們才接，合約會明寫時間壓縮與要補的課。條件不夠我們會直接說，不接。地基會員這個年級一樣可以加，兩條線是並行的。</p>
+        </div>
+        <div class="gcount">
+          <div class="k">到大一結束還剩</div>
+          <div class="v"><em class="gcm">34</em>個月</div>
+          <div class="k">下一個硬日期</div>
+          <div class="v">高三 11 月<small>網球簽約期，<em class="gcd" style="font-size:16px">14</em> 個月後</small></div>
+        </div>
       </div>
-      <dl class="go">
-        <dt>從哪裡接</dt><dd>體檢，通過才進招募專案<small>高二 9 月簽晚 6 個月，32 萬。加地基會員 2 學年共 56 萬</small></dd>
-        <dt>接下來盯這個</dt><dd>高三 11 月：簽約期<small>之前要有口頭 offer 與獎學金條件</small></dd>
-      </dl>
+      <div class="lanes">
+        <div class="lane"><div class="lk">學業</div><p>成績單做認證翻譯送件，Eligibility Center 第二次上傳。</p></div>
+        <div class="lane"><div class="lk">英文</div><p>正式考一次英檢，對準目標學校的門檻。</p></div>
+        <div class="lane"><div class="lk">網球</div><p>驗證性賽事連續打，影片第二版重剪，對手要更強、分數要更真。</p></div>
+        <div class="lane"><div class="lk">個人</div><p>Zoom 訪校自己主持，口頭 offer 自己讀懂。</p></div>
+      </div>
+      <div class="gplan">
+        <div class="pk">建議方案</div>
+        <div class="pv">體檢通過才進招募專案<small>高二 9 月簽晚 6 個月，32 萬。加地基會員 2 學年共 56 萬。</small></div>
+      </div>
     </div>
+
     <div class="gpanel" id="g5" role="tabpanel" aria-labelledby="t5" data-label="高三">
-      <div class="now">
-        <h3>時間很緊。我們只接體檢說可以的。</h3>
-        <p>11 月是簽約期，畢業到入學中間只有 8 到 10 週要跑完 NCAA 最終認證、I‑20、簽證、役男。高三進場一定要先體檢，我們每年最多接 3 到 4 件這種時間壓縮的案子。體檢報告會誠實寫他的落點，以及如果不加入也能自己做的版本。</p>
-        <p>另一條路是先申請入學再走 walk-on 或轉學，體檢報告的時間可行性會把四條路徑一起列出來。</p>
+      <div class="gnow">
+        <div>
+          <h3>時間很緊。我們只接體檢說可以的。</h3>
+          <p>這個階段 Recruiting、學校申請與入學準備可能同時進行。確定學校後，還要接續處理 NCAA 最終資格認證、入學文件、I-20、學生簽證，以及男選手的役男出境程序。每一個環節都有自己的文件與時間要求，所以高三才進場，我們不會直接承接。</p>
+          <p>高三也不一定只剩一條路。我們會依條件與時間，把直接 Recruiting、Admission First、換一所第一站、先進去再轉學這四條路徑攤開來比，再決定現在最值得走哪一條。高三才開始並不代表沒有機會，只是這時候最重要的已經不是趕快做，而是先確認哪一條路還走得通。</p>
+        </div>
+        <div class="gcount">
+          <div class="k">到大一結束還剩</div>
+          <div class="v"><em class="gcm">22</em>個月</div>
+          <div class="k">下一個硬日期</div>
+          <div class="v">高三 11 月<small>網球簽約期，<em class="gcd" style="font-size:16px">2</em> 個月後</small></div>
+        </div>
       </div>
-      <dl class="go">
-        <dt>從哪裡接</dt><dd>體檢，通過才進招募專案<small>高三 9 月簽晚 18 個月，36 萬。每年最多接 3 到 4 件</small></dd>
-        <dt>接下來盯這個</dt><dd>11 月簽約期，6 到 8 月最後一哩<small>役男狀態確認在 2 月</small></dd>
-      </dl>
+      <div class="lanes">
+        <div class="lane"><div class="lk">學業</div><p>NCAA 最終資格認證，四月一日起可以申請。</p></div>
+        <div class="lane"><div class="lk">英文</div><p>課堂聽得懂、作業寫得出來。這才是到了美國每天要用的。</p></div>
+        <div class="lane"><div class="lk">網球</div><p>教練書面確認 roster 位置，不只是進得了名單。</p></div>
+        <div class="lane"><div class="lk">個人</div><p>Offer 淨額比較、談判、aid agreement 逐條讀懂。最後的決定他自己做。</p></div>
+      </div>
+      <div class="gplan">
+        <div class="pk">建議方案</div>
+        <div class="pv">先做體檢，確認可行才啟動<small>高三 9 月簽晚 18 個月，36 萬。加地基會員 1 學年共 48 萬。</small></div>
+      </div>
     </div>
   </div>
 </section>
@@ -586,8 +755,9 @@ footer .legal p+p{margin-top:4px}
   <div class="wrap">
     <div class="head">
       <div class="lead">教練的第一道篩子</div>
-      <h2>他的 UTR 打得進哪一層？</h2>
-      <p>教練的第一道篩子是 Verified UTR，超過九成的大學教練在讀信之前就先用它篩資料庫。下面是各層級「先發或有競爭力」的區間，也就是能排進那隊第 3 到 6 號單打的範圍。拉一下看你的孩子落在哪。</p>
+      <h2>選手的 UTR，打得進哪一層？</h2>
+      <p>UTR 是美國大學教練評估競技程度的重要指標，超過九成的教練在讀信之前就先用它篩資料庫。下面以各層級球隊第 3 到 6 號單打的競爭區間作為參考，拉一下看選手現在大概落在哪一層。</p>
+      <p class="utr-disc">UTR 只是 Recruiting 評估的一部分。實際落點還會受到性別、學業條件、比賽紀錄、UTR 趨勢、球隊需求，以及各校當年度招募狀況影響。</p>
     </div>
 
     <div class="uw">
@@ -782,6 +952,63 @@ footer .legal p+p{margin-top:4px}
   </div>
 </section>
 
+<section class="dark" id="edge">
+  <div class="wrap">
+    <div class="head">
+      <div class="lead">為什麼是我們</div>
+      <h2>我們自己就在 UTR 賽事裡</h2>
+      <p>UTR 是美國大學網球 Recruiting 重要的評估工具之一。多數顧問只能看分數，我們自己就在辦亞洲知名的 UTR Verified 賽事。</p>
+    </div>
+
+    <div class="edge">
+      <div class="ed">
+        <div>
+          <div class="ed-n">優勢 01</div>
+          <h3>不是叫他多打比賽，是一起判斷下一場該打什麼</h3>
+        </div>
+        <div>
+          <p><span class="kick">長期累積的賽事經驗，也吸引過不同國家的選手來台參賽。</span>平誠更是 UTR Pro Tennis Tour 2026 全球賽程的舉辦團隊之一。所以我們能多做一步：依照選手目前的 UTR 與 Recruiting 目標</p>
+          <ul>
+            <li>安排適合的 Verified 賽事，而不是有什麼打什麼</li>
+            <li>累積有效的比賽紀錄，讓分數撐得住</li>
+            <li>完整比賽錄影，直接變成招募影片的素材</li>
+            <li>賽後一起分析：這場比賽對 Recruiting 有什麼價值</li>
+          </ul>
+          <div class="stats">
+            <div class="stat">
+              <div class="sk">亞洲知名的 UTR 認證賽事</div>
+              <div class="sv">約 90%<small>台灣選手透過本團隊舉辦的 UTR 賽事取得分數，用來申請美國大學獎學金。</small></div>
+              <p>這些選手平均每人每年獲得約 NT$120 萬獎學金，四年累計最高約 500 萬。這是已經發生的結果，不是對個別選手的承諾。</p>
+            </div>
+            <div class="stat">
+              <div class="sk">亞洲少數取得 UTR 國際職業巡迴賽資格的團隊</div>
+              <div class="sv">約 480 萬<small>每年為賽事爭取到的獎金，單位新台幣。</small></div>
+              <p>團隊與韓國、日本、印度、美國建立合作，包含主審與協會連結，並與 UTR 直接合作。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ed">
+        <div>
+          <div class="ed-n">優勢 02</div>
+          <h3>不只教他寄信，也幫他把自己呈現好</h3>
+        </div>
+        <div>
+          <p><span class="kick">教練第一次認識一個選手，看的不只有 UTR。</span>比賽影片、球員資料與他怎麼呈現自己，都可能決定教練願不願意繼續看下去。UTR 自己的 College Showcase 也是把 Verified 比賽、球員 Profile 與教練觀看機會綁在一起。所以我們有自己的影片與視覺團隊。</p>
+          <ul>
+            <li>影片：專業剪輯陪選手整理比賽素材，顧問一起討論哪一球該留、教練想看什麼、怎麼讓人更快看懂他的特色</li>
+            <li>視覺：設計協助製作 Recruiting 需要的球員素材，讓他在聯繫、社群與自我介紹時資訊更清楚</li>
+          </ul>
+          <p>我們不替他包裝成另一個人。我們只是讓真正的他，更容易被教練看見。</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="edge-note">以上賽事規模、獎學金與獎金數字來自平誠自身的賽事營運紀錄。Kuroshio 是平誠旗下的服務，這些賽事資源選手用得到，但賽事成績與招募結果仍由選手本人的表現決定。</p>
+  </div>
+</section>
+
 <section id="plans">
   <div class="wrap">
     <div class="head">
@@ -875,7 +1102,7 @@ footer .legal p+p{margin-top:4px}
     </div>
 
     <div class="calc">
-      <div class="calc-q">你的孩子現在幾年級？</div>
+      <div class="calc-q">選手現在幾年級？</div>
       <div class="calc-g" role="group" aria-label="進場年級">
         <button type="button" data-g="g8" aria-pressed="true">國二</button>
         <button type="button" data-g="g9" aria-pressed="false">國三</button>
@@ -899,7 +1126,8 @@ footer .legal p+p{margin-top:4px}
 
     <div class="fine">
       <div>
-        <h3>退費與過程保證</h3>
+        <h3>我們接得下的量，與退費</h3>
+        招募階段<b>同時最多只接 8 位選手</b>。不是行銷話術，是時間算得出來的：兩條線都買的學生每個月要兩次一對一，招募一次、地基一次，不合併。接不下就是不接，不接的標準公開。<br><br>
         招募專案的六期對齊教育部海外留學定型化契約六階段：諮詢選校 15%、文件 15%、送件 25%、錄取 20%、簽證 15%、行前與第一年 10%，退費照法規階梯。另外兩個我們自己加的退費觸發點：學校名單每一所都附個別理由，抓到公版名單全退該期；送件後 90 天內零封教練書面回覆，退送件期的一半。
       </div>
       <div>
@@ -992,7 +1220,7 @@ footer .legal p+p{margin-top:4px}
     <div>
       <div class="lead">第一步</div>
       <h2>先花 60 分鐘認識我們</h2>
-      <p class="sub">諮詢 NT$2,800。一份短問卷加 60 分鐘線上會談，我們說明服務怎麼運作、你的孩子大概在哪個位置。往下走的話這筆錢折抵體檢，體檢再折抵服務。</p>
+      <p class="sub">諮詢 NT$2,800。一份短問卷加 60 分鐘線上會談，我們說明服務怎麼運作、選手大概在哪個位置。往下走的話這筆錢折抵體檢，體檢再折抵服務。</p>
       <div class="acts">
         <a class="btn primary" href="#form">填諮詢問卷</a>
         <span class="mail" data-email hidden>有問題先寫信 <a href="#" data-email-link></a></span>
@@ -1052,22 +1280,39 @@ var TAX_ID = "95435096";
     document.querySelector('[data-taxid]').hidden=false;
   }
 
-  // 年級切換
+  // 年級切換：面板加時間軸游標，數字用滾的
   var tabs=document.querySelectorAll('.grades [role=tab]');
   var panels=document.querySelectorAll('.gpanel');
-  function select(tab){
+  var GX=[1.2,17.1,34.3,51.4,68.6];            // 各年級在時間軸上的位置，%
+  var gFill=document.getElementById('gtlFill'), gCur=document.getElementById('gtlCur'),
+      gLabs=document.querySelectorAll('.gtl-g[data-g]');
+  function select(tab,i){
     tabs.forEach(function(t){t.setAttribute('aria-selected',t===tab?'true':'false');t.tabIndex=t===tab?0:-1;});
-    panels.forEach(function(p){p.classList.toggle('on',p.id===tab.getAttribute('aria-controls'));});
+    var id=tab.getAttribute('aria-controls'), panel=null;
+    panels.forEach(function(p){var on=p.id===id;p.classList.toggle('on',on);if(on)panel=p;});
+    var x=GX[i]||0;
+    if(gFill) gFill.style.width=x+'%';
+    if(gCur) gCur.style.left=x+'%';
+    gLabs.forEach(function(l,n){l.classList.toggle('on',n===i);});
+    if(panel && window.__rollInt){
+      panel.querySelectorAll('.gcm,.gcd').forEach(function(el){
+        window.__rollInt(el, parseInt(el.dataset.to||el.textContent,10));
+      });
+    }
   }
+  // 把每個面板的目標數字記下來，滾動時才知道要滾到多少
+  document.querySelectorAll('.gpanel .gcm,.gpanel .gcd').forEach(function(el){
+    el.dataset.to=el.textContent.trim();
+  });
   tabs.forEach(function(t,i){
-    t.addEventListener('click',function(){select(t);});
+    t.addEventListener('click',function(){select(t,i);});
     t.addEventListener('keydown',function(e){
       var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;
       if(n===null)return;e.preventDefault();
-      n=(n+tabs.length)%tabs.length;tabs[n].focus();select(tabs[n]);
+      n=(n+tabs.length)%tabs.length;tabs[n].focus();select(tabs[n],n);
     });
   });
-  select(tabs[0]);
+  select(tabs[0],0);
 
   // 價格樂高
   var P={Q:2800,X:15000,M:120000,P:300000};
@@ -1156,7 +1401,7 @@ var TAX_ID = "95435096";
   // ---- 六步驟 stepper ----
   var STEPS=[
     ['諮詢','60 分鐘線上','NT$2,800，往下走全額折抵',
-     '一份 5 分鐘的短問卷，加一次 60 分鐘的線上會談。我們說明服務怎麼運作、你的孩子大概在哪個位置，然後你判斷要不要做體檢。不推銷，講完就停。',
+     '一份 5 分鐘的短問卷，加一次 60 分鐘的線上會談。我們了解選手目前的位置、說明整套服務怎麼運作，也回答你最在意的問題。不推銷，談完就停，由你決定要不要進入下一步。',
      '會談結束，如果你決定做體檢，我們當天把體檢問卷和匯款資訊寄給你。'],
     ['填寫體檢問卷','面談前 7 天','體檢從這裡開始',
      '國三起每學期的逐科成績單、班別、出生年月、UTR 檔案連結，加一場完整的比賽影片。沒有影片的話問卷裡附拍攝說明，手機架著錄一場就行。',
@@ -1299,17 +1544,17 @@ var TAX_ID = "95435096";
         below=rows.filter(function(r){return v<r[1];});
     var vt,vd;
     if(top.length){
-      vt='他現在打得進 '+hit.join('、');
+      vt='選手現在打得進 '+hit.join('、');
       vd='這幾層的先發或有競爭力區間包含 '+v.toFixed(1)+'。意思是進得了名單，而且有機會排在第 3 到 6 號，不是坐板凳。名單就從這幾層裡挑 30 到 40 所。';
     } else if(above.length===rows.length){
-      vt='他超過表上所有層級';
-      vd='這個分數的問題不是打不打得進，是要挑教練與科系，並確認 Verified 場數夠不夠支撐這個數字。';
+      vt='選手已經超過表上所有層級';
+      vd='這個分數的問題已經不是打不打得進，而是哪一間最適合。接下來看的是教練、科系、學校資源與球隊位置，同時確認 Verified 比賽與成績紀錄支撐得住這個數字。';
     } else if(below.length===rows.length){
       vt='現在還沒進到表上任何一層';
-      vd='差最近的一層還有 '+(rows[rows.length-1][1]-v).toFixed(1)+' 分。這不是句點，是時間問題：先確認他打的是不是 Verified 賽事，再看曲線往哪走。JUCO 是正規路徑不是退路，兩年後轉四年制是教練熟悉的模式。';
+      vd='距離最近的一層還差 '+(rows[rows.length-1][1]-v).toFixed(1)+' 分。先看兩件事：Verified 賽事打得夠不夠，UTR 曲線有沒有持續往上。現在的數字不是句點，趨勢更重要。JUCO 也不是退路，而是另一條正式路徑，先累積課業與球技，再依轉學規則挑戰四年制大學。';
     } else {
       var nearest=below[below.length-1];
-      vt='他還差 '+(nearest[1]-v).toFixed(1)+' 分進 '+nearest[0];
+      vt='選手還差 '+(nearest[1]-v).toFixed(1)+' 分進 '+nearest[0];
       vd='目前落在表的下緣。重點是曲線方向，不是這一刻的數字。教練看趨勢，往上走的分數比停住的高分有說服力。';
     }
     uverdict.innerHTML='<div class="vt">'+vt+'</div><div class="vd">'+vd+'</div>';
@@ -1401,6 +1646,15 @@ var TAX_ID = "95435096";
       },
       onComplete:function(){el.textContent=pre+to.toLocaleString('en-US');}});
   }
+  window.__rollInt=function(el,to){
+    if(!el||isNaN(to))return;
+    var from=parseInt(el.textContent,10);
+    if(isNaN(from)||from===to){el.textContent=to;return;}
+    var o={v:from};
+    gsap.to(o,{v:to,duration:.45,ease:'power2.out',overwrite:true,
+      onUpdate:function(){el.textContent=Math.round(o.v);},
+      onComplete:function(){el.textContent=to;}});
+  };
   window.__roll=function(total,perMonth,months){
     rollNum(money,total,1000); rollNum(per,perMonth,100);
     if(mons){var o={v:parseInt(mons.textContent,10)||0};

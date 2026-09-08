@@ -1,0 +1,72 @@
+# Kuroshio Athletics 官網（kuroshio-site）
+
+這是平誠旗下 Kuroshio Athletics（黑潮運動）的對外網站。靜態站，零建置，GitHub Pages 從 main 根目錄發布。服務設計、研究、決策都在 second brain（~/Anson），這裡只管網站本身。
+
+## 品牌硬規則
+- 色票只有這五個：Abyss #07253E、Deep #0E3A5C、Tide #186E80、Foam #8FC0C9、Brass #C08A3E；中性色 Paper #FFFDF8、Sand #F6F2E9、Hair #D7D2C6、Muted #5A6D7B。狀態色只用在報告不用在行銷頁。不新增第六個顏色。
+- Brass 只當強調與主要行動按鈕，不進 logo。Foam 不能在淺底上當文字。Deep 只當 Abyss 底上的分層。
+- 字型：Fraunces（英文標題）、Noto Sans TC（正文）、IBM Plex Mono（標籤數字）。只從 Google Fonts 載。
+- Logo 在 assets/，不改色、不拉伸、不旋轉。深底用 lockup-on-dark。
+
+## 文案紅線
+- 不寫「保證」「100%」「最少 X 個 offer」「full ride」當預設、「教練網絡 X 萬人」。
+- 沒有依據的數字寫【待確認】，不編。
+- 語氣：專業、誠實、短句。Hero 主標是 Paul 自己的句子「你要走的路，我都走過。」下面接身分行 Paul Wang　Vanderbilt 網球校隊　NCAA Division I。定位句「代辦只幫你送件。我們讓他在送件之前就準備好。」仍然成立，位置在副標（workshop-notes 決定 8.20）。不要把主標改回定位句。
+- 不用內部術語當對外文案。「硬日期」「資料包」這類詞是工作坊語言，網站上一律講白話（決定 8.21）。
+- 不用 emoji，不用破折號。
+
+## 做法
+- 單一 HTML 加原生 CSS，不引框架，不加 build step。
+- 例外：GSAP（2026-09-06 Paul 同意）。從 cdnjs 載固定版號，只做動態與捲動觸發，不拿它管狀態或畫版面。CDN 掛掉時網站要照樣可讀，所以動畫一律用 `.from()`，初始狀態不寫進 CSS。除此之外不再加第二個外部依賴。
+- 動態的原則：動起來的理由必須是「它在工作」，不是「它想好看」。計算中的數字、捲到才算的東西可以動；純裝飾的淡入滑動不要。一律包在 `gsap.matchMedia()` 的 `prefers-reduced-motion` 判斷裡。
+- 改文案直接改 index.html，它是唯一來源。
+- 每完成一件看得到的事就 commit 並 push，main 就是正式站。
+- 價格與方案內容的真相在 ~/Anson/projects/kuroshio/service-design/workshop-notes.md，改價先改那裡再改這裡。
+
+# 來自 Anson（second brain，~/Anson）的 context，開場自動載入
+@~/Anson/projects/kuroshio/README.md
+@~/Anson/.Codex/rules/brand-voice.md
+@~/Anson/.Codex/rules/communication-style.md
+Anson 的 README 有進度、Paul 丟過的想法、給程式端的待辦。做完功能改 docs 或 README，Anson 那邊說「同步程式碼文件」就會收到。
+
+## 做完功能的收尾
+每次功能做完或行為改變，更新 README.md 或 docs/ 對應段落再 commit。post-commit hook 只抄文件不抄程式碼，README 沒更新 Anson 就不知道你做了什麼。
+
+## 跟 Paul 工作的方式
+Paul 是 founder，不是這個 repo 的全職工程師。目標是讓他清楚知道現在在做什麼，並且能自己往下推。
+- 收到指令先盤點再動手，格式照上面 import 的 communication-style「先盤點再動手」。
+- 用白話講。技術名詞第一次出現就用一句話解釋（例如「migration，就是改資料庫欄位的腳本」）。不要用縮寫堆疊。
+- 不要貼大段程式碼給他看，除非他要。講「改了哪個檔、行為變成怎樣」。
+- 做完給三段：改了什麼、怎麼驗證（他可以自己點的步驟或指令）、下一步。
+- 對外會影響使用者的改動（上線、寄信、改資料）先問。
+- 繁體中文，專有名詞英文，不用 emoji，不用破折號。
+
+## Anson（Paul 的 second brain，`~/Anson`）有什麼可以拿
+
+Paul 看到的任何東西都會進 Anson。這個 repo 已經有讀取權限（`.Codex/settings.local.json`），
+**需要什麼直接讀，不用問他，也不用等他貼過來**：
+
+| 要找什麼 | 讀哪裡 |
+|---|---|
+| 他丟進來的任何資料（設計參考、研究、規範、文件） | 先讀 `~/Anson/wiki/index.md` 目錄，再讀個別頁 |
+| 原始全文（網頁、PDF 轉的 markdown） | wiki 頁 frontmatter 的 `source:` 那一行指到哪就讀哪；設計與學習類在 `~/Anson/raw/learning/` |
+| 他是誰、三個組織、事業線、收入結構 | `~/Anson/context/me.md`、`~/Anson/context/work.md` |
+| 誰負責什麼、什麼時候該找誰 | `~/Anson/context/team.md` |
+| 某件事為什麼這樣定、有沒有被推翻過 | `~/Anson/decisions/log.md`，append-only，新的在最下面 |
+| SOP 與待建清單 | `~/Anson/references/` |
+
+**開始做之前先查 `decisions/log.md`。** 那裡面是 Paul 已經拍板的事，
+重提被否決過的方案會浪費他的時間，而且他不一定記得自己否決過。
+
+反向的管道：Paul 在別的地方講的想法，Anson 會寫進 `~/Anson/projects/<專案>/README.md`
+的「給程式端的待辦與想法」段。那一段已經被上面的 import 自動載入，開場就看得到。
+
+**刻意沒開權限的**：`raw/private/`（協會法律文件正本）、`projects/`（之後會有學生資料）、
+`personal/`（體重與健康紀錄）、`archives/`。需要那裡面的東西直接問 Paul。
+
+## 這是 public repo，人名與經歷有紅線
+
+- 學生與家庭的任何資訊都不得出現在網站上，即使是代號。要放案例先問 Paul，並取得書面同意。
+- `~/Anson/context/me.md` 記著：Vanderbilt 校名的對外用法 2026-09-06 起以 Paul 的裁定為準，
+  官網已具名是他核可過的，**不要擴大到其他文案**。
+- 價格、退費、承諾這類會產生法律效果的文字，一律以 `~/Anson/decisions/log.md` 拍板過的為準，不要自己改寫。
