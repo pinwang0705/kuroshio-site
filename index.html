@@ -199,6 +199,7 @@ br.m{display:none}
 .stage{display:grid;grid-template-columns:150px 28px minmax(0,1fr);gap:0 clamp(16px,3vw,36px);position:relative;padding:0 0 clamp(34px,4vw,52px)}
 .stage .when{font-family:var(--mono);font-size:13.5px;color:var(--foam);letter-spacing:.02em;text-align:right;padding-top:6px;line-height:1.6}
 .stage .when b{display:block;color:#fff;font-family:var(--disp);font-size:15px;font-weight:600;letter-spacing:0}
+.stage:last-child{padding-bottom:0}
 .stage .rail{position:relative}
 .stage .rail::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:4px;background:linear-gradient(var(--tide),var(--foam));opacity:.55}
 .stage:first-child .rail::before{top:14px}
@@ -223,9 +224,6 @@ html[lang="en"] .stage .ask::before{content:"By the end of this stage, you shoul
 .stage .dates{margin-top:14px;display:flex;flex-direction:column;gap:6px;list-style:none}
 .stage .dates li{display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:15px;color:rgba(255,255,255,.85)}
 .stage .dates li span{font-family:var(--mono);color:var(--brass);white-space:nowrap;font-size:13.5px;padding-top:2px}
-.clocks{margin-top:24px;background:var(--deep);padding:22px 26px;max-width:46em}
-.clocks h3{font-size:18px;color:#fff;margin-bottom:8px}
-.clocks p{color:rgba(255,255,255,.85);font-size:15.5px}
 @media(max-width:760px){
   .stage{grid-template-columns:28px minmax(0,1fr);gap:0 18px}
   .stage .when{grid-column:2;text-align:left;padding:0 0 4px;order:-1}
@@ -585,13 +583,12 @@ footer .legal p+p{margin-top:4px}
   body{font-size:11.5pt;background:#fff;color:#000}
   .nav,.skip,.hero .acts,.cta .acts,.menu{display:none!important}
   .hero,section.dark,.cta,footer{background:#fff!important;color:#000!important;padding:20pt 0}
-  .hero h1,.hero .sub,.stage h3,.stage p,.stage .ask,.stage .dates li,.stage .when,.stage .when b,.dark .head p,.dark .lead,.clocks h3,.clocks p,.cta h2,.cta .mail,.cta ol li,footer,footer .brand{color:#000!important}
-  .clocks{background:#f2f2f2!important}
+  .hero h1,.hero .sub,.stage h3,.stage p,.stage .ask,.stage .dates li,.stage .when,.stage .when b,.dark .head p,.dark .lead,.cta h2,.cta .mail,.cta ol li,footer,footer .brand{color:#000!important}
   .hero .mark{display:none}
   .hero .facts{color:#333}.hero .facts b{color:#000}
   .hero .disc{color:#444!important}
   section{padding:18pt 0}
-  .stage,.plan,.gpanel,.step,.nine div,.two>div,.clocks{break-inside:avoid}
+  .stage,.plan,.gpanel,.step,.nine div,.two>div{break-inside:avoid}
   .gpanel{display:block!important;border-top:1px solid #ccc;padding:14pt 0}
   .grades,.gtl{display:none}
   .gpanel::before{content:attr(data-label);font-weight:700;grid-column:1/-1}
@@ -968,10 +965,6 @@ footer .legal p+p{margin-top:4px}
       </div>
     </div>
 
-    <div class="clocks">
-      <h3 data-en="Male players run two clocks at once">男選手，有兩個時鐘要一起算</h3>
-      <p data-en="The conscription clock and the NCAA clock are not the same system. Taiwan's conscription age starts on January 1 of the year he turns 19. The NCAA works from date of birth, expected enrolment date and the eligibility window, on a different basis entirely. So at the assessment stage we run the two timelines separately, from his date of birth and his expected entry year. Conscription is not something you deal with after the offer arrives. It is something you know the deadlines for from the very start.">兵役的時鐘，和 NCAA 的時鐘，不是同一套。台灣兵役從滿 19 歲那一年的 1 月 1 日起進入役齡；NCAA 則要看出生日期、預計入學時間與 Eligibility 年限，兩邊的計算基準不同。所以在體檢階段，我們會依照選手的出生年月與預計入學年，把兩個時間軸分開計算。不是拿到 Offer 才處理兵役，而是一開始就知道，最晚什麼時候必須做什麼。</p>
-    </div>
   </div>
 </section>
 
