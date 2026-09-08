@@ -411,28 +411,42 @@ html[lang="en"] .stage .ask::before{content:"By the end of this stage, you shoul
 @media(max-width:760px){.ubig{grid-template-columns:1fr;gap:16px}}
 
 /* 我們的優勢 */
-.edge{display:grid;gap:clamp(30px,5vw,54px);margin-top:38px}
-.ed{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(22px,4vw,50px);align-items:start}
-.ed-n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--foam)}
-.ed h3{font-size:clamp(21px,2.5vw,27px);margin:6px 0 0;line-height:1.4;color:#fff}
-.ed p{font-size:15.5px;line-height:1.9;color:rgba(255,255,255,.76);margin-top:14px;max-width:40em}
-.ed .kick{color:#fff;font-weight:500}
-.ed ul{list-style:none;margin:16px 0 0}
-.ed li{padding:6px 0 6px 20px;position:relative;font-size:15px;line-height:1.8;color:rgba(255,255,255,.82)}
-.ed li::before{content:"";position:absolute;left:0;top:17px;width:9px;height:2px;background:var(--brass)}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(143,192,201,.24);margin-top:22px;
-  border:1px solid rgba(143,192,201,.24)}
-.stat{background:var(--deep);padding:22px 22px 24px}
-.stat .sk{font-size:13.5px;font-weight:700;color:var(--foam);line-height:1.5;margin-bottom:14px;
-  padding-bottom:12px;border-bottom:1px solid rgba(143,192,201,.24)}
-.stat .sv{font-family:var(--mono);font-size:clamp(24px,3.4vw,32px);font-weight:500;color:#fff;
-  letter-spacing:-.02em;line-height:1.2}
-.stat .sv small{display:block;font-family:var(--body);font-size:13.5px;font-weight:400;
-  color:rgba(255,255,255,.62);letter-spacing:0;margin-top:8px;line-height:1.75}
-.stat p{font-size:13.5px;line-height:1.8;color:rgba(255,255,255,.62);margin-top:14px}
-.edge-note{margin-top:30px;padding:14px 18px;border:1px solid rgba(143,192,201,.3);
-  font-size:13.5px;line-height:1.8;color:rgba(255,255,255,.6)}
-@media(max-width:820px){.ed{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(143,192,201,.22);
+  border:1px solid rgba(143,192,201,.22);margin-top:clamp(28px,4vw,44px)}
+.pf{background:var(--abyss);padding:clamp(24px,3.4vw,34px) clamp(20px,2.6vw,30px);
+  display:flex;flex-direction:column}
+.pf-n{font-family:var(--disp);font-size:clamp(34px,4.6vw,50px);font-weight:600;line-height:1.1;
+  letter-spacing:-.03em;color:#fff;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pf-n em{font-family:var(--body);font-style:normal;font-weight:500;font-size:.44em;
+  letter-spacing:0;color:rgba(255,255,255,.72);margin:0 .12em}
+.pf-l{font-size:14.5px;line-height:1.8;color:rgba(255,255,255,.7);padding-top:16px;margin-top:18px;
+  border-top:1px solid rgba(143,192,201,.24)}
+@media(max-width:860px){
+  .proof{grid-template-columns:1fr}
+  .pf-n{font-size:clamp(32px,9vw,44px)}
+
+}
+
+.proof-tour{margin-top:22px;padding:16px 20px;background:var(--deep);
+  border-left:3px solid var(--brass);font-size:15.5px;line-height:1.85;color:rgba(255,255,255,.88);max-width:none}
+.proof-tour b{color:#fff;font-weight:700}
+.proof-note{margin-top:14px;font-size:13.5px;line-height:1.8;color:rgba(255,255,255,.5);max-width:64em}
+
+.edge{display:grid;gap:clamp(34px,5vw,56px);margin-top:clamp(40px,6vw,68px)}
+.ed{border-top:1px solid rgba(143,192,201,.26);padding-top:clamp(22px,3vw,30px)}
+.ed-h{margin-bottom:clamp(16px,2.4vw,24px)}
+.ed-n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brass);margin-bottom:8px}
+.ed-h h3{font-size:clamp(21px,2.6vw,29px);color:#fff;line-height:1.45;max-width:22em}
+.ed-b{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:start}
+.ed-b p{font-size:15.5px;line-height:1.9;color:rgba(255,255,255,.76);margin:0;max-width:34em}
+.ed-b ul{list-style:none;margin:0;display:grid;gap:4px}
+.ed-b li{padding:7px 0 7px 20px;position:relative;font-size:15px;line-height:1.8;color:rgba(255,255,255,.85)}
+.ed-b li::before{content:"";position:absolute;left:0;top:18px;width:9px;height:2px;background:var(--brass)}
+.ed-b li b{color:#fff;font-weight:700;margin-right:2px}
+.ed-end{grid-column:1/-1;margin-top:6px!important;padding-top:16px;
+  border-top:1px solid rgba(143,192,201,.2);color:#fff!important;font-weight:500;max-width:none!important}
+@media(max-width:860px){.ed-b{grid-template-columns:1fr}}
 
 /* 晚來加價 */
 .late{margin-top:40px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(22px,3vw,44px);
@@ -1074,56 +1088,61 @@ footer .legal p+p{margin-top:4px}
   <div class="wrap">
     <div class="head">
       <div class="lead" data-en="Why us">為什麼是我們</div>
-      <h2 data-en="We run UTR events ourselves">我們自己就在 UTR 賽事裡</h2>
+      <h2 data-en="We run the UTR events ourselves">我們自己就在 UTR 賽事裡</h2>
       <p data-en="UTR is one of the key evaluation tools in US college tennis recruiting. Most consultants can only read the number. We run UTR Verified events that are well known across Asia.">UTR 是美國大學網球 Recruiting 重要的評估工具之一。多數顧問只能看分數，我們自己就在辦亞洲知名的 UTR Verified 賽事。</p>
     </div>
 
+    <div class="proof">
+      <div class="pf">
+        <div class="pf-n" data-en="&lt;em&gt;about&lt;/em&gt;90&lt;em&gt;%&lt;/em&gt;"><em>約</em>90<em>%</em></div>
+        <div class="pf-l" data-en="of Taiwanese players earn their rating at events run by this team, and use it to apply for US college scholarships">台灣選手透過本團隊舉辦的 UTR 賽事取得分數，用來申請美國大學獎學金</div>
+      </div>
+      <div class="pf">
+        <div class="pf-n" data-en="NT$1.2&lt;em&gt;M&lt;/em&gt;">NT$120<em>萬</em></div>
+        <div class="pf-l" data-en="the average scholarship those players received per year, up to about NT$5M across four years">這些選手平均每人每年獲得的獎學金，四年累計最高約 500 萬</div>
+      </div>
+      <div class="pf">
+        <div class="pf-n" data-en="NT$4.8&lt;em&gt;M&lt;/em&gt;">NT$480<em>萬</em></div>
+        <div class="pf-l" data-en="in prize money secured for our events each year">每年為我們的賽事爭取到的獎金</div>
+      </div>
+    </div>
+
+    <p class="proof-tour" data-en="Pincheng is one of the host teams on the &lt;b&gt;UTR Pro Tennis Tour 2026&lt;/b&gt; global calendar, and works with partners in Korea, Japan, India and the US, including chair-umpire and federation links.">平誠是 <b>UTR Pro Tennis Tour 2026</b> 全球賽程的舉辦團隊之一，並與韓國、日本、印度、美國建立合作，包含主審與協會連結。</p>
+
+    <p class="proof-note" data-en="The event, scholarship and prize-money figures above come from Pincheng&#39;s own operating records. They are results that have already happened, not a promise to any individual player. Kuroshio is a Pincheng service, so players have access to these event resources, but results on court and in recruiting still come down to the player.">以上賽事規模、獎學金與獎金數字來自平誠自身的賽事營運紀錄，是已經發生的結果，不是對個別選手的承諾。Kuroshio 是平誠旗下的服務，這些賽事資源選手用得到，但賽事成績與招募結果仍由選手本人的表現決定。</p>
+
     <div class="edge">
       <div class="ed">
-        <div>
+        <div class="ed-h">
           <div class="ed-n" data-en="Edge 01">優勢 01</div>
-          <h3 data-en="Not &amp;quot;play more tournaments&amp;quot;. Deciding together what the next one should be.">不是叫他多打比賽，是一起判斷下一場該打什麼</h3>
+          <h3 data-en="Not &quot;play more tournaments&quot;. Deciding together what the next one should be.">不是叫他多打比賽，是一起判斷下一場該打什麼</h3>
         </div>
-        <div>
-          <p data-en="&lt;span class=&quot;kick&quot;&gt;Years of running events have brought players from several countries to Taiwan to compete.&lt;/span&gt;Pincheng is also one of the host teams on the UTR Pro Tennis Tour 2026 global calendar. That lets us go a step further, working from the player's current UTR and recruiting targets"><span class="kick">長期累積的賽事經驗，也吸引過不同國家的選手來台參賽。</span>平誠更是 UTR Pro Tennis Tour 2026 全球賽程的舉辦團隊之一。所以我們能多做一步：依照選手目前的 UTR 與 Recruiting 目標</p>
+        <div class="ed-b">
+          <p data-en="Years of running events have brought players from several countries to Taiwan to compete. Being on the tour calendar ourselves lets us go a step further, working from the player&#39;s current UTR and recruiting targets rather than from whatever happens to be on next month.">長期累積的賽事經驗，也吸引過不同國家的選手來台參賽。因為賽事在我們自己手上，我們能多做一步：依照選手目前的 UTR 與 Recruiting 目標排賽程，而不是下個月有什麼就打什麼。</p>
           <ul>
             <li data-en="Schedule the right Verified events instead of playing whatever is available">安排適合的 Verified 賽事，而不是有什麼打什麼</li>
             <li data-en="Build a match record that actually holds the rating up">累積有效的比賽紀錄，讓分數撐得住</li>
             <li data-en="Full match footage that becomes recruiting film directly">完整比賽錄影，直接變成招募影片的素材</li>
             <li data-en="Review it together afterwards: what was this match worth for recruiting?">賽後一起分析：這場比賽對 Recruiting 有什麼價值</li>
           </ul>
-          <div class="stats">
-            <div class="stat">
-              <div class="sk" data-en="UTR-sanctioned events known across Asia">亞洲知名的 UTR 認證賽事</div>
-              <div class="sv" data-en="About 90%&lt;small&gt;of Taiwanese players earn their rating at events run by this team, and use it to apply for US college scholarships.&lt;/small&gt;">約 90%<small>台灣選手透過本團隊舉辦的 UTR 賽事取得分數，用來申請美國大學獎學金。</small></div>
-              <p data-en="Those players have averaged around NT$1.2 million in scholarship per year, up to roughly NT$5 million across four years. These are results that have already happened, not a promise to any individual player.">這些選手平均每人每年獲得約 NT$120 萬獎學金，四年累計最高約 500 萬。這是已經發生的結果，不是對個別選手的承諾。</p>
-            </div>
-            <div class="stat">
-              <div class="sk" data-en="One of the few teams in Asia sanctioned for the UTR pro tour">亞洲少數取得 UTR 國際職業巡迴賽資格的團隊</div>
-              <div class="sv" data-en="About 4.8M&lt;small&gt;in prize money secured for events each year, in NT$.&lt;/small&gt;">約 480 萬<small>每年為賽事爭取到的獎金，單位新台幣。</small></div>
-              <p data-en="The team works with partners in Korea, Japan, India and the US, including chair-umpire and federation links, and directly with UTR.">團隊與韓國、日本、印度、美國建立合作，包含主審與協會連結，並與 UTR 直接合作。</p>
-            </div>
-          </div>
         </div>
       </div>
 
       <div class="ed">
-        <div>
+        <div class="ed-h">
           <div class="ed-n" data-en="Edge 02">優勢 02</div>
           <h3 data-en="Not just teaching him to send letters. Helping him present himself well.">不只教他寄信，也幫他把自己呈現好</h3>
         </div>
-        <div>
-          <p data-en="&lt;span class=&quot;kick&quot;&gt;When a coach meets a player for the first time, UTR is not all he looks at.&lt;/span&gt;Match film, the player's information and how he presents himself all feed into whether the coach keeps reading. UTR's own College Showcase bundles Verified matches, player profiles and coach viewing together for the same reason. So we keep our own film and design team."><span class="kick">教練第一次認識一個選手，看的不只有 UTR。</span>比賽影片、球員資料與他怎麼呈現自己，都可能決定教練願不願意繼續看下去。UTR 自己的 College Showcase 也是把 Verified 比賽、球員 Profile 與教練觀看機會綁在一起。所以我們有自己的影片與視覺團隊。</p>
+        <div class="ed-b">
+          <p data-en="When a coach meets a player for the first time, UTR is not all he looks at. Match film, the player&#39;s information and how he presents himself all feed into whether the coach keeps reading. UTR&#39;s own College Showcase bundles Verified matches, player profiles and coach viewing together for the same reason. So we keep our own film and design team.">教練第一次認識一個選手，看的不只有 UTR。比賽影片、球員資料與他怎麼呈現自己，都可能決定教練願不願意繼續看下去。UTR 自己的 College Showcase 也是把 Verified 比賽、球員 Profile 與教練觀看機會綁在一起。所以我們有自己的影片與視覺團隊。</p>
           <ul>
-            <li data-en="Film: a professional editor works through the footage with the player, and the consultant weighs in on which point stays, what coaches want to see, and how to make his strengths land faster">影片：專業剪輯陪選手整理比賽素材，顧問一起討論哪一球該留、教練想看什麼、怎麼讓人更快看懂他的特色</li>
-            <li data-en="Design: a designer builds the player assets recruiting needs, so his information reads clearly in outreach, on social and in his introduction">視覺：設計協助製作 Recruiting 需要的球員素材，讓他在聯繫、社群與自我介紹時資訊更清楚</li>
+            <li data-en="&lt;b&gt;Film&lt;/b&gt; a professional editor works through the footage with the player, and the consultant weighs in on which point stays, what coaches want to see, and how to make his strengths land faster"><b>影片</b>　專業剪輯陪選手整理比賽素材，顧問一起討論哪一球該留、教練想看什麼、怎麼讓人更快看懂他的特色</li>
+            <li data-en="&lt;b&gt;Design&lt;/b&gt; a designer builds the player assets recruiting needs, so his information reads clearly in outreach, on social and in his introduction"><b>視覺</b>　設計協助製作 Recruiting 需要的球員素材，讓他在聯繫、社群與自我介紹時資訊更清楚</li>
           </ul>
-          <p data-en="We do not package him into someone else. We just make the real him easier for a coach to see.">我們不替他包裝成另一個人。我們只是讓真正的他，更容易被教練看見。</p>
+          <p class="ed-end" data-en="We do not package him into someone else. We just make the real him easier for a coach to see.">我們不替他包裝成另一個人。我們只是讓真正的他，更容易被教練看見。</p>
         </div>
       </div>
     </div>
-
-    <p class="edge-note" data-en="The event, scholarship and prize-money figures above come from Pincheng's own operating records. Kuroshio is a Pincheng service, so players have access to these event resources, but results on court and in recruiting still come down to the player.">以上賽事規模、獎學金與獎金數字來自平誠自身的賽事營運紀錄。Kuroshio 是平誠旗下的服務，這些賽事資源選手用得到，但賽事成績與招募結果仍由選手本人的表現決定。</p>
   </div>
 </section>
 
