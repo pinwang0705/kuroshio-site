@@ -9,6 +9,9 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:site_name" content="Kuroshio Athletics 黑潮運動">
+<link rel="alternate" hreflang="zh-Hant" href="https://kuroshio.pinchengco.com/">
+<link rel="alternate" hreflang="en" href="https://kuroshio.pinchengco.com/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://kuroshio.pinchengco.com/">
 <meta property="og:title" content="代辦只幫你送件。我們讓他在送件之前就準備好。">
 <meta property="og:description" content="台灣網球選手赴美大學的準備服務。從國二的課表開始，到抵美第一年結束。價格全部公開，不保證錄取。">
 <meta property="og:url" content="https://kuroshio.pinchengco.com/">
@@ -67,6 +70,11 @@ p{max-width:38em}
 .nav .links a{color:rgba(255,255,255,.85);text-decoration:none;padding:8px 12px;border-radius:3px;font-size:15px}
 .nav .links a:hover{background:rgba(143,192,201,.16);color:#fff}
 .nav .cta{font-size:14px;padding:11px 16px;margin-left:8px}
+.lang{background:none;border:1px solid rgba(255,255,255,.32);color:rgba(255,255,255,.82);
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;padding:7px 11px;
+  cursor:pointer;border-radius:3px;transition:border-color .15s,color .15s}
+.lang:hover{border-color:var(--brass);color:#fff}
+.lang:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 .nav .menu{display:none;background:none;border:1px solid rgba(255,255,255,.35);color:#fff;padding:8px 12px;border-radius:3px;font-size:14px;font-family:var(--body);cursor:pointer}
 @media(max-width:860px){
   .nav .links{display:none;position:absolute;left:0;right:0;top:100%;background:var(--deep);flex-direction:column;padding:8px var(--gut) 14px;border-top:1px solid rgba(143,192,201,.25)}
@@ -562,43 +570,44 @@ footer .legal p+p{margin-top:4px}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">跳到內容</a>
+<a class="skip" href="#main" data-en="Skip to content">跳到內容</a>
 
-<nav class="nav" aria-label="主選單">
+<nav class="nav" aria-label="主選單" data-en-attr="aria-label|Main menu">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Kuroshio Athletics 回到頂端"><img src="assets/icon-circle-512.png" alt="" width="512" height="512"><span>Kuroshio</span></a>
-    <button class="menu" type="button" aria-expanded="false" aria-controls="navlinks">選單</button>
+    <a class="logo" href="#top" aria-label="Kuroshio Athletics 回到頂端" data-en-attr="aria-label|Kuroshio Athletics, back to top"><img src="assets/icon-circle-512.png" alt="" width="512" height="512"><span>Kuroshio</span></a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="navlinks" data-en="Menu">選單</button>
     <div class="links" id="navlinks">
-      <a href="#grade">現在幾年級</a>
-      <a href="#timeline">六個階段</a>
-      <a href="#why">為什麼是我們</a>
-      <a href="#plans">方案與價格</a>
-      <a href="#faq">常見問題</a>
-      <a href="#form">問卷</a>
+      <a href="#grade" data-en="What grade">現在幾年級</a>
+      <a href="#timeline" data-en="Six stages">六個階段</a>
+      <a href="#why" data-en="Why us">為什麼是我們</a>
+      <a href="#plans" data-en="Plans &amp; pricing">方案與價格</a>
+      <a href="#faq" data-en="FAQ">常見問題</a>
+      <a href="#form" data-en="Enquiry">問卷</a>
     </div>
-    <a class="btn primary cta" href="#book">預約諮詢</a>
+    <button class="lang" type="button" id="langBtn" aria-label="Switch language">EN</button>
+    <a class="btn primary cta" href="#book" data-en="Book a consultation">預約諮詢</a>
   </div>
 </nav>
 
 <header class="hero dark" id="top">
   <div class="wrap">
     <div>
-      <div class="lead">Kuroshio Athletics 黑潮運動</div>
-      <h1><span>你要走的路，</span><span>我都走過。</span></h1>
-      <p class="who">Paul Wang　Vanderbilt 網球校隊　NCAA Division I</p>
-      <p class="sub">台灣網球選手赴美大學的準備服務。從國二的課表開始，到抵美第一年結束。代辦幫你把申請送出去，我們更在意的是送出去以前，選手準備好了沒有。</p>
+      <div class="lead" data-en="Kuroshio Athletics">Kuroshio Athletics 黑潮運動</div>
+      <h1 data-en="&lt;span&gt;I have walked&lt;/span&gt;&lt;span&gt;the same road.&lt;/span&gt;"><span>你要走的路，</span><span>我都走過。</span></h1>
+      <p class="who" data-en="Paul Wang　Vanderbilt Men's Tennis　NCAA Division I">Paul Wang　Vanderbilt 網球校隊　NCAA Division I</p>
+      <p class="sub" data-en="Long-term US college preparation for Taiwanese tennis players, from the 8th-grade course plan to the end of freshman year in the States. Agencies submit the application. We care more about whether the player is ready before it goes out.">台灣網球選手赴美大學的準備服務。從國二的課表開始，到抵美第一年結束。代辦幫你把申請送出去，我們更在意的是送出去以前，選手準備好了沒有。</p>
       <div class="acts">
-        <a class="btn primary" href="#book">預約諮詢</a>
-        <a class="btn ghost" href="#timeline">先看六個階段</a>
+        <a class="btn primary" href="#book" data-en="Book a consultation">預約諮詢</a>
+        <a class="btn ghost" href="#timeline" data-en="See the six stages">先看六個階段</a>
       </div>
       <div class="facts">
-        <span>從國二的課表到抵美<b>第一年</b>結束</span>
-        <span>價格公式<b>公開</b>，不個案議價</span>
-        <span><b>不保證</b>錄取、Offer 數量或獎學金金額</span>
+        <span data-en="From the 8th-grade course plan to the end of &lt;b&gt;freshman year&lt;/b&gt;">從國二的課表到抵美<b>第一年</b>結束</span>
+        <span data-en="Pricing formula is &lt;b&gt;published&lt;/b&gt;. No case-by-case negotiation">價格公式<b>公開</b>，不個案議價</span>
+        <span data-en="&lt;b&gt;No guarantee&lt;/b&gt; of admission, offer count or scholarship amount"><b>不保證</b>錄取、Offer 數量或獎學金金額</span>
       </div>
-      <p class="disc">因為最終決定權，始終在學校與教練手上。</p>
+      <p class="disc" data-en="Because the final decision always sits with the schools and the coaches.">因為最終決定權，始終在學校與教練手上。</p>
     </div>
-    <img class="mark" src="assets/lockup-on-dark-1600.png" alt="Kuroshio 黑潮的狼" width="1600" height="1202" fetchpriority="high">
+    <img class="mark" src="assets/lockup-on-dark-1600.png" alt="Kuroshio Athletics" data-en-attr="alt|Kuroshio Athletics" width="1600" height="1202" fetchpriority="high">
   </div>
 </header>
 
@@ -607,164 +616,164 @@ footer .legal p+p{margin-top:4px}
 <section id="grade">
   <div class="wrap">
     <div class="head">
-      <div class="lead">美國的時鐘，比台灣早一年</div>
-      <h2>選手現在幾年級？</h2>
-      <p>NCAA 的招募日曆用美制年級寫，台灣的高一是他們的 Sophomore。選一個年級，我們告訴你三件事：現在站在哪裡、還剩多少時間、現在最該做什麼。</p>
+      <div class="lead" data-en="The US clock runs a year ahead of Taiwan's">美國的時鐘，比台灣早一年</div>
+      <h2 data-en="What grade is the player in?">選手現在幾年級？</h2>
+      <p data-en="The NCAA recruiting calendar is written in US grades. Taiwan's 高一 is their sophomore year. Pick a grade and we will tell you three things: where the player stands, how much time is left, and what matters most right now.">NCAA 的招募日曆用美制年級寫，台灣的高一是他們的 Sophomore。選一個年級，我們告訴你三件事：現在站在哪裡、還剩多少時間、現在最該做什麼。</p>
     </div>
-    <div class="grades" role="tablist" aria-label="年級">
-      <button role="tab" aria-selected="true" aria-controls="g1" id="t1">國二<small>8th Grade</small></button>
-      <button role="tab" aria-selected="false" aria-controls="g2" id="t2">國三<small>Freshman</small></button>
-      <button role="tab" aria-selected="false" aria-controls="g3" id="t3">高一<small>Sophomore</small></button>
-      <button role="tab" aria-selected="false" aria-controls="g4" id="t4">高二<small>Junior</small></button>
-      <button role="tab" aria-selected="false" aria-controls="g5" id="t5">高三<small>Senior</small></button>
+    <div class="grades" role="tablist" aria-label="年級" data-en-attr="aria-label|Grade">
+      <button role="tab" aria-selected="true" aria-controls="g1" id="t1" data-en="8th&lt;small&gt;Grade 8&lt;/small&gt;">國二<small>8th Grade</small></button>
+      <button role="tab" aria-selected="false" aria-controls="g2" id="t2" data-en="Freshman&lt;small&gt;Grade 9&lt;/small&gt;">國三<small>Freshman</small></button>
+      <button role="tab" aria-selected="false" aria-controls="g3" id="t3" data-en="Sophomore&lt;small&gt;Grade 10&lt;/small&gt;">高一<small>Sophomore</small></button>
+      <button role="tab" aria-selected="false" aria-controls="g4" id="t4" data-en="Junior&lt;small&gt;Grade 11&lt;/small&gt;">高二<small>Junior</small></button>
+      <button role="tab" aria-selected="false" aria-controls="g5" id="t5" data-en="Senior&lt;small&gt;Grade 12&lt;/small&gt;">高三<small>Senior</small></button>
     </div>
 
     <div class="gtl" aria-hidden="true">
       <div class="gtl-bar">
         <div class="gtl-fill" id="gtlFill"></div>
-        <div class="gtl-seg"><b>國二</b><i>8th</i></div>
-        <div class="gtl-seg"><b>國三</b><i>Freshman</i></div>
-        <div class="gtl-seg"><b>高一</b><i>Sophomore</i></div>
-        <div class="gtl-seg"><b>高二</b><i>Junior</i></div>
-        <div class="gtl-seg"><b>高三</b><i>Senior</i></div>
-        <div class="gtl-seg"><b>大一</b><i>College Fr.</i></div>
+        <div class="gtl-seg" data-en="&lt;b&gt;8th&lt;/b&gt;&lt;i&gt;Grade 8&lt;/i&gt;"><b>國二</b><i>8th</i></div>
+        <div class="gtl-seg" data-en="&lt;b&gt;Freshman&lt;/b&gt;&lt;i&gt;Grade 9&lt;/i&gt;"><b>國三</b><i>Freshman</i></div>
+        <div class="gtl-seg" data-en="&lt;b&gt;Sophomore&lt;/b&gt;&lt;i&gt;Grade 10&lt;/i&gt;"><b>高一</b><i>Sophomore</i></div>
+        <div class="gtl-seg" data-en="&lt;b&gt;Junior&lt;/b&gt;&lt;i&gt;Grade 11&lt;/i&gt;"><b>高二</b><i>Junior</i></div>
+        <div class="gtl-seg" data-en="&lt;b&gt;Senior&lt;/b&gt;&lt;i&gt;Grade 12&lt;/i&gt;"><b>高三</b><i>Senior</i></div>
+        <div class="gtl-seg" data-en="&lt;b&gt;College&lt;/b&gt;&lt;i&gt;Freshman&lt;/i&gt;"><b>大一</b><i>College Fr.</i></div>
         <div class="gtl-cur" id="gtlCur"></div>
       </div>
       <div class="gtl-marks">
-        <span class="gtl-m" style="--x:16.67%"><span><b>國三 9 月</b><i>成績開始算</i></span></span>
-        <span class="gtl-m lo" style="--x:46.5%"><span><b>6 / 15</b><i>教練可以聯絡他</i></span></span>
-        <span class="gtl-m" style="--x:69.4%"><span><b>高三 11 月</b><i>簽約期</i></span></span>
-        <span class="gtl-m r lo" style="--x:83.33%"><span><b>8 月</b><i>站在校園裡</i></span></span>
+        <span class="gtl-m" style="--x:16.67%"><span data-en="&lt;b&gt;Grade 9, Sep&lt;/b&gt;&lt;i&gt;grades start counting&lt;/i&gt;"><b>國三 9 月</b><i>成績開始算</i></span></span>
+        <span class="gtl-m lo" style="--x:46.5%"><span data-en="&lt;b&gt;Jun 15&lt;/b&gt;&lt;i&gt;coaches may contact him&lt;/i&gt;"><b>6 / 15</b><i>教練可以聯絡他</i></span></span>
+        <span class="gtl-m" style="--x:69.4%"><span data-en="&lt;b&gt;Grade 12, Nov&lt;/b&gt;&lt;i&gt;signing period&lt;/i&gt;"><b>高三 11 月</b><i>簽約期</i></span></span>
+        <span class="gtl-m r lo" style="--x:83.33%"><span data-en="&lt;b&gt;August&lt;/b&gt;&lt;i&gt;on campus&lt;/i&gt;"><b>8 月</b><i>站在校園裡</i></span></span>
       </div>
     </div>
 
     <div class="gpanel on" id="g1" role="tabpanel" aria-labelledby="t1" data-label="國二">
       <div class="gnow">
         <div>
-          <h3>現在開始，完整走三到四年。</h3>
-          <p>這個階段不用急著找學校，最重要的是把地基打好。這一年沒有太多迫在眉睫的期限，卻也是最容易被浪費的一年。</p>
-          <p>越早開始，不是越早決定學校，而是讓三、四年後的自己有更多選擇。</p>
+          <h3 data-en="Start now and you get the full three to four years.">現在開始，完整走三到四年。</h3>
+          <p data-en="At this stage there is no rush to pick schools. What matters is laying the foundation. This year has few pressing deadlines, which is exactly why it is the easiest one to waste.">這個階段不用急著找學校，最重要的是把地基打好。這一年沒有太多迫在眉睫的期限，卻也是最容易被浪費的一年。</p>
+          <p data-en="Starting early is not about deciding on a school early. It is about giving the player more choices three or four years from now.">越早開始，不是越早決定學校，而是讓三、四年後的自己有更多選擇。</p>
         </div>
         <div class="gcount">
-          <div class="k">到大一結束還剩</div>
-          <div class="v"><em class="gcm">70</em>個月</div>
-          <div class="k">下一個硬日期</div>
-          <div class="v">國三 9 月<small>成績開始算進 NCAA 核心 GPA，<em class="gcd" style="font-size:16px">12</em> 個月後</small></div>
+          <div class="k" data-en="Months left to end of freshman year">到大一結束還剩</div>
+          <div class="v" data-en="&lt;em class=&quot;gcm&quot;&gt;70&lt;/em&gt; months"><em class="gcm">70</em>個月</div>
+          <div class="k" data-en="Next hard date">下一個硬日期</div>
+          <div class="v" data-en="Grade 9, September&lt;small&gt;grades start counting toward the NCAA core GPA, in &lt;em class=&quot;gcd&quot; style=&quot;font-size:16px&quot;&gt;12&lt;/em&gt; months&lt;/small&gt;">國三 9 月<small>成績開始算進 NCAA 核心 GPA，<em class="gcd" style="font-size:16px">12</em> 個月後</small></div>
         </div>
       </div>
       <div class="lanes">
-        <div class="lane"><div class="lk">學業</div><p>提前規劃高中課程，確認 NCAA 16 門核心課的方向。</p></div>
-        <div class="lane"><div class="lk">英文</div><p>提早累積語言能力，不等到申請前才準備。</p></div>
-        <div class="lane"><div class="lk">網球</div><p>建立訓練、比賽與 UTR 的成長紀錄。</p></div>
-        <div class="lane"><div class="lk">個人</div><p>開始探索「除了網球之外，我是誰」。</p></div>
+        <div class="lane"><div class="lk" data-en="Academics">學業</div><p data-en="Plan the high-school course load early and confirm the direction of the 16 NCAA core courses.">提前規劃高中課程，確認 NCAA 16 門核心課的方向。</p></div>
+        <div class="lane"><div class="lk" data-en="English">英文</div><p data-en="Build the language early instead of cramming right before applications.">提早累積語言能力，不等到申請前才準備。</p></div>
+        <div class="lane"><div class="lk" data-en="Tennis">網球</div><p data-en="Start a real record of training, matches and UTR growth.">建立訓練、比賽與 UTR 的成長紀錄。</p></div>
+        <div class="lane"><div class="lk" data-en="Personal">個人</div><p data-en="Begin working on the question: who am I besides a tennis player?">開始探索「除了網球之外，我是誰」。</p></div>
       </div>
       <div class="gplan">
-        <div class="pk">建議方案</div>
-        <div class="pv">地基會員先跑，招募專案高一 3 月簽<small>招募專案 30 萬基準價，加地基會員 5 學年共 90 萬。會員買幾年自己決定。</small></div>
+        <div class="pk" data-en="Suggested plan">建議方案</div>
+        <div class="pv" data-en="Start with Foundation Membership; sign the Recruiting Project in March of Grade 10&lt;small&gt;Recruiting Project at the NT$300,000 base price, plus five years of Foundation Membership: NT$900,000 in total. How many years of membership you buy is up to you.&lt;/small&gt;">地基會員先跑，招募專案高一 3 月簽<small>招募專案 30 萬基準價，加地基會員 5 學年共 90 萬。會員買幾年自己決定。</small></div>
       </div>
     </div>
 
     <div class="gpanel" id="g2" role="tabpanel" aria-labelledby="t2" data-label="國三">
       <div class="gnow">
         <div>
-          <h3>還很早，但這一年已經開始算分了。</h3>
-          <p>國三是整條路上第一個真正要注意「資格」的階段。從這一年開始，符合 NCAA 規範的核心課程與成績，就會正式進入未來核心 GPA 的計算。</p>
-          <p>從國三進場依然可以走完整條路，地基階段該做的一樣都會做，只是探索與準備的時間會稍微壓縮。現在還不用急著決定去哪裡，但從這一年開始，每一個選擇都會慢慢影響三年後手上有多少選擇。</p>
+          <h3 data-en="Still early, but this is the year the scoring starts.">還很早，但這一年已經開始算分了。</h3>
+          <p data-en="Grade 9 is the first point on this road where eligibility genuinely matters. From this year on, NCAA-approved core courses and the grades in them start counting toward the core GPA.">國三是整條路上第一個真正要注意「資格」的階段。從這一年開始，符合 NCAA 規範的核心課程與成績，就會正式進入未來核心 GPA 的計算。</p>
+          <p data-en="Entering at Grade 9 still leaves room for the full path. Everything in the foundation stage still gets done, the exploration window is simply a little tighter. There is no rush to decide where to go, but from this year every choice quietly shapes how many choices are left three years from now.">從國三進場依然可以走完整條路，地基階段該做的一樣都會做，只是探索與準備的時間會稍微壓縮。現在還不用急著決定去哪裡，但從這一年開始，每一個選擇都會慢慢影響三年後手上有多少選擇。</p>
         </div>
         <div class="gcount">
-          <div class="k">到大一結束還剩</div>
-          <div class="v"><em class="gcm">58</em>個月</div>
-          <div class="k">下一個硬日期</div>
-          <div class="v">高一 3 月 15 日<small>招募專案的簽約基準日，<em class="gcd" style="font-size:16px">18</em> 個月後</small></div>
+          <div class="k" data-en="Months left to end of freshman year">到大一結束還剩</div>
+          <div class="v" data-en="&lt;em class=&quot;gcm&quot;&gt;58&lt;/em&gt; months"><em class="gcm">58</em>個月</div>
+          <div class="k" data-en="Next hard date">下一個硬日期</div>
+          <div class="v" data-en="Grade 10, March 15&lt;small&gt;baseline signing date for the Recruiting Project, in &lt;em class=&quot;gcd&quot; style=&quot;font-size:16px&quot;&gt;18&lt;/em&gt; months&lt;/small&gt;">高一 3 月 15 日<small>招募專案的簽約基準日，<em class="gcd" style="font-size:16px">18</em> 個月後</small></div>
         </div>
       </div>
       <div class="lanes">
-        <div class="lane"><div class="lk">學業</div><p>這一年的成績每一科都算進核心 GPA。高中選組與課表決定接下來三年的資格風險。</p></div>
-        <div class="lane"><div class="lk">英文</div><p>從用開始，不從考試開始。先養成習慣，分數晚一點再說。</p></div>
-        <div class="lane"><div class="lk">網球</div><p>比賽、UTR、訓練紀錄與比賽影片開始有系統地保存。</p></div>
-        <div class="lane"><div class="lk">個人</div><p>九月可以免費開 Eligibility Center 帳戶，第一次擁有自己的資格紀錄。</p></div>
+        <div class="lane"><div class="lk" data-en="Academics">學業</div><p data-en="Every subject this year counts toward the core GPA. The high-school track and timetable set the eligibility risk for the next three years.">這一年的成績每一科都算進核心 GPA。高中選組與課表決定接下來三年的資格風險。</p></div>
+        <div class="lane"><div class="lk" data-en="English">英文</div><p data-en="Start by using it, not by testing it. Build the habit first; scores can wait.">從用開始，不從考試開始。先養成習慣，分數晚一點再說。</p></div>
+        <div class="lane"><div class="lk" data-en="Tennis">網球</div><p data-en="Matches, UTR, training logs and match footage start being archived systematically.">比賽、UTR、訓練紀錄與比賽影片開始有系統地保存。</p></div>
+        <div class="lane"><div class="lk" data-en="Personal">個人</div><p data-en="In September he can open a free Eligibility Center account, his first eligibility record of his own.">九月可以免費開 Eligibility Center 帳戶，第一次擁有自己的資格紀錄。</p></div>
       </div>
       <div class="gplan">
-        <div class="pk">建議方案</div>
-        <div class="pv">地基會員先跑，招募專案高一 3 月簽<small>招募專案 30 萬基準價，加地基會員 4 學年共 78 萬。</small></div>
+        <div class="pk" data-en="Suggested plan">建議方案</div>
+        <div class="pv" data-en="Start with Foundation Membership; sign the Recruiting Project in March of Grade 10&lt;small&gt;Recruiting Project at the NT$300,000 base price, plus four years of Foundation Membership: NT$780,000 in total.&lt;/small&gt;">地基會員先跑，招募專案高一 3 月簽<small>招募專案 30 萬基準價，加地基會員 4 學年共 78 萬。</small></div>
       </div>
     </div>
 
     <div class="gpanel" id="g3" role="tabpanel" aria-labelledby="t3" data-label="高一">
       <div class="gnow">
         <div>
-          <h3>關鍵的一年。目標很清楚：六月十五。</h3>
-          <p>高中二年級（台灣的高一）結束後的 6 月 15 日起，依 NCAA Division I 的招募規則，大學教練可以開始用電話、Email、訊息直接跟選手溝通。</p>
-          <p>所以真正重要的不是等到 6 月 15 日才開始，而是到了那一天，他已經準備好被教練看見。三月十五那天就該簽招募專案，因為我們需要那三個月，把影片、Resume、名單、第一批信做好。</p>
+          <h3 data-en="The decisive year. One clear target: June 15.">關鍵的一年。目標很清楚：六月十五。</h3>
+          <p data-en="From June 15 after sophomore year, NCAA Division I rules allow college coaches to contact the player directly by phone, email and message.">高中二年級（台灣的高一）結束後的 6 月 15 日起，依 NCAA Division I 的招募規則，大學教練可以開始用電話、Email、訊息直接跟選手溝通。</p>
+          <p data-en="So what matters is not starting on June 15. It is that when the day arrives, he is already ready to be seen. March 15 is when the Recruiting Project should be signed, because we need those three months to build the film, the resume, the school list and the first batch of letters.">所以真正重要的不是等到 6 月 15 日才開始，而是到了那一天，他已經準備好被教練看見。三月十五那天就該簽招募專案，因為我們需要那三個月，把影片、Resume、名單、第一批信做好。</p>
         </div>
         <div class="gcount">
-          <div class="k">到大一結束還剩</div>
-          <div class="v"><em class="gcm">46</em>個月</div>
-          <div class="k">下一個硬日期</div>
-          <div class="v">高一 3 月 15 日<small>招募專案的簽約基準日，<em class="gcd" style="font-size:16px">6</em> 個月後</small></div>
+          <div class="k" data-en="Months left to end of freshman year">到大一結束還剩</div>
+          <div class="v" data-en="&lt;em class=&quot;gcm&quot;&gt;46&lt;/em&gt; months"><em class="gcm">46</em>個月</div>
+          <div class="k" data-en="Next hard date">下一個硬日期</div>
+          <div class="v" data-en="Grade 10, March 15&lt;small&gt;baseline signing date for the Recruiting Project, in &lt;em class=&quot;gcd&quot; style=&quot;font-size:16px&quot;&gt;6&lt;/em&gt; months&lt;/small&gt;">高一 3 月 15 日<small>招募專案的簽約基準日，<em class="gcd" style="font-size:16px">6</em> 個月後</small></div>
         </div>
       </div>
       <div class="lanes">
-        <div class="lane"><div class="lk">學業</div><p>核心課程與核心 GPA 進入實質累積，高二的選課要在這一年談好。</p></div>
-        <div class="lane"><div class="lk">英文</div><p>教練打來要答得出來。四堂視訊面談英文演練排在這一年。</p></div>
-        <div class="lane"><div class="lk">網球</div><p>Verified UTR 的成長曲線與比賽影片第一版，六月十五之前要備妥。</p></div>
-        <div class="lane"><div class="lk">個人</div><p>學校長名單、Tennis Resume、第一批 15 到 20 封信，都是他自己寫。</p></div>
+        <div class="lane"><div class="lk" data-en="Academics">學業</div><p data-en="Core courses and core GPA start accumulating for real. Next year's course selection has to be settled this year.">核心課程與核心 GPA 進入實質累積，高二的選課要在這一年談好。</p></div>
+        <div class="lane"><div class="lk" data-en="English">英文</div><p data-en="He has to be able to answer when a coach calls. Four English video-interview rehearsals are scheduled this year.">教練打來要答得出來。四堂視訊面談英文演練排在這一年。</p></div>
+        <div class="lane"><div class="lk" data-en="Tennis">網球</div><p data-en="A Verified UTR growth curve and the first cut of match film, both ready before June 15.">Verified UTR 的成長曲線與比賽影片第一版，六月十五之前要備妥。</p></div>
+        <div class="lane"><div class="lk" data-en="Personal">個人</div><p data-en="The long list, the tennis resume and the first 15 to 20 letters. He writes them himself.">學校長名單、Tennis Resume、第一批 15 到 20 封信，都是他自己寫。</p></div>
       </div>
       <div class="gplan">
-        <div class="pk">建議方案</div>
-        <div class="pv">招募專案現在就該簽<small>30 萬基準價，加地基會員 3 學年共 66 萬。三月十五之後每晚三個月加一萬。</small></div>
+        <div class="pk" data-en="Suggested plan">建議方案</div>
+        <div class="pv" data-en="The Recruiting Project should be signed now&lt;small&gt;NT$300,000 base price, plus three years of Foundation Membership: NT$660,000 in total. After March 15 the price rises NT$10,000 for every three months of delay.&lt;/small&gt;">招募專案現在就該簽<small>30 萬基準價，加地基會員 3 學年共 66 萬。三月十五之後每晚三個月加一萬。</small></div>
       </div>
     </div>
 
     <div class="gpanel" id="g4" role="tabpanel" aria-labelledby="t4" data-label="高二">
       <div class="gnow">
         <div>
-          <h3>招募年。這一年決定手上有多少真正的機會。</h3>
-          <p>到了高二，Recruiting 不再只是準備，而是正式進入執行。前一階段建立的 UTR、比賽影片、Resume 與學校名單，會在這一年真正開始轉化成教練回覆、持續對話、校園訪問，以及實際的招募機會。</p>
-          <p>這個階段進場一樣先做體檢。體檢說條件夠我們才接，合約會明寫時間壓縮與要補的課。條件不夠我們會直接說，不接。地基會員這個年級一樣可以加，兩條線是並行的。</p>
+          <h3 data-en="The recruiting year. This is what decides how many real options he ends up with.">招募年。這一年決定手上有多少真正的機會。</h3>
+          <p data-en="By Grade 11 recruiting stops being preparation and becomes execution. The UTR, match film, resume and school list built in the previous stage start converting into coach replies, ongoing conversations, campus visits and real recruiting opportunities.">到了高二，Recruiting 不再只是準備，而是正式進入執行。前一階段建立的 UTR、比賽影片、Resume 與學校名單，會在這一年真正開始轉化成教練回覆、持續對話、校園訪問，以及實際的招募機會。</p>
+          <p data-en="Entering at this stage still starts with the assessment. We take the case only if the assessment says the conditions are there, and the contract spells out the time compression and what has to be made up. If the conditions are not there we say so and decline. Foundation Membership can still be added at this grade; the two tracks run in parallel.">這個階段進場一樣先做體檢。體檢說條件夠我們才接，合約會明寫時間壓縮與要補的課。條件不夠我們會直接說，不接。地基會員這個年級一樣可以加，兩條線是並行的。</p>
         </div>
         <div class="gcount">
-          <div class="k">到大一結束還剩</div>
-          <div class="v"><em class="gcm">34</em>個月</div>
-          <div class="k">下一個硬日期</div>
-          <div class="v">高三 11 月<small>網球簽約期，<em class="gcd" style="font-size:16px">14</em> 個月後</small></div>
+          <div class="k" data-en="Months left to end of freshman year">到大一結束還剩</div>
+          <div class="v" data-en="&lt;em class=&quot;gcm&quot;&gt;34&lt;/em&gt; months"><em class="gcm">34</em>個月</div>
+          <div class="k" data-en="Next hard date">下一個硬日期</div>
+          <div class="v" data-en="Grade 12, November&lt;small&gt;tennis signing period, in &lt;em class=&quot;gcd&quot; style=&quot;font-size:16px&quot;&gt;14&lt;/em&gt; months&lt;/small&gt;">高三 11 月<small>網球簽約期，<em class="gcd" style="font-size:16px">14</em> 個月後</small></div>
         </div>
       </div>
       <div class="lanes">
-        <div class="lane"><div class="lk">學業</div><p>成績單做認證翻譯送件，Eligibility Center 第二次上傳。</p></div>
-        <div class="lane"><div class="lk">英文</div><p>正式考一次英檢，對準目標學校的門檻。</p></div>
-        <div class="lane"><div class="lk">網球</div><p>驗證性賽事連續打，影片第二版重剪，對手要更強、分數要更真。</p></div>
-        <div class="lane"><div class="lk">個人</div><p>Zoom 訪校自己主持，口頭 offer 自己讀懂。</p></div>
+        <div class="lane"><div class="lk" data-en="Academics">學業</div><p data-en="Transcripts go out for certified translation and the second Eligibility Center upload.">成績單做認證翻譯送件，Eligibility Center 第二次上傳。</p></div>
+        <div class="lane"><div class="lk" data-en="English">英文</div><p data-en="Sit a formal English test once, aimed at the target schools' thresholds.">正式考一次英檢，對準目標學校的門檻。</p></div>
+        <div class="lane"><div class="lk" data-en="Tennis">網球</div><p data-en="A continuous block of verifying events, and a second cut of the film with stronger opponents and more honest points.">驗證性賽事連續打，影片第二版重剪，對手要更強、分數要更真。</p></div>
+        <div class="lane"><div class="lk" data-en="Personal">個人</div><p data-en="He runs the Zoom visits himself and learns to read a verbal offer himself.">Zoom 訪校自己主持，口頭 offer 自己讀懂。</p></div>
       </div>
       <div class="gplan">
-        <div class="pk">建議方案</div>
-        <div class="pv">體檢通過才進招募專案<small>高二 9 月簽晚 6 個月，32 萬。加地基會員 2 學年共 56 萬。</small></div>
+        <div class="pk" data-en="Suggested plan">建議方案</div>
+        <div class="pv" data-en="Assessment first, then the Recruiting Project&lt;small&gt;Signing in September of Grade 11 is six months late: NT$320,000. With two years of Foundation Membership, NT$560,000 in total.&lt;/small&gt;">體檢通過才進招募專案<small>高二 9 月簽晚 6 個月，32 萬。加地基會員 2 學年共 56 萬。</small></div>
       </div>
     </div>
 
     <div class="gpanel" id="g5" role="tabpanel" aria-labelledby="t5" data-label="高三">
       <div class="gnow">
         <div>
-          <h3>時間很緊。我們只接體檢說可以的。</h3>
-          <p>這個階段 Recruiting、學校申請與入學準備可能同時進行。確定學校後，還要接續處理 NCAA 最終資格認證、入學文件、I-20、學生簽證，以及男選手的役男出境程序。每一個環節都有自己的文件與時間要求，所以高三才進場，我們不會直接承接。</p>
-          <p>高三也不一定只剩一條路。我們會依條件與時間，把直接 Recruiting、Admission First、換一所第一站、先進去再轉學這四條路徑攤開來比，再決定現在最值得走哪一條。高三才開始並不代表沒有機會，只是這時候最重要的已經不是趕快做，而是先確認哪一條路還走得通。</p>
+          <h3 data-en="Time is tight. We only take the cases the assessment clears.">時間很緊。我們只接體檢說可以的。</h3>
+          <p data-en="At this stage recruiting, applications and enrolment preparation may all run at once. Once a school is settled, there is still NCAA final certification, enrolment documents, the I-20, the student visa, and for male players the conscription exit procedure. Every one of those has its own paperwork and its own clock, which is why we do not take a Grade 12 case on sight.">這個階段 Recruiting、學校申請與入學準備可能同時進行。確定學校後，還要接續處理 NCAA 最終資格認證、入學文件、I-20、學生簽證，以及男選手的役男出境程序。每一個環節都有自己的文件與時間要求，所以高三才進場，我們不會直接承接。</p>
+          <p data-en="Grade 12 does not necessarily mean one road left. We lay out four paths side by side, direct recruiting, admission first, a different first stop, or enrol then transfer, and weigh them against the conditions and the time remaining. Starting in Grade 12 does not mean there is no chance. It means the priority is no longer to move fast, but to confirm which road is still open.">高三也不一定只剩一條路。我們會依條件與時間，把直接 Recruiting、Admission First、換一所第一站、先進去再轉學這四條路徑攤開來比，再決定現在最值得走哪一條。高三才開始並不代表沒有機會，只是這時候最重要的已經不是趕快做，而是先確認哪一條路還走得通。</p>
         </div>
         <div class="gcount">
-          <div class="k">到大一結束還剩</div>
-          <div class="v"><em class="gcm">22</em>個月</div>
-          <div class="k">下一個硬日期</div>
-          <div class="v">高三 11 月<small>網球簽約期，<em class="gcd" style="font-size:16px">2</em> 個月後</small></div>
+          <div class="k" data-en="Months left to end of freshman year">到大一結束還剩</div>
+          <div class="v" data-en="&lt;em class=&quot;gcm&quot;&gt;22&lt;/em&gt; months"><em class="gcm">22</em>個月</div>
+          <div class="k" data-en="Next hard date">下一個硬日期</div>
+          <div class="v" data-en="Grade 12, November&lt;small&gt;tennis signing period, in &lt;em class=&quot;gcd&quot; style=&quot;font-size:16px&quot;&gt;2&lt;/em&gt; months&lt;/small&gt;">高三 11 月<small>網球簽約期，<em class="gcd" style="font-size:16px">2</em> 個月後</small></div>
         </div>
       </div>
       <div class="lanes">
-        <div class="lane"><div class="lk">學業</div><p>NCAA 最終資格認證，四月一日起可以申請。</p></div>
-        <div class="lane"><div class="lk">英文</div><p>課堂聽得懂、作業寫得出來。這才是到了美國每天要用的。</p></div>
-        <div class="lane"><div class="lk">網球</div><p>教練書面確認 roster 位置，不只是進得了名單。</p></div>
-        <div class="lane"><div class="lk">個人</div><p>Offer 淨額比較、談判、aid agreement 逐條讀懂。最後的決定他自己做。</p></div>
+        <div class="lane"><div class="lk" data-en="Academics">學業</div><p data-en="NCAA final certification, which can be filed from April 1.">NCAA 最終資格認證，四月一日起可以申請。</p></div>
+        <div class="lane"><div class="lk" data-en="English">英文</div><p data-en="Following lectures and writing assignments. This is what he actually uses every day in the States.">課堂聽得懂、作業寫得出來。這才是到了美國每天要用的。</p></div>
+        <div class="lane"><div class="lk" data-en="Tennis">網球</div><p data-en="Written confirmation of a roster spot from the coach, not just a place on a list.">教練書面確認 roster 位置，不只是進得了名單。</p></div>
+        <div class="lane"><div class="lk" data-en="Personal">個人</div><p data-en="Net-value offer comparison, negotiation, and reading the aid agreement line by line. The final call is his.">Offer 淨額比較、談判、aid agreement 逐條讀懂。最後的決定他自己做。</p></div>
       </div>
       <div class="gplan">
-        <div class="pk">建議方案</div>
-        <div class="pv">先做體檢，確認可行才啟動<small>高三 9 月簽晚 18 個月，36 萬。加地基會員 1 學年共 48 萬。</small></div>
+        <div class="pk" data-en="Suggested plan">建議方案</div>
+        <div class="pv" data-en="Assessment first; we start only if it is viable&lt;small&gt;Signing in September of Grade 12 is eighteen months late: NT$360,000. With one year of Foundation Membership, NT$480,000 in total.&lt;/small&gt;">先做體檢，確認可行才啟動<small>高三 9 月簽晚 18 個月，36 萬。加地基會員 1 學年共 48 萬。</small></div>
       </div>
     </div>
   </div>
@@ -773,10 +782,10 @@ footer .legal p+p{margin-top:4px}
 <section class="sand" id="utr">
   <div class="wrap">
     <div class="head">
-      <div class="lead">教練的第一道篩子</div>
-      <h2>選手的 UTR，打得進哪一層？</h2>
-      <p>UTR 是美國大學教練評估競技程度的重要指標，超過九成的教練在讀信之前就先用它篩資料庫。下面以各層級球隊第 3 到 6 號單打的競爭區間作為參考，拉一下看選手現在大概落在哪一層。</p>
-      <p class="utr-disc">UTR 只是 Recruiting 評估的一部分。實際落點還會受到性別、學業條件、比賽紀錄、UTR 趨勢、球隊需求，以及各校當年度招募狀況影響。</p>
+      <div class="lead" data-en="The first filter a coach uses">教練的第一道篩子</div>
+      <h2 data-en="Where does the player's UTR get him?">選手的 UTR，打得進哪一層？</h2>
+      <p data-en="UTR is a key measure US college coaches use to judge playing level. More than nine in ten screen their database with it before they ever read a letter. The bands below are the competitive ranges for the No. 3 to No. 6 singles spots at each level. Drag the slider to see roughly where the player sits.">UTR 是美國大學教練評估競技程度的重要指標，超過九成的教練在讀信之前就先用它篩資料庫。下面以各層級球隊第 3 到 6 號單打的競爭區間作為參考，拉一下看選手現在大概落在哪一層。</p>
+      <p class="utr-disc" data-en="UTR is only one part of a recruiting evaluation. Where a player actually lands is also shaped by gender, academics, match record, UTR trend, roster needs and each school's recruiting situation that year.">UTR 只是 Recruiting 評估的一部分。實際落點還會受到性別、學業條件、比賽紀錄、UTR 趨勢、球隊需求，以及各校當年度招募狀況影響。</p>
     </div>
 
     <div class="uw">
@@ -784,9 +793,9 @@ footer .legal p+p{margin-top:4px}
         <label class="ul" for="uv">Verified UTR</label>
         <output class="uval" id="uval">11.0</output>
         <input type="range" id="uv" min="4" max="14" step="0.1" value="11" aria-label="Verified UTR">
-        <div class="usex" role="group" aria-label="性別">
-          <button type="button" data-sex="m" aria-pressed="true">男</button>
-          <button type="button" data-sex="f" aria-pressed="false">女</button>
+        <div class="usex" role="group" aria-label="性別" data-en-attr="aria-label|Gender">
+          <button type="button" data-sex="m" aria-pressed="true" data-en="Men">男</button>
+          <button type="button" data-sex="f" aria-pressed="false" data-en="Women">女</button>
         </div>
       </div>
       <div class="uverdict" id="uverdict"></div>
@@ -794,8 +803,8 @@ footer .legal p+p{margin-top:4px}
 
     <div class="ubars" id="ubars"></div>
     <div class="ubig">
-      <p class="l1">UTR 只決定他有沒有被看見。<br>被選上靠的是人格、拚勁、可教性。</p>
-      <p class="l2">而且教練看的是方向，不是那一刻的數字。一個往上走的 10.8，比一個停住的 11.5 有說服力。上面的區間來自 2025 到 2026 年的招生指南與教練訪談，是觀察值，不是門檻。</p>
+      <p class="l1" data-en="UTR only decides whether he gets seen.&lt;br&gt;Getting picked comes down to character, work rate and coachability.">UTR 只決定他有沒有被看見。<br>被選上靠的是人格、拚勁、可教性。</p>
+      <p class="l2" data-en="And coaches read direction, not the number on the day. A 10.8 still climbing is more persuasive than an 11.5 that has stalled. The bands above come from 2025 to 2026 recruiting guides and coach interviews. They are observations, not cut-offs.">而且教練看的是方向，不是那一刻的數字。一個往上走的 10.8，比一個停住的 11.5 有說服力。上面的區間來自 2025 到 2026 年的招生指南與教練訪談，是觀察值，不是門檻。</p>
     </div>
   </div>
 </section>
@@ -803,80 +812,80 @@ footer .legal p+p{margin-top:4px}
 <section class="dark" id="timeline">
   <div class="wrap">
     <div class="head">
-      <div class="lead">六個階段，照台灣學年排</div>
-      <h2>每一段結束，<br>都要能回答一個問題</h2>
-      <p>NCAA 招募日曆的 sophomore 是台灣的高一，junior 是高二。大多數家庭晚一年才發現這件事。階段 1 到 2 是地基會員，階段 3 到 5 是招募專案。</p>
+      <div class="lead" data-en="Six stages, mapped to the Taiwanese school year">六個階段，照台灣學年排</div>
+      <h2 data-en="Every stage ends with&lt;br&gt;one question it must answer">每一段結束，<br>都要能回答一個問題</h2>
+      <p data-en="The sophomore year on the NCAA recruiting calendar is Taiwan's 高一, and junior is 高二. Most families work this out a year too late. Stages 1 and 2 are Foundation Membership; stages 3 to 5 are the Recruiting Project.">NCAA 招募日曆的 sophomore 是台灣的高一，junior 是高二。大多數家庭晚一年才發現這件事。階段 1 到 2 是地基會員，階段 3 到 5 是招募專案。</p>
     </div>
     <div class="tl">
       <div class="stage">
-        <div class="when"><b>任何年級</b>諮詢 2,800<br>體檢 15,000</div><div class="rail"></div>
+        <div class="when" data-en="&lt;b&gt;Any grade&lt;/b&gt;Consultation 2,800&lt;br&gt;Assessment 15,000"><b>任何年級</b>諮詢 2,800<br>體檢 15,000</div><div class="rail"></div>
         <div>
-          <h3>諮詢與體檢 <small>階段 0</small></h3>
-          <p>先 60 分鐘諮詢認識我們，再決定要不要做體檢。體檢用 Verified UTR、成績單、比賽影片講真話，不加入也拿得到一份能自己用的報告。</p>
-          <p class="ask">現在適合啟動嗎？從哪一段接？</p>
+          <h3 data-en="Consultation &amp; assessment &lt;small&gt;Stage 0&lt;/small&gt;">諮詢與體檢 <small>階段 0</small></h3>
+          <p data-en="A 60-minute consultation to get to know us, then you decide whether to do the assessment. The assessment tells the truth using Verified UTR, transcripts and match film, and you keep a usable report even if you never join.">先 60 分鐘諮詢認識我們，再決定要不要做體檢。體檢用 Verified UTR、成績單、比賽影片講真話，不加入也拿得到一份能自己用的報告。</p>
+          <p class="ask" data-en="Is now the right time to start? Which stage do we join at?">現在適合啟動嗎？從哪一段接？</p>
         </div>
       </div>
       <div class="stage">
-        <div class="when"><b>國二下到國三</b>12 到 18 個月</div><div class="rail"></div>
+        <div class="when" data-en="&lt;b&gt;Grade 8 spring to Grade 9&lt;/b&gt;12 to 18 months"><b>國二下到國三</b>12 到 18 個月</div><div class="rail"></div>
         <div>
-          <h3>地基 <small>階段 1</small></h3>
-          <p>把課表對到 NCAA 的核心課，開好帳戶，養成寫訓練日誌和用英文的習慣，也開始想「不打球的時候他是誰」。每月一次一對一，加月報、季會談、家長工作坊、mentor。</p>
+          <h3 data-en="Foundation &lt;small&gt;Stage 1&lt;/small&gt;">地基 <small>階段 1</small></h3>
+          <p data-en="Map the timetable onto NCAA core courses, open the accounts, build the habit of a training log and of using English, and start on the question of who he is when he is not playing. Monthly one-to-one, plus a monthly report, quarterly review, parent workshops and a mentor.">把課表對到 NCAA 的核心課，開好帳戶，養成寫訓練日誌和用英文的習慣，也開始想「不打球的時候他是誰」。每月一次一對一，加月報、季會談、家長工作坊、mentor。</p>
           <ul class="dates">
-            <li><span>國三 9 月</span>免費開 NCAA Eligibility Center 帳戶</li>
-            <li><span>國三全年</span>成績開始算進核心 GPA</li>
+            <li data-en="&lt;span&gt;Grade 9, Sep&lt;/span&gt;Open a free NCAA Eligibility Center account"><span>國三 9 月</span>免費開 NCAA Eligibility Center 帳戶</li>
+            <li data-en="&lt;span&gt;All of Grade 9&lt;/span&gt;Grades start counting toward the core GPA"><span>國三全年</span>成績開始算進核心 GPA</li>
           </ul>
-          <p class="ask">課表符合 16 門核心課嗎？他是誰？</p>
+          <p class="ask" data-en="Does the timetable add up to 16 core courses? And who is he?">課表符合 16 門核心課嗎？他是誰？</p>
         </div>
       </div>
       <div class="stage key">
-        <div class="when"><b>高一</b>一個學年</div><div class="rail"></div>
+        <div class="when" data-en="&lt;b&gt;Grade 10&lt;/b&gt;one school year"><b>高一</b>一個學年</div><div class="rail"></div>
         <div>
-          <h3>被看見 <small>階段 2</small></h3>
-          <p>六月十五之前要備妥的東西：Verified UTR 的曲線、比賽影片、Resume、長名單、第一批信，還要把 Eligibility Center 升級成 Certification 帳戶。含四堂視訊面談英文演練。</p>
+          <h3 data-en="Getting seen &lt;small&gt;Stage 2&lt;/small&gt;">被看見 <small>階段 2</small></h3>
+          <p data-en="What has to be ready before June 15: the Verified UTR curve, match film, resume, long list and the first batch of letters, plus upgrading the Eligibility Center to a Certification account. Includes four English video-interview rehearsals.">六月十五之前要備妥的東西：Verified UTR 的曲線、比賽影片、Resume、長名單、第一批信，還要把 Eligibility Center 升級成 Certification 帳戶。含四堂視訊面談英文演練。</p>
           <ul class="dates">
-            <li><span>高一 4 月</span>影片 v1、Resume v1</li>
-            <li><span>6 月 15 日</span>D1 教練可以直接聯絡選手、口頭 offer</li>
+            <li data-en="&lt;span&gt;Grade 10, Apr&lt;/span&gt;Film v1 and resume v1"><span>高一 4 月</span>影片 v1、Resume v1</li>
+            <li data-en="&lt;span&gt;June 15&lt;/span&gt;D1 coaches may contact the player directly and give verbal offers"><span>6 月 15 日</span>D1 教練可以直接聯絡選手、口頭 offer</li>
           </ul>
-          <p class="ask">6 月 15 日那天，有幾位教練會主動找他？</p>
+          <p class="ask" data-en="On June 15, how many coaches reach out to him first?">6 月 15 日那天，有幾位教練會主動找他？</p>
         </div>
       </div>
       <div class="stage">
-        <div class="when"><b>高二</b>一個學年</div><div class="rail"></div>
+        <div class="when" data-en="&lt;b&gt;Grade 11&lt;/b&gt;one school year"><b>高二</b>一個學年</div><div class="rail"></div>
         <div>
-          <h3>招募 <small>階段 3</small></h3>
-          <p>名單收斂到三層，安排 Zoom 訪校與驗證性賽事，成績單做認證翻譯送件，收到口頭 offer 幫他讀懂。信是他自己寫的，我們改完用他的帳號寄出去。</p>
+          <h3 data-en="Recruiting &lt;small&gt;Stage 3&lt;/small&gt;">招募 <small>階段 3</small></h3>
+          <p data-en="Narrow the list to three tiers, schedule Zoom visits and verifying events, send transcripts for certified translation, and help him read any verbal offer that comes in. He writes the letters; we edit and send them from his own account.">名單收斂到三層，安排 Zoom 訪校與驗證性賽事，成績單做認證翻譯送件，收到口頭 offer 幫他讀懂。信是他自己寫的，我們改完用他的帳號寄出去。</p>
           <ul class="dates">
-            <li><span>8 月 1 日</span>official visit 開放</li>
-            <li><span>9 到 11 月</span>教練聯繫高峰</li>
+            <li data-en="&lt;span&gt;August 1&lt;/span&gt;Official visits open"><span>8 月 1 日</span>official visit 開放</li>
+            <li data-en="&lt;span&gt;Sep to Nov&lt;/span&gt;Peak of coach contact"><span>9 到 11 月</span>教練聯繫高峰</li>
           </ul>
-          <p class="ask">手上有幾個真的機會？</p>
+          <p class="ask" data-en="How many real opportunities are on the table?">手上有幾個真的機會？</p>
         </div>
       </div>
       <div class="stage">
-        <div class="when"><b>高三</b>一個學年</div><div class="rail"></div>
+        <div class="when" data-en="&lt;b&gt;Grade 12&lt;/b&gt;one school year"><b>高三</b>一個學年</div><div class="rail"></div>
         <div>
-          <h3>落地 <small>階段 4</small></h3>
-          <p>Offer 淨額比較、談判、aid agreement 逐條說明、役男、NCAA 最終認證、I‑20 與 F‑1、抵美前六個月準備、行前訓練營。</p>
+          <h3 data-en="Landing &lt;small&gt;Stage 4&lt;/small&gt;">落地 <small>階段 4</small></h3>
+          <p data-en="Net-value offer comparison, negotiation, a line-by-line read of the aid agreement, conscription, NCAA final certification, the I-20 and F-1, a six-month pre-departure plan and a departure camp.">Offer 淨額比較、談判、aid agreement 逐條說明、役男、NCAA 最終認證、I‑20 與 F‑1、抵美前六個月準備、行前訓練營。</p>
           <ul class="dates">
-            <li><span>11 月</span>簽約期</li>
-            <li><span>2 月</span>役男狀態確認</li>
-            <li><span>6 到 8 月</span>只有 8 到 10 週跑最終認證與簽證</li>
+            <li data-en="&lt;span&gt;November&lt;/span&gt;Signing period"><span>11 月</span>簽約期</li>
+            <li data-en="&lt;span&gt;February&lt;/span&gt;Conscription status confirmed"><span>2 月</span>役男狀態確認</li>
+            <li data-en="&lt;span&gt;Jun to Aug&lt;/span&gt;Only 8 to 10 weeks for final certification and the visa"><span>6 到 8 月</span>只有 8 到 10 週跑最終認證與簽證</li>
           </ul>
-          <p class="ask">8 月能不能站在校園裡？</p>
+          <p class="ask" data-en="Can he be standing on campus in August?">8 月能不能站在校園裡？</p>
         </div>
       </div>
       <div class="stage">
-        <div class="when"><b>大一</b>整個學年</div><div class="rail"></div>
+        <div class="when" data-en="&lt;b&gt;Freshman year&lt;/b&gt;the whole year"><b>大一</b>整個學年</div><div class="rail"></div>
         <div>
-          <h3>第一年 <small>階段 5</small></h3>
-          <p>失敗集中在第一年，所以服務不在錄取那天結束。每月 30 分鐘視訊 check-in、學期中一次三方通話、隨時可傳訊息、年底結業評估。包在招募與落地方案裡，不另賣。</p>
-          <p class="ask">上場、進步、留下來？</p>
+          <h3 data-en="First year &lt;small&gt;Stage 5&lt;/small&gt;">第一年 <small>階段 5</small></h3>
+          <p data-en="Failure clusters in the first year, so the service does not end on the day he is admitted. A 30-minute video check-in every month, one three-way call mid-semester, messaging whenever it is needed, and a year-end review. Included in the recruiting and landing plan, not sold separately.">失敗集中在第一年，所以服務不在錄取那天結束。每月 30 分鐘視訊 check-in、學期中一次三方通話、隨時可傳訊息、年底結業評估。包在招募與落地方案裡，不另賣。</p>
+          <p class="ask" data-en="Playing, improving, staying?">上場、進步、留下來？</p>
         </div>
       </div>
     </div>
     <div class="clocks">
-      <h3>男生有兩個時鐘，分開算</h3>
-      <p>兵役看 19 歲那一年的 1 月 1 日，NCAA 看 19 歲生日對 9 月 1 日。用的不是同一個日期，體檢會用他的出生年月各算一次，並算出最後一個不需要辦役男手續的入學年。</p>
+      <h3 data-en="Boys run on two clocks. Count them separately.">男生有兩個時鐘，分開算</h3>
+      <p data-en="Conscription runs from January 1 of the year he turns 19; the NCAA clock reads his 19th birthday against September 1. They are not the same date. The assessment runs both from his date of birth and works out the last entry year that needs no conscription paperwork.">兵役看 19 歲那一年的 1 月 1 日，NCAA 看 19 歲生日對 9 月 1 日。用的不是同一個日期，體檢會用他的出生年月各算一次，並算出最後一個不需要辦役男手續的入學年。</p>
     </div>
   </div>
 </section>
@@ -884,30 +893,30 @@ footer .legal p+p{margin-top:4px}
 <section class="sand" id="scope">
   <div class="wrap">
     <div class="head">
-      <div class="lead">哪些是他的事</div>
-      <h2>文件我們一起做，<br class="m">路他自己走</h2>
-      <p>代辦做的我們也做。代辦不做的，才是這個服務的主體。</p>
+      <div class="lead" data-en="What is his to do">哪些是他的事</div>
+      <h2 data-en="We do the paperwork together.&lt;br class=&quot;m&quot;&gt;He walks the road himself.">文件我們一起做，<br class="m">路他自己走</h2>
+      <p data-en="We do what agencies do. What agencies do not do is what this service is actually about.">代辦做的我們也做。代辦不做的，才是這個服務的主體。</p>
     </div>
     <div class="two">
       <div>
-        <h3>我們一起做</h3>
+        <h3 data-en="What we do together">我們一起做</h3>
         <ul>
-          <li>用 Verified UTR、成績單、比賽影片判斷他真正的位置，不美化</li>
-          <li>讓他在事情發生之前就知道會遇到什麼</li>
-          <li>翻譯品管、Eligibility Center、簽證、役男，這些一起處理</li>
-          <li>英文練到能應付大學課堂，也答得出教練的視訊提問。檢定要考也教</li>
-          <li>到了美國的第一年，我們還在</li>
+          <li data-en="Judge where he really stands from Verified UTR, transcripts and match film. No flattering.">用 Verified UTR、成績單、比賽影片判斷他真正的位置，不美化</li>
+          <li data-en="Tell him what is coming before it arrives.">讓他在事情發生之前就知道會遇到什麼</li>
+          <li data-en="Translation QA, Eligibility Center, visa and conscription, handled together.">翻譯品管、Eligibility Center、簽證、役男，這些一起處理</li>
+          <li data-en="English good enough for college lectures and for answering a coach on a video call. If a test is needed, we teach that too.">英文練到能應付大學課堂，也答得出教練的視訊提問。檢定要考也教</li>
+          <li data-en="Through his first year in the States, we are still there.">到了美國的第一年，我們還在</li>
         </ul>
       </div>
       <div class="no">
-        <h3>我們不做</h3>
+        <h3 data-en="What we do not do">我們不做</h3>
         <ul>
-          <li>教練信、essay、自我介紹他寫，我們改，改完用他的帳號寄</li>
-          <li>不保證錄取，不保證獎學金金額</li>
-          <li>不用「保證」「100%」「最少幾個 offer」這些字</li>
-          <li>時間來不及又條件不夠的案子不接，不接的標準公開</li>
-          <li>不隱藏價格與退費表</li>
-          <li>不拿現成的補習教材硬塞</li>
+          <li data-en="Coach letters, essays and self-introductions: he writes, we edit, and it goes out from his own account.">教練信、essay、自我介紹他寫，我們改，改完用他的帳號寄</li>
+          <li data-en="No guarantee of admission. No guarantee of a scholarship amount.">不保證錄取，不保證獎學金金額</li>
+          <li data-en="We never use words like &amp;quot;guaranteed&amp;quot;, &amp;quot;100%&amp;quot; or &amp;quot;at least X offers&amp;quot;.">不用「保證」「100%」「最少幾個 offer」這些字</li>
+          <li data-en="We decline cases where time is too short and the conditions are not there. The standard for declining is public.">時間來不及又條件不夠的案子不接，不接的標準公開</li>
+          <li data-en="We do not hide the price list or the refund schedule.">不隱藏價格與退費表</li>
+          <li data-en="We do not push an off-the-shelf cram-school curriculum.">不拿現成的補習教材硬塞</li>
         </ul>
       </div>
     </div>
@@ -917,14 +926,14 @@ footer .legal p+p{margin-top:4px}
 <section id="nine">
   <div class="wrap">
     <div class="head">
-      <div class="lead">同一把尺，量五年</div>
-      <h2>我們會一直看的九件事</h2>
-      <p>順序五年不變，所以每一份報告都能跟上一份對照。每一項都要能回答一個問題：知道之後，家裡會做什麼不一樣的決定。點一下看那一項在看什麼。</p>
+      <div class="lead" data-en="One ruler, five years">同一把尺，量五年</div>
+      <h2 data-en="The nine things we keep watching">我們會一直看的九件事</h2>
+      <p data-en="The order never changes across five years, so every report can be read against the last one. Each axis has to answer one question: once you know this, what does the family decide differently? Click an axis to see what it tracks.">順序五年不變，所以每一份報告都能跟上一份對照。每一項都要能回答一個問題：知道之後，家裡會做什麼不一樣的決定。點一下看那一項在看什麼。</p>
     </div>
 
     <div class="nona">
       <div class="nona-fig">
-        <svg viewBox="0 0 580 404" role="img" aria-label="九條能力軸">
+        <svg viewBox="0 0 580 404" role="img" aria-label="九條能力軸" data-en-attr="aria-label|Nine ability axes">
           <polygon id="nonaRing" points="" fill="none" stroke="var(--hair)" stroke-width="1.5"></polygon>
           <polygon id="nonaFill" points="" fill="var(--tide)" fill-opacity=".07" stroke="var(--tide)" stroke-width="2"></polygon>
           <g id="nonaDots"></g>
@@ -933,39 +942,39 @@ footer .legal p+p{margin-top:4px}
       <div class="nona-panel" id="nonaPanel" aria-live="polite"></div>
     </div>
 
-    <p class="note">體檢報告另外回答兩件事：時間來不來得及（四條路徑一起列），預算夠不夠（I‑20 差額與四年台幣區間）。</p>
+    <p class="note" data-en="The assessment report answers two more questions: is there enough time (four paths laid out side by side), and is the budget enough (the I-20 funding gap and a four-year NT$ range).">體檢報告另外回答兩件事：時間來不來得及（四條路徑一起列），預算夠不夠（I‑20 差額與四年台幣區間）。</p>
   </div>
 </section>
 
 <section class="sand" id="why">
   <div class="wrap">
     <div class="head">
-      <div class="lead">為什麼是我</div>
-      <h2>我走得很吃力，<br>所以知道哪裡會卡</h2>
-      <p>Paul Wang，Vanderbilt University 網球校隊出身，NCAA Division I。</p>
+      <div class="lead" data-en="Why me">為什麼是我</div>
+      <h2 data-en="I had a hard time on this road,&lt;br&gt;so I know where it jams">我走得很吃力，<br>所以知道哪裡會卡</h2>
+      <p data-en="Paul Wang. Vanderbilt University men's tennis, NCAA Division I.">Paul Wang，Vanderbilt University 網球校隊出身，NCAA Division I。</p>
     </div>
     <figure class="shot">
       <img src="assets/paul-vanderbilt.jpg"
            srcset="assets/paul-vanderbilt-900.jpg 900w, assets/paul-vanderbilt.jpg 1800w"
            sizes="(max-width: 760px) 100vw, 1080px"
            width="1800" height="1013"
-           alt="Paul 在 Vanderbilt 球場上正手擊球" loading="lazy" decoding="async"
+           alt="Paul 在 Vanderbilt 球場上正手擊球" data-en-attr="alt|Paul hitting a forehand on the Vanderbilt courts" loading="lazy" decoding="async"
            onerror="this.style.display='none';this.nextElementSibling.hidden=false">
       <div class="shot-ph" hidden>
-        <span>照片待放</span>
-        <small>把檔案存成 assets/paul-vanderbilt.jpg 就會自動出現</small>
+        <span data-en="Photo pending">照片待放</span>
+        <small data-en="Save the file as assets/paul-vanderbilt.jpg and it will appear">把檔案存成 assets/paul-vanderbilt.jpg 就會自動出現</small>
       </div>
       <figcaption>Vanderbilt University，NCAA Division I</figcaption>
     </figure>
     <div class="story">
-      <blockquote class="quote">「我聯絡了大概 20 所學校，都是自己寫的 cold email，回覆率不高。我非常理解現在選手的那種無助。」<cite>Paul Wang，Kuroshio Athletics 創辦人。Vanderbilt University 網球校隊，NCAA Division I</cite></blockquote>
+      <blockquote class="quote" data-en="&quot;I contacted around 20 schools. Every cold email was written and sent by me, and not many came back. I understand exactly how helpless players feel right now.&quot;&lt;cite&gt;Paul Wang, founder of Kuroshio Athletics. Vanderbilt University men's tennis, NCAA Division I&lt;/cite&gt;">「我聯絡了大概 20 所學校，都是自己寫的 cold email，回覆率不高。我非常理解現在選手的那種無助。」<cite>Paul Wang，Kuroshio Athletics 創辦人。Vanderbilt University 網球校隊，NCAA Division I</cite></blockquote>
       <div class="text">
-        <p>Paul 從體育班一路打上來，看到學長的路只有一條：打球，然後當教練。高中有一陣子不想打球，去做了世界學者盃、模擬聯合國、機器人比賽，才發現世界很大，而網球可以是通往它的一條路，不是終點。</p>
-        <p>那時候台灣沒有 UTR Verified 賽事，他和家人用兩個暑假飛美國比賽，花了超過 80 萬台幣。在一場比賽被 Vanderbilt 的教練看到，UTR 12 左右，教練看中的是他踩在線上攻擊的打法。最後談到 40% 的獎學金，幾年後才知道其實可以談得更好。</p>
-        <p>全中運第二，到了美國打第六單、第二雙。教育學院大三要去公立高中實習，需要大一大二就選好的課，沒有人告訴他。學校的獎學金、交換、社團資源，他前三年不知道存在。大二手肘疲勞性骨折，大三換了教練，他選擇退出球隊，把最後一年留給學校本身。</p>
-        <p><strong>「這些其實都可以被避免。這是為什麼我想做這件事。」</strong></p>
-        <p>他對留學代辦最不滿的一件事：不在乎學生要什麼。把你送進一所學校，說「這所不錯」或「你的實力就在這裡」，有時候甚至壓低你的能力，好把你送進比較好處理的學校。送進去之後就不聞不問。</p>
-        <p>他希望一個選手在 Kuroshio 結束的時候，知道自己要什麼、有什麼能力、離目標還有多遠，而且知道自己是誰。這比拿到 offer 難，也比拿到 offer 重要。</p>
+        <p data-en="Paul came up through Taiwan's sports-class system, where the seniors he watched had exactly one road: play, then coach. In high school he lost interest in playing for a while and went off to do the World Scholar's Cup, Model UN and robotics competitions. That is when he realised the world was large, and that tennis could be a road into it rather than the destination.">Paul 從體育班一路打上來，看到學長的路只有一條：打球，然後當教練。高中有一陣子不想打球，去做了世界學者盃、模擬聯合國、機器人比賽，才發現世界很大，而網球可以是通往它的一條路，不是終點。</p>
+        <p data-en="There were no UTR Verified events in Taiwan then, so he and his family spent two summers flying to the US to compete, more than NT$800,000 in all. At one of those events a Vanderbilt coach saw him at around UTR 12, drawn to the way he stepped inside the baseline and attacked. He ended up negotiating a 40% scholarship. Years later he learned he could have negotiated a better one.">那時候台灣沒有 UTR Verified 賽事，他和家人用兩個暑假飛美國比賽，花了超過 80 萬台幣。在一場比賽被 Vanderbilt 的教練看到，UTR 12 左右，教練看中的是他踩在線上攻擊的打法。最後談到 40% 的獎學金，幾年後才知道其實可以談得更好。</p>
+        <p data-en="Runner-up at the National High School Games in Taiwan; in the US he played No. 6 singles and No. 2 doubles. His education degree required a public high-school placement in junior year, which required specific courses chosen in freshman and sophomore year. Nobody told him. For three years he did not know the school's scholarships, exchange programmes and club resources existed. A stress fracture in his elbow in sophomore year, a coaching change in junior year, and he chose to leave the team and give his final year to the university itself.">全中運第二，到了美國打第六單、第二雙。教育學院大三要去公立高中實習，需要大一大二就選好的課，沒有人告訴他。學校的獎學金、交換、社團資源，他前三年不知道存在。大二手肘疲勞性骨折，大三換了教練，他選擇退出球隊，把最後一年留給學校本身。</p>
+        <p data-en="&lt;strong&gt;&amp;quot;All of this could have been avoided. That is why I want to do this.&amp;quot;&lt;/strong&gt;"><strong>「這些其實都可以被避免。這是為什麼我想做這件事。」</strong></p>
+        <p data-en="What he resents most about study-abroad agencies is that they do not care what the student wants. They place you somewhere and tell you it is a good school, or that this is your level. Sometimes they even talk your ability down so you are easier to place. Once you are in, you never hear from them again.">他對留學代辦最不滿的一件事：不在乎學生要什麼。把你送進一所學校，說「這所不錯」或「你的實力就在這裡」，有時候甚至壓低你的能力，好把你送進比較好處理的學校。送進去之後就不聞不問。</p>
+        <p data-en="What he wants is that when a player finishes with Kuroshio, he knows what he wants, what he is capable of, how far he still is from the goal, and who he is. That is harder than getting an offer, and it matters more.">他希望一個選手在 Kuroshio 結束的時候，知道自己要什麼、有什麼能力、離目標還有多遠，而且知道自己是誰。這比拿到 offer 難，也比拿到 offer 重要。</p>
       </div>
     </div>
   </div>
@@ -974,35 +983,35 @@ footer .legal p+p{margin-top:4px}
 <section class="dark" id="edge">
   <div class="wrap">
     <div class="head">
-      <div class="lead">為什麼是我們</div>
-      <h2>我們自己就在 UTR 賽事裡</h2>
-      <p>UTR 是美國大學網球 Recruiting 重要的評估工具之一。多數顧問只能看分數，我們自己就在辦亞洲知名的 UTR Verified 賽事。</p>
+      <div class="lead" data-en="Why us">為什麼是我們</div>
+      <h2 data-en="We run UTR events ourselves">我們自己就在 UTR 賽事裡</h2>
+      <p data-en="UTR is one of the key evaluation tools in US college tennis recruiting. Most consultants can only read the number. We run UTR Verified events that are well known across Asia.">UTR 是美國大學網球 Recruiting 重要的評估工具之一。多數顧問只能看分數，我們自己就在辦亞洲知名的 UTR Verified 賽事。</p>
     </div>
 
     <div class="edge">
       <div class="ed">
         <div>
-          <div class="ed-n">優勢 01</div>
-          <h3>不是叫他多打比賽，是一起判斷下一場該打什麼</h3>
+          <div class="ed-n" data-en="Edge 01">優勢 01</div>
+          <h3 data-en="Not &amp;quot;play more tournaments&amp;quot;. Deciding together what the next one should be.">不是叫他多打比賽，是一起判斷下一場該打什麼</h3>
         </div>
         <div>
-          <p><span class="kick">長期累積的賽事經驗，也吸引過不同國家的選手來台參賽。</span>平誠更是 UTR Pro Tennis Tour 2026 全球賽程的舉辦團隊之一。所以我們能多做一步：依照選手目前的 UTR 與 Recruiting 目標</p>
+          <p data-en="&lt;span class=&quot;kick&quot;&gt;Years of running events have brought players from several countries to Taiwan to compete.&lt;/span&gt;Pincheng is also one of the host teams on the UTR Pro Tennis Tour 2026 global calendar. That lets us go a step further, working from the player's current UTR and recruiting targets"><span class="kick">長期累積的賽事經驗，也吸引過不同國家的選手來台參賽。</span>平誠更是 UTR Pro Tennis Tour 2026 全球賽程的舉辦團隊之一。所以我們能多做一步：依照選手目前的 UTR 與 Recruiting 目標</p>
           <ul>
-            <li>安排適合的 Verified 賽事，而不是有什麼打什麼</li>
-            <li>累積有效的比賽紀錄，讓分數撐得住</li>
-            <li>完整比賽錄影，直接變成招募影片的素材</li>
-            <li>賽後一起分析：這場比賽對 Recruiting 有什麼價值</li>
+            <li data-en="Schedule the right Verified events instead of playing whatever is available">安排適合的 Verified 賽事，而不是有什麼打什麼</li>
+            <li data-en="Build a match record that actually holds the rating up">累積有效的比賽紀錄，讓分數撐得住</li>
+            <li data-en="Full match footage that becomes recruiting film directly">完整比賽錄影，直接變成招募影片的素材</li>
+            <li data-en="Review it together afterwards: what was this match worth for recruiting?">賽後一起分析：這場比賽對 Recruiting 有什麼價值</li>
           </ul>
           <div class="stats">
             <div class="stat">
-              <div class="sk">亞洲知名的 UTR 認證賽事</div>
-              <div class="sv">約 90%<small>台灣選手透過本團隊舉辦的 UTR 賽事取得分數，用來申請美國大學獎學金。</small></div>
-              <p>這些選手平均每人每年獲得約 NT$120 萬獎學金，四年累計最高約 500 萬。這是已經發生的結果，不是對個別選手的承諾。</p>
+              <div class="sk" data-en="UTR-sanctioned events known across Asia">亞洲知名的 UTR 認證賽事</div>
+              <div class="sv" data-en="About 90%&lt;small&gt;of Taiwanese players earn their rating at events run by this team, and use it to apply for US college scholarships.&lt;/small&gt;">約 90%<small>台灣選手透過本團隊舉辦的 UTR 賽事取得分數，用來申請美國大學獎學金。</small></div>
+              <p data-en="Those players have averaged around NT$1.2 million in scholarship per year, up to roughly NT$5 million across four years. These are results that have already happened, not a promise to any individual player.">這些選手平均每人每年獲得約 NT$120 萬獎學金，四年累計最高約 500 萬。這是已經發生的結果，不是對個別選手的承諾。</p>
             </div>
             <div class="stat">
-              <div class="sk">亞洲少數取得 UTR 國際職業巡迴賽資格的團隊</div>
-              <div class="sv">約 480 萬<small>每年為賽事爭取到的獎金，單位新台幣。</small></div>
-              <p>團隊與韓國、日本、印度、美國建立合作，包含主審與協會連結，並與 UTR 直接合作。</p>
+              <div class="sk" data-en="One of the few teams in Asia sanctioned for the UTR pro tour">亞洲少數取得 UTR 國際職業巡迴賽資格的團隊</div>
+              <div class="sv" data-en="About 4.8M&lt;small&gt;in prize money secured for events each year, in NT$.&lt;/small&gt;">約 480 萬<small>每年為賽事爭取到的獎金，單位新台幣。</small></div>
+              <p data-en="The team works with partners in Korea, Japan, India and the US, including chair-umpire and federation links, and directly with UTR.">團隊與韓國、日本、印度、美國建立合作，包含主審與協會連結，並與 UTR 直接合作。</p>
             </div>
           </div>
         </div>
@@ -1010,152 +1019,152 @@ footer .legal p+p{margin-top:4px}
 
       <div class="ed">
         <div>
-          <div class="ed-n">優勢 02</div>
-          <h3>不只教他寄信，也幫他把自己呈現好</h3>
+          <div class="ed-n" data-en="Edge 02">優勢 02</div>
+          <h3 data-en="Not just teaching him to send letters. Helping him present himself well.">不只教他寄信，也幫他把自己呈現好</h3>
         </div>
         <div>
-          <p><span class="kick">教練第一次認識一個選手，看的不只有 UTR。</span>比賽影片、球員資料與他怎麼呈現自己，都可能決定教練願不願意繼續看下去。UTR 自己的 College Showcase 也是把 Verified 比賽、球員 Profile 與教練觀看機會綁在一起。所以我們有自己的影片與視覺團隊。</p>
+          <p data-en="&lt;span class=&quot;kick&quot;&gt;When a coach meets a player for the first time, UTR is not all he looks at.&lt;/span&gt;Match film, the player's information and how he presents himself all feed into whether the coach keeps reading. UTR's own College Showcase bundles Verified matches, player profiles and coach viewing together for the same reason. So we keep our own film and design team."><span class="kick">教練第一次認識一個選手，看的不只有 UTR。</span>比賽影片、球員資料與他怎麼呈現自己，都可能決定教練願不願意繼續看下去。UTR 自己的 College Showcase 也是把 Verified 比賽、球員 Profile 與教練觀看機會綁在一起。所以我們有自己的影片與視覺團隊。</p>
           <ul>
-            <li>影片：專業剪輯陪選手整理比賽素材，顧問一起討論哪一球該留、教練想看什麼、怎麼讓人更快看懂他的特色</li>
-            <li>視覺：設計協助製作 Recruiting 需要的球員素材，讓他在聯繫、社群與自我介紹時資訊更清楚</li>
+            <li data-en="Film: a professional editor works through the footage with the player, and the consultant weighs in on which point stays, what coaches want to see, and how to make his strengths land faster">影片：專業剪輯陪選手整理比賽素材，顧問一起討論哪一球該留、教練想看什麼、怎麼讓人更快看懂他的特色</li>
+            <li data-en="Design: a designer builds the player assets recruiting needs, so his information reads clearly in outreach, on social and in his introduction">視覺：設計協助製作 Recruiting 需要的球員素材，讓他在聯繫、社群與自我介紹時資訊更清楚</li>
           </ul>
-          <p>我們不替他包裝成另一個人。我們只是讓真正的他，更容易被教練看見。</p>
+          <p data-en="We do not package him into someone else. We just make the real him easier for a coach to see.">我們不替他包裝成另一個人。我們只是讓真正的他，更容易被教練看見。</p>
         </div>
       </div>
     </div>
 
-    <p class="edge-note">以上賽事規模、獎學金與獎金數字來自平誠自身的賽事營運紀錄。Kuroshio 是平誠旗下的服務，這些賽事資源選手用得到，但賽事成績與招募結果仍由選手本人的表現決定。</p>
+    <p class="edge-note" data-en="The event, scholarship and prize-money figures above come from Pincheng's own operating records. Kuroshio is a Pincheng service, so players have access to these event resources, but results on court and in recruiting still come down to the player.">以上賽事規模、獎學金與獎金數字來自平誠自身的賽事營運紀錄。Kuroshio 是平誠旗下的服務，這些賽事資源選手用得到，但賽事成績與招募結果仍由選手本人的表現決定。</p>
   </div>
 </section>
 
 <section id="plans">
   <div class="wrap">
     <div class="head">
-      <div class="lead">價格公式公開，不個案議價</div>
-      <h2>招募專案 30 萬起，<br>地基會員一個月一萬</h2>
-      <p>單季代辦公開價通常是 8 到 15 萬，多年期顧問沒有人公開價格。我們把公式寫出來，任何人算得出同一個數字。</p>
+      <div class="lead" data-en="Pricing formula published. No case-by-case negotiation.">價格公式公開，不個案議價</div>
+      <h2 data-en="Recruiting Project from NT$300,000.&lt;br&gt;Foundation Membership NT$10,000 a month.">招募專案 30 萬起，<br>地基會員一個月一萬</h2>
+      <p data-en="A single-season agency typically publishes NT$80,000 to NT$150,000. Nobody publishes a price for multi-year advisory work. We write out the formula so anyone can arrive at the same number.">單季代辦公開價通常是 8 到 15 萬，多年期顧問沒有人公開價格。我們把公式寫出來，任何人算得出同一個數字。</p>
     </div>
 
     <div class="funnel">
       <div class="fn">
-        <div class="fn-n">先認識</div>
-        <h3>諮詢</h3>
+        <div class="fn-n" data-en="First, meet us">先認識</div>
+        <h3 data-en="Consultation">諮詢</h3>
         <div class="fn-p">NT$2,800</div>
-        <p>一份短問卷，60 分鐘線上會談。我們說明服務怎麼運作，你判斷要不要往下走。不推銷。</p>
+        <p data-en="A short questionnaire and a 60-minute call online. We explain how the service works and you decide whether to go further. No pitch.">一份短問卷，60 分鐘線上會談。我們說明服務怎麼運作，你判斷要不要往下走。不推銷。</p>
       </div>
       <div class="fn">
-        <div class="fn-n">再判斷</div>
-        <h3>體檢</h3>
+        <div class="fn-n" data-en="Then, judge">再判斷</div>
+        <h3 data-en="Assessment">體檢</h3>
         <div class="fn-p">NT$15,000</div>
-        <p>長問卷、90 分鐘面談、書面報告家長版與選手版、60 分鐘一起讀報告。不適合啟動我們會直接說。</p>
+        <p data-en="A long questionnaire, a 90-minute interview, a written report in a parent version and a player version, and 60 minutes reading it together. If now is not the time to start, we say so.">長問卷、90 分鐘面談、書面報告家長版與選手版、60 分鐘一起讀報告。不適合啟動我們會直接說。</p>
       </div>
       <div class="fn">
-        <div class="fn-n">才開始</div>
-        <h3>服務</h3>
-        <div class="fn-p">兩個，可以疊加</div>
-        <p>招募專案讓他進得去，地基會員讓他進去之後活得下來。兩個獨立，都可以單買。體檢報告會告訴你他缺哪一邊。</p>
+        <div class="fn-n" data-en="Then, begin">才開始</div>
+        <h3 data-en="The service">服務</h3>
+        <div class="fn-p" data-en="Two tracks. They stack.">兩個，可以疊加</div>
+        <p data-en="The Recruiting Project gets him in. Foundation Membership keeps him alive once he is there. They are independent and either can be bought alone. The assessment report tells you which side he is short on.">招募專案讓他進得去，地基會員讓他進去之後活得下來。兩個獨立，都可以單買。體檢報告會告訴你他缺哪一邊。</p>
       </div>
     </div>
-    <p class="fn-note"><b>前面付過的都折抵。</b>諮詢的 2,800 折進體檢，體檢的 15,000 折進服務。走完全程，前面兩層等於沒有多收。</p>
+    <p class="fn-note" data-en="&lt;b&gt;Everything you paid earlier is credited forward.&lt;/b&gt; The NT$2,800 consultation credits against the assessment, and the NT$15,000 assessment credits against the service. Go the whole way and the first two steps cost you nothing extra."><b>前面付過的都折抵。</b>諮詢的 2,800 折進體檢，體檢的 15,000 折進服務。走完全程，前面兩層等於沒有多收。</p>
 
     <div class="svc">
       <div class="s">
         <div class="s-top">
-          <div class="s-tag">讓他進得去</div>
-          <h3>招募專案</h3>
-          <div class="s-p">NT$300,000 起<small>高一 3 月 15 日前簽約是基準價。晚一點簽會加價，公式在下面</small></div>
+          <div class="s-tag" data-en="Gets him in">讓他進得去</div>
+          <h3 data-en="Recruiting Project">招募專案</h3>
+          <div class="s-p" data-en="From NT$300,000&lt;small&gt;Signing before March 15 of Grade 10 is the base price. Signing later costs more; the formula is below.&lt;/small&gt;">NT$300,000 起<small>高一 3 月 15 日前簽約是基準價。晚一點簽會加價，公式在下面</small></div>
         </div>
         <ul>
-          <li>代辦幫你做的事，這裡都有</li>
-          <li>幫他開一組自己的 Gmail、Drive、Calendar，之後所有往來都從這裡出去</li>
-          <li>essay、教練信、自我介紹：他寫，我們改，改完用他的帳號寄</li>
-          <li>學校名單三層、教練聯繫與追蹤、教練視訊面談準備</li>
-          <li>比賽影片拍攝與剪輯，接平誠的 UTR 認證賽事</li>
-          <li>認證翻譯品管、Offer 淨額比較、獎學金談判</li>
-          <li>役男、NCAA 最終認證、I‑20 與簽證、行前</li>
-          <li>大一整年支援，包在裡面不另賣</li>
+          <li data-en="Everything an agency does for you is in here">代辦幫你做的事，這裡都有</li>
+          <li data-en="We set up his own Gmail, Drive and Calendar, and everything afterwards goes out from there">幫他開一組自己的 Gmail、Drive、Calendar，之後所有往來都從這裡出去</li>
+          <li data-en="Essays, coach letters, self-introductions: he writes, we edit, and it sends from his account">essay、教練信、自我介紹：他寫，我們改，改完用他的帳號寄</li>
+          <li data-en="A three-tier school list, coach outreach and follow-up, and preparation for coach video calls">學校名單三層、教練聯繫與追蹤、教練視訊面談準備</li>
+          <li data-en="Match filming and editing, drawing on Pincheng's UTR-sanctioned events">比賽影片拍攝與剪輯，接平誠的 UTR 認證賽事</li>
+          <li data-en="Certified-translation QA, net-value offer comparison and scholarship negotiation">認證翻譯品管、Offer 淨額比較、獎學金談判</li>
+          <li data-en="Conscription, NCAA final certification, the I-20 and visa, and departure prep">役男、NCAA 最終認證、I‑20 與簽證、行前</li>
+          <li data-en="A full year of freshman-year support, included and not sold separately">大一整年支援，包在裡面不另賣</li>
         </ul>
-        <p class="s-why">高二下或高三才進場的人也是買這個，但要先做體檢，說條件夠我們才接。每年最多接 3 到 4 件，合約明寫成功率與不接的標準。</p>
+        <p class="s-why" data-en="Families entering in the spring of Grade 11 or in Grade 12 buy this too, but the assessment comes first and we only take the case if the conditions are there. We take three to four such cases a year, and the contract states the standard for declining.">高二下或高三才進場的人也是買這個，但要先做體檢，說條件夠我們才接。每年最多接 3 到 4 件，合約明寫成功率與不接的標準。</p>
       </div>
       <div class="s">
         <div class="s-top">
-          <div class="s-tag">讓他活得下來</div>
-          <h3>地基會員</h3>
-          <div class="s-p">一個月一萬<small>年費 NT$120,000，每學期收 60,000。國二到大一任何年級都能加，買幾年自己決定</small></div>
+          <div class="s-tag" data-en="Keeps him alive there">讓他活得下來</div>
+          <h3 data-en="Foundation Membership">地基會員</h3>
+          <div class="s-p" data-en="NT$10,000 a month&lt;small&gt;NT$120,000 a year, billed NT$60,000 a semester. Any grade from Grade 8 to freshman year can join, for as many years as you choose.&lt;/small&gt;">一個月一萬<small>年費 NT$120,000，每學期收 60,000。國二到大一任何年級都能加，買幾年自己決定</small></div>
         </div>
         <ul>
-          <li>英文：SAT、TOEFL、寫作</li>
-          <li>職場英文與大學課堂英文</li>
-          <li>大學先修準備，把大一會撞到的東西提前撞</li>
-          <li>做專案的能力：拆解、排程、交件</li>
-          <li>網球訓練日誌，寫目標與結果不寫流水帳</li>
+          <li data-en="English: SAT, TOEFL and writing">英文：SAT、TOEFL、寫作</li>
+          <li data-en="Workplace English and college classroom English">職場英文與大學課堂英文</li>
+          <li data-en="College prep, hitting freshman-year problems early on purpose">大學先修準備，把大一會撞到的東西提前撞</li>
+          <li data-en="How to run a project: break it down, schedule it, ship it">做專案的能力：拆解、排程、交件</li>
+          <li data-en="A training log built on goals and outcomes, not a diary">網球訓練日誌，寫目標與結果不寫流水帳</li>
           <li>Time management</li>
-          <li>面試演練</li>
-          <li>家長工作坊，每年兩次</li>
-          <li>有機會的話，實習</li>
+          <li data-en="Interview rehearsal">面試演練</li>
+          <li data-en="Parent workshops, twice a year">家長工作坊，每年兩次</li>
+          <li data-en="An internship when the chance comes up">有機會的話，實習</li>
         </ul>
-        <p class="s-why">完全 optional，不買也能走招募專案。但這些是進了學校之後每天要用的東西，而失敗集中在第一年。</p>
+        <p class="s-why" data-en="Entirely optional. You can run the Recruiting Project without it. But these are the things he uses every day once he is at the school, and failure clusters in the first year.">完全 optional，不買也能走招募專案。但這些是進了學校之後每天要用的東西，而失敗集中在第一年。</p>
       </div>
     </div>
 
-    <p class="both">兩個一樣重要，但做的是不同的事。招募專案讓他進得去，地基會員讓他進去之後活得下來、知道什麼該做什麼不該做。兩個都買的話，地基會員有折扣。</p>
+    <p class="both" data-en="They matter equally and they do different jobs. The Recruiting Project gets him in. Foundation Membership keeps him alive once he is there and teaches him what to do and what not to. Buy both and the membership is discounted.">兩個一樣重要，但做的是不同的事。招募專案讓他進得去，地基會員讓他進去之後活得下來、知道什麼該做什麼不該做。兩個都買的話，地基會員有折扣。</p>
 
     <div class="late">
       <div class="late-h">
-        <div class="lead">為什麼早簽比較便宜</div>
-        <h3>招募專案的價格跟著時間走</h3>
-        <p>六月十五那天教練就可以直接聯絡他，我們需要三個月把資料包做好，所以高一 3 月 15 日是最舒服的簽約時間。晚一點來，同樣的東西要壓在更短的時間裡做完，價格反映的是那個壓縮。</p>
-        <p class="late-rule">基準價 30 萬。以高一 3 月 15 日為準，每晚三個月加 1 萬，加價最多 10 萬。高三下學期才來，是 38 萬。</p>
+        <div class="lead" data-en="Why signing early costs less">為什麼早簽比較便宜</div>
+        <h3 data-en="The Recruiting Project price moves with the clock">招募專案的價格跟著時間走</h3>
+        <p data-en="Coaches can contact him directly from June 15, and we need three months to build the package. That makes March 15 of Grade 10 the comfortable moment to sign. Come later and the same work has to be compressed into less time. The price reflects that compression.">六月十五那天教練就可以直接聯絡他，我們需要三個月把資料包做好，所以高一 3 月 15 日是最舒服的簽約時間。晚一點來，同樣的東西要壓在更短的時間裡做完，價格反映的是那個壓縮。</p>
+        <p class="late-rule" data-en="Base price NT$300,000. Measured from March 15 of Grade 10, every three months of delay adds NT$10,000, capped at NT$100,000. Coming in the spring of Grade 12 means NT$380,000.">基準價 30 萬。以高一 3 月 15 日為準，每晚三個月加 1 萬，加價最多 10 萬。高三下學期才來，是 38 萬。</p>
       </div>
       <table class="late-t">
-        <thead><tr><th>什麼時候簽約</th><th>晚幾個月</th><th>招募專案</th></tr></thead>
+        <thead><tr><th data-en="When you sign">什麼時候簽約</th><th data-en="Months late">晚幾個月</th><th data-en="Recruiting Project">招募專案</th></tr></thead>
         <tbody>
-          <tr><td>高一 3 月 15 日前</td><td>基準</td><td>NT$300,000</td></tr>
-          <tr><td>高一 6 月</td><td>3</td><td>NT$310,000</td></tr>
-          <tr><td>高二 9 月</td><td>6</td><td>NT$320,000</td></tr>
-          <tr><td>高二 3 月</td><td>12</td><td>NT$340,000</td></tr>
-          <tr><td>高三 9 月</td><td>18</td><td>NT$360,000</td></tr>
-          <tr><td>高三 3 月</td><td>24</td><td>NT$380,000</td></tr>
+          <tr><td data-en="Before Mar 15, Grade 10">高一 3 月 15 日前</td><td data-en="base">基準</td><td>NT$300,000</td></tr>
+          <tr><td data-en="June, Grade 10">高一 6 月</td><td>3</td><td>NT$310,000</td></tr>
+          <tr><td data-en="Sep, Grade 11">高二 9 月</td><td>6</td><td>NT$320,000</td></tr>
+          <tr><td data-en="Mar, Grade 11">高二 3 月</td><td>12</td><td>NT$340,000</td></tr>
+          <tr><td data-en="Sep, Grade 12">高三 9 月</td><td>18</td><td>NT$360,000</td></tr>
+          <tr><td data-en="Mar, Grade 12">高三 3 月</td><td>24</td><td>NT$380,000</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="calc">
-      <div class="calc-q">選手現在幾年級？</div>
-      <div class="calc-g" role="group" aria-label="進場年級">
-        <button type="button" data-g="g8" aria-pressed="true">國二</button>
-        <button type="button" data-g="g9" aria-pressed="false">國三</button>
-        <button type="button" data-g="h1" aria-pressed="false">高一</button>
-        <button type="button" data-g="h2" aria-pressed="false">高二</button>
-        <button type="button" data-g="h3" aria-pressed="false">高三</button>
+      <div class="calc-q" data-en="What grade is the player in?">選手現在幾年級？</div>
+      <div class="calc-g" role="group" aria-label="進場年級" data-en-attr="aria-label|Entry grade">
+        <button type="button" data-g="g8" aria-pressed="true" data-en="Grade 8">國二</button>
+        <button type="button" data-g="g9" aria-pressed="false" data-en="Grade 9">國三</button>
+        <button type="button" data-g="h1" aria-pressed="false" data-en="Grade 10">高一</button>
+        <button type="button" data-g="h2" aria-pressed="false" data-en="Grade 11">高二</button>
+        <button type="button" data-g="h3" aria-pressed="false" data-en="Grade 12">高三</button>
       </div>
       <div class="calc-rows">
-        <div class="row"><input type="checkbox" id="cQ" data-p="Q" checked><label for="cQ">諮詢<small>60 分鐘會談。往下走的話折抵</small></label><div class="qty">單次</div><div class="amt" data-amt="Q">NT$2,800</div></div>
-        <div class="row"><input type="checkbox" id="cX" data-p="X" checked><label for="cX">體檢<small>報告加 debrief。加入服務的話折抵</small></label><div class="qty">單次</div><div class="amt" data-amt="X">NT$15,000</div></div>
-        <div class="row"><input type="checkbox" id="cM" data-p="M" checked><label for="cM">地基會員<small>一個月一萬，任何年級都能加</small></label><div class="qty"><select id="qM" aria-label="會員學年數"><option value="1">1 學年</option><option value="2">2 學年</option><option value="3" selected>3 學年</option><option value="4">4 學年</option><option value="5">5 學年</option><option value="6">6 學年</option></select></div><div class="amt" data-amt="M">NT$360,000</div></div>
-        <div class="row"><input type="checkbox" id="cP" data-p="P" checked><label for="cP">招募專案<small>簽約到大一結束。基準 30 萬，晚簽加價</small></label><div class="qty">簽約到大一結束</div><div class="amt" data-amt="P">NT$300,000</div></div>
-        <div class="row"><input type="checkbox" id="cE" data-p="E"><label for="cE">招募英文<small>加價購。會員綑綁折 10%</small></label><div class="qty"><select id="qE" aria-label="英文課堂數"><option value="10">10 堂</option><option value="20">20 堂</option><option value="30">30 堂</option></select></div><div class="amt" data-amt="E">NT$13,500</div></div>
+        <div class="row"><input type="checkbox" id="cQ" data-p="Q" checked><label for="cQ" data-en="Consultation&lt;small&gt;60-minute call. Credited forward if you continue.&lt;/small&gt;">諮詢<small>60 分鐘會談。往下走的話折抵</small></label><div class="qty" data-en="One-off">單次</div><div class="amt" data-amt="Q">NT$2,800</div></div>
+        <div class="row"><input type="checkbox" id="cX" data-p="X" checked><label for="cX" data-en="Assessment&lt;small&gt;Report plus debrief. Credited forward if you join.&lt;/small&gt;">體檢<small>報告加 debrief。加入服務的話折抵</small></label><div class="qty" data-en="One-off">單次</div><div class="amt" data-amt="X">NT$15,000</div></div>
+        <div class="row"><input type="checkbox" id="cM" data-p="M" checked><label for="cM" data-en="Foundation Membership&lt;small&gt;NT$10,000 a month. Any grade can join.&lt;/small&gt;">地基會員<small>一個月一萬，任何年級都能加</small></label><div class="qty"><select id="qM" aria-label="會員學年數" data-en-attr="aria-label|Membership years"><option value="1" data-en="1 year">1 學年</option><option value="2" data-en="2 years">2 學年</option><option value="3" selected data-en="3 years">3 學年</option><option value="4" data-en="4 years">4 學年</option><option value="5" data-en="5 years">5 學年</option><option value="6" data-en="6 years">6 學年</option></select></div><div class="amt" data-amt="M">NT$360,000</div></div>
+        <div class="row"><input type="checkbox" id="cP" data-p="P" checked><label for="cP" data-en="Recruiting Project&lt;small&gt;From signing to the end of freshman year. NT$300,000 base, more if signed late.&lt;/small&gt;">招募專案<small>簽約到大一結束。基準 30 萬，晚簽加價</small></label><div class="qty" data-en="Signing to end of freshman year">簽約到大一結束</div><div class="amt" data-amt="P">NT$300,000</div></div>
+        <div class="row"><input type="checkbox" id="cE" data-p="E"><label for="cE" data-en="Recruiting English&lt;small&gt;Add-on. 10% off when bundled with membership.&lt;/small&gt;">招募英文<small>加價購。會員綑綁折 10%</small></label><div class="qty"><select id="qE" aria-label="英文課堂數" data-en-attr="aria-label|Number of English lessons"><option value="10" data-en="10 lessons">10 堂</option><option value="20" data-en="20 lessons">20 堂</option><option value="30" data-en="30 lessons">30 堂</option></select></div><div class="amt" data-amt="E">NT$13,500</div></div>
       </div>
       <div class="calc-sum">
-        <div><div class="lab">你會付的總額</div><div class="big" id="calcTotal">NT$660,000</div></div>
-        <div class="per">陪 <b id="calcMonths">40</b> 個月<br>平均每月 <b id="calcPer">NT$16,500</b></div>
+        <div><div class="lab" data-en="What you will pay">你會付的總額</div><div class="big" id="calcTotal">NT$660,000</div></div>
+        <div class="per" data-en="Over &lt;b id=&quot;calcMonths&quot;&gt;40&lt;/b&gt; months&lt;br&gt;Average &lt;b id=&quot;calcPer&quot;&gt;NT$16,500&lt;/b&gt; a month">陪 <b id="calcMonths">40</b> 個月<br>平均每月 <b id="calcPer">NT$16,500</b></div>
       </div>
       <p class="calc-note" id="calcNote"></p>
     </div>
 
     <div class="fine">
       <div>
-        <h3>我們接得下的量，與退費</h3>
-        招募階段<b>同時最多只接 8 位選手</b>。不是行銷話術，是時間算得出來的：兩條線都買的學生每個月要兩次一對一，招募一次、地基一次，不合併。接不下就是不接，不接的標準公開。<br><br>
-        招募專案的六期對齊教育部海外留學定型化契約六階段：諮詢選校 15%、文件 15%、送件 25%、錄取 20%、簽證 15%、行前與第一年 10%，退費照法規階梯。另外兩個我們自己加的退費觸發點：學校名單每一所都附個別理由，抓到公版名單全退該期；送件後 90 天內零封教練書面回覆，退送件期的一半。
+        <h3 data-en="How many we can take, and refunds">我們接得下的量，與退費</h3>
+        <span data-en="We carry &lt;b&gt;a maximum of 8 players in the recruiting stage at any one time&lt;/b&gt;. That is not a marketing line, it is arithmetic: a student on both tracks needs two one-to-ones a month, one for recruiting and one for foundation, and they are not merged. If we cannot take it, we do not, and the standard for declining is public.&lt;br&gt;&lt;br&gt;The Recruiting Project's six phases follow the six stages of Taiwan's Ministry of Education standard study-abroad contract: school selection 15%, documents 15%, submission 25%, admission 20%, visa 15%, departure and first year 10%, with refunds on the statutory ladder. We add two refund triggers of our own: every school on the list carries an individual reason, and if a boilerplate list is found we refund that phase in full; if no coach replies in writing within 90 days of submission, we refund half the submission phase.">招募階段<b>同時最多只接 8 位選手</b>。不是行銷話術，是時間算得出來的：兩條線都買的學生每個月要兩次一對一，招募一次、地基一次，不合併。接不下就是不接，不接的標準公開。<br><br>
+        招募專案的六期對齊教育部海外留學定型化契約六階段：諮詢選校 15%、文件 15%、送件 25%、錄取 20%、簽證 15%、行前與第一年 10%，退費照法規階梯。另外兩個我們自己加的退費觸發點：學校名單每一所都附個別理由，抓到公版名單全退該期；送件後 90 天內零封教練書面回覆，退送件期的一半。</span>
       </div>
       <div>
-        <h3>招募英文，加價購</h3>
-        一對一，內容照他缺的排。學術英文（essay、大學課堂與寫作）、網球英文加自我介紹加面談，檢定要考也教。先看他要申請的學校門檻是多少、他現在差多少，再決定教什麼、教多久。每 10 堂為一期收，會員綑綁折 10%。
+        <h3 data-en="Recruiting English, as an add-on">招募英文，加價購</h3>
+        <span data-en="One-to-one, built around what he is missing. Academic English (essays, college classes and writing), tennis English plus self-introduction and interviews, and test prep if a test is needed. We start from the threshold at his target schools and how far he is from it, then decide what to teach and for how long. Billed in blocks of 10 lessons, 10% off when bundled with membership.">一對一，內容照他缺的排。學術英文（essay、大學課堂與寫作）、網球英文加自我介紹加面談，檢定要考也教。先看他要申請的學校門檻是多少、他現在差多少，再決定教什麼、教多久。每 10 堂為一期收，會員綑綁折 10%。</span>
         <table>
-          <tr><td>10 堂</td><td>NT$15,000</td></tr>
-          <tr><td>20 堂</td><td>NT$28,000</td></tr>
-          <tr><td>30 堂</td><td>NT$40,000</td></tr>
+          <tr><td data-en="10 lessons">10 堂</td><td>NT$15,000</td></tr>
+          <tr><td data-en="20 lessons">20 堂</td><td>NT$28,000</td></tr>
+          <tr><td data-en="30 lessons">30 堂</td><td>NT$40,000</td></tr>
         </table>
       </div>
     </div>
@@ -1165,19 +1174,19 @@ footer .legal p+p{margin-top:4px}
 <section class="sand" id="exam">
   <div class="wrap">
     <div class="head">
-      <div class="lead">怎麼開始</div>
-      <h2>先 60 分鐘諮詢，<br>再決定要不要做體檢</h2>
-      <p>諮詢 NT$2,800，體檢 NT$15,000，前面付過的都往下折抵。如果我們判斷現在不適合啟動，會直接說，報告裡也會附一份不加入也能自己做的版本。</p>
+      <div class="lead" data-en="How to start">怎麼開始</div>
+      <h2 data-en="A 60-minute consultation first.&lt;br&gt;Then decide about the assessment.">先 60 分鐘諮詢，<br>再決定要不要做體檢</h2>
+      <p data-en="Consultation NT$2,800, assessment NT$15,000, and everything paid earlier is credited forward. If we judge that now is not the time to start, we say so plainly, and the report still includes a version you can execute on your own.">諮詢 NT$2,800，體檢 NT$15,000，前面付過的都往下折抵。如果我們判斷現在不適合啟動，會直接說，報告裡也會附一份不加入也能自己做的版本。</p>
     </div>
 
     <div class="stepper" id="stepper">
-      <div class="strip" role="tablist" aria-label="體檢流程六個步驟">
-        <button role="tab" aria-selected="true"  data-i="0"><span class="k">01</span><span class="arw"></span><span class="t">諮詢</span><span class="w">60 分鐘</span></button>
-        <button role="tab" aria-selected="false" data-i="1"><span class="k">02</span><span class="arw"></span><span class="t">填寫體檢問卷</span><span class="w">面談前 7 天</span></button>
-        <button role="tab" aria-selected="false" data-i="2"><span class="k">03</span><span class="arw"></span><span class="t">體檢報告準備</span><span class="w">面談前 2 天</span></button>
-        <button role="tab" aria-selected="false" data-i="3"><span class="k">04</span><span class="arw"></span><span class="t">體檢面談</span><span class="w">90 分鐘</span></button>
-        <button role="tab" aria-selected="false" data-i="4"><span class="k">05</span><span class="arw"></span><span class="t">體檢報告出爐</span><span class="w">48 小時內</span></button>
-        <button role="tab" aria-selected="false" data-i="5"><span class="k">06</span><span class="arw"></span><span class="t">體檢報告回饋會議</span><span class="w">60 分鐘</span></button>
+      <div class="strip" role="tablist" aria-label="體檢流程六個步驟" data-en-attr="aria-label|The six steps of the assessment">
+        <button role="tab" aria-selected="true"  data-i="0"><span class="k">01</span><span class="arw"></span><span class="t" data-en="Consultation">諮詢</span><span class="w" data-en="60 min">60 分鐘</span></button>
+        <button role="tab" aria-selected="false" data-i="1"><span class="k">02</span><span class="arw"></span><span class="t" data-en="Fill in the questionnaire">填寫體檢問卷</span><span class="w" data-en="7 days before">面談前 7 天</span></button>
+        <button role="tab" aria-selected="false" data-i="2"><span class="k">03</span><span class="arw"></span><span class="t" data-en="Report preparation">體檢報告準備</span><span class="w" data-en="2 days before">面談前 2 天</span></button>
+        <button role="tab" aria-selected="false" data-i="3"><span class="k">04</span><span class="arw"></span><span class="t" data-en="Assessment interview">體檢面談</span><span class="w" data-en="90 min">90 分鐘</span></button>
+        <button role="tab" aria-selected="false" data-i="4"><span class="k">05</span><span class="arw"></span><span class="t" data-en="Report delivered">體檢報告出爐</span><span class="w" data-en="within 48 hrs">48 小時內</span></button>
+        <button role="tab" aria-selected="false" data-i="5"><span class="k">06</span><span class="arw"></span><span class="t" data-en="Report debrief">體檢報告回饋會議</span><span class="w" data-en="60 min">60 分鐘</span></button>
       </div>
       <div class="stage-panel" id="stepPanel" aria-live="polite"></div>
     </div>
@@ -1187,48 +1196,48 @@ footer .legal p+p{margin-top:4px}
 <section id="faq">
   <div class="wrap">
     <div class="head">
-      <h2>常見問題</h2>
+      <h2 data-en="Frequently asked questions">常見問題</h2>
     </div>
     <div class="faq">
       <details>
-        <summary>你們跟留學代辦差在哪裡？</summary>
-        <div class="a"><p>代辦做的事我們也做：翻譯品管、申請文件、Eligibility Center、簽證。差別在代辦不做的：從國二開始的準備、用數據誠實判斷落點、心理與身分的工作、第一年在美國的支援。還有一個差別是分工：信、面談、決定是他自己做，我們只改不代寫。因為到了美國之後，沒有人會替他寫信給教授。</p></div>
+        <summary data-en="How are you different from a study-abroad agency?">你們跟留學代辦差在哪裡？</summary>
+        <div class="a" data-en="&lt;p&gt;Agencies do certain things and so do we: translation QA, application documents, the Eligibility Center, the visa. The difference is what they do not do: preparation starting in Grade 8, an honest read of where he lands using data, the psychological and identity work, and support through his first year in the US. There is one more difference, in the division of labour. The letters, the interviews and the decisions are his; we edit, we never ghostwrite. Because once he is in the US, nobody is going to write to his professor for him.&lt;/p&gt;"><p>代辦做的事我們也做：翻譯品管、申請文件、Eligibility Center、簽證。差別在代辦不做的：從國二開始的準備、用數據誠實判斷落點、心理與身分的工作、第一年在美國的支援。還有一個差別是分工：信、面談、決定是他自己做，我們只改不代寫。因為到了美國之後，沒有人會替他寫信給教授。</p></div>
       </details>
       <details>
-        <summary>我的孩子 UTR 多少才有機會？</summary>
-        <div class="a"><p>誠實的落點：台灣男選手 UTR 10.5 到 12，目標是 D1 low-major、D2、NAIA、強的 D3；女選手 UTR 8 到 10，可以看 D1 mid-major 以下。這不是門檻，是目前的位置。體檢會用他的 Verified UTR、成績單和影片一起判斷，而且會告訴你他的曲線往哪個方向走。</p><p>沒有 Verified UTR 的話，體檢會先處理這件事。</p></div>
+        <summary data-en="What UTR does my child need to have a chance?">我的孩子 UTR 多少才有機會？</summary>
+        <div class="a" data-en="&lt;p&gt;The honest read: Taiwanese men at UTR 10.5 to 12 are looking at D1 low-major, D2, NAIA and strong D3. Women at UTR 8 to 10 can look at D1 mid-major and below. These are not cut-offs, they are where you stand today. The assessment reads his Verified UTR, transcripts and film together, and tells you which way his curve is heading.&lt;/p&gt;&lt;p&gt;If he has no Verified UTR yet, the assessment deals with that first.&lt;/p&gt;"><p>誠實的落點：台灣男選手 UTR 10.5 到 12，目標是 D1 low-major、D2、NAIA、強的 D3；女選手 UTR 8 到 10，可以看 D1 mid-major 以下。這不是門檻，是目前的位置。體檢會用他的 Verified UTR、成績單和影片一起判斷，而且會告訴你他的曲線往哪個方向走。</p><p>沒有 Verified UTR 的話，體檢會先處理這件事。</p></div>
       </details>
       <details>
-        <summary>什麼時候開始最好？</summary>
-        <div class="a"><p>國二下到高一。因為 NCAA 的招募日曆比台灣早一年：高一結束的 6 月 15 日教練就可以聯絡他，那天之前要備妥影片、Resume 和名單，而國三的成績已經算進核心 GPA。高二之後進場就沒有準備期了，直接買招募專案，而且要先體檢過。</p></div>
+        <summary data-en="When is the best time to start?">什麼時候開始最好？</summary>
+        <div class="a" data-en="&lt;p&gt;The spring of Grade 8 through Grade 10. The NCAA recruiting calendar runs a year ahead of Taiwan's: coaches can contact him from June 15 at the end of Grade 10, the film, resume and school list have to be ready before that day, and Grade 9 grades already count toward the core GPA. Enter after Grade 10 and there is no preparation window left. You buy the Recruiting Project directly, and only after the assessment clears it.&lt;/p&gt;"><p>國二下到高一。因為 NCAA 的招募日曆比台灣早一年：高一結束的 6 月 15 日教練就可以聯絡他，那天之前要備妥影片、Resume 和名單，而國三的成績已經算進核心 GPA。高二之後進場就沒有準備期了，直接買招募專案，而且要先體檢過。</p></div>
       </details>
       <details>
-        <summary>總共要花多少錢？</summary>
-        <div class="a"><p>兩個分開算。招募專案基準價 30 萬，高一 3 月 15 日以後每晚三個月加 1 萬，加價最多 10 萬。實際上最晚會來的是高三下學期，那是 38 萬。地基會員一個月一萬，年費 12 萬，買幾年自己決定。</p><p>兩個都買的話：高一簽是 66 萬（會員 3 學年加專案 30 萬），高三才來是 48 萬（會員 1 學年加專案 36 萬）。上面的計算器可以自己加減。</p><p>這不含美國的學費與生活費：一年在美國的花費依學校與獎學金差很多，體檢報告的預算可行性會用 I‑20 差額算出三個層級的四年台幣區間。</p></div>
+        <summary data-en="What does it cost in total?">總共要花多少錢？</summary>
+        <div class="a" data-en="&lt;p&gt;They are priced separately. The Recruiting Project has a base price of NT$300,000, rising NT$10,000 for every three months after March 15 of Grade 10, capped at NT$100,000. In practice the latest anyone arrives is the spring of Grade 12, which is NT$380,000. Foundation Membership is NT$10,000 a month, NT$120,000 a year, for as many years as you choose.&lt;/p&gt;&lt;p&gt;Buying both: signing in Grade 10 is NT$660,000 (three years of membership plus NT$300,000 for the project); arriving in Grade 12 is NT$480,000 (one year of membership plus NT$360,000). The calculator above lets you work it out yourself.&lt;/p&gt;&lt;p&gt;This excludes US tuition and living costs. A year in the US varies enormously by school and scholarship, and the budget section of the assessment report uses the I-20 funding gap to produce a four-year NT$ range at three different levels.&lt;/p&gt;"><p>兩個分開算。招募專案基準價 30 萬，高一 3 月 15 日以後每晚三個月加 1 萬，加價最多 10 萬。實際上最晚會來的是高三下學期，那是 38 萬。地基會員一個月一萬，年費 12 萬，買幾年自己決定。</p><p>兩個都買的話：高一簽是 66 萬（會員 3 學年加專案 30 萬），高三才來是 48 萬（會員 1 學年加專案 36 萬）。上面的計算器可以自己加減。</p><p>這不含美國的學費與生活費：一年在美國的花費依學校與獎學金差很多，體檢報告的預算可行性會用 I‑20 差額算出三個層級的四年台幣區間。</p></div>
       </details>
       <details>
-        <summary>你們保證錄取嗎？</summary>
-        <div class="a"><p>不保證。錄取是教練的決定，任何人說保證都是在騙你。我們保證的是過程：合約裡把「我們會做到什麼」寫成可以驗證的承諾，做不到就退錢。名單抓到公版全退該期，送件後 90 天內零封教練書面回覆退送件期的一半。</p></div>
+        <summary data-en="Do you guarantee admission?">你們保證錄取嗎？</summary>
+        <div class="a" data-en="&lt;p&gt;No. Admission is the coach's decision, and anyone who guarantees it is lying to you. What we guarantee is the process: the contract turns &amp;quot;what we will do&amp;quot; into verifiable commitments, and if we do not deliver, you get money back. A boilerplate school list refunds that phase in full; no written coach reply within 90 days of submission refunds half the submission phase.&lt;/p&gt;"><p>不保證。錄取是教練的決定，任何人說保證都是在騙你。我們保證的是過程：合約裡把「我們會做到什麼」寫成可以驗證的承諾，做不到就退錢。名單抓到公版全退該期，送件後 90 天內零封教練書面回覆退送件期的一半。</p></div>
       </details>
       <details>
-        <summary>如果體檢之後你們說不適合呢？</summary>
-        <div class="a"><p>我們會直接說，而且會說原因。報告裡有一段「不加入也能自己做的版本」，列出接下來三個月該做的三件事，這份報告你帶走。體檢費不退，但如果一年後條件不一樣了想再來，之前的體檢費可以折抵。</p></div>
+        <summary data-en="What if the assessment says it is not a fit?">如果體檢之後你們說不適合呢？</summary>
+        <div class="a" data-en="&lt;p&gt;We say so directly, and we say why. The report contains a section you can execute without us, listing the three things that matter most over the next three months, and the report is yours to keep. The assessment fee is not refunded, but if conditions change and you come back within a year, it credits toward the service.&lt;/p&gt;"><p>我們會直接說，而且會說原因。報告裡有一段「不加入也能自己做的版本」，列出接下來三個月該做的三件事，這份報告你帶走。體檢費不退，但如果一年後條件不一樣了想再來，之前的體檢費可以折抵。</p></div>
       </details>
       <details>
-        <summary>英文要多好？要考 TOEFL 嗎？</summary>
-        <div class="a"><p>TOEFL、IELTS、Duolingo 這類檢定是學校入學的要求，不是 NCAA 的。要考我們就教，但不會給他一套現成的補習教材。先看他要申請的學校門檻是多少、他現在差多少，再決定教什麼、教多久。</p><p>比檢定更重要的是兩件事：課堂聽得懂、寫得出來，還有跟教練視訊的時候答得出來。這兩件是他到了美國每天要用的。地基會員在高一那年含四堂面談英文演練，招募專案含 Zoom 面談前的模擬，不夠的話可以加購招募英文。</p></div>
+        <summary data-en="How good does his English need to be? Does he need TOEFL?">英文要多好？要考 TOEFL 嗎？</summary>
+        <div class="a" data-en="&lt;p&gt;TOEFL, IELTS and Duolingo are the school's admission requirement, not the NCAA's. If a test is needed we teach it, but we will not hand him an off-the-shelf cram package. We start from the threshold at his target schools and how far he is from it, then decide what to teach and for how long.&lt;/p&gt;&lt;p&gt;Two things matter more than the test: following a lecture and writing the assignment, and answering a coach on a video call. Those are what he uses every day in the US. Foundation Membership includes four interview-English rehearsals in the Grade 10 year, the Recruiting Project includes Zoom interview simulations, and if that is not enough you can add Recruiting English.&lt;/p&gt;"><p>TOEFL、IELTS、Duolingo 這類檢定是學校入學的要求，不是 NCAA 的。要考我們就教，但不會給他一套現成的補習教材。先看他要申請的學校門檻是多少、他現在差多少，再決定教什麼、教多久。</p><p>比檢定更重要的是兩件事：課堂聽得懂、寫得出來，還有跟教練視訊的時候答得出來。這兩件是他到了美國每天要用的。地基會員在高一那年含四堂面談英文演練，招募專案含 Zoom 面談前的模擬，不夠的話可以加購招募英文。</p></div>
       </details>
       <details>
-        <summary>男生的兵役怎麼辦？</summary>
-        <div class="a"><p>兵役看 19 歲那一年的 1 月 1 日，NCAA 的年齡規則看 19 歲生日對 9 月 1 日，兩個日期分開算。體檢會用他的出生年月各算一次。應屆出國通常辦得下來，役男狀態確認排在高三 2 月。</p></div>
+        <summary data-en="What about conscription for boys?">男生的兵役怎麼辦？</summary>
+        <div class="a" data-en="&lt;p&gt;Conscription counts from January 1 of the year he turns 19. The NCAA age rule reads his 19th birthday against September 1. They are two separate clocks. The assessment runs both from his date of birth. Going straight from graduation usually clears, and conscription status is confirmed in February of Grade 12.&lt;/p&gt;"><p>兵役看 19 歲那一年的 1 月 1 日，NCAA 的年齡規則看 19 歲生日對 9 月 1 日，兩個日期分開算。體檢會用他的出生年月各算一次。應屆出國通常辦得下來，役男狀態確認排在高三 2 月。</p></div>
       </details>
       <details>
-        <summary>家長要做什麼？</summary>
-        <div class="a"><p>地基會員每年有兩次家長工作坊，那裡會講清楚一件事：教練要看的是選手本人，所以聯絡教練的每一步都由他出面。工作坊會教你怎麼在旁邊支持而不是代替他。</p><p>體檢報告有家長版，第九軸「支持系統」也會誠實寫家長的回饋方式對他的影響。</p></div>
+        <summary data-en="What do parents do?">家長要做什麼？</summary>
+        <div class="a" data-en="&lt;p&gt;Foundation Membership includes two parent workshops a year, where one thing is made clear: the coach wants to see the player himself, so every step of contacting a coach comes from him. The workshop teaches you how to support from beside him rather than instead of him.&lt;/p&gt;&lt;p&gt;The assessment report has a parent version, and the ninth axis, support system, is honest about how the family's style of feedback affects him.&lt;/p&gt;"><p>地基會員每年有兩次家長工作坊，那裡會講清楚一件事：教練要看的是選手本人，所以聯絡教練的每一步都由他出面。工作坊會教你怎麼在旁邊支持而不是代替他。</p><p>體檢報告有家長版，第九軸「支持系統」也會誠實寫家長的回饋方式對他的影響。</p></div>
       </details>
       <details>
-        <summary>到了美國之後呢？</summary>
-        <div class="a"><p>失敗集中在第一年，所以招募與落地方案包含大一整年：每月 30 分鐘視訊 check-in、學期中一次三方通話、隨時可以傳訊息、年底一次結業評估。合約會明寫第一年支援是什麼、不是什麼。</p></div>
+        <summary data-en="What happens once he is in the US?">到了美國之後呢？</summary>
+        <div class="a" data-en="&lt;p&gt;Failure clusters in the first year, so the recruiting and landing plan covers the whole freshman year: a 30-minute video check-in every month, one three-way call mid-semester, messaging whenever it is needed, and one year-end review. The contract states exactly what first-year support is and is not.&lt;/p&gt;"><p>失敗集中在第一年，所以招募與落地方案包含大一整年：每月 30 分鐘視訊 check-in、學期中一次三方通話、隨時可以傳訊息、年底一次結業評估。合約會明寫第一年支援是什麼、不是什麼。</p></div>
       </details>
     </div>
   </div>
@@ -1237,20 +1246,20 @@ footer .legal p+p{margin-top:4px}
 <section class="dark cta" id="book">
   <div class="wrap">
     <div>
-      <div class="lead">第一步</div>
-      <h2>先花 60 分鐘認識我們</h2>
-      <p class="sub">諮詢 NT$2,800。一份短問卷加 60 分鐘線上會談，我們說明服務怎麼運作、選手大概在哪個位置。往下走的話這筆錢折抵體檢，體檢再折抵服務。</p>
+      <div class="lead" data-en="Step one">第一步</div>
+      <h2 data-en="Spend 60 minutes getting to know us">先花 60 分鐘認識我們</h2>
+      <p class="sub" data-en="Consultation NT$2,800. A short questionnaire plus a 60-minute call online, where we explain how the service works and roughly where the player stands. If you continue, this credits against the assessment, and the assessment credits against the service.">諮詢 NT$2,800。一份短問卷加 60 分鐘線上會談，我們說明服務怎麼運作、選手大概在哪個位置。往下走的話這筆錢折抵體檢，體檢再折抵服務。</p>
       <div class="acts">
-        <a class="btn primary" href="#form">填諮詢問卷</a>
-        <span class="mail" data-email hidden>有問題先寫信 <a href="#" data-email-link></a></span>
+        <a class="btn primary" href="#form" data-en="Fill in the enquiry form">填諮詢問卷</a>
+        <span class="mail" data-email hidden data-en="Questions first? Email us ">有問題先寫信 <a href="#" data-email-link></a></span>
       </div>
     </div>
     <ol>
-      <li>諮詢 2,800，60 分鐘認識我們</li>
-      <li>體檢 15,000，長問卷加 90 分鐘面談</li>
-      <li>48 小時內收到報告，家長版與選手版</li>
-      <li>60 分鐘一起讀報告，決定要不要啟動</li>
-      <li>加入服務，前面付過的都折抵</li>
+      <li data-en="Consultation NT$2,800, 60 minutes to get to know us">諮詢 2,800，60 分鐘認識我們</li>
+      <li data-en="Assessment NT$15,000, long questionnaire plus a 90-minute interview">體檢 15,000，長問卷加 90 分鐘面談</li>
+      <li data-en="Report within 48 hours, in a parent version and a player version">48 小時內收到報告，家長版與選手版</li>
+      <li data-en="60 minutes reading it together, then you decide whether to start">60 分鐘一起讀報告，決定要不要啟動</li>
+      <li data-en="Join the service and everything paid earlier is credited">加入服務，前面付過的都折抵</li>
     </ol>
   </div>
 </section>
@@ -1258,16 +1267,16 @@ footer .legal p+p{margin-top:4px}
 <section class="sand" id="form" style="scroll-margin-top:64px">
   <div class="wrap">
     <div class="head">
-      <div class="lead">從這裡開始</div>
-      <h2>預約 60 分鐘諮詢</h2>
-      <p>5 分鐘的問卷，不用附任何檔案。填完我們會在 2 個工作天內回信安排時間。諮詢之後如果要做體檢，體檢問卷會另外寄給你。</p>
+      <div class="lead" data-en="Start here">從這裡開始</div>
+      <h2 data-en="Book a 60-minute consultation">預約 60 分鐘諮詢</h2>
+      <p data-en="A five-minute form with no files to attach. Once it is in, we reply within two working days to schedule. If you go on to the assessment, that questionnaire is sent to you separately.">5 分鐘的問卷，不用附任何檔案。填完我們會在 2 個工作天內回信安排時間。諮詢之後如果要做體檢，體檢問卷會另外寄給你。</p>
     </div>
     <div class="form">
-      <div class="form-top"><b>Kuroshio 諮詢問卷</b><span>NT$2,800，往下走全額折抵</span></div>
+      <div class="form-top" data-en="&lt;b&gt;Kuroshio enquiry form&lt;/b&gt;&lt;span&gt;NT$2,800, credited in full if you continue&lt;/span&gt;"><b>Kuroshio 諮詢問卷</b><span>NT$2,800，往下走全額折抵</span></div>
       <iframe data-tally-src="https://tally.so/embed/LZrGDz?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
               src="https://tally.so/embed/LZrGDz?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
-              loading="lazy" height="640" title="Kuroshio 諮詢問卷"></iframe>
-      <p class="form-fb">表單開不起來的話，<a href="https://tally.so/r/LZrGDz" target="_blank" rel="noopener">在新分頁開啟諮詢問卷</a>。</p>
+              loading="lazy" height="640" title="Kuroshio 諮詢問卷" data-en-attr="title|Kuroshio enquiry form"></iframe>
+      <p class="form-fb" data-en="If the form will not load, &lt;a href=&quot;https://tally.so/r/LZrGDz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;open the enquiry form in a new tab&lt;/a&gt;.">表單開不起來的話，<a href="https://tally.so/r/LZrGDz" target="_blank" rel="noopener">在新分頁開啟諮詢問卷</a>。</p>
     </div>
   </div>
 </section>
@@ -1276,10 +1285,10 @@ footer .legal p+p{margin-top:4px}
 
 <footer>
   <div class="wrap">
-    <div class="brand">Kuroshio Athletics<small>黑潮運動，平誠行銷有限公司</small></div>
+    <div class="brand" data-en="Kuroshio Athletics&lt;small&gt;A Pincheng Marketing Co., Ltd. service&lt;/small&gt;">Kuroshio Athletics<small>黑潮運動，平誠行銷有限公司</small></div>
     <div class="legal">
-      <p><span data-taxid hidden>統一編號 <span data-taxid-value></span></span> <span data-email hidden><a data-email-link href="#"></a></span></p>
-      <p>本網頁所載費用與流程為一般情況說明，實際以雙方簽署之書面契約為準。本公司不提供錄取或獎學金保證。</p>
+      <p><span data-taxid hidden data-en="Tax ID ">統一編號 <span data-taxid-value></span></span> <span data-email hidden><a data-email-link href="#"></a></span></p>
+      <p data-en="The fees and process described on this page are a general explanation. The signed written contract governs. We do not provide any guarantee of admission or scholarship.">本網頁所載費用與流程為一般情況說明，實際以雙方簽署之書面契約為準。本公司不提供錄取或獎學金保證。</p>
     </div>
   </div>
 </footer>
@@ -1298,6 +1307,43 @@ var TAX_ID = "95435096";
     document.querySelector('[data-taxid-value]').textContent=TAX_ID;
     document.querySelector('[data-taxid]').hidden=false;
   }
+
+  // ---- 中英切換 ----
+  // 英文寫在各元素的 data-en 上，中文留在 HTML 裡當唯一來源。
+  // 切換時把原本的中文存進 data-zh，之後兩邊互換。
+  var LANG='zh';
+  var META={
+    zh:{title:'Kuroshio Athletics 黑潮運動｜台灣網球選手赴美大學的準備',
+        desc:'代辦幫你把申請送出去，我們更在意的是送出去以前，選手準備好了沒有。台灣網球選手赴美大學的準備服務，從國二的課表開始，到抵美第一年結束。價格公式公開，不保證錄取。'},
+    en:{title:'Kuroshio Athletics｜NCAA tennis recruiting for Taiwanese players',
+        desc:'Agencies submit the application. We care more about whether the player is ready before it goes out. Long-term NCAA preparation for Taiwanese tennis players, from the 8th-grade course plan to the end of freshman year in the US. Pricing formula published. No admission guaranteed.'}
+  };
+  function applyLang(l){
+    LANG = (l==='en') ? 'en' : 'zh';
+    document.documentElement.lang = LANG==='en' ? 'en' : 'zh-Hant';
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      if(!el.hasAttribute('data-zh')) el.setAttribute('data-zh', el.innerHTML);
+      el.innerHTML = LANG==='en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
+    });
+    document.querySelectorAll('[data-en-attr]').forEach(function(el){
+      var spec=el.getAttribute('data-en-attr').split('|');   // 格式 屬性名|英文值
+      var name=spec[0], val=spec.slice(1).join('|');
+      if(!el.hasAttribute('data-zh-attr')) el.setAttribute('data-zh-attr', el.getAttribute(name)||'');
+      el.setAttribute(name, LANG==='en' ? val : el.getAttribute('data-zh-attr'));
+    });
+    document.title = META[LANG].title;
+    var md=document.querySelector('meta[name="description"]');
+    if(md) md.setAttribute('content', META[LANG].desc);
+    var lb=document.getElementById('langBtn');
+    if(lb) lb.textContent = LANG==='en' ? '中文' : 'EN';
+    try{ localStorage.setItem('kuroshio-lang', LANG); }catch(e){}
+    var u=new URL(location.href);
+    if(LANG==='en') u.searchParams.set('lang','en'); else u.searchParams.delete('lang');
+    history.replaceState(null,'',u);
+    if(window.__relang) window.__relang();       // 重畫用 JS 產生的區塊
+  }
+  var lb0=document.getElementById('langBtn');
+  if(lb0) lb0.addEventListener('click',function(){ applyLang(LANG==='en'?'zh':'en'); });
 
   // 年級切換：面板加時間軸游標，數字用滾的
   var tabs=document.querySelectorAll('.grades [role=tab]');
@@ -1322,9 +1368,21 @@ var TAX_ID = "95435096";
     }
   }
   // 把每個面板的目標數字記下來，滾動時才知道要滾到多少
-  document.querySelectorAll('.gpanel .gcm,.gpanel .gcd').forEach(function(el){
-    el.dataset.to=el.textContent.trim();
-  });
+  function captureTargets(){
+    document.querySelectorAll('.gpanel .gcm,.gpanel .gcd').forEach(function(el){
+      el.dataset.to=el.textContent.trim();
+    });
+  }
+  captureTargets();
+  window.__relang=function(){                 // 換語言後 innerHTML 被換掉，要重抓一次
+    captureTargets();
+    var act=document.querySelector('.grades [role=tab][aria-selected="true"]');
+    tabs.forEach(function(t,i){ if(t===act) select(t,i); });
+    if(window.__redrawStep) window.__redrawStep();
+    if(window.__redrawNona) window.__redrawNona();
+    if(window.__redrawUTR) window.__redrawUTR();
+    if(window.__redrawCalc) window.__redrawCalc();
+  };
   tabs.forEach(function(t,i){
     t.addEventListener('click',function(){select(t,i);});
     t.addEventListener('keydown',function(e){
@@ -1359,19 +1417,19 @@ var TAX_ID = "95435096";
     // 諮詢與體檢：加入服務就全額折抵
     ['Q','X'].forEach(function(k){
       var on=box(k).checked;
-      amt(k).textContent = on ? (joined?'折抵後 NT$0':nf(P[k])) : nf(0);
+      amt(k).textContent = on ? (joined?(LANG==='en'?'Credited　NT$0':'折抵後 NT$0'):nf(P[k])) : nf(0);
       if(on && !joined) total += P[k];
     });
     // 只做體檢沒做諮詢時體檢全額；有諮詢時 2,800 折進體檢，合計仍是 15,000
     if(!joined && box('Q').checked && box('X').checked){
       total = P.X;
-      amt('X').textContent = nf(P.X - P.Q) + ' 折抵後';
+      amt('X').textContent = nf(P.X - P.Q) + (LANG==='en'?'　after credit':' 折抵後');
     }
 
     var mAmt = mOn ? P.M*my : 0;
     amt('M').textContent = nf(mAmt); total += mAmt;
     var pAmt = pOn ? P.P + lateNow : 0;
-    if(pOn && lateNow) amt('P').innerHTML = nf(pAmt) + '<small>含晚簽加價 ' + nf(lateNow) + '</small>';
+    if(pOn && lateNow) amt('P').innerHTML = nf(pAmt) + '<small>' + (LANG==='en'?'incl. late-signing surcharge ':'含晚簽加價 ') + nf(lateNow) + '</small>';
     else amt('P').textContent = nf(pAmt);
     total += pAmt;
 
@@ -1391,18 +1449,18 @@ var TAX_ID = "95435096";
     } else {
       document.getElementById('calcTotal').textContent = nf(total);
       document.getElementById('calcMonths').textContent = months;
-      document.getElementById('calcPer').textContent = months ? nf(perM) : '不適用';
+      document.getElementById('calcPer').textContent = months ? nf(perM) : (LANG==='en'?'n/a':'不適用');
     }
-    if(!months) document.getElementById('calcPer').textContent = '不適用';
+    if(!months) document.getElementById('calcPer').textContent = (LANG==='en'?'n/a':'不適用');
 
-    var note=[];
-    if(joined && (box('Q').checked||box('X').checked)) note.push('諮詢與體檢的錢往下折抵，所以總額裡是 0。');
-    if(pOn) note.push('招募專案的 NT$300,000 分兩段：招募段 200,000，落地段 100,000 錄取後才付。');
-    if(pOn) note.push('算的是這個年級開學時簽約。晚幾個月照上面那張表加。');
-    if(mOn && pOn) note.push('兩條線是並行的不是接力，所以月數取比較長的那一條，不是相加。');
-    if(box('E').checked && joined) note.push('招募英文已套用會員綑綁 9 折。');
-    if(!joined) note.push('還沒加入服務，所以諮詢與體檢是實際要付的錢。');
-    note.push('以上不含美國的學費與生活費。那一段依學校與獎學金差很多，體檢報告會用 I‑20 差額算出四年的台幣區間。');
+    var EN=(LANG==='en'), note=[];
+    if(joined && (box('Q').checked||box('X').checked)) note.push(EN?'The consultation and assessment fees credit forward, so they show as 0 in the total.':'諮詢與體檢的錢往下折抵，所以總額裡是 0。');
+    if(pOn) note.push(EN?'The Recruiting Project\u2019s NT$300,000 splits in two: NT$200,000 for the recruiting phase and NT$100,000 for the landing phase, paid after admission.':'招募專案的 NT$300,000 分兩段：招募段 200,000，落地段 100,000 錄取後才付。');
+    if(pOn) note.push(EN?'This assumes signing at the start of that school year. Add the surcharge from the table above for each further delay.':'算的是這個年級開學時簽約。晚幾個月照上面那張表加。');
+    if(mOn && pOn) note.push(EN?'The two tracks run in parallel, not in sequence, so the month count is the longer of the two rather than the sum.':'兩條線是並行的不是接力，所以月數取比較長的那一條，不是相加。');
+    if(box('E').checked && joined) note.push(EN?'Recruiting English has the 10% membership bundle discount applied.':'招募英文已套用會員綑綁 9 折。');
+    if(!joined) note.push(EN?'No service has been added yet, so the consultation and assessment are money you actually pay.':'還沒加入服務，所以諮詢與體檢是實際要付的錢。');
+    note.push(EN?'US tuition and living costs are not included. That varies enormously by school and scholarship, and the assessment report uses the I-20 funding gap to produce a four-year NT$ range.':'以上不含美國的學費與生活費。那一段依學校與獎學金差很多，體檢報告會用 I‑20 差額算出四年的台幣區間。');
     document.getElementById('calcNote').textContent = note.join(' ');
   }
 
@@ -1418,6 +1476,7 @@ var TAX_ID = "95435096";
   });
   document.querySelectorAll('.calc input,.calc select').forEach(function(el){el.addEventListener('change',calc);});
   calc();
+  window.__redrawCalc=calc;
 
   // ---- 六步驟 stepper ----
   var STEPS=[
@@ -1440,6 +1499,27 @@ var TAX_ID = "95435096";
      '一起把報告讀完，講三個月內要做的三件事，說明如果啟動要從哪一段接。如果我們判斷現在不適合，會在這裡直接說，並給你一份不加入也能自己做的版本。',
      '要不要加入服務，你回家再決定。我們不當場問。']
   ];
+  var STEPS_EN=[
+    ['Consultation','60 min online','NT$2,800, credited in full if you continue',
+     'A five-minute questionnaire and one 60-minute call online. We work out where the player currently stands, explain how the whole service runs, and answer whatever matters most to you. No pitch. We stop when the conversation stops, and you decide whether to take the next step.',
+     'When the call ends, if you decide to do the assessment we send you the questionnaire and payment details the same day.'],
+    ['Fill in the questionnaire','7 days before the interview','This is where the assessment starts',
+     'Subject-by-subject transcripts for every semester from Grade 9, the class track, date of birth, a link to the UTR profile, and one full match on video. If there is no film, the questionnaire includes filming instructions. A phone on a tripod for one match is enough.',
+     'We only schedule the interview once those four are in. Without them the interview turns into a session of asking for basic information.'],
+    ['Report preparation','2 days before the interview','Nothing for you to do',
+     'We run the numbers on what you sent: an NCAA eligibility estimate, which band the UTR falls into, an initial direction of six to nine schools, a full watch of that match, and the list of questions for the interview.',
+     'This takes about four hours and you never see it. Doing it is what makes those 90 minutes worth having.'],
+    ['Assessment interview','90 min online','Player and parents both attend',
+     'We watch that full match together, ten minutes in English, time with the player alone, time with the parents alone, and a short quiz on the rules. Splitting it is deliberate. Some honest answers only appear when the parents are out of the room.',
+     'Writing starts the moment the interview ends. It reaches your inbox within 48 hours.'],
+    ['Report delivered','within 48 hrs of the interview','One parent version, one player version',
+     'The nine axes plus two feasibility verdicts. The player version leads with strengths and turns weaknesses into drills. Time feasibility lays out four paths side by side; budget feasibility uses the I-20 funding gap to produce a four-year NT$ range.',
+     'After it is sent we schedule 60 minutes to read it together. We do not just email a PDF and call it done.'],
+    ['Report debrief','60 min online','The assessment ends here',
+     'We read the report through together, name the three things to do in the next three months, and explain which stage you would join at if you start. If we judge that now is not the time, we say so here, and give you a version you can execute without us.',
+     'Whether to join is something you decide at home. We do not ask on the call.']
+  ];
+  function stepsData(){ return LANG==='en' ? STEPS_EN : STEPS; }
   (function(){
     var strip=document.querySelector('#stepper .strip'), panel=document.getElementById('stepPanel');
     if(!strip||!panel) return;
@@ -1447,12 +1527,12 @@ var TAX_ID = "95435096";
     function show(i,focus){
       btns.forEach(function(b,k){b.setAttribute('aria-selected',k===i?'true':'false');});
       if(focus) btns[i].focus();
-      var d=STEPS[i], last=(i===STEPS.length-1);
+      var d=stepsData()[i], last=(i===STEPS.length-1);
       panel.innerHTML='<div class="lhs"><div class="when">'+d[1]+'</div><h3>'+d[0]+'</h3>'
         + (d[2]?'<div class="cost">'+d[2]+'</div>':'') + '</div>'
         + '<div class="rhs"><p>'+d[3]+'</p>'
         + '<div class="next'+(last?' last':'')+'"><div class="ico"></div><div>'
-        + '<b>'+(last?'然後呢':'接下來')+'</b><p>'+d[4]+'</p></div></div></div>';
+        + '<b>'+(LANG==='en'?(last?'And then':'What happens next'):(last?'然後呢':'接下來'))+'</b><p>'+d[4]+'</p></div></div></div>';
       if(window.gsap) gsap.from(panel.querySelectorAll('.lhs > *, .rhs > *'),
         {autoAlpha:0,y:10,duration:.4,stagger:.05,overwrite:true});
     }
@@ -1465,6 +1545,8 @@ var TAX_ID = "95435096";
       });
     });
     show(0);
+    window.__redrawStep=function(){ var a=strip.querySelector('[aria-selected="true"]');
+      show(Array.prototype.indexOf.call(btns,a)); };
   })();
 
   // ---- 九邊形：九條能力軸 ----
@@ -1479,6 +1561,18 @@ var TAX_ID = "95435096";
     ['制度知識與落地準備','招募','NCAA、役男、獎學金的規則；招募日程的執行力；抵美前六個月的準備。','他知道自己在跟什麼制度打交道嗎？'],
     ['支持系統','地基','家長工作坊、mentor、同儕、現任教練。含家長版。','他身邊有幾個真的幫得上忙的人？']
   ];
+  var AXES_EN=[
+    ['Tennis level','Recruiting','The Verified UTR and WTN curve, how many matches a year, whether the opponents are the right ones, and doubles.','Which level does he get into? Climbing, or stalled?','Tennis'],
+    ['Body and craft','Recruiting｜Foundation too','Weapons and weaknesses, tactical reading, fitness, physical maturity, injuries. Film and coach evaluation read this axis, but the habit of a training log is built on the foundation side.','Is there still time to change his technique before eighteen?','Body & craft'],
+    ['Academics and NCAA eligibility','Recruiting','Core-course count, core GPA, timetable risk, and study habits at college level.','Does his timetable add up to 16 core courses?','Academics'],
+    ['English','Foundation','Following a lecture, writing it out, and answering on a video call. SAT, TOEFL and writing all sit here.','When a coach calls, can he answer?','English'],
+    ['Resilience and asking for help','Foundation','How he performs under pressure, how he handles a loss, whether he knows who to go to, and whether he actually speaks up.','When he cannot cope, will he say so?','Resilience'],
+    ['Identity and direction','Foundation','Who he is when he is not playing, what he commits to outside tennis, and his answer for five years from now.','Beyond the ball, who is he?','Identity'],
+    ['Self-management and self-advocacy','Recruiting｜Foundation too','Writing his own letters, chasing coaches himself, deciding on his own offers. That is recruiting execution. Time management and running a project are taught on the foundation side.','With nobody pushing him, does he still move?','Self-management'],
+    ['Knowing the system and landing prep','Recruiting','The rules of the NCAA, conscription and scholarships; executing against the recruiting calendar; the six months before arrival.','Does he know which systems he is dealing with?','The system'],
+    ['Support system','Foundation','Parent workshops, mentor, peers, current coach. Includes a parent version.','How many people around him can actually help?','Support']
+  ];
+  function axesData(){ return LANG==='en' ? AXES_EN : AXES; }
   (function(){
     var svg=document.querySelector('.nona-fig svg');
     if(!svg) return;
@@ -1505,7 +1599,8 @@ var TAX_ID = "95435096";
       // 標籤依角度靠左或靠右，避免壓到圖形
       var anchor = lp[0]>CX+8 ? 'start' : (lp[0]<CX-8 ? 'end' : 'middle');
       t.setAttribute('x', lp[0]); t.setAttribute('y', lp[1]+ (Math.abs(lp[0]-CX)<6 ? (lp[1]<CY?-4:12) : 4));
-      t.setAttribute('text-anchor',anchor); t.textContent=ax[0];
+      t.setAttribute('class','nona-lab');
+      t.setAttribute('text-anchor',anchor); t.textContent=ax[4]||ax[0];
       g.appendChild(c); g.appendChild(n); g.appendChild(t);
       g.addEventListener('click',function(){pick(i);});
       g.addEventListener('keydown',function(e){
@@ -1521,13 +1616,19 @@ var TAX_ID = "95435096";
       var gs=dots.querySelectorAll('.nona-dot');
       gs.forEach(function(g,k){g.setAttribute('aria-pressed',k===i?'true':'false');});
       if(focus) gs[i].focus();
-      var ax=AXES[i];
+      var ax=axesData()[i];
       panel.innerHTML='<div class="n">'+String(i+1).padStart(2,'0')+'　<span class="own">'+ax[1]+'</span></div>'
         + '<h3>'+ax[0]+'</h3><p>'+ax[2]+'</p>'
-        + '<div class="ask"><b>這一軸要回答的</b>'+ax[3]+'</div>';
+        + '<div class="ask"><b>'+(LANG==='en'?'What this axis has to answer':'這一軸要回答的')+'</b>'+ax[3]+'</div>';
       if(window.gsap) gsap.from(panel.children,{autoAlpha:0,y:10,duration:.4,stagger:.05,overwrite:true});
     }
     pick(0);
+    window.__redrawNona=function(){
+      var A=axesData();
+      dots.querySelectorAll('.nona-lab').forEach(function(tx,k){ tx.textContent=A[k][4]||A[k][0]; });
+      dots.querySelectorAll('.nona-dot').forEach(function(g,k){ g.setAttribute('aria-label',A[k][0]); });
+      pick(sel);
+    };
   })();
 
   // ---- UTR 落點對照 ----
@@ -1564,19 +1665,26 @@ var TAX_ID = "95435096";
         above=rows.filter(function(r){return v>r[2];}),
         below=rows.filter(function(r){return v<r[1];});
     var vt,vd;
+    var EN=(LANG==='en');
     if(top.length){
-      vt='選手現在打得進 '+hit.join('、');
-      vd='這幾層的先發或有競爭力區間包含 '+v.toFixed(1)+'。意思是進得了名單，而且有機會排在第 3 到 6 號，不是坐板凳。名單就從這幾層裡挑 30 到 40 所。';
+      vt=EN ? 'He is currently competitive at '+hit.join(', ')
+            : '選手現在打得進 '+hit.join('、');
+      vd=EN ? 'The starting or competitive range at these levels includes '+v.toFixed(1)+'. That means making the roster with a real chance at the No. 3 to No. 6 spot, not sitting on the bench. The list gets built from these levels, 30 to 40 schools.'
+            : '這幾層的先發或有競爭力區間包含 '+v.toFixed(1)+'。意思是進得了名單，而且有機會排在第 3 到 6 號，不是坐板凳。名單就從這幾層裡挑 30 到 40 所。';
     } else if(above.length===rows.length){
-      vt='選手已經超過表上所有層級';
-      vd='這個分數的問題已經不是打不打得進，而是哪一間最適合。接下來看的是教練、科系、學校資源與球隊位置，同時確認 Verified 比賽與成績紀錄支撐得住這個數字。';
+      vt=EN ? 'He is above every level on the table' : '選手已經超過表上所有層級';
+      vd=EN ? 'At this rating the question is no longer whether he gets in, but which school fits. What matters next is the coach, the major, the school resources and the roster spot, plus confirming that his Verified matches and results actually support the number.'
+            : '這個分數的問題已經不是打不打得進，而是哪一間最適合。接下來看的是教練、科系、學校資源與球隊位置，同時確認 Verified 比賽與成績紀錄支撐得住這個數字。';
     } else if(below.length===rows.length){
-      vt='現在還沒進到表上任何一層';
-      vd='距離最近的一層還差 '+(rows[rows.length-1][1]-v).toFixed(1)+' 分。先看兩件事：Verified 賽事打得夠不夠，UTR 曲線有沒有持續往上。現在的數字不是句點，趨勢更重要。JUCO 也不是退路，而是另一條正式路徑，先累積課業與球技，再依轉學規則挑戰四年制大學。';
+      vt=EN ? 'Not yet inside any band on the table' : '現在還沒進到表上任何一層';
+      vd=EN ? 'He is '+(rows[rows.length-1][1]-v).toFixed(1)+' short of the nearest level. Two things to check first: is he playing enough Verified events, and is the UTR curve still climbing? The number today is not the full stop; the trend matters more. JUCO is not a fallback either, it is a legitimate route: build the academics and the game, then move up to a four-year program under the transfer rules.'
+            : '距離最近的一層還差 '+(rows[rows.length-1][1]-v).toFixed(1)+' 分。先看兩件事：Verified 賽事打得夠不夠，UTR 曲線有沒有持續往上。現在的數字不是句點，趨勢更重要。JUCO 也不是退路，而是另一條正式路徑，先累積課業與球技，再依轉學規則挑戰四年制大學。';
     } else {
       var nearest=below[below.length-1];
-      vt='選手還差 '+(nearest[1]-v).toFixed(1)+' 分進 '+nearest[0];
-      vd='目前落在表的下緣。重點是曲線方向，不是這一刻的數字。教練看趨勢，往上走的分數比停住的高分有說服力。';
+      vt=EN ? 'He is '+(nearest[1]-v).toFixed(1)+' short of '+nearest[0]
+            : '選手還差 '+(nearest[1]-v).toFixed(1)+' 分進 '+nearest[0];
+      vd=EN ? 'He sits just under the bottom of the table. What matters is the direction of the curve, not the number on the day. Coaches read the trend, and a rating still climbing is more persuasive than a higher one that has stopped.'
+            : '目前落在表的下緣。重點是曲線方向，不是這一刻的數字。教練看趨勢，往上走的分數比停住的高分有說服力。';
     }
     uverdict.innerHTML='<div class="vt">'+vt+'</div><div class="vd">'+vd+'</div>';
   }
@@ -1592,13 +1700,20 @@ var TAX_ID = "95435096";
   });
   uv.min=DOM.m[0]; uv.max=DOM.m[1];
   drawUTR();
+  window.__redrawUTR=drawUTR;
 
   // 手機選單
   var btn=document.querySelector('.nav .menu'),links=document.getElementById('navlinks');
+  function menuLabel(open){ return LANG==='en' ? (open?'Close':'Menu') : (open?'關閉':'選單'); }
   btn.addEventListener('click',function(){
-    var open=links.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');btn.textContent=open?'關閉':'選單';
+    var open=links.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');btn.textContent=menuLabel(open);
   });
-  links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='選單';}});
+  links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent=menuLabel(false);}});
+
+  // 全部初始化完才決定語言：網址的 ?lang 優先，其次記住的選擇
+  var wanted=new URLSearchParams(location.search).get('lang');
+  if(!wanted){ try{ wanted=localStorage.getItem('kuroshio-lang'); }catch(e){} }
+  applyLang(wanted==='en'?'en':'zh');
 })();
 </script>
 <script async src="https://tally.so/widgets/embed.js"></script>
@@ -1653,8 +1768,9 @@ var TAX_ID = "95435096";
   });
 
   // 價格計算器：數字用滾的，不是直接跳
-  var money=document.getElementById('calcTotal'), per=document.getElementById('calcPer'),
-      mons=document.getElementById('calcMonths');
+  function elTotal(){return document.getElementById('calcTotal');}
+  function elPer(){return document.getElementById('calcPer');}
+  function elMons(){return document.getElementById('calcMonths');}
   function rollNum(el,to,step){
     if(!el) return;
     var from=parseInt((el.textContent||'0').replace(/[^0-9]/g,''),10)||0;
@@ -1677,7 +1793,8 @@ var TAX_ID = "95435096";
       onComplete:function(){el.textContent=to;}});
   };
   window.__roll=function(total,perMonth,months){
-    rollNum(money,total,1000); rollNum(per,perMonth,100);
+    var mons=elMons();
+    rollNum(elTotal(),total,1000); rollNum(elPer(),perMonth,100);
     if(mons){var o={v:parseInt(mons.textContent,10)||0};
       gsap.to(o,{v:months,duration:.5,onUpdate:function(){mons.textContent=Math.round(o.v);},
         onComplete:function(){mons.textContent=months;}});}
