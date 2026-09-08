@@ -205,6 +205,10 @@ br.m{display:none}
 .stage:last-child .rail::before{bottom:auto;height:14px}
 .stage .rail::after{content:"";position:absolute;left:5px;top:8px;width:18px;height:18px;border-radius:50%;background:var(--abyss);border:3px solid var(--foam)}
 .stage.key .rail::after{background:var(--brass);border-color:var(--brass)}
+.who-line{font-family:var(--mono);font-size:14px;letter-spacing:.02em;color:var(--tide);margin-bottom:10px}
+.asks{list-style:none;margin:6px 0 18px;display:grid;gap:8px}
+.asks li{padding-left:20px;position:relative;font-size:clamp(17px,2vw,20px);font-weight:700;color:var(--abyss);line-height:1.6}
+.asks li::before{content:"";position:absolute;left:0;top:.72em;width:11px;height:2px;background:var(--brass)}
 .key-tag{font-style:normal;font-family:var(--body);font-size:11.5px;font-weight:500;letter-spacing:.02em;
   color:var(--brass);border:1px solid var(--brass);padding:3px 9px;white-space:nowrap;align-self:center}
 .stage h3{font-size:clamp(21px,2.4vw,26px);color:#fff;margin-bottom:8px;display:flex;align-items:baseline;gap:12px}
@@ -213,6 +217,9 @@ br.m{display:none}
 .stage .ask{margin-top:12px;color:#fff;font-weight:500}
 .stage .ask::before{content:"這一段結束時要能回答：";color:var(--foam);font-weight:400}
 html[lang="en"] .stage .ask::before{content:"By the end of this stage, you should be able to answer: "}
+.stage .doing{margin-top:14px;list-style:none;display:grid;gap:5px}
+.stage .doing li{position:relative;padding-left:18px;font-size:15px;line-height:1.8;color:rgba(255,255,255,.82)}
+.stage .doing li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:1.5px;background:var(--foam);opacity:.7}
 .stage .dates{margin-top:14px;display:flex;flex-direction:column;gap:6px;list-style:none}
 .stage .dates li{display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:15px;color:rgba(255,255,255,.85)}
 .stage .dates li span{font-family:var(--mono);color:var(--brass);white-space:nowrap;font-size:13.5px;padding-top:2px}
@@ -815,80 +822,126 @@ footer .legal p+p{margin-top:4px}
 <section class="dark" id="timeline">
   <div class="wrap">
     <div class="head">
-      <div class="lead" data-en="Six stages, mapped to the Taiwanese school year">六個階段，照台灣學年排</div>
+      <div class="lead" data-en="Six stages, on the Taiwanese school year">六個階段，照台灣學年走</div>
       <h2 data-en="Every stage ends with&lt;br&gt;one question it must answer">每一段結束，<br>都要能回答一個問題</h2>
-      <p data-en="The sophomore year on the NCAA recruiting calendar is Taiwan's 高一, and junior is 高二. Most families work this out a year too late. Stages 1 and 2 are Foundation Membership; stages 3 to 5 are the Recruiting Project.">NCAA 招募日曆的 sophomore 是台灣的高一，junior 是高二。大多數家庭晚一年才發現這件事。階段 1 到 2 是地基會員，階段 3 到 5 是招募專案。</p>
+      <p data-en="The American recruiting timeline starts earlier than most Taiwanese families expect. What the NCAA calls sophomore year roughly matches Taiwan's 高一, and junior year roughly matches 高二. By the time many families start thinking about US college in 高二 or 高三, the critical preparation window has already opened. So we split the whole road into six stages.">美國 Recruiting 的時間軸，比多數台灣家庭想得更早。NCAA 所說的 Sophomore 大致對應台灣高一，Junior 大致對應高二。當很多家庭到了高二、高三才開始思考美國升學時，Recruiting 的重要準備期其實早已開始。所以我們把整條路拆成六個階段。</p>
+      <p data-en="Stages 1 and 2 are Foundation Membership: getting the academics, the English, the UTR, the film and the recruiting material ready. Stages 3 to 5 are the Recruiting Project: coach outreach, choosing schools, offers, and actually landing in the US through freshman year. It is not the same work every year. It is the right work at the right time.">階段 1 到 2 是地基會員，把課業、英文、UTR、影片與 Recruiting 素材準備好。階段 3 到 5 是招募專案，從教練聯繫、選校、Offer，到真正赴美與大一落地。不是每一年都做一樣的事，而是在對的時間，完成對的事情。</p>
     </div>
-    <div class="tl">
-      <div class="stage">
+
+    <div class="stages">
+<div class="stage">
         <div class="when" data-en="&lt;b&gt;Any grade&lt;/b&gt;Consultation 2,800&lt;br&gt;Assessment 15,000"><b>任何年級</b>諮詢 2,800<br>體檢 15,000</div><div class="rail"></div>
         <div>
-          <h3 data-en="Consultation &amp; assessment &lt;small&gt;Stage 0&lt;/small&gt;">諮詢與體檢 <small>階段 0</small></h3>
-          <p data-en="A 60-minute consultation to get to know us, then you decide whether to do the assessment. The assessment tells the truth using Verified UTR, transcripts and match film, and you keep a usable report even if you never join.">先 60 分鐘諮詢認識我們，再決定要不要做體檢。體檢用 Verified UTR、成績單、比賽影片講真話，不加入也拿得到一份能自己用的報告。</p>
-          <p class="ask" data-en="Is now the right time to start? Which stage do we join at?">現在適合啟動嗎？從哪一段接？</p>
+          <h3 data-en="Look before you begin &lt;small&gt;Stage 0&lt;/small&gt;">先看清楚，再決定要不要開始 <small>階段 0</small></h3>
+          <p data-en="&lt;b&gt;One-to-one consultation, NT$2,800.&lt;/b&gt; Sixty minutes to understand where the player is and what he is aiming at, and for you to see how we work. &lt;b&gt;Full assessment, NT$15,000.&lt;/b&gt; From Verified UTR, transcripts, match film and the family&#39;s goals, we work out where the player actually stands and which paths are viable. We do not flatter the conditions, and we do not say nice things to win the case."><b>一對一諮詢 NT$2,800。</b>60 分鐘了解選手現況、目標，也認識我們的做法。<b>完整體檢 NT$15,000。</b>從 Verified UTR、成績單、比賽影片與升學目標，判斷選手真正的位置與可行路徑。不美化條件，也不為了接案說好聽話。</p>
+          <ul class="doing" data-en="&lt;li&gt;Even if you never join, you keep a full assessment report you can act on yourself&lt;/li&gt;">
+            <li>即使最後不加入，也會拿到一份可以自己帶走、繼續使用的完整評估報告</li>
+          </ul>
+          <p class="ask" data-en="Is now the right time to start? And if we start, which stage do we join at?">現在適合啟動嗎？如果開始，應該從哪一段接？</p>
         </div>
       </div>
-      <div class="stage">
+<div class="stage">
         <div class="when" data-en="&lt;b&gt;Grade 8 spring to Grade 9&lt;/b&gt;12 to 18 months"><b>國二下到國三</b>12 到 18 個月</div><div class="rail"></div>
         <div>
-          <h3 data-en="Foundation &lt;small&gt;Stage 1&lt;/small&gt;">地基 <small>階段 1</small></h3>
-          <p data-en="Map the timetable onto NCAA core courses, open the accounts, build the habit of a training log and of using English, and start on the question of who he is when he is not playing. Monthly one-to-one, plus a monthly report, quarterly review, parent workshops and a mentor.">把課表對到 NCAA 的核心課，開好帳戶，養成寫訓練日誌和用英文的習慣，也開始想「不打球的時候他是誰」。每月一次一對一，加月報、季會談、家長工作坊、mentor。</p>
+          <h3 data-en="Lay the foundation &lt;small&gt;Stage 1&lt;/small&gt;">把地基打好 <small>階段 1</small></h3>
+          <p data-en="At this stage there is no hurry to approach coaches. What gets built first is the foundation recruiting will later stand on: academic eligibility, English habits, a training record, and an understanding of himself.">這個階段還不用急著找教練。先把未來 Recruiting 最重要的地基準備好：課業資格、英文習慣、訓練紀錄，以及對自己的認識。</p>
+          <ul class="doing" data-en="&lt;li&gt;Check the high-school timetable against NCAA core courses early&lt;/li&gt;&lt;li&gt;Open and manage the NCAA Eligibility Center account&lt;/li&gt;&lt;li&gt;Start tracking core-course GPA and academic performance&lt;/li&gt;&lt;li&gt;Build the habit of using English and keeping a training log&lt;/li&gt;&lt;li&gt;Track progress over time through one-to-ones, monthly reports, quarterly reviews, parent workshops and a mentor&lt;/li&gt;&lt;li&gt;Start on a question harder than UTR: who am I when I am not playing?&lt;/li&gt;">
+            <li>提前檢查高中課程與 NCAA Core Courses</li>
+            <li>建立並管理 NCAA Eligibility Center 帳戶</li>
+            <li>開始追蹤 Core-Course GPA 與學業表現</li>
+            <li>養成英文與訓練日誌的習慣</li>
+            <li>透過一對一、月報、季會談、家長工作坊與 mentor 長期追蹤</li>
+            <li>開始回答一個比 UTR 更難的問題：不打球的時候，我是誰？</li>
+          </ul>
           <ul class="dates">
             <li data-en="&lt;span&gt;Grade 9, Sep&lt;/span&gt;Open a free NCAA Eligibility Center account"><span>國三 9 月</span>免費開 NCAA Eligibility Center 帳戶</li>
             <li data-en="&lt;span&gt;All of Grade 9&lt;/span&gt;Grades start counting toward the core GPA"><span>國三全年</span>成績開始算進核心 GPA</li>
           </ul>
-          <p class="ask" data-en="Does the timetable add up to 16 core courses? And who is he?">課表符合 16 門核心課嗎？他是誰？</p>
+          <p class="ask" data-en="Does the academic eligibility hold up? And beyond tennis, does he know who he is?">課業資格走得通嗎？除了網球，他知道自己是誰嗎？</p>
         </div>
       </div>
-      <div class="stage key">
+<div class="stage key">
         <div class="when" data-en="&lt;b&gt;Grade 10&lt;/b&gt;one school year"><b>高一</b>一個學年</div><div class="rail"></div>
         <div>
-          <h3 data-en="Getting seen &lt;small&gt;Stage 2&lt;/small&gt;&lt;em class=&quot;key-tag&quot;&gt;the decisive year&lt;/em&gt;">被看見 <small>階段 2</small><em class="key-tag">最關鍵的一年</em></h3>
-          <p data-en="What has to be ready before June 15: the Verified UTR curve, match film, resume, long list and the first batch of letters, plus upgrading the Eligibility Center to a Certification account. Includes four English video-interview rehearsals.">六月十五之前要備妥的東西：Verified UTR 的曲線、比賽影片、Resume、長名單、第一批信，還要把 Eligibility Center 升級成 Certification 帳戶。含四堂視訊面談英文演練。</p>
-          <ul class="dates">
-            <li data-en="&lt;span&gt;Grade 10, Apr&lt;/span&gt;Film v1 and resume v1"><span>高一 4 月</span>影片 v1、Resume v1</li>
-            <li data-en="&lt;span&gt;June 15&lt;/span&gt;D1 coaches may contact the player directly and give verbal offers"><span>6 月 15 日</span>D1 教練可以直接聯絡選手、口頭 offer</li>
+          <h3 data-en="Ready to be seen &lt;small&gt;Stage 2&lt;/small&gt;&lt;em class=&quot;key-tag&quot;&gt;the decisive year&lt;/em&gt;">準備被看見 <small>階段 2</small><em class="key-tag">最關鍵的一年</em></h3>
+          <p data-en="This is the year the accumulated work gets shaped into something a coach can read, and wants to keep reading.">這一年，要把過去的累積整理成教練看得懂、也願意繼續了解的樣子。</p>
+          <ul class="doing" data-en="&lt;li&gt;A Verified UTR growth curve&lt;/li&gt;&lt;li&gt;Match film v1&lt;/li&gt;&lt;li&gt;Tennis resume v1&lt;/li&gt;&lt;li&gt;The long list of schools&lt;/li&gt;&lt;li&gt;The first batch of coach outreach&lt;/li&gt;&lt;li&gt;Four English video-interview rehearsals&lt;/li&gt;&lt;li&gt;Upgrading the NCAA Eligibility Center to a Certification account&lt;/li&gt;">
+            <li>Verified UTR 成長曲線</li>
+            <li>比賽影片 v1</li>
+            <li>Tennis Resume v1</li>
+            <li>學校長名單</li>
+            <li>第一批教練聯繫內容</li>
+            <li>四堂英文視訊面談演練</li>
+            <li>確認 NCAA Eligibility Center 升級成 Certification Account</li>
           </ul>
-          <p class="ask" data-en="On June 15, how many coaches reach out to him first?">6 月 15 日那天，有幾位教練會主動找他？</p>
+          <ul class="dates">
+            <li data-en="&lt;span&gt;Grade 10, Apr&lt;/span&gt;Film and resume, first versions done"><span>高一 4 月</span>影片、Resume 第一版完成</li>
+            <li data-en="&lt;span&gt;June 15&lt;/span&gt;The point where D1 coaches may contact the player directly"><span>6 月 15 日</span>D1 Recruiting 進入教練可直接聯繫的重要節點</li>
+          </ul>
+          <p class="ask" data-en="June 15 arrives. Is he ready to be seen?">6 月 15 日到了，準備好讓教練看見了嗎？</p>
         </div>
       </div>
-      <div class="stage">
+<div class="stage">
         <div class="when" data-en="&lt;b&gt;Grade 11&lt;/b&gt;one school year"><b>高二</b>一個學年</div><div class="rail"></div>
         <div>
-          <h3 data-en="Recruiting &lt;small&gt;Stage 3&lt;/small&gt;">招募 <small>階段 3</small></h3>
-          <p data-en="Narrow the list to three tiers, schedule Zoom visits and verifying events, send transcripts for certified translation, and help him read any verbal offer that comes in. He writes the letters; we edit and send them from his own account.">名單收斂到三層，安排 Zoom 訪校與驗證性賽事，成績單做認證翻譯送件，收到口頭 offer 幫他讀懂。信是他自己寫的，我們改完用他的帳號寄出去。</p>
-          <ul class="dates">
-            <li data-en="&lt;span&gt;August 1&lt;/span&gt;Official visits open"><span>8 月 1 日</span>official visit 開放</li>
-            <li data-en="&lt;span&gt;Sep to Nov&lt;/span&gt;Peak of coach contact"><span>9 到 11 月</span>教練聯繫高峰</li>
+          <h3 data-en="Recruiting for real &lt;small&gt;Stage 3&lt;/small&gt;">正式進入 Recruiting <small>階段 3</small></h3>
+          <p data-en="This year is no longer about being seen. It is about turning opportunities into actual choices.">這一年，不再只是被看見，而是要把機會慢慢變成真正的選擇。</p>
+          <ul class="doing" data-en="&lt;li&gt;Narrow the school list into three tiers&lt;/li&gt;&lt;li&gt;Set up coach Zooms and prepare for visits&lt;/li&gt;&lt;li&gt;Plan events that verify the level&lt;/li&gt;&lt;li&gt;Handle transcripts, certified translation and submission&lt;/li&gt;&lt;li&gt;Help him read verbal offers, scholarships and conditions&lt;/li&gt;&lt;li&gt;Keep tracking UTR, film and recruiting progress&lt;/li&gt;">
+            <li>把學校名單收斂成三個層級</li>
+            <li>安排教練 Zoom 與訪校準備</li>
+            <li>規劃能驗證實力的比賽</li>
+            <li>處理成績單、認證翻譯與送件</li>
+            <li>協助判讀口頭 Offer、獎學金與條件</li>
+            <li>持續追蹤 UTR、影片與 Recruiting 進度</li>
           </ul>
-          <p class="ask" data-en="How many real opportunities are on the table?">手上有幾個真的機會？</p>
+          <ul class="dates">
+            <li data-en="&lt;span&gt;From August 1&lt;/span&gt;D1 tennis enters the official-visit window"><span>8 月 1 日起</span>D1 Tennis 可進入 Official Visit 的重要階段</li>
+          </ul>
+          <p class="ask" data-en="How many opportunities does he have that genuinely suit him?">手上有幾個真正適合自己的機會？</p>
         </div>
       </div>
-      <div class="stage">
+<div class="stage">
         <div class="when" data-en="&lt;b&gt;Grade 12&lt;/b&gt;one school year"><b>高三</b>一個學年</div><div class="rail"></div>
         <div>
-          <h3 data-en="Landing &lt;small&gt;Stage 4&lt;/small&gt;">落地 <small>階段 4</small></h3>
-          <p data-en="Net-value offer comparison, negotiation, a line-by-line read of the aid agreement, conscription, NCAA final certification, the I-20 and F-1, a six-month pre-departure plan and a departure camp.">Offer 淨額比較、談判、aid agreement 逐條說明、役男、NCAA 最終認證、I‑20 與 F‑1、抵美前六個月準備、行前訓練營。</p>
+          <h3 data-en="Actually landing &lt;small&gt;Stage 4&lt;/small&gt;">真正落地 <small>階段 4</small></h3>
+          <p data-en="An offer is not the end of it. This is the year admission has to turn into actually enrolling.">拿到 Offer，不代表事情結束。這一年，要把錄取真正變成順利入學。</p>
+          <ul class="doing" data-en="&lt;li&gt;Net-value comparison and negotiation of offers and scholarships&lt;/li&gt;&lt;li&gt;Reading the aid agreement line by line&lt;/li&gt;&lt;li&gt;NCAA final certification&lt;/li&gt;&lt;li&gt;Conscription status and exit planning for male players&lt;/li&gt;&lt;li&gt;The I-20 and F-1 visa&lt;/li&gt;&lt;li&gt;A six-month pre-arrival plan&lt;/li&gt;&lt;li&gt;Departure training and preparation&lt;/li&gt;">
+            <li>Offer 與獎學金淨額比較、談判</li>
+            <li>Aid Agreement 逐條確認</li>
+            <li>NCAA 最終資格認證</li>
+            <li>男選手役男身分與出境規劃</li>
+            <li>I-20、F-1 簽證</li>
+            <li>抵美前六個月準備</li>
+            <li>行前訓練與赴美準備</li>
+          </ul>
           <ul class="dates">
-            <li data-en="&lt;span&gt;November&lt;/span&gt;Signing period"><span>11 月</span>簽約期</li>
+            <li data-en="&lt;span&gt;November&lt;/span&gt;Tennis signing period"><span>11 月</span>網球簽約期</li>
             <li data-en="&lt;span&gt;February&lt;/span&gt;Conscription status confirmed"><span>2 月</span>役男狀態確認</li>
             <li data-en="&lt;span&gt;Jun to Aug&lt;/span&gt;Only 8 to 10 weeks for final certification and the visa"><span>6 到 8 月</span>只有 8 到 10 週跑最終認證與簽證</li>
           </ul>
-          <p class="ask" data-en="Can he be standing on campus in August?">8 月能不能站在校園裡？</p>
+          <p class="ask" data-en="Once the offer is in, can he actually be standing on a US campus in August?">拿到 Offer 之後，8 月能不能真的站在美國校園裡？</p>
         </div>
       </div>
-      <div class="stage">
+<div class="stage">
         <div class="when" data-en="&lt;b&gt;Freshman year&lt;/b&gt;the whole year"><b>大一</b>整個學年</div><div class="rail"></div>
         <div>
-          <h3 data-en="First year &lt;small&gt;Stage 5&lt;/small&gt;">第一年 <small>階段 5</small></h3>
-          <p data-en="Failure clusters in the first year, so the service does not end on the day he is admitted. A 30-minute video check-in every month, one three-way call mid-semester, messaging whenever it is needed, and a year-end review. Included in the recruiting and landing plan, not sold separately.">失敗集中在第一年，所以服務不在錄取那天結束。每月 30 分鐘視訊 check-in、學期中一次三方通話、隨時可傳訊息、年底結業評估。包在招募與落地方案裡，不另賣。</p>
-          <p class="ask" data-en="Playing, improving, staying?">上場、進步、留下來？</p>
+          <h3 data-en="The first year is the real start &lt;small&gt;Stage 5&lt;/small&gt;">第一年，才是真正開始 <small>階段 5</small></h3>
+          <p data-en="Getting the offer and arriving in the US does not end the service. The real test usually starts in freshman year: coursework, the team, the coach, playing time, adjusting to life there, and what comes next. So we are still there for that first year.">拿到 Offer、抵達美國，不代表服務結束。真正的挑戰往往從大一開始：課業、球隊、教練、上場機會、生活適應，以及下一步的選擇。所以第一年，我們還在。</p>
+          <ul class="doing" data-en="&lt;li&gt;A 30-minute video check-in every month&lt;/li&gt;&lt;li&gt;One three-way review each semester&lt;/li&gt;&lt;li&gt;Day-to-day questions handled by message&lt;/li&gt;&lt;li&gt;A full evaluation at the end of the school year&lt;/li&gt;&lt;li&gt;First-year support is included in the Recruiting Project at no extra charge&lt;/li&gt;">
+            <li>每月 30 分鐘視訊 check-in</li>
+            <li>每學期一次三方會談</li>
+            <li>日常問題可持續傳訊息討論</li>
+            <li>學年結束進行完整評估</li>
+            <li>第一年支援包含在招募專案中，不另外收費</li>
+          </ul>
+          <p class="ask" data-en="Is he playing? Improving? Settling in? A year on, is he still on the road he wanted?">上場了嗎？進步了嗎？適應了嗎？一年後，他還在自己想走的路上嗎？</p>
         </div>
       </div>
     </div>
+
     <div class="clocks">
-      <h3 data-en="Boys run on two clocks. Count them separately.">男生有兩個時鐘，分開算</h3>
-      <p data-en="Conscription runs from January 1 of the year he turns 19; the NCAA clock reads his 19th birthday against September 1. They are not the same date. The assessment runs both from his date of birth and works out the last entry year that needs no conscription paperwork.">兵役看 19 歲那一年的 1 月 1 日，NCAA 看 19 歲生日對 9 月 1 日。用的不是同一個日期，體檢會用他的出生年月各算一次，並算出最後一個不需要辦役男手續的入學年。</p>
+      <h3 data-en="Male players run two clocks at once">男選手，有兩個時鐘要一起算</h3>
+      <p data-en="The conscription clock and the NCAA clock are not the same system. Taiwan's conscription age starts on January 1 of the year he turns 19. The NCAA works from date of birth, expected enrolment date and the eligibility window, on a different basis entirely. So at the assessment stage we run the two timelines separately, from his date of birth and his expected entry year. Conscription is not something you deal with after the offer arrives. It is something you know the deadlines for from the very start.">兵役的時鐘，和 NCAA 的時鐘，不是同一套。台灣兵役從滿 19 歲那一年的 1 月 1 日起進入役齡；NCAA 則要看出生日期、預計入學時間與 Eligibility 年限，兩邊的計算基準不同。所以在體檢階段，我們會依照選手的出生年月與預計入學年，把兩個時間軸分開計算。不是拿到 Offer 才處理兵役，而是一開始就知道，最晚什麼時候必須做什麼。</p>
     </div>
   </div>
 </section>
@@ -952,9 +1005,10 @@ footer .legal p+p{margin-top:4px}
 <section class="sand" id="why">
   <div class="wrap">
     <div class="head">
-      <div class="lead" data-en="Why me">為什麼是我</div>
-      <h2 data-en="I had a hard time on this road,&lt;br&gt;so I know where it jams">我走得很吃力，<br>所以知道哪裡會卡</h2>
-      <p data-en="Paul Wang. Vanderbilt University men's tennis, NCAA Division I.">Paul Wang，Vanderbilt University 網球校隊出身，NCAA Division I。</p>
+      <div class="lead" data-en="Why Paul">為什麼是 Paul</div>
+      <h2 data-en="Because this road&lt;br&gt;is one I walked myself">因為這條路，<br>我自己走過</h2>
+      <p class="who-line" data-en="Paul Wang｜Vanderbilt University Men's Tennis｜NCAA Division I">Paul Wang｜Vanderbilt University 男子網球校隊｜NCAA Division I</p>
+      <p data-en="I know where it jams, because the detours, the missed chances and the things nobody warned me about all happened to me. So now I want the next player to have an easier time of it.">我知道哪裡會卡，因為那些彎路、錯過的機會與沒有人提醒的事，我都遇過。所以現在，我希望下一個選手不用走得那麼辛苦。</p>
     </div>
     <figure class="shot">
       <img src="assets/paul-vanderbilt.jpg"
@@ -970,14 +1024,22 @@ footer .legal p+p{margin-top:4px}
       <figcaption>Vanderbilt University，NCAA Division I</figcaption>
     </figure>
     <div class="story">
-      <blockquote class="quote" data-en="&quot;I contacted around 20 schools. Every cold email was written and sent by me, and not many came back. I understand exactly how helpless players feel right now.&quot;&lt;cite&gt;Paul Wang, founder of Kuroshio Athletics. Vanderbilt University men's tennis, NCAA Division I&lt;/cite&gt;">「我聯絡了大概 20 所學校，都是自己寫的 cold email，回覆率不高。我非常理解現在選手的那種無助。」<cite>Paul Wang，Kuroshio Athletics 創辦人。Vanderbilt University 網球校隊，NCAA Division I</cite></blockquote>
+      <blockquote class="quote" data-en="&quot;I contacted around 20 schools. I wrote and sent every cold email myself, and not many came back. So I understand how players feel now. It is not that they are not trying. It is that they often cannot tell whether they are doing it right, and they do not know what the next move is.&quot;&lt;cite&gt;Paul Wang, founder of Kuroshio Athletics. Vanderbilt University Men's Tennis, NCAA Division I&lt;/cite&gt;">「當時我大概聯絡了 20 所學校，每一封 Cold Email 都是自己寫、自己寄，但收到的回覆並不多。所以我很懂現在選手的感受，不是不努力，而是你常常不知道自己做得對不對，也不知道下一步還能做什麼。」<cite>Paul Wang，Kuroshio Athletics 創辦人。Vanderbilt University 男子網球校隊，NCAA Division I</cite></blockquote>
       <div class="text">
-        <p data-en="Paul came up through Taiwan's sports-class system, where the seniors he watched had exactly one road: play, then coach. In high school he lost interest in playing for a while and went off to do the World Scholar's Cup, Model UN and robotics competitions. That is when he realised the world was large, and that tennis could be a road into it rather than the destination.">Paul 從體育班一路打上來，看到學長的路只有一條：打球，然後當教練。高中有一陣子不想打球，去做了世界學者盃、模擬聯合國、機器人比賽，才發現世界很大，而網球可以是通往它的一條路，不是終點。</p>
-        <p data-en="There were no UTR Verified events in Taiwan then, so he and his family spent two summers flying to the US to compete, more than NT$800,000 in all. At one of those events a Vanderbilt coach saw him at around UTR 12, drawn to the way he stepped inside the baseline and attacked. He ended up negotiating a 40% scholarship. Years later he learned he could have negotiated a better one.">那時候台灣沒有 UTR Verified 賽事，他和家人用兩個暑假飛美國比賽，花了超過 80 萬台幣。在一場比賽被 Vanderbilt 的教練看到，UTR 12 左右，教練看中的是他踩在線上攻擊的打法。最後談到 40% 的獎學金，幾年後才知道其實可以談得更好。</p>
-        <p data-en="Runner-up at the National High School Games in Taiwan; in the US he played No. 6 singles and No. 2 doubles. His education degree required a public high-school placement in junior year, which required specific courses chosen in freshman and sophomore year. Nobody told him. For three years he did not know the school's scholarships, exchange programmes and club resources existed. A stress fracture in his elbow in sophomore year, a coaching change in junior year, and he chose to leave the team and give his final year to the university itself.">全中運第二，到了美國打第六單、第二雙。教育學院大三要去公立高中實習，需要大一大二就選好的課，沒有人告訴他。學校的獎學金、交換、社團資源，他前三年不知道存在。大二手肘疲勞性骨折，大三換了教練，他選擇退出球隊，把最後一年留給學校本身。</p>
-        <p data-en="&lt;strong&gt;&amp;quot;All of this could have been avoided. That is why I want to do this.&amp;quot;&lt;/strong&gt;"><strong>「這些其實都可以被避免。這是為什麼我想做這件事。」</strong></p>
-        <p data-en="What he resents most about study-abroad agencies is that they do not care what the student wants. They place you somewhere and tell you it is a good school, or that this is your level. Sometimes they even talk your ability down so you are easier to place. Once you are in, you never hear from them again.">他對留學代辦最不滿的一件事：不在乎學生要什麼。把你送進一所學校，說「這所不錯」或「你的實力就在這裡」，有時候甚至壓低你的能力，好把你送進比較好處理的學校。送進去之後就不聞不問。</p>
-        <p data-en="What he wants is that when a player finishes with Kuroshio, he knows what he wants, what he is capable of, how far he still is from the goal, and who he is. That is harder than getting an offer, and it matters more.">他希望一個選手在 Kuroshio 結束的時候，知道自己要什麼、有什麼能力、離目標還有多遠，而且知道自己是誰。這比拿到 offer 難，也比拿到 offer 重要。</p>
+        <p data-en="Paul came up through Taiwan's sports-class system. Watching the seniors around him, the future seemed to hold two roads: turn professional, or become a coach. Both are good roads, but he started to wonder. After all these years of tennis, could there be more choices than that?">Paul 從體育班一路打上來。那時候看著身邊的學長，未來好像只有兩條路：成為職業選手，或成為教練。這兩條路都很好，但他開始想：打了這麼多年網球，人生的選擇，能不能更多一點？</p>
+        <p data-en="Then in high school he got into the World Scholar's Cup, Model UN and robotics competitions, and realised something for the first time: the world is large, and tennis can be a road into it rather than the destination.">直到高中，他開始接觸世界學者盃、模擬聯合國、機器人競賽，才第一次發現：原來世界很大，而網球可以是一條通往世界的路，不是終點。</p>
+        <p data-en="There were no UTR Verified events in Taiwan then, so he and his family flew to the US to compete two summers running, more than NT$800,000 all in. At one of those events a Vanderbilt coach saw him. He was around UTR 12, and he ended up negotiating a 40% scholarship. Only years later, looking back, did he understand: a great deal of it could have been prepared better, and negotiated better.">當時台灣沒有 UTR Verified 賽事，他和家人連續兩個暑假飛到美國比賽，前後花費超過 NT$800,000。一次比賽中，他被 Vanderbilt 教練看見。當時 UTR 約 12，最後談到 40% 的獎學金。直到幾年後回頭看，他才知道：原來很多事情，可以準備得更好，也可以談得更好。</p>
+        <p data-en="He had finished runner-up at Taiwan's National High School Games. At Vanderbilt he started again at No. 6 singles and No. 2 doubles. Once he was in college he slowly discovered that what actually needed preparing went far beyond tennis. A junior-year placement in a public high school required courses that had to be lined up in freshman and sophomore year. The university also had scholarships, exchanges, clubs and all kinds of resources, and many of those chances he only found out about later.">他曾拿下全中運第二名，到了 Vanderbilt，卻從第六單、第二雙重新開始。進入大學後，他才慢慢發現，真正需要準備的遠遠不只是網球。想在大三進入公立高中實習，有些課程其實從大一、大二就要開始安排；學校裡還有獎學金、交換、社團與各種資源，但很多機會，他到了後來才知道。</p>
+        <p data-en="A stress fracture in his elbow in sophomore year, a coaching change in junior year. In the end he left the team, gave his final year of college to himself, and started asking a different question:">大二手肘疲勞性骨折，大三又遇上教練更換。最後，他選擇退出球隊，把大學最後一年留給自己，也開始重新思考：</p>
+        <p data-en="&lt;strong&gt;&quot;If somebody had told me these things earlier, would it have turned out differently?&quot;&lt;/strong&gt;"><strong>「如果當年有人更早告訴我這些事情，結果會不會不一樣？」</strong></p>
+        <p data-en="That is why he wanted to build Kuroshio. He does not want a college-placement service to end the moment a player is put into a school and hands back an offer. Because what matters is not only which school you can get into.">這就是他想做 Kuroshio 的原因。他不希望升學服務只是把一個選手送進一所學校、拿到 Offer，然後就結束。因為真正重要的，不只是你能去哪間學校。</p>
+        <ul class="asks" data-en="&lt;li&gt;What do you want?&lt;/li&gt;&lt;li&gt;What are you capable of?&lt;/li&gt;&lt;li&gt;How far are you from the goal?&lt;/li&gt;&lt;li&gt;Who do you want to become?&lt;/li&gt;">
+          <li>你想要什麼？</li>
+          <li>你有什麼能力？</li>
+          <li>你離目標還有多遠？</li>
+          <li>你希望自己成為什麼樣的人？</li>
+        </ul>
+        <p data-en="What we want is that on the day a player finishes with Kuroshio, he leaves with more than an offer. He leaves knowing who he is better than he did when he started, and knowing where he can go next. That is harder than getting an offer, and it matters more.">我們希望一個選手在 Kuroshio 結束的那一天，得到的不只是一張 Offer。而是比出發以前，更知道自己是誰，也知道自己未來可以往哪裡走。這比拿到 Offer 更難，也比拿到 Offer 更重要。</p>
       </div>
     </div>
   </div>
