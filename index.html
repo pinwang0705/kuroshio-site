@@ -241,6 +241,11 @@ html[lang="en"] .stage .ask::before{content:"By the end of this stage, you shoul
 .two li{padding:8px 0 8px 22px;position:relative;color:var(--ink)}
 .two li::before{content:"";position:absolute;left:0;top:19px;width:10px;height:2px;background:var(--tide)}
 .two .no li::before{background:var(--brass)}
+.two.three{grid-template-columns:repeat(3,1fr)}
+.two .own li::before{background:var(--abyss)}
+@media(max-width:980px){.two.three{grid-template-columns:1fr}}
+.scope-end{margin:clamp(22px,3vw,32px) auto 0;max-width:44em;text-align:center;
+  font-size:clamp(17px,2vw,20px);font-weight:500;line-height:1.8;color:var(--abyss)}
 @media(max-width:720px){.two{grid-template-columns:1fr}}
 
 /* nine things */
@@ -950,32 +955,40 @@ footer .legal p+p{margin-top:4px}
   <div class="wrap">
     <div class="head">
       <div class="lead" data-en="What is his to do">哪些是他的事</div>
-      <h2 data-en="We do the paperwork together.&lt;br class=&quot;m&quot;&gt;He walks the road himself.">文件我們一起做，<br class="m">路他自己走</h2>
-      <p data-en="We do what agencies do. What agencies do not do is what this service is actually about.">代辦做的我們也做。代辦不做的，才是這個服務的主體。</p>
+      <h2 data-en="We do the paperwork together.&lt;br class=&quot;m&quot;&gt;He walks the road himself.">文件我們一起做，<br class="m">路要選手自己走</h2>
+      <p data-en="We do what agencies do. What agencies do not necessarily do is what this service is actually about.">代辦會做的，我們做。但代辦不一定做的，才是這個服務真正的主體。</p>
     </div>
-    <div class="two">
+    <div class="two three">
       <div>
         <h3 data-en="What we do together">我們一起做</h3>
         <ul>
-          <li data-en="Judge where he really stands from Verified UTR, transcripts and match film. No flattering.">用 Verified UTR、成績單、比賽影片判斷他真正的位置，不美化</li>
-          <li data-en="Tell him what is coming before it arrives.">讓他在事情發生之前就知道會遇到什麼</li>
-          <li data-en="Translation QA, Eligibility Center, visa and conscription, handled together.">翻譯品管、Eligibility Center、簽證、役男，這些一起處理</li>
-          <li data-en="English good enough for college lectures and for answering a coach on a video call. If a test is needed, we teach that too.">英文練到能應付大學課堂，也答得出教練的視訊提問。檢定要考也教</li>
-          <li data-en="Through his first year in the States, we are still there.">到了美國的第一年，我們還在</li>
+          <li data-en="Judge where the player really stands from Verified UTR, grades and match film. No flattering.">用 Verified UTR、成績、比賽影片，判斷選手真正的位置，不美化</li>
+          <li data-en="Tell him ahead of time what each stage brings and what to prepare for it.">提前告訴他每個階段會遇到什麼、該準備什麼</li>
+          <li data-en="Handle translation QA, the NCAA Eligibility Center, the visa and conscription procedures.">協助翻譯品管、NCAA Eligibility Center、簽證、役男等流程</li>
+          <li data-en="English not just for a test, but enough to sit in class, do an interview and talk to a coach.">英文不只為了考試，更要能上課、面試、和教練溝通</li>
+          <li data-en="From preparation through recruiting to arriving in the US, we are still there through freshman year.">從準備、Recruiting 到赴美，大一第一年我們都還在</li>
+        </ul>
+      </div>
+      <div class="own">
+        <h3 data-en="These he does himself">這些事，他要自己做</h3>
+        <ul>
+          <li data-en="Coach letters, essays and self-introductions. He writes them; we sit with him and edit.">教練信、Essay、自我介紹，他寫，我們陪他改</li>
+          <li data-en="He has to learn to talk to a coach and speak for himself.">他要學會自己和教練對話、表達自己</li>
+          <li data-en="He has to know why he chose that school. We do not pick a life for him.">他要知道自己為什麼選這間學校，而不是我們替他選人生</li>
         </ul>
       </div>
       <div class="no">
         <h3 data-en="What we do not do">我們不做</h3>
         <ul>
-          <li data-en="Coach letters, essays and self-introductions: he writes, we edit, and it goes out from his own account.">教練信、essay、自我介紹他寫，我們改，改完用他的帳號寄</li>
-          <li data-en="No guarantee of admission. No guarantee of a scholarship amount.">不保證錄取，不保證獎學金金額</li>
-          <li data-en="We never use words like &amp;quot;guaranteed&amp;quot;, &amp;quot;100%&amp;quot; or &amp;quot;at least X offers&amp;quot;.">不用「保證」「100%」「最少幾個 offer」這些字</li>
-          <li data-en="We decline cases where time is too short and the conditions are not there. The standard for declining is public.">時間來不及又條件不夠的案子不接，不接的標準公開</li>
-          <li data-en="We do not hide the price list or the refund schedule.">不隱藏價格與退費表</li>
-          <li data-en="We do not push an off-the-shelf cram-school curriculum.">不拿現成的補習教材硬塞</li>
+          <li data-en="No ghostwriting, and no packaging him as somebody else.">不代寫、不包裝成另一個人</li>
+          <li data-en="No guarantee of admission, no guarantee of a scholarship, no promise of a number of offers.">不保證錄取、不保證獎學金、不承諾 Offer 數量</li>
+          <li data-en="We do not force through cases where the conditions are short and the time has run out.">條件不足、時間來不及的案子，不硬接</li>
+          <li data-en="Pricing, refunds and the standard for declining a case are all public.">價格、退費與不接案標準全部公開</li>
+          <li data-en="We do not put the same curriculum and the same road onto every player.">不拿同一套教材、同一條路套在每個選手身上</li>
         </ul>
       </div>
     </div>
+    <p class="scope-end" data-en="We can hand him the information, the tools and the experience. But the person who walks into that American university is the player himself.">我們可以把資訊、工具和經驗都給他。但最後走進美國大學的人，是選手自己。</p>
   </div>
 </section>
 
@@ -983,8 +996,9 @@ footer .legal p+p{margin-top:4px}
   <div class="wrap">
     <div class="head">
       <div class="lead" data-en="One ruler, five years">同一把尺，量五年</div>
-      <h2 data-en="The nine things we keep watching">我們會一直看的九件事</h2>
-      <p data-en="The order never changes across five years, so every report can be read against the last one. Each axis has to answer one question: once you know this, what does the family decide differently? Click an axis to see what it tracks.">順序五年不變，所以每一份報告都能跟上一份對照。每一項都要能回答一個問題：知道之後，家裡會做什麼不一樣的決定。點一下看那一項在看什麼。</p>
+      <h2 data-en="The nine things we keep tracking">我們會持續追蹤的九件事</h2>
+      <p data-en="From now until freshman year, nine measures on one consistent standard, tracked continuously. Every report can be read against the last one, so you can see what improved, what stalled, and what to adjust next.">從現在到大一，九個指標、同一套標準，持續追蹤。每一份報告都能和上一份對照，讓你看見：哪裡進步了？哪裡停住了？下一步該調整什麼？</p>
+      <p data-en="We do not just record numbers. Each measure has to answer one question at the end: knowing this, does the next decision change? Click any one of them to see what we track.">我們不只記錄數字。每一項最後都要回答一個問題：知道這件事之後，下一個決定要不要改變？點開每一項，看看我們在追蹤什麼。</p>
     </div>
 
     <div class="nona">
@@ -998,7 +1012,7 @@ footer .legal p+p{margin-top:4px}
       <div class="nona-panel" id="nonaPanel" aria-live="polite"></div>
     </div>
 
-    <p class="note" data-en="The assessment report answers two more questions: is there enough time (four paths laid out side by side), and is the budget enough (the I-20 funding gap and a four-year NT$ range).">體檢報告另外回答兩件事：時間來不來得及（四條路徑一起列），預算夠不夠（I‑20 差額與四年台幣區間）。</p>
+    <p class="note" data-en="&lt;b&gt;The assessment answers two more practical questions.&lt;/b&gt; Is there enough time? Four possible paths laid side by side, with the preparation time left on each. Does the budget stretch? Tuition, living costs, scholarship and the I-20 funding gap counted together into a four-year NT$ range. Not just whether he can get admitted, but whether this road can actually be walked to the end."><b>體檢還會回答兩個現實問題。</b>時間來得及嗎？四條可能路徑一起排，算出每條路還剩多少準備時間。預算走得完嗎？把學費、生活費、獎學金與 I‑20 資金差額一起算，估出四年的台幣預算區間。不是只看能不能錄取，而是確認這條路真的走不走得完。</p>
   </div>
 </section>
 
@@ -1616,26 +1630,26 @@ var TAX_ID = "95435096";
 
   // ---- 九邊形：九條能力軸 ----
   var AXES=[
-    ['網球競技','招募','Verified UTR 與 WTN 的曲線、一年打幾場、對手挑得對不對、雙打。','他打得進哪一層？往上還是停住？'],
-    ['身體與球技','招募｜地基也推','武器與弱點、戰術判斷、體能、成熟度、傷病。影片與教練評估看的是這一軸，但訓練日誌的習慣是地基在養。','他的技術到十八歲還來得及改嗎？'],
-    ['學業與 NCAA 資格','招募','核心課程數、核心 GPA、課表風險、大學程度的讀書習慣。','他的課表湊得到 16 門核心課嗎？'],
-    ['英文','地基','課堂聽得懂、寫得出來、視訊面談答得出來。SAT、TOEFL、寫作都在這裡。','教練打來的時候，他答得出來嗎？'],
-    ['心理韌性與求助','地基','壓力下怎麼表現、輸了怎麼處理、知道找誰、真的會不會開口。','他撐不住的時候，會不會開口？'],
-    ['身分與生涯','地基','不打球的時候他是誰、網球以外長期投入的事、五年後的答案。','球以外，他是誰？'],
-    ['自我管理與自我倡議','招募｜地基也推','自己寫信、自己追教練、自己決定 offer，那是招募執行力；time management 與做專案的能力是地基在教。','沒有人推他的時候，他還會動嗎？'],
-    ['制度知識與落地準備','招募','NCAA、役男、獎學金的規則；招募日程的執行力；抵美前六個月的準備。','他知道自己在跟什麼制度打交道嗎？'],
-    ['支持系統','地基','家長工作坊、mentor、同儕、現任教練。含家長版。','他身邊有幾個真的幫得上忙的人？']
+    ['網球競技','招募','持續追蹤 Verified UTR、WTN、比賽量、對手品質、成長曲線與雙打能力。','他現在打得進哪一層？實力正在往上，還是停住了？'],
+    ['身體與球技','招募｜地基也推','從訓練日誌持續追蹤武器與弱點、戰術判斷、體能、身體成熟度與傷病狀況。','哪些問題還來得及改？哪些事情，不能再等到 18 歲？'],
+    ['學業與 NCAA 資格','招募','持續追蹤核心課程、Core-Course GPA、課表風險與大學程度的讀書習慣。','他的課表湊得到 16 門核心課嗎？成績撐得住未來想去的學校嗎？'],
+    ['英文','地基','持續追蹤課堂理解、教練視訊溝通與英文檢定的進步曲線。英文不只是為了考試，更是 Recruiting 真正開始後，選手能不能自己表達與溝通的能力。','教練真的打來時，選手能不能自己聽懂、答得出來？'],
+    ['心理韌性與求助','地基','持續觀察壓力下的表現、輸球後的反應、情緒恢復，以及遇到問題時是否知道向誰求助。真正的韌性，不是什麼都自己撐。','當選手真的撐不住時，知道找誰，也願意開口嗎？'],
+    ['身分與生涯','地基','持續探索網球以外的興趣、長期投入的事，以及選手對未來五年的想像。不是急著決定職業，而是慢慢知道自己想成為誰。','如果有一天不談網球，選手是誰？'],
+    ['自我管理與自我倡議','招募｜地基也推','持續觀察時間、身體與金錢管理，以及自己溝通、追蹤與做決定的能力。信自己寫、事情自己追、選擇自己做。','當沒有人提醒、沒有人推，選手還會自己往前走嗎？'],
+    ['制度知識與落地準備','招募','持續追蹤 NCAA、Recruiting、獎學金、役男與赴美流程，以及每個時間點該完成的事情。不是只知道規則，而是知道什麼時候該做什麼。','選手知道自己正在跟哪些制度打交道，也知道下一步該做什麼嗎？'],
+    ['支持系統','地基','持續盤點家長、Mentor、同儕與現任教練，以及每個人在不同階段能提供什麼支持。同時提供家長版追蹤，讓家長知道什麼時候該參與，什麼時候該退一步。','當選手真的遇到問題時，身邊有幾個真正幫得上忙的人？']
   ];
   var AXES_EN=[
-    ['Tennis level','Recruiting','The Verified UTR and WTN curve, how many matches a year, whether the opponents are the right ones, and doubles.','Which level does he get into? Climbing, or stalled?','Tennis'],
-    ['Body and craft','Recruiting｜Foundation too','Weapons and weaknesses, tactical reading, fitness, physical maturity, injuries. Film and coach evaluation read this axis, but the habit of a training log is built on the foundation side.','Is there still time to change his technique before eighteen?','Body & craft'],
-    ['Academics and NCAA eligibility','Recruiting','Core-course count, core GPA, timetable risk, and study habits at college level.','Does his timetable add up to 16 core courses?','Academics'],
-    ['English','Foundation','Following a lecture, writing it out, and answering on a video call. SAT, TOEFL and writing all sit here.','When a coach calls, can he answer?','English'],
-    ['Resilience and asking for help','Foundation','How he performs under pressure, how he handles a loss, whether he knows who to go to, and whether he actually speaks up.','When he cannot cope, will he say so?','Resilience'],
-    ['Identity and direction','Foundation','Who he is when he is not playing, what he commits to outside tennis, and his answer for five years from now.','Beyond the ball, who is he?','Identity'],
-    ['Self-management and self-advocacy','Recruiting｜Foundation too','Writing his own letters, chasing coaches himself, deciding on his own offers. That is recruiting execution. Time management and running a project are taught on the foundation side.','With nobody pushing him, does he still move?','Self-management'],
-    ['Knowing the system and landing prep','Recruiting','The rules of the NCAA, conscription and scholarships; executing against the recruiting calendar; the six months before arrival.','Does he know which systems he is dealing with?','The system'],
-    ['Support system','Foundation','Parent workshops, mentor, peers, current coach. Includes a parent version.','How many people around him can actually help?','Support']
+    ['Tennis level','Recruiting','Continuous tracking of Verified UTR, WTN, match volume, quality of opposition, the growth curve and doubles ability.','Which level does he get into right now? Is the level still climbing, or has it stalled?','Tennis'],
+    ['Body and craft','Recruiting｜Foundation too','Continuous tracking, from the training log, of weapons and weaknesses, tactical reading, fitness, physical maturity and injury history.','Which problems can still be fixed? And which ones cannot wait until eighteen?','Body & craft'],
+    ['Academics and NCAA eligibility','Recruiting','Continuous tracking of core courses, core-course GPA, timetable risk and study habits at college level.','Does his timetable add up to the 16 required core courses? Will the grades hold up at the schools he wants?','Academics'],
+    ['English','Foundation','Continuous tracking of classroom comprehension, video communication with coaches and the progress curve on English tests. English is not only for a test. Once recruiting really starts, it is whether the player can express himself and hold a conversation.','When a coach actually calls, can he understand it and answer for himself?','English'],
+    ['Resilience and asking for help','Foundation','Continuous observation of performance under pressure, the reaction after a loss, emotional recovery, and whether he knows who to turn to when something goes wrong. Real resilience is not carrying everything alone.','When he genuinely cannot cope, does he know who to go to, and will he speak up?','Resilience'],
+    ['Identity and direction','Foundation','Continuous exploration of interests outside tennis, the things he commits to long term, and how he pictures the next five years. Not rushing to pick a career, but gradually working out who he wants to become.','If tennis were off the table one day, who is he?','Identity'],
+    ['Self-management and self-advocacy','Recruiting｜Foundation too','Continuous observation of how he manages time, body and money, and his ability to communicate, follow up and decide for himself. He writes his own letters, chases his own leads, makes his own choices.','With nobody reminding him and nobody pushing, does he still move forward on his own?','Self-management'],
+    ['Knowing the system and landing prep','Recruiting','Continuous tracking of the NCAA, recruiting, scholarships, conscription and the process of going to the US, and what has to be finished at each point in time. Not just knowing the rules, but knowing when to do what.','Does he know which systems he is dealing with, and what the next step is?','The system'],
+    ['Support system','Foundation','A continuous audit of parents, mentor, peers and current coach, and what each can offer at each stage. It also comes with a parent version, so parents know when to step in and when to step back.','When he really runs into trouble, how many people around him can genuinely help?','Support']
   ];
   function axesData(){ return LANG==='en' ? AXES_EN : AXES; }
   (function(){
