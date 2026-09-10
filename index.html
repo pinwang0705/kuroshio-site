@@ -458,7 +458,7 @@ html[lang="en"] .stage .ask::before{content:"By the end of this stage, you shoul
   color:var(--tide);font-weight:500;padding:9px 12px 9px 0;border-bottom:1.5px solid var(--abyss)}
 .late-t td{padding:11px 12px 11px 0;border-bottom:1px solid var(--hair);vertical-align:top}
 .late-t td:nth-child(2){font-family:var(--mono);color:var(--muted);text-align:center}
-.late-t td:last-child{font-family:var(--mono);text-align:right;padding-right:0;white-space:nowrap}
+.late-t td:last-child{text-align:right;padding-right:0;color:var(--ink)}
 .late-t tr:last-child td{border-bottom:0;color:var(--abyss);font-weight:500}
 
 /* funnel */
@@ -486,45 +486,9 @@ html[lang="en"] .stage .ask::before{content:"By the end of this stage, you shoul
 @media(max-width:760px){.svc{grid-template-columns:1fr}}
 .both{margin-top:20px;padding:18px 22px;background:var(--sand);border-left:3px solid var(--tide);font-size:15.5px;line-height:1.85;max-width:none}
 
-/* price builder */
-.calc{border:1px solid var(--hair);background:var(--paper);margin-top:44px}
-.calc-q{padding:20px 24px 0;font-weight:700;font-size:17px}
-.calc-g{display:flex;flex-wrap:wrap;gap:8px;padding:12px 24px 20px}
-.calc-g button{font:inherit;font-size:15px;font-weight:700;padding:9px 16px;border:1px solid var(--hair);background:var(--paper);color:var(--muted);cursor:pointer;border-radius:3px}
-.calc-g button:hover{border-color:var(--tide);color:var(--ink)}
-.calc-g button[aria-pressed="true"]{background:var(--abyss);border-color:var(--abyss);color:#fff}
-.calc-rows{border-top:1px solid var(--hair)}
-.row{display:grid;grid-template-columns:26px minmax(0,1fr) 150px 140px;gap:16px;align-items:center;padding:14px 24px;border-bottom:1px solid var(--hair)}
-.row:has(input:checked){background:var(--sand)}
-.row input[type=checkbox]{width:19px;height:19px;accent-color:var(--abyss);cursor:pointer;margin:0}
-.row label{cursor:pointer;font-weight:700;font-size:16px}
-.row label small{display:block;font-weight:400;font-size:13.5px;color:var(--muted);margin-top:1px;line-height:1.55}
-.row .qty{font-size:14px;color:var(--muted)}
-.row .qty select{font:inherit;font-size:14px;padding:5px 8px;border:1px solid var(--hair);background:var(--paper);color:var(--ink);border-radius:3px;max-width:100%}
-.row .amt{font-family:var(--mono);font-size:16px;text-align:right;color:var(--ink);font-variant-numeric:tabular-nums}
-.row .amt small{display:block;font-family:var(--body);font-size:11.5px;color:var(--muted);margin-top:2px}
-.row.off{opacity:.45}
-.row.off .amt{color:var(--muted)}
-.calc-sum{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;padding:20px 24px;background:var(--abyss);color:#fff}
-.calc-sum .lab{font-size:14px;color:var(--foam)}
-.calc-sum .big{font-family:var(--mono);font-size:clamp(26px,3.4vw,34px);font-weight:500;letter-spacing:-.02em;line-height:1.1;margin-top:4px}
-.calc-sum .per{text-align:right;font-size:14px;color:rgba(255,255,255,.85);line-height:1.7}
-.calc-sum .per b{font-family:var(--mono);font-size:17px;font-weight:500;color:#fff}
-.calc-note{padding:14px 24px;font-size:13.5px;color:var(--muted);line-height:1.75;border-top:1px solid var(--hair);max-width:none}
-@media(max-width:760px){
-  .row{grid-template-columns:24px minmax(0,1fr);gap:6px 14px;padding:14px 18px}
-  .row .qty,.row .amt{grid-column:2}
-  .row .amt{text-align:left;font-size:17px}
-  .calc-q,.calc-g,.calc-sum,.calc-note{padding-left:18px;padding-right:18px}
-  .calc-sum{grid-template-columns:1fr}
-  .calc-sum .per{text-align:left}
-}
 .fine{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
 .fine div{font-size:15px;color:var(--muted)}
 .fine h3{font-size:16px;color:var(--ink);margin-bottom:6px}
-.fine table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin-top:8px}
-.fine td{padding:7px 0;border-bottom:1px solid var(--hair);color:var(--ink);vertical-align:top}
-.fine td:last-child{text-align:right;font-family:var(--mono);white-space:nowrap}
 @media(max-width:720px){.fine{grid-template-columns:1fr}}
 
 /* assessment steps */
@@ -595,8 +559,6 @@ footer .legal p+p{margin-top:4px}
   .faq details{break-inside:avoid}
   #form{display:none}
   .strip .arw{display:none}
-  .calc-g,.calc-sum .per{display:none}
-  .row.off{display:none}
   .stepper,.nona-panel,.ubig{break-inside:avoid}
   .faq details:not([open]) .a{display:block}
   .faq summary::after{display:none}
@@ -616,7 +578,7 @@ footer .legal p+p{margin-top:4px}
       <a href="#grade" data-en="What grade">現在幾年級</a>
       <a href="#timeline" data-en="Six stages">六個階段</a>
       <a href="#why" data-en="Why us">為什麼是我們</a>
-      <a href="#plans" data-en="Plans &amp; pricing">方案與價格</a>
+      <a href="#plans" data-en="Plans">方案</a>
       <a href="#faq" data-en="FAQ">常見問題</a>
       <a href="#form" data-en="Enquiry">問卷</a>
     </div>
@@ -705,7 +667,7 @@ footer .legal p+p{margin-top:4px}
       </div>
       <div class="gplan">
         <div class="pk" data-en="Suggested plan">建議方案</div>
-        <div class="pv" data-en="Start with Foundation Membership; sign the Recruiting Project in March of Grade 10&lt;small&gt;Recruiting Project at the NT$300,000 base price, plus five years of Foundation Membership: NT$900,000 in total. How many years of membership you buy is up to you.&lt;/small&gt;">地基會員先跑，招募專案高一 3 月簽<small>招募專案 30 萬基準價，加地基會員 5 學年共 90 萬。會員買幾年自己決定。</small></div>
+        <div class="pv" data-en="Start with Foundation Membership; sign the Recruiting Project in March of Grade 10&lt;small&gt;Sign the Recruiting Project before March 15 of Grade 10 and you pay the base price. How many years of membership you buy is up to you, and starting earlier leaves more room to adjust.&lt;/small&gt;">地基會員先跑，招募專案高一 3 月簽<small>招募專案在高一 3 月 15 日前簽是基準價。會員買幾年自己決定，越早開始，能調整的空間越大。</small></div>
       </div>
     </div>
 
@@ -731,7 +693,7 @@ footer .legal p+p{margin-top:4px}
       </div>
       <div class="gplan">
         <div class="pk" data-en="Suggested plan">建議方案</div>
-        <div class="pv" data-en="Start with Foundation Membership; sign the Recruiting Project in March of Grade 10&lt;small&gt;Recruiting Project at the NT$300,000 base price, plus four years of Foundation Membership: NT$780,000 in total.&lt;/small&gt;">地基會員先跑，招募專案高一 3 月簽<small>招募專案 30 萬基準價，加地基會員 4 學年共 78 萬。</small></div>
+        <div class="pv" data-en="Start with Foundation Membership; sign the Recruiting Project in March of Grade 10&lt;small&gt;The Recruiting Project is still at the base price if it is signed before March 15 of Grade 10. Grade 9 is when the high-school timetable and the NCAA core-course GPA start accumulating.&lt;/small&gt;">地基會員先跑，招募專案高一 3 月簽<small>招募專案高一 3 月 15 日前簽仍是基準價。國三正好是高中課程與 NCAA Core-Course GPA 開始累積的時候。</small></div>
       </div>
     </div>
 
@@ -757,7 +719,7 @@ footer .legal p+p{margin-top:4px}
       </div>
       <div class="gplan">
         <div class="pk" data-en="Suggested plan">建議方案</div>
-        <div class="pv" data-en="The Recruiting Project should be signed now&lt;small&gt;NT$300,000 base price, plus three years of Foundation Membership: NT$660,000 in total. After March 15 the price rises NT$10,000 for every three months of delay.&lt;/small&gt;">招募專案現在就該簽<small>30 萬基準價，加地基會員 3 學年共 66 萬。三月十五之後每晚三個月加一萬。</small></div>
+        <div class="pv" data-en="The Recruiting Project should be signed now&lt;small&gt;Sign before March 15 and you pay the base price. After that it rises with every three months of delay. This is the one grade that is not chasing the clock.&lt;/small&gt;">招募專案現在就該簽<small>三月十五日前簽是基準價，之後每晚三個月加一次價。這是唯一一個還不用追時間的年級。</small></div>
       </div>
     </div>
 
@@ -783,7 +745,7 @@ footer .legal p+p{margin-top:4px}
       </div>
       <div class="gplan">
         <div class="pk" data-en="Suggested plan">建議方案</div>
-        <div class="pv" data-en="Assessment first, then the Recruiting Project&lt;small&gt;Signing in September of Grade 11 is six months late: NT$320,000. With two years of Foundation Membership, NT$560,000 in total.&lt;/small&gt;">體檢通過才進招募專案<small>高二 9 月簽晚 6 個月，32 萬。加地基會員 2 學年共 56 萬。</small></div>
+        <div class="pv" data-en="Assessment first, then the Recruiting Project&lt;small&gt;Signing in September of Grade 11 is six months late, so the Recruiting Project costs more. The assessment comes first, and we start only if it is viable.&lt;/small&gt;">體檢通過才進招募專案<small>高二 9 月簽已經晚了 6 個月，招募專案會加價。先體檢確認可行，再決定啟不啟動。</small></div>
       </div>
     </div>
 
@@ -809,7 +771,7 @@ footer .legal p+p{margin-top:4px}
       </div>
       <div class="gplan">
         <div class="pk" data-en="Suggested plan">建議方案</div>
-        <div class="pv" data-en="Assessment first; we start only if it is viable&lt;small&gt;Signing in September of Grade 12 is eighteen months late: NT$360,000. With one year of Foundation Membership, NT$480,000 in total.&lt;/small&gt;">先做體檢，確認可行才啟動<small>高三 9 月簽晚 18 個月，36 萬。加地基會員 1 學年共 48 萬。</small></div>
+        <div class="pv" data-en="Assessment first; we start only if it is viable&lt;small&gt;Signing in September of Grade 12 is eighteen months late, the steepest point on the scale, and we may decline. Three to four time-compressed cases a year, no more.&lt;/small&gt;">先做體檢，確認可行才啟動<small>高三 9 月簽晚了 18 個月，加價幅度最大，而且我們不一定接。每年只接 3 到 4 件時間壓縮案件。</small></div>
       </div>
     </div>
   </div>
@@ -1141,9 +1103,9 @@ footer .legal p+p{margin-top:4px}
 <section id="plans">
   <div class="wrap">
     <div class="head">
-      <div class="lead" data-en="Pricing formula published. No case-by-case negotiation.">價格公式公開，不個案議價</div>
-      <h2 data-en="Recruiting Project from NT$300,000.&lt;br&gt;Foundation Membership NT$10,000 a month.">招募專案 30 萬起，<br>地基會員一個月一萬</h2>
-      <p data-en="A single-season agency typically publishes NT$80,000 to NT$150,000. Nobody publishes a price for multi-year advisory work. We write out the formula so anyone can arrive at the same number.">單季代辦公開價通常是 8 到 15 萬，多年期顧問沒有人公開價格。我們把公式寫出來，任何人算得出同一個數字。</p>
+      <div class="lead" data-en="One formula for everyone. No case-by-case negotiation.">同一套公式，不個案議價</div>
+      <h2 data-en="Two tracks, each independent.&lt;br&gt;You can buy just one.">兩條線，各自獨立。<br>你可以只買一條</h2>
+      <p data-en="An agency works the application season. What we do is multi-year preparation and recruiting itself, sold as two separate things, so you buy the part the player actually needs. We go through the full cost in the consultation, from one formula that applies to everyone.">代辦做的是申請那一季。我們做的是多年期的準備，以及招募本身，兩件事分開賣，你買的是選手真正需要的那一段。完整費用在諮詢時說明，用的是同一套對所有人都一樣的公式。</p>
     </div>
 
     <div class="funnel">
@@ -1173,7 +1135,7 @@ footer .legal p+p{margin-top:4px}
         <div class="s-top">
           <div class="s-tag" data-en="Gets the player in">讓選手進得去</div>
           <h3 data-en="Recruiting Project">招募專案</h3>
-          <div class="s-p" data-en="From NT$300,000&lt;small&gt;Signing before March 15 of Grade 10 is the base price. Signing later costs more; the formula is below.&lt;/small&gt;">NT$300,000 起<small>高一 3 月 15 日前簽約是基準價。晚一點簽會加價，公式在下面</small></div>
+          <div class="s-p" data-en="A single fee&lt;small&gt;From signing to the end of freshman year. Signing before March 15 of Grade 10 is the base price; signing later costs more.&lt;/small&gt;">一次性收費<small>簽約到大一結束。高一 3 月 15 日前簽是基準價，晚一點簽會加價</small></div>
         </div>
         <ul>
           <li data-en="Everything an agency does for you is in here">代辦幫你做的事，這裡都有</li>
@@ -1191,7 +1153,7 @@ footer .legal p+p{margin-top:4px}
         <div class="s-top">
           <div class="s-tag" data-en="Keeps the player alive there">讓選手活得下來</div>
           <h3 data-en="Foundation Membership">地基會員</h3>
-          <div class="s-p" data-en="NT$10,000 a month&lt;small&gt;NT$120,000 a year, billed NT$60,000 a semester. Any grade from Grade 8 to freshman year can join, for as many years as you choose.&lt;/small&gt;">一個月一萬<small>年費 NT$120,000，每學期收 60,000。國二到大一任何年級都能加，買幾年自己決定</small></div>
+          <div class="s-p" data-en="A subscription&lt;small&gt;Billed by semester. Any grade from Grade 8 to freshman year can join, for as many years as you choose.&lt;/small&gt;">訂閱制<small>一學期收一次。國二到大一任何年級都能加，買幾年自己決定</small></div>
         </div>
         <ul>
           <li data-en="English: SAT, TOEFL and writing">英文：SAT、TOEFL、寫作</li>
@@ -1215,42 +1177,19 @@ footer .legal p+p{margin-top:4px}
         <div class="lead" data-en="Why signing early costs less">為什麼早簽比較便宜</div>
         <h3 data-en="The Recruiting Project price moves with the clock">招募專案的價格跟著時間走</h3>
         <p data-en="Coaches can contact him directly from June 15, and we need three months to build the package. That makes March 15 of Grade 10 the comfortable moment to sign. Come later and the same work has to be compressed into less time. The price reflects that compression.">六月十五那天教練就可以直接聯絡選手，我們需要三個月把資料包做好，所以高一 3 月 15 日是最舒服的簽約時間。晚一點來，同樣的東西要壓在更短的時間裡做完，價格反映的是那個壓縮。</p>
-        <p class="late-rule" data-en="Base price NT$300,000. Measured from March 15 of Grade 10, every three months of delay adds NT$10,000, capped at NT$100,000. Coming in the spring of Grade 12 means NT$380,000.">基準價 30 萬。以高一 3 月 15 日為準，每晚三個月加 1 萬，加價最多 10 萬。高三下學期才來，是 38 萬。</p>
+        <p class="late-rule" data-en="March 15 of Grade 10 is the baseline. Every three months of delay moves the price up one step, and the surcharge is capped, so it does not climb without limit. The spring of Grade 12 is the latest anyone can sign. We go through the actual figures in the consultation.">以高一 3 月 15 日為準，每晚三個月加一次價。加價有上限，不會無限往上加。高三下學期是能簽約的最晚時間。實際金額在諮詢時說明。</p>
       </div>
       <table class="late-t">
-        <thead><tr><th data-en="When you sign">什麼時候簽約</th><th data-en="Months late">晚幾個月</th><th data-en="Recruiting Project">招募專案</th></tr></thead>
+        <thead><tr><th data-en="When you sign">什麼時候簽約</th><th data-en="Months late">晚幾個月</th><th data-en="How we see it">我們怎麼看</th></tr></thead>
         <tbody>
-          <tr><td data-en="Before Mar 15, Grade 10">高一 3 月 15 日前</td><td data-en="base">基準</td><td>NT$300,000</td></tr>
-          <tr><td data-en="June, Grade 10">高一 6 月</td><td>3</td><td>NT$310,000</td></tr>
-          <tr><td data-en="Sep, Grade 11">高二 9 月</td><td>6</td><td>NT$320,000</td></tr>
-          <tr><td data-en="Mar, Grade 11">高二 3 月</td><td>12</td><td>NT$340,000</td></tr>
-          <tr><td data-en="Sep, Grade 12">高三 9 月</td><td>18</td><td>NT$360,000</td></tr>
-          <tr><td data-en="Mar, Grade 12">高三 3 月</td><td>24</td><td>NT$380,000</td></tr>
+          <tr><td data-en="Before Mar 15, Grade 10">高一 3 月 15 日前</td><td data-en="base">基準</td><td data-en="The best time to start">最好的起點</td></tr>
+          <tr><td data-en="June, Grade 10">高一 6 月</td><td>3</td><td data-en="Still comfortable">還來得及</td></tr>
+          <tr><td data-en="Sep, Grade 11">高二 9 月</td><td>6</td><td data-en="Starting to compress">開始壓縮</td></tr>
+          <tr><td data-en="Mar, Grade 11">高二 3 月</td><td>12</td><td data-en="Assessment first">先體檢再決定</td></tr>
+          <tr><td data-en="Sep, Grade 12">高三 9 月</td><td>18</td><td data-en="Assessment first; we may decline">先體檢，不一定接</td></tr>
+          <tr><td data-en="Mar, Grade 12">高三 3 月</td><td>24</td><td data-en="The last possible moment">最晚，不一定接</td></tr>
         </tbody>
       </table>
-    </div>
-
-    <div class="calc">
-      <div class="calc-q" data-en="What grade is the player in?">選手現在幾年級？</div>
-      <div class="calc-g" role="group" aria-label="進場年級" data-en-attr="aria-label|Entry grade">
-        <button type="button" data-g="g8" aria-pressed="true" data-en="Grade 8">國二</button>
-        <button type="button" data-g="g9" aria-pressed="false" data-en="Grade 9">國三</button>
-        <button type="button" data-g="h1" aria-pressed="false" data-en="Grade 10">高一</button>
-        <button type="button" data-g="h2" aria-pressed="false" data-en="Grade 11">高二</button>
-        <button type="button" data-g="h3" aria-pressed="false" data-en="Grade 12">高三</button>
-      </div>
-      <div class="calc-rows">
-        <div class="row"><input type="checkbox" id="cQ" data-p="Q" checked><label for="cQ" data-en="Consultation&lt;small&gt;60-minute call. Credited forward if you continue.&lt;/small&gt;">諮詢<small>60 分鐘會談。往下走的話折抵</small></label><div class="qty" data-en="One-off">單次</div><div class="amt" data-amt="Q">NT$2,800</div></div>
-        <div class="row"><input type="checkbox" id="cX" data-p="X" checked><label for="cX" data-en="Assessment&lt;small&gt;Report plus debrief. Credited forward if you join.&lt;/small&gt;">體檢<small>報告加 debrief。加入服務的話折抵</small></label><div class="qty" data-en="One-off">單次</div><div class="amt" data-amt="X">NT$15,000</div></div>
-        <div class="row"><input type="checkbox" id="cM" data-p="M" checked><label for="cM" data-en="Foundation Membership&lt;small&gt;NT$10,000 a month. Any grade can join.&lt;/small&gt;">地基會員<small>一個月一萬，任何年級都能加</small></label><div class="qty"><select id="qM" aria-label="會員學年數" data-en-attr="aria-label|Membership years"><option value="1" data-en="1 year">1 學年</option><option value="2" data-en="2 years">2 學年</option><option value="3" selected data-en="3 years">3 學年</option><option value="4" data-en="4 years">4 學年</option><option value="5" data-en="5 years">5 學年</option><option value="6" data-en="6 years">6 學年</option></select></div><div class="amt" data-amt="M">NT$360,000</div></div>
-        <div class="row"><input type="checkbox" id="cP" data-p="P" checked><label for="cP" data-en="Recruiting Project&lt;small&gt;From signing to the end of freshman year. NT$300,000 base, more if signed late.&lt;/small&gt;">招募專案<small>簽約到大一結束。基準 30 萬，晚簽加價</small></label><div class="qty" data-en="Signing to end of freshman year">簽約到大一結束</div><div class="amt" data-amt="P">NT$300,000</div></div>
-        <div class="row"><input type="checkbox" id="cE" data-p="E"><label for="cE" data-en="Recruiting English&lt;small&gt;Add-on. 10% off when bundled with membership.&lt;/small&gt;">招募英文<small>加價購。會員綑綁折 10%</small></label><div class="qty"><select id="qE" aria-label="英文課堂數" data-en-attr="aria-label|Number of English lessons"><option value="10" data-en="10 lessons">10 堂</option><option value="20" data-en="20 lessons">20 堂</option><option value="30" data-en="30 lessons">30 堂</option></select></div><div class="amt" data-amt="E">NT$13,500</div></div>
-      </div>
-      <div class="calc-sum">
-        <div><div class="lab" data-en="What you will pay">你會付的總額</div><div class="big" id="calcTotal">NT$660,000</div></div>
-        <div class="per" data-en="Over &lt;b id=&quot;calcMonths&quot;&gt;40&lt;/b&gt; months&lt;br&gt;Average &lt;b id=&quot;calcPer&quot;&gt;NT$16,500&lt;/b&gt; a month">陪 <b id="calcMonths">40</b> 個月<br>平均每月 <b id="calcPer">NT$16,500</b></div>
-      </div>
-      <p class="calc-note" id="calcNote"></p>
     </div>
 
     <div class="fine">
@@ -1262,11 +1201,6 @@ footer .legal p+p{margin-top:4px}
       <div>
         <h3 data-en="Recruiting English, as an add-on">招募英文，加價購</h3>
         <span data-en="One-to-one and custom built. No off-the-shelf course. We start from the English threshold at the target schools, assess how far he is from it, and decide from there what to teach and for how long. Requirements genuinely do differ between US universities.&lt;br&gt;&lt;b&gt;Academic English&lt;/b&gt; essays, college writing and classroom English. &lt;b&gt;Recruiting English&lt;/b&gt; self-introduction, tennis English, coach interviews. &lt;b&gt;Test English&lt;/b&gt; TOEFL, IELTS, Duolingo and others, aimed at the target schools.&lt;br&gt;Billed in blocks of 10 lessons, 10% off bundled with Foundation Membership. The point is not to finish teaching him English. It is to fill in the English the application and the move to the US actually require.">一對一客製，不上公版課程。先看目標學校的英文門檻，再評估現在差多少，決定教什麼、教多久。不同美國大學的英語能力要求確實可能不同。<br><b>學術英文</b>　Essay、大學寫作與課堂英文。<b>招募英文</b>　自我介紹、網球英文、教練面談。<b>檢定英文</b>　依目標學校準備 TOEFL、IELTS、Duolingo 等。<br>每 10 堂一期，地基會員綑綁享 9 折。不是把英文教完，而是把申請與赴美真正需要的英文補起來。</span>
-        <table>
-          <tr><td data-en="10 lessons">10 堂</td><td>NT$15,000</td></tr>
-          <tr><td data-en="20 lessons">20 堂</td><td>NT$28,000</td></tr>
-          <tr><td data-en="30 lessons">30 堂</td><td>NT$40,000</td></tr>
-        </table>
       </div>
     </div>
   </div>
@@ -1314,7 +1248,7 @@ footer .legal p+p{margin-top:4px}
       </details>
       <details>
         <summary data-en="What does it cost in total?">總共要花多少錢？</summary>
-        <div class="a" data-en="&lt;p&gt;They are priced separately. The Recruiting Project has a base price of NT$300,000, rising NT$10,000 for every three months after March 15 of Grade 10, capped at NT$100,000. In practice the latest anyone arrives is the spring of Grade 12, which is NT$380,000. Foundation Membership is NT$10,000 a month, NT$120,000 a year, for as many years as you choose.&lt;/p&gt;&lt;p&gt;Buying both: signing in Grade 10 is NT$660,000 (three years of membership plus NT$300,000 for the project); arriving in Grade 12 is NT$480,000 (one year of membership plus NT$360,000). The calculator above works out the full service cost from the player&amp;#39;s current grade.&lt;/p&gt;&lt;p&gt;US tuition and living costs are separate. Actual costs vary enormously by school, region and scholarship, and when a school issues an I-20 it requires proof of funds matched to its own tuition and living estimates. The assessment report factors this in, producing three budget scenarios across four years as NT$ ranges. Not just where he can go, but whether you can afford to get there.&lt;/p&gt;"><p>兩個分開算。招募專案基準價 30 萬，高一 3 月 15 日以後每晚三個月加 1 萬，加價最多 10 萬。實際上最晚會來的是高三下學期，那是 38 萬。地基會員一個月一萬，年費 12 萬，買幾年自己決定。</p><p>兩個都買的話：高一簽是 66 萬（會員 3 學年加專案 30 萬），高三才來是 48 萬（會員 1 學年加專案 36 萬）。上方計算器可以依選手現在的年級，直接算出完整服務費用。</p><p>美國學費與生活費另計。實際費用會因學校、地區與獎學金有很大差異；各校核發 I‑20 時，也會依學費與生活成本要求相應的財力證明。體檢報告會把這件事一起算進去，依不同學校與獎學金情境，整理成 3 個預算層級乘以 4 年的台幣區間。不只告訴你能去哪，也先算清楚去不去得起。</p></div>
+        <div class="a" data-en="&lt;p&gt;The two tracks are priced separately and you can buy just one. The Recruiting Project is a single fee covering everything from signing to the end of freshman year. Foundation Membership is a subscription billed by semester, and how many years you buy is up to you. Buy both and the membership is discounted.&lt;/p&gt;&lt;p&gt;What the Recruiting Project costs depends on when you sign. The earlier it is, the lower it is, and the surcharge for signing late is capped. We go through the full figures and the formula in the NT$2,800 consultation, and the formula is the same for everyone: no case-by-case negotiation. The consultation fee credits against the assessment and the assessment credits against the service, so going the whole way means the first two steps cost you nothing extra.&lt;/p&gt;&lt;p&gt;US tuition and living costs are separate. Actual costs vary enormously by school, region and scholarship, and when a school issues an I-20 it requires proof of funds matched to its own tuition and living estimates. The assessment report factors this in, producing three budget scenarios across four years as NT$ ranges. Not just where he can go, but whether you can afford to get there.&lt;/p&gt;"><p>兩條線分開計價，可以只買一條。招募專案是一次性收費，涵蓋簽約到大一結束；地基會員是訂閱制，一學期收一次，買幾年自己決定。兩個都買，地基會員有折扣。</p><p>招募專案的費用取決於什麼時候簽約，越早越低，晚簽的加價有上限。完整金額與公式，我們在 NT$2,800 的諮詢裡直接講清楚，而且公式對所有人都一樣，不個案議價。諮詢的錢折抵體檢，體檢再折抵服務，走完全程，前面兩層等於沒有多收。</p><p>美國學費與生活費另計。實際費用會因學校、地區與獎學金有很大差異；各校核發 I‑20 時，也會依學費與生活成本要求相應的財力證明。體檢報告會把這件事一起算進去，依不同學校與獎學金情境，整理成 3 個預算層級乘以 4 年的台幣區間。不只告訴你能去哪，也先算清楚去不去得起。</p></div>
       </details>
       <details>
         <summary data-en="Do you guarantee admission?">你們保證錄取嗎？</summary>
@@ -1482,7 +1416,6 @@ var TAX_ID = "95435096";
     if(window.__redrawStep) window.__redrawStep();
     if(window.__redrawNona) window.__redrawNona();
     if(window.__redrawUTR) window.__redrawUTR();
-    if(window.__redrawCalc) window.__redrawCalc();
   };
   tabs.forEach(function(t,i){
     t.addEventListener('click',function(){select(t,i);});
@@ -1493,91 +1426,6 @@ var TAX_ID = "95435096";
     });
   });
   select(tabs[0],0);
-
-  // 價格樂高
-  var P={Q:2800,X:15000,M:120000,P:300000};
-  var lateNow=0, projM=40;   // 晚簽加價（封頂 10 萬）與招募專案剩幾個月
-  var ENG={10:15000,20:28000,30:40000};
-  // 學年數是「還剩幾年到高三結束」，可自己調。late 與 pm 都以該年級開學時簽約計算
-  var PRESET={
-    g8:{M:5,on:['Q','X','M','P'],late:0,pm:40},          // 到高一 3 月才簽，還是基準價
-    g9:{M:4,on:['Q','X','M','P'],late:0,pm:40},
-    h1:{M:3,on:['Q','X','M','P'],late:0,pm:40},          // 高一 3 月 15 日，基準
-    h2:{M:2,on:['Q','X','M','P'],late:20000,pm:34},      // 高二 9 月，晚 6 個月
-    h3:{M:1,on:['Q','X','M','P'],late:60000,pm:22}       // 高三 9 月，晚 18 個月
-  };
-  var nf=function(n){return 'NT$'+n.toLocaleString('en-US');};
-  var box=function(k){return document.querySelector('[data-p="'+k+'"]');};
-  var amt=function(k){return document.querySelector('[data-amt="'+k+'"]');};
-  var qM=document.getElementById('qM'), qE=document.getElementById('qE');
-
-  function calc(){
-    var mOn=box('M').checked, pOn=box('P').checked, joined=mOn||pOn;
-    var my=parseInt(qM.value,10), total=0;
-
-    // 諮詢與體檢：加入服務就全額折抵
-    ['Q','X'].forEach(function(k){
-      var on=box(k).checked;
-      amt(k).textContent = on ? (joined?(LANG==='en'?'Credited　NT$0':'折抵後 NT$0'):nf(P[k])) : nf(0);
-      if(on && !joined) total += P[k];
-    });
-    // 只做體檢沒做諮詢時體檢全額；有諮詢時 2,800 折進體檢，合計仍是 15,000
-    if(!joined && box('Q').checked && box('X').checked){
-      total = P.X;
-      amt('X').textContent = nf(P.X - P.Q) + (LANG==='en'?'　after credit':' 折抵後');
-    }
-
-    var mAmt = mOn ? P.M*my : 0;
-    amt('M').textContent = nf(mAmt); total += mAmt;
-    var pAmt = pOn ? P.P + lateNow : 0;
-    if(pOn && lateNow) amt('P').innerHTML = nf(pAmt) + '<small>' + (LANG==='en'?'incl. late-signing surcharge ':'含晚簽加價 ') + nf(lateNow) + '</small>';
-    else amt('P').textContent = nf(pAmt);
-    total += pAmt;
-
-    var eBase = ENG[qE.value];
-    var eAmt = box('E').checked ? Math.round(eBase*(joined?0.9:1)) : 0;
-    amt('E').textContent = nf(eAmt); total += eAmt;
-
-    ['Q','X','M','P','E'].forEach(function(k){
-      box(k).closest('.row').classList.toggle('off', !box(k).checked);
-    });
-
-    // 兩條線並行不是接力，所以月數取比較長的那一條
-    var months = Math.max(mOn?my*12:0, pOn?projM:0);
-    var perM = months ? Math.round(total/months/100)*100 : 0;
-    if(window.__roll && months){
-      window.__roll(total, perM, months);
-    } else {
-      document.getElementById('calcTotal').textContent = nf(total);
-      document.getElementById('calcMonths').textContent = months;
-      document.getElementById('calcPer').textContent = months ? nf(perM) : (LANG==='en'?'n/a':'不適用');
-    }
-    if(!months) document.getElementById('calcPer').textContent = (LANG==='en'?'n/a':'不適用');
-
-    var EN=(LANG==='en'), note=[];
-    if(joined && (box('Q').checked||box('X').checked)) note.push(EN?'The consultation and assessment fees credit forward, so they show as 0 in the total.':'諮詢與體檢的錢往下折抵，所以總額裡是 0。');
-    if(pOn) note.push(EN?'The Recruiting Project\u2019s NT$300,000 splits in two: NT$200,000 for the recruiting phase and NT$100,000 for the landing phase, paid after admission.':'招募專案的 NT$300,000 分兩段：招募段 200,000，落地段 100,000 錄取後才付。');
-    if(pOn) note.push(EN?'This assumes signing at the start of that school year. Add the surcharge from the table above for each further delay.':'算的是這個年級開學時簽約。晚幾個月照上面那張表加。');
-    if(mOn && pOn) note.push(EN?'The two tracks run in parallel, not in sequence, so the month count is the longer of the two rather than the sum.':'兩條線是並行的不是接力，所以月數取比較長的那一條，不是相加。');
-    if(box('E').checked && joined) note.push(EN?'Recruiting English has the 10% membership bundle discount applied.':'招募英文已套用會員綑綁 9 折。');
-    if(!joined) note.push(EN?'No service has been added yet, so the consultation and assessment are money you actually pay.':'還沒加入服務，所以諮詢與體檢是實際要付的錢。');
-    note.push(EN?'US tuition and living costs are not included. That varies enormously by school and scholarship, and the assessment report uses the I-20 funding gap to produce a four-year NT$ range.':'以上不含美國的學費與生活費。那一段依學校與獎學金差很多，體檢報告會用 I‑20 差額算出四年的台幣區間。');
-    document.getElementById('calcNote').textContent = note.join(' ');
-  }
-
-  document.querySelectorAll('.calc-g button').forEach(function(b){
-    b.addEventListener('click',function(){
-      var pre=PRESET[b.dataset.g];
-      document.querySelectorAll('.calc-g button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
-      ['Q','X','M','P'].forEach(function(k){box(k).checked=pre.on.indexOf(k)>-1;});
-      if(pre.M) qM.value=String(pre.M);
-      lateNow=pre.late||0; projM=pre.pm||40;
-      calc();
-    });
-  });
-  document.querySelectorAll('.calc input,.calc select').forEach(function(el){el.addEventListener('change',calc);});
-  calc();
-  window.__redrawCalc=calc;
 
   // ---- 六步驟 stepper ----
   var STEPS=[
@@ -1840,26 +1688,11 @@ var TAX_ID = "95435096";
       });
 
     // 引言與計算器
-    ScrollTrigger.batch('.story .quote, .both, .calc, .fn-note, .ubig',{start:'top 88%',once:true,
+    ScrollTrigger.batch('.story .quote, .both, .fn-note, .ubig',{start:'top 88%',once:true,
       onEnter:function(els){gsap.from(els,{autoAlpha:0,y:20,duration:.7,stagger:.1,overwrite:true});}});
   });
 
-  // 價格計算器：數字用滾的，不是直接跳
-  function elTotal(){return document.getElementById('calcTotal');}
-  function elPer(){return document.getElementById('calcPer');}
-  function elMons(){return document.getElementById('calcMonths');}
-  function rollNum(el,to,step){
-    if(!el) return;
-    var from=parseInt((el.textContent||'0').replace(/[^0-9]/g,''),10)||0;
-    if(from===to){return;}
-    var o={v:from}, pre=(el.textContent||'').indexOf('NT$')===0?'NT$':'';
-    gsap.to(o,{v:to,duration:.55,ease:'power2.out',
-      onUpdate:function(){
-        var n=Math.round(o.v/step)*step;
-        el.textContent=pre+n.toLocaleString('en-US');
-      },
-      onComplete:function(){el.textContent=pre+to.toLocaleString('en-US');}});
-  }
+  // 年級時間軸的月數：用滾的，不是直接跳
   window.__rollInt=function(el,to){
     if(!el||isNaN(to))return;
     var from=parseInt(el.textContent,10);
@@ -1869,14 +1702,6 @@ var TAX_ID = "95435096";
       onUpdate:function(){el.textContent=Math.round(o.v);},
       onComplete:function(){el.textContent=to;}});
   };
-  window.__roll=function(total,perMonth,months){
-    var mons=elMons();
-    rollNum(elTotal(),total,1000); rollNum(elPer(),perMonth,100);
-    if(mons){var o={v:parseInt(mons.textContent,10)||0};
-      gsap.to(o,{v:months,duration:.5,onUpdate:function(){mons.textContent=Math.round(o.v);},
-        onComplete:function(){mons.textContent=months;}});}
-  };
-
   // UTR 滑桿：大數字微微跳一下，確認有在動
   var uval=document.getElementById('uval');
   if(uval){document.getElementById('uv').addEventListener('input',function(){

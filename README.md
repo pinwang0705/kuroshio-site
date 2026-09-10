@@ -4,7 +4,8 @@ Kuroshio Athletics（黑潮運動）官網。靜態站，單一 HTML，零建置
 
 正式站：https://kuroshio.pinchengco.com/
 
-- `index.html`：整站，唯一來源。受眾是家長與選手。方案編號 A 到 F，價格依 2026-09-06 定版（決定 4.5）。
+- `index.html`：整站，唯一來源。受眾是家長與選手。中文寫在 HTML 裡，英文寫在同一個元素的 `data-en` 屬性，**改中文一定要一起改 data-en**，不然英文版會停在舊版本。
+- 服務是兩條各自獨立的線：招募專案（讓選手進得去）與地基會員（讓選手活得下來），可以只買一條。細節見 `~/Anson/projects/kuroshio/service-design/workshop-notes.md` 第九段。
 - `CNAME`：自訂網域 kuroshio.pinchengco.com。刪掉會退回 github.io 網址。
 - 對外聯絡：support@pinchengcaptain.com。統編 95435096。改在 `index.html` 最底的兩個常數。
 - `assets/`：logo PNG 五張加 `og-1200x630.png`（LINE / FB 分享預覽圖，Abyss 底加 lockup）。
@@ -29,9 +30,16 @@ var TAX_ID = "";
 
 生效後到 repo Settings → Pages 勾 Enforce HTTPS。
 
+## 價格怎麼寫（2026-09-09 決定 11.1 到 11.4）
+官網**不公開**招募專案與地基會員的金額。拿掉的有：金額、晚簽加價的六個數字、價格計算器、年級面板的全程總額、招募英文價目表。
+
+保留的是入口價（諮詢 NT$2,800、體檢 NT$15,000）與價格的**結構**：兩條線分開計價可以只買一條、招募專案一次性、地基會員訂閱制、越早簽越便宜、晚簽加價有上限、兩個都買地基有折扣、前面付過的往下折抵。金額一律寫「在諮詢時說明」。
+
+要加價格回去之前先讀 workshop-notes 第十一段，那裡寫了為什麼拿掉。價目本身沒有變，只是不寫在官網。
+
 ## 尚未定案
-- 問卷 v2 上線後換 Tally 連結（現在是 v1：tally.so/r/Mepoqk）。
-- 對外 EMAIL 與統一編號（見上）。
+- 綑綁折扣的折數、轉學方案的範圍，兩個都還沒定，所以官網只寫「有折扣」不寫幾折。
+- Cal.com 預約連結還沒接進來，`#book` 現在只有問卷。
 
 ## 本機預覽
 `python3 -m http.server 8765` 然後開 http://localhost:8765/
