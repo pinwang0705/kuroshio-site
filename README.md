@@ -42,7 +42,7 @@ var TAX_ID = "";
 諮詢曾經是 2,800 六十分鐘（第八段）、免費 30 分鐘（第十三段），2026-09-14 定為 **NT$1,500 六十分鐘、先付再排**。體檢從 15,000 改 **7,500**。折抵是「前面付過的都往下折」：1,500 折進體檢實付 6,000，體檢全額折進服務。官網不寫「有時免費」，打折或免費只用有條件有期限的活動。理由在 workshop-notes 第十四段。
 
 ## 諮詢問卷改按鈕連出，不再嵌入（2026-09-14 決定 14.7）
-`#form` 區原本嵌 Tally iframe（LZrGDz），現在是兩顆按鈕：「家長填這份」「選手填這份」，連結填在 index.html 最底的常數 `TALLY_PARENT`、`TALLY_STUDENT`。**常數是空字串時按鈕半透明不可點**，所以四份新表單建好前不要 push。Tally 的 embed script 已移除。體檢兩份問卷不放官網，匯款後寄（決定 8.16 不變）。四份問卷的建立指令在 `~/Anson/projects/kuroshio/service-design/tally-prompts/`。
+`#form` 區原本嵌 Tally iframe（LZrGDz），現在是兩顆按鈕：「家長填這份」「選手填這份」，連結填在 index.html 最底的常數 `TALLY_PARENT`、`TALLY_STUDENT`。**常數是空字串時按鈕半透明不可點**，Paul 2026-09-14 決定先 push，表單建好再補連結。Tally 的 embed script 已移除。體檢兩份問卷不放官網，匯款後寄（決定 8.16 不變）。四份問卷的建立指令在 `~/Anson/projects/kuroshio/service-design/tally-prompts/`。
 
 要加價格回去之前先讀 workshop-notes 第十一段，那裡寫了為什麼拿掉。
 
