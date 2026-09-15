@@ -519,6 +519,11 @@ html[lang="en"] .stage .ask::before{content:"By the end of this stage, you shoul
 .form-top span{font-size:13.5px;color:var(--muted)}
 .form iframe{display:block;width:100%;border:0;min-height:640px}
 .form-fb{padding:12px 22px 16px;font-size:14px;color:var(--muted);border-top:1px solid var(--hair)}
+.form-links{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:22px}
+.form-links .btn{text-align:left;line-height:1.25;padding:18px 22px}
+.form-links .btn small{display:block;font-weight:400;font-size:13px;opacity:.85;margin-top:6px}
+.form-links .btn.is-pending{opacity:.55;cursor:not-allowed}
+@media(max-width:560px){.form-links{grid-template-columns:1fr;padding:16px}}
 @media(max-width:560px){.form-top{padding:14px 16px}}
 
 /* final cta */
@@ -667,7 +672,7 @@ footer .legal p+p{margin-top:4px}
       </div>
       <div class="gplan">
         <div class="pk" data-en="Suggested plan">建議方案</div>
-        <div class="pv" data-en="Start with Foundation Membership; sign the Recruiting Project in March of Grade 10&lt;small&gt;Sign the Recruiting Project before March 15 of Grade 10 and you pay the base price. How many years of membership you buy is up to you, and starting earlier leaves more room to adjust.&lt;/small&gt;">地基會員先跑，招募專案高一 3 月簽<small>招募專案在高一 3 月 15 日前簽是基準價。會員買幾年自己決定，越早開始，能調整的空間越大。</small></div>
+        <div class="pv" data-en="Start with Foundation Membership; sign the Recruiting Project in Grade 10&lt;small&gt;Sign the Recruiting Project before August 15 of the summer before Grade 11 and you pay the base price. How many years of membership you buy is up to you, and starting earlier leaves more room to adjust.&lt;/small&gt;">地基會員先跑，招募專案高一那年簽<small>招募專案在升高二的 8 月 15 日前簽是基準價。會員買幾年自己決定，越早開始，能調整的空間越大。</small></div>
       </div>
     </div>
 
@@ -682,7 +687,7 @@ footer .legal p+p{margin-top:4px}
           <div class="k" data-en="Months left to end of freshman year">到大一結束還剩</div>
           <div class="v" data-en="&lt;em class=&quot;gcm&quot;&gt;58&lt;/em&gt; months"><em class="gcm">58</em>個月</div>
           <div class="k" data-en="Next hard date">下一個硬日期</div>
-          <div class="v" data-en="Grade 10, March 15&lt;small&gt;baseline signing date for the Recruiting Project, in &lt;em class=&quot;gcd&quot; style=&quot;font-size:16px&quot;&gt;18&lt;/em&gt; months&lt;/small&gt;">高一 3 月 15 日<small>招募專案的簽約基準日，<em class="gcd" style="font-size:16px">18</em> 個月後</small></div>
+          <div class="v" data-en="Aug 15 before Grade 11&lt;small&gt;last day to sign the Recruiting Project at the base price, in &lt;em class=&quot;gcd&quot; style=&quot;font-size:16px&quot;&gt;23&lt;/em&gt; months&lt;/small&gt;">升高二的 8 月 15 日<small>招募專案不加價的最後一天，<em class="gcd" style="font-size:16px">23</em> 個月後</small></div>
         </div>
       </div>
       <div class="lanes">
@@ -693,7 +698,7 @@ footer .legal p+p{margin-top:4px}
       </div>
       <div class="gplan">
         <div class="pk" data-en="Suggested plan">建議方案</div>
-        <div class="pv" data-en="Start with Foundation Membership; sign the Recruiting Project in March of Grade 10&lt;small&gt;The Recruiting Project is still at the base price if it is signed before March 15 of Grade 10. Grade 9 is when the high-school timetable and the NCAA core-course GPA start accumulating.&lt;/small&gt;">地基會員先跑，招募專案高一 3 月簽<small>招募專案高一 3 月 15 日前簽仍是基準價。國三正好是高中課程與 NCAA Core-Course GPA 開始累積的時候。</small></div>
+        <div class="pv" data-en="Start with Foundation Membership; sign the Recruiting Project in Grade 10&lt;small&gt;The Recruiting Project is still at the base price if it is signed before August 15 of the summer before Grade 11. Grade 9 is when the high-school timetable and the NCAA core-course GPA start accumulating.&lt;/small&gt;">地基會員先跑，招募專案高一那年簽<small>招募專案在升高二的 8 月 15 日前簽仍是基準價。國三正好是高中課程與 NCAA Core-Course GPA 開始累積的時候。</small></div>
       </div>
     </div>
 
@@ -702,13 +707,13 @@ footer .legal p+p{margin-top:4px}
         <div>
           <h3 data-en="The decisive year. One clear target: June 15.">關鍵的一年。目標很清楚：六月十五。</h3>
           <p data-en="From June 15 after sophomore year, NCAA Division I rules allow college coaches to contact the player directly by phone, email and message.">高中二年級（台灣的高一）結束後的 6 月 15 日起，依 NCAA Division I 的招募規則，大學教練可以開始用電話、Email、訊息直接跟選手溝通。</p>
-          <p data-en="So what matters is not starting on June 15. It is that when the day arrives, he is already ready to be seen. March 15 is when the Recruiting Project should be signed, because we need those three months to build the film, the resume, the school list and the first batch of letters.">所以真正重要的不是等到 6 月 15 日才開始，而是到了那一天，選手已經準備好被教練看見。三月十五那天就該簽招募專案，因為我們需要那三個月，把影片、Resume、名單、第一批信做好。</p>
+          <p data-en="So what matters is not starting on June 15. It is that when the day arrives, he is already ready to be seen. Grade 10 is the year to sign the Recruiting Project, ideally before March, because we need those three months to build the film, the resume, the school list and the first batch of letters before June 15.">所以真正重要的不是等到 6 月 15 日才開始，而是到了那一天，選手已經準備好被教練看見。高一這一年就該簽招募專案，最好在 3 月前，因為我們需要那三個月，把影片、Resume、名單、第一批信做好，6 月 15 日才來得及。</p>
         </div>
         <div class="gcount">
           <div class="k" data-en="Months left to end of freshman year">到大一結束還剩</div>
           <div class="v" data-en="&lt;em class=&quot;gcm&quot;&gt;46&lt;/em&gt; months"><em class="gcm">46</em>個月</div>
           <div class="k" data-en="Next hard date">下一個硬日期</div>
-          <div class="v" data-en="Grade 10, March 15&lt;small&gt;baseline signing date for the Recruiting Project, in &lt;em class=&quot;gcd&quot; style=&quot;font-size:16px&quot;&gt;6&lt;/em&gt; months&lt;/small&gt;">高一 3 月 15 日<small>招募專案的簽約基準日，<em class="gcd" style="font-size:16px">6</em> 個月後</small></div>
+          <div class="v" data-en="Aug 15 before Grade 11&lt;small&gt;last day to sign the Recruiting Project at the base price, in &lt;em class=&quot;gcd&quot; style=&quot;font-size:16px&quot;&gt;11&lt;/em&gt; months&lt;/small&gt;">升高二的 8 月 15 日<small>招募專案不加價的最後一天，<em class="gcd" style="font-size:16px">11</em> 個月後</small></div>
         </div>
       </div>
       <div class="lanes">
@@ -719,7 +724,7 @@ footer .legal p+p{margin-top:4px}
       </div>
       <div class="gplan">
         <div class="pk" data-en="Suggested plan">建議方案</div>
-        <div class="pv" data-en="The Recruiting Project should be signed now&lt;small&gt;Sign before March 15 and you pay the base price. After that it rises with every three months of delay. This is the one grade that is not chasing the clock.&lt;/small&gt;">招募專案現在就該簽<small>三月十五日前簽是基準價，之後每晚三個月加一次價。這是唯一一個還不用追時間的年級。</small></div>
+        <div class="pv" data-en="This is the year to sign the Recruiting Project&lt;small&gt;Sign before August 15 of the coming summer and you pay the base price. After that it rises with every three months closer to the signing period. This is the one grade that is not chasing the clock.&lt;/small&gt;">招募專案這一年簽最划算<small>升高二的 8 月 15 日前簽是基準價，之後每近簽約期三個月加一次價。這是唯一一個還不用追時間的年級。</small></div>
       </div>
     </div>
 
@@ -745,7 +750,7 @@ footer .legal p+p{margin-top:4px}
       </div>
       <div class="gplan">
         <div class="pk" data-en="Suggested plan">建議方案</div>
-        <div class="pv" data-en="Assessment first, then the Recruiting Project&lt;small&gt;Signing in September of Grade 11 is six months late, so the Recruiting Project costs more. The assessment comes first, and we start only if it is viable.&lt;/small&gt;">體檢通過才進招募專案<small>高二 9 月簽已經晚了 6 個月，招募專案會加價。先體檢確認可行，再決定啟不啟動。</small></div>
+        <div class="pv" data-en="Assessment first, then the Recruiting Project&lt;small&gt;Signing in September of Grade 11 leaves fourteen months to the signing period, so the Recruiting Project already costs more. The assessment comes first, and we start only if it is viable.&lt;/small&gt;">體檢通過才進招募專案<small>高二 9 月簽，距簽約期只剩 14 個月，招募專案已經開始加價。先體檢確認可行，再決定啟不啟動。</small></div>
       </div>
     </div>
 
@@ -771,7 +776,7 @@ footer .legal p+p{margin-top:4px}
       </div>
       <div class="gplan">
         <div class="pk" data-en="Suggested plan">建議方案</div>
-        <div class="pv" data-en="Assessment first; we start only if it is viable&lt;small&gt;Signing in September of Grade 12 is eighteen months late, the steepest point on the scale, and we may decline. Three to four time-compressed cases a year, no more.&lt;/small&gt;">先做體檢，確認可行才啟動<small>高三 9 月簽晚了 18 個月，加價幅度最大，而且我們不一定接。每年只接 3 到 4 件時間壓縮案件。</small></div>
+        <div class="pv" data-en="Assessment first; we start only if it is viable&lt;small&gt;Signing in September of Grade 12 leaves two months to the signing period. The surcharge is at its cap, and we may decline.&lt;/small&gt;">先做體檢，確認可行才啟動<small>高三 9 月簽，距簽約期只剩兩個月，加價到頂，而且我們不一定接。</small></div>
       </div>
     </div>
   </div>
@@ -818,10 +823,10 @@ footer .legal p+p{margin-top:4px}
 
     <div class="stages">
 <div class="stage">
-        <div class="when" data-en="&lt;b&gt;Any grade&lt;/b&gt;Consultation free&lt;br&gt;Assessment 15,000"><b>任何年級</b>諮詢免費<br>體檢 15,000</div><div class="rail"></div>
+        <div class="when" data-en="&lt;b&gt;Any grade&lt;/b&gt;Consultation 1,500&lt;br&gt;Assessment 7,500"><b>任何年級</b>諮詢 1,500<br>體檢 7,500</div><div class="rail"></div>
         <div>
           <h3 data-en="Look before you begin &lt;small&gt;Stage 0&lt;/small&gt;">先看清楚，再決定要不要開始 <small>階段 0</small></h3>
-          <p data-en="&lt;b&gt;One-to-one consultation, free.&lt;/b&gt; Thirty minutes to understand where the player is and what he is aiming at, and for you to see how we work. &lt;b&gt;Full assessment, NT$15,000.&lt;/b&gt; From Verified UTR, transcripts, match film and the family&#39;s goals, we work out where the player actually stands and which paths are viable. We do not flatter the conditions, and we do not say nice things to win the case."><b>一對一諮詢，免費。</b>30 分鐘了解選手現況、目標，也認識我們的做法。<b>完整體檢 NT$15,000。</b>從 Verified UTR、成績單、比賽影片與升學目標，判斷選手真正的位置與可行路徑。不美化條件，也不為了接案說好聽話。</p>
+          <p data-en="&lt;b&gt;One-to-one consultation, NT$1,500.&lt;/b&gt; Sixty minutes on where the player is, the roads open to him, and how we work. &lt;b&gt;Full assessment, NT$7,500.&lt;/b&gt; From Verified UTR, transcripts, match film and the family&#39;s goals, we work out where the player actually stands and which paths are viable. We do not flatter the conditions, and we do not say nice things to win the case."><b>一對一諮詢，NT$1,500。</b>60 分鐘講選手現在在哪、可以走哪幾條路，也認識我們的做法。<b>完整體檢 NT$7,500。</b>從 Verified UTR、成績單、比賽影片與升學目標，判斷選手真正的位置與可行路徑。不美化條件，也不為了接案說好聽話。</p>
           <ul class="doing" data-en="&lt;li&gt;Even if you never join, you keep a full assessment report you can act on yourself&lt;/li&gt;">
             <li>即使最後不加入，也會拿到一份可以自己帶走、繼續使用的完整評估報告</li>
           </ul>
@@ -1112,13 +1117,13 @@ footer .legal p+p{margin-top:4px}
       <div class="fn">
         <div class="fn-n" data-en="First, meet us">先認識</div>
         <h3 data-en="Consultation">諮詢</h3>
-        <div class="fn-p" data-en="Free">免費</div>
-        <p data-en="A short questionnaire plus a 30-minute call online. We understand your situation, and you see how we work. No pitch. You decide whether to take the next step.">短問卷加 30 分鐘線上會談。了解你的狀況，也讓你了解我們怎麼做。不推銷，你自己決定要不要往下一步。</p>
+        <div class="fn-p">NT$1,500</div>
+        <p data-en="Two short questionnaires, one for the parent and one for the player, then a 60-minute call online. We do the research before the call, so we spend the hour on the roads open to him right now. No pitch. You decide whether to take the next step.">家長與選手各填一份短問卷，加 60 分鐘線上會談。會談前我們先研究他的狀況，60 分鐘直接講他現在可以走哪幾條路。不推銷，你自己決定要不要往下一步。</p>
       </div>
       <div class="fn">
         <div class="fn-n" data-en="Then, judge">再判斷</div>
         <h3 data-en="Assessment">體檢</h3>
-        <div class="fn-p">NT$15,000</div>
+        <div class="fn-p">NT$7,500</div>
         <p data-en="A full questionnaire, a 90-minute in-depth interview, a written report in two versions, and 60 minutes going through it. We tell you where he stands, what is missing, how much time is left and which road to take. If it is not the time to start, we say so plainly.">完整問卷加 90 分鐘深度面談，雙版本書面報告，加 60 分鐘報告解析。我們會告訴你：現在站在哪、缺什麼、還有多少時間、該走哪條路。不適合啟動，我們也會直接說。</p>
       </div>
       <div class="fn">
@@ -1128,14 +1133,14 @@ footer .legal p+p{margin-top:4px}
         <p data-en="Foundation Membership is the long preparation: academics, English, tennis and NCAA eligibility. The Recruiting Project is recruiting itself: coach outreach, choosing schools and applying. Two tracks, independent, either one on its own. You do not have to guess which to buy. The assessment report tells you where to start.">地基會員是長期準備，把學業、英文、網球與 NCAA 資格打好。招募專案是進入 Recruiting、教練聯繫、選校與申請。兩個獨立，都可以單買。不用自己猜該買哪一個，體檢報告會直接告訴你現在該從哪裡開始。</p>
       </div>
     </div>
-    <p class="fn-note" data-en="&lt;b&gt;The assessment fee is credited forward.&lt;/b&gt; The consultation is free, and the NT$15,000 assessment credits against the service. Go the whole way and the assessment costs you nothing extra."><b>體檢的錢往下折抵。</b>諮詢免費，體檢的 15,000 折進服務。走完全程，體檢等於沒有多收。</p>
+    <p class="fn-note" data-en="&lt;b&gt;Whatever you have paid is credited forward.&lt;/b&gt; The NT$1,500 consultation credits against the assessment, and the NT$7,500 assessment credits against the service. Go the whole way and neither costs you anything extra."><b>前面付過的都往下折抵。</b>諮詢的 1,500 折進體檢，體檢的 7,500 折進服務。走完全程，前面兩層等於沒有多收。</p>
 
     <div class="svc">
       <div class="s">
         <div class="s-top">
           <div class="s-tag" data-en="Gets the player in">讓選手進得去</div>
           <h3 data-en="Recruiting Project">招募專案</h3>
-          <div class="s-p" data-en="A single fee&lt;small&gt;From signing to the end of freshman year. Signing before March 15 of Grade 10 is the base price; signing later costs more.&lt;/small&gt;">一次性收費<small>簽約到大一結束。高一 3 月 15 日前簽是基準價，晚一點簽會加價</small></div>
+          <div class="s-p" data-en="A single fee&lt;small&gt;From signing to the end of freshman year. The closer you sign to the November signing period of Grade 12, the higher the price, up to a cap. The first cohort pays a founding price.&lt;/small&gt;">一次性收費<small>簽約到大一結束。越接近高三 11 月的簽約期簽，價格越高，加價有上限。第一屆有創始價</small></div>
         </div>
         <ul>
           <li data-en="Everything an agency does for you is in here">代辦幫你做的事，這裡都有</li>
@@ -1147,7 +1152,7 @@ footer .legal p+p{margin-top:4px}
           <li data-en="Conscription, NCAA final certification, the I-20 and visa, and departure prep">役男、NCAA 最終認證、I‑20 與簽證、行前</li>
           <li data-en="A full year of freshman-year support, included and not sold separately">大一整年支援，包在裡面不另賣</li>
         </ul>
-        <p class="s-why" data-en="Entering in the spring of Grade 11 or in Grade 12 means the assessment comes first. The later it gets, the less likely we are to take a case on sight. We evaluate UTR, academics, English, NCAA eligibility and the time remaining, and only start if it is viable. Three to four time-compressed cases a year, no more. The contract sets out the feasibility assessment, the standard for taking a case, the scope of work and the process guarantees. We do not guarantee admission, but we are accountable for every case we choose to take.">高二下、高三才進場，先體檢。時間越晚，我們越不會直接接案。會先評估 UTR、學業、英文、NCAA 資格與剩餘時間，確認可行才啟動。每年僅接 3 到 4 件時間壓縮案件。合約會清楚寫明可行性評估、承接標準、服務內容與過程保障。我們不保證錄取，但會對每一個我們決定接下的案件負責。</p>
+        <p class="s-why" data-en="Entering in the spring of Grade 11 or in Grade 12 means the assessment comes first. The later it gets, the less likely we are to take a case on sight. We evaluate UTR, academics, English, NCAA eligibility and the time remaining, and only start if it is viable. The contract sets out the feasibility assessment, the standard for taking a case, the scope of work and the process guarantees. We do not guarantee admission, but we are accountable for every case we choose to take.">高二下、高三才進場，先體檢。時間越晚，我們越不會直接接案。會先評估 UTR、學業、英文、NCAA 資格與剩餘時間，確認可行才啟動。合約會清楚寫明可行性評估、承接標準、服務內容與過程保障。我們不保證錄取，但會對每一個我們決定接下的案件負責。</p>
       </div>
       <div class="s">
         <div class="s-top">
@@ -1176,18 +1181,18 @@ footer .legal p+p{margin-top:4px}
       <div class="late-h">
         <div class="lead" data-en="Why signing early costs less">為什麼早簽比較便宜</div>
         <h3 data-en="The Recruiting Project price moves with the clock">招募專案的價格跟著時間走</h3>
-        <p data-en="Coaches can contact him directly from June 15, and we need three months to build the package. That makes March 15 of Grade 10 the comfortable moment to sign. Come later and the same work has to be compressed into less time. The price reflects that compression.">六月十五那天教練就可以直接聯絡選手，我們需要三個月把資料包做好，所以高一 3 月 15 日是最舒服的簽約時間。晚一點來，同樣的東西要壓在更短的時間裡做完，價格反映的是那個壓縮。</p>
-        <p class="late-rule" data-en="March 15 of Grade 10 is the baseline. Every three months of delay moves the price up one step, and the surcharge is capped, so it does not climb without limit. The spring of Grade 12 is the latest anyone can sign. We go through the actual figures in the consultation.">以高一 3 月 15 日為準，每晚三個月加一次價。加價有上限，不會無限往上加。高三下學期是能簽約的最晚時間。實際金額在諮詢時說明。</p>
+        <p data-en="Coaches can sign a player from November 15 of Grade 12. Everything we do has to be finished before that day: the school list, the letters, the film, the eligibility file. Sign with fifteen months or more to go and you pay the base price. Come later and the same work has to be compressed into less time. The price reflects that compression.">高三 11 月 15 日起教練就可以跟選手簽約。我們做的每一件事都要在那天之前做完：名單、信、影片、資格文件。距離那天還有 15 個月以上簽約，是基準價。晚一點來，同樣的東西要壓在更短的時間裡做完，價格反映的是那個壓縮。</p>
+        <p class="late-rule" data-en="Count back from November 15 of Grade 12. Fifteen months or more out is the base price. Every three months closer moves the price up one step, and the surcharge is capped, so it does not climb without limit. The spring of Grade 12 is the latest anyone can sign. We go through the actual figures in the consultation, together with the founding price for the first cohort.">以高三 11 月 15 日往回算。還有 15 個月以上是基準價，每近三個月加一次價。加價有上限，不會無限往上加。高三下學期是能簽約的最晚時間。實際金額與第一屆的創始價，在諮詢時說明。</p>
       </div>
       <table class="late-t">
-        <thead><tr><th data-en="When you sign">什麼時候簽約</th><th data-en="Months late">晚幾個月</th><th data-en="How we see it">我們怎麼看</th></tr></thead>
+        <thead><tr><th data-en="When you sign">什麼時候簽約</th><th data-en="Months to Nov 15, Grade 12">距高三 11 月 15 日</th><th data-en="How we see it">我們怎麼看</th></tr></thead>
         <tbody>
-          <tr><td data-en="Before Mar 15, Grade 10">高一 3 月 15 日前</td><td data-en="base">基準</td><td data-en="The best time to start">最好的起點</td></tr>
-          <tr><td data-en="June, Grade 10">高一 6 月</td><td>3</td><td data-en="Still comfortable">還來得及</td></tr>
-          <tr><td data-en="Sep, Grade 11">高二 9 月</td><td>6</td><td data-en="Starting to compress">開始壓縮</td></tr>
-          <tr><td data-en="Mar, Grade 11">高二 3 月</td><td>12</td><td data-en="Assessment first">先體檢再決定</td></tr>
-          <tr><td data-en="Sep, Grade 12">高三 9 月</td><td>18</td><td data-en="Assessment first; we may decline">先體檢，不一定接</td></tr>
-          <tr><td data-en="Mar, Grade 12">高三 3 月</td><td>24</td><td data-en="The last possible moment">最晚，不一定接</td></tr>
+          <tr><td data-en="Before Aug 15, the summer before Grade 11">升高二的暑假，8 月 15 日前</td><td data-en="15 or more">15 個月以上</td><td data-en="Base price. The best time to start">基準價，最好的起點</td></tr>
+          <tr><td data-en="Sep to Nov, Grade 11">高二 9 月到 11 月</td><td data-en="12 to 15">12 到 15</td><td data-en="Still comfortable">還來得及</td></tr>
+          <tr><td data-en="Dec, Grade 11 to Feb, Grade 11">高二 12 月到 2 月</td><td data-en="9 to 12">9 到 12</td><td data-en="Starting to compress">開始壓縮</td></tr>
+          <tr><td data-en="Mar to May, Grade 11">高二 3 月到 5 月</td><td data-en="6 to 9">6 到 9</td><td data-en="Assessment first">先體檢再決定</td></tr>
+          <tr><td data-en="Jun to Aug, the summer before Grade 12">高二 6 月到升高三的暑假</td><td data-en="3 to 6">3 到 6</td><td data-en="Assessment first; we may decline">先體檢，不一定接</td></tr>
+          <tr><td data-en="Sep, Grade 12 onward">高三 9 月起</td><td data-en="under 3, capped">3 個月內，加價到頂</td><td data-en="The last possible window">最晚，不一定接</td></tr>
         </tbody>
       </table>
     </div>
@@ -1210,8 +1215,8 @@ footer .legal p+p{margin-top:4px}
   <div class="wrap">
     <div class="head">
       <div class="lead" data-en="How to start">怎麼開始</div>
-      <h2 data-en="A 30-minute consultation first.&lt;br&gt;Then decide about the assessment.">先 30 分鐘諮詢，<br>再決定要不要做體檢</h2>
-      <p data-en="The consultation is free. Assessment NT$15,000. If you later join the service, the assessment fee is credited against your plan. If the assessment says now is not the time to start, we say so plainly. The report still includes an action version you can run without us, so you know what the next step is either way. If it does not fit, you still do not leave empty-handed.">諮詢免費，體檢 NT$15,000。後續正式加入服務，體檢的費用可依方案折抵。如果評估後認為現在不適合啟動，我們會直接說。體檢報告也會提供一份「不加入我們，也能自己執行」的行動版本，讓你清楚知道下一步怎麼走。不適合，也不讓你空手回去。</p>
+      <h2 data-en="A 60-minute consultation first.&lt;br&gt;Then decide about the assessment.">先 60 分鐘諮詢，<br>再決定要不要做體檢</h2>
+      <p data-en="Consultation NT$1,500, assessment NT$7,500. The consultation credits against the assessment, and if you later join the service the assessment fee is credited against your plan. If the assessment says now is not the time to start, we say so plainly. The report still includes an action version you can run without us, so you know what the next step is either way. If it does not fit, you still do not leave empty-handed.">諮詢 NT$1,500，體檢 NT$7,500。諮詢的錢折進體檢，後續正式加入服務，體檢的費用再折進方案。如果評估後認為現在不適合啟動，我們會直接說。體檢報告也會提供一份「不加入我們，也能自己執行」的行動版本，讓你清楚知道下一步怎麼走。不適合，也不讓你空手回去。</p>
     </div>
 
     <div class="stepper" id="stepper">
@@ -1248,7 +1253,7 @@ footer .legal p+p{margin-top:4px}
       </details>
       <details>
         <summary data-en="What does it cost in total?">總共要花多少錢？</summary>
-        <div class="a" data-en="&lt;p&gt;The two tracks are priced separately and you can buy just one. The Recruiting Project is a single fee covering everything from signing to the end of freshman year. Foundation Membership is a subscription billed by semester, and how many years you buy is up to you. Buy both and the membership is discounted.&lt;/p&gt;&lt;p&gt;What the Recruiting Project costs depends on when you sign. The earlier it is, the lower it is, and the surcharge for signing late is capped. We go through the full figures and the formula in the free consultation, and the formula is the same for everyone: no case-by-case negotiation. The assessment fee credits against the service, so going the whole way means the assessment costs you nothing extra.&lt;/p&gt;&lt;p&gt;US tuition and living costs are separate. Actual costs vary enormously by school, region and scholarship, and when a school issues an I-20 it requires proof of funds matched to its own tuition and living estimates. The assessment report factors this in, producing three budget scenarios across four years as NT$ ranges. Not just where he can go, but whether you can afford to get there.&lt;/p&gt;"><p>兩條線分開計價，可以只買一條。招募專案是一次性收費，涵蓋簽約到大一結束；地基會員是訂閱制，一學期收一次，買幾年自己決定。兩個都買，地基會員有折扣。</p><p>招募專案的費用取決於什麼時候簽約，越早越低，晚簽的加價有上限。完整金額與公式，我們在免費諮詢裡直接講清楚，而且公式對所有人都一樣，不個案議價。體檢的錢折抵服務，走完全程，體檢等於沒有多收。</p><p>美國學費與生活費另計。實際費用會因學校、地區與獎學金有很大差異；各校核發 I‑20 時，也會依學費與生活成本要求相應的財力證明。體檢報告會把這件事一起算進去，依不同學校與獎學金情境，整理成 3 個預算層級乘以 4 年的台幣區間。不只告訴你能去哪，也先算清楚去不去得起。</p></div>
+        <div class="a" data-en="&lt;p&gt;The two tracks are priced separately and you can buy just one. The Recruiting Project is a single fee covering everything from signing to the end of freshman year. Foundation Membership is a subscription billed by semester, and how many years you buy is up to you. Buy both and the membership is discounted.&lt;/p&gt;&lt;p&gt;What the Recruiting Project costs depends on when you sign. The earlier it is, the lower it is, and the surcharge for signing late is capped. We go through the full figures, the formula and the founding price for the first cohort in the consultation, and the formula is the same for everyone: no case-by-case negotiation. The consultation and assessment fees credit forward, so going the whole way means the first two steps cost you nothing extra.&lt;/p&gt;&lt;p&gt;US tuition and living costs are separate. Actual costs vary enormously by school, region and scholarship, and when a school issues an I-20 it requires proof of funds matched to its own tuition and living estimates. The assessment report factors this in, producing three budget scenarios across four years as NT$ ranges. Not just where he can go, but whether you can afford to get there.&lt;/p&gt;"><p>兩條線分開計價，可以只買一條。招募專案是一次性收費，涵蓋簽約到大一結束；地基會員是訂閱制，一學期收一次，買幾年自己決定。兩個都買，地基會員有折扣。</p><p>招募專案的費用取決於什麼時候簽約，越早越低，晚簽的加價有上限。完整金額、公式與第一屆的創始價，我們在諮詢裡直接講清楚，而且公式對所有人都一樣，不個案議價。諮詢與體檢的錢往下折抵，走完全程，前面兩層等於沒有多收。</p><p>美國學費與生活費另計。實際費用會因學校、地區與獎學金有很大差異；各校核發 I‑20 時，也會依學費與生活成本要求相應的財力證明。體檢報告會把這件事一起算進去，依不同學校與獎學金情境，整理成 3 個預算層級乘以 4 年的台幣區間。不只告訴你能去哪，也先算清楚去不去得起。</p></div>
       </details>
       <details>
         <summary data-en="Do you guarantee admission?">你們保證錄取嗎？</summary>
@@ -1282,16 +1287,16 @@ footer .legal p+p{margin-top:4px}
   <div class="wrap">
     <div>
       <div class="lead" data-en="Step one">第一步</div>
-      <h2 data-en="Spend 30 minutes getting to know us">先花 30 分鐘認識我們</h2>
-      <p class="sub" data-en="The consultation is free. A short questionnaire plus a 30-minute call online, where we explain how the service works and roughly where the player stands. If you continue, the assessment fee credits against the service.">諮詢免費。一份短問卷加 30 分鐘線上會談，我們說明服務怎麼運作、選手大概在哪個位置。往下走的話，體檢的錢折抵服務。</p>
+      <h2 data-en="Spend an hour getting to know us">先花 60 分鐘認識我們</h2>
+      <p class="sub" data-en="Consultation NT$1,500. The parent and the player each fill in a short questionnaire, we do the research, and in a 60-minute call online we lay out where the player stands and the roads open to him. If you continue, whatever you have paid credits forward.">諮詢 NT$1,500。家長與選手各填一份短問卷，我們先研究，60 分鐘線上會談講選手現在在哪、可以走哪幾條路。往下走的話，前面付過的都折抵。</p>
       <div class="acts">
         <a class="btn primary" href="#form" data-en="Fill in the enquiry form">填諮詢問卷</a>
         <span class="mail" data-email hidden data-en="Questions first? Email us ">有問題先寫信 <a href="#" data-email-link></a></span>
       </div>
     </div>
     <ol>
-      <li data-en="Consultation, free, 30 minutes to get to know us">諮詢免費，30 分鐘認識我們</li>
-      <li data-en="Assessment NT$15,000, long questionnaire plus a 90-minute interview">體檢 15,000，長問卷加 90 分鐘面談</li>
+      <li data-en="Consultation NT$1,500, two short questionnaires plus 60 minutes online">諮詢 1,500，兩份短問卷加 60 分鐘線上會談</li>
+      <li data-en="Assessment NT$7,500, the consultation fee credited, long questionnaires plus a 90-minute interview">體檢 7,500，諮詢的錢折進去，長問卷加 90 分鐘面談</li>
       <li data-en="Report within 48 hours, in a parent version and a player version">48 小時內收到報告，家長版與選手版</li>
       <li data-en="60 minutes reading it together, then you decide whether to start">60 分鐘一起讀報告，決定要不要啟動</li>
       <li data-en="Join the service and the assessment fee is credited">加入服務，體檢的錢折抵</li>
@@ -1303,15 +1308,16 @@ footer .legal p+p{margin-top:4px}
   <div class="wrap">
     <div class="head">
       <div class="lead" data-en="Start here">從這裡開始</div>
-      <h2 data-en="Book a 30-minute consultation">預約 30 分鐘諮詢</h2>
-      <p data-en="A five-minute form with no files to attach. Once it is in, we reply within two working days to schedule. If you go on to the assessment, that questionnaire is sent to you separately.">5 分鐘的問卷，不用附任何檔案。填完我們會在 2 個工作天內回信安排時間。諮詢之後如果要做體檢，體檢問卷會另外寄給你。</p>
+      <h2 data-en="Book a 60-minute consultation">預約 60 分鐘諮詢</h2>
+      <p data-en="Two short forms, no files to attach: one for the parent, one for the player. Once both are in, we reply within two working days with payment details and a booking link. If you go on to the assessment, those questionnaires are sent to you separately.">兩份短問卷，不用附任何檔案：家長一份，選手一份。兩份都收到，我們會在 2 個工作天內回信，附上匯款資訊與預約連結。諮詢之後如果要做體檢，體檢問卷會另外寄給你。</p>
     </div>
     <div class="form">
-      <div class="form-top" data-en="&lt;b&gt;Kuroshio enquiry form&lt;/b&gt;&lt;span&gt;Free, 30 minutes&lt;/span&gt;"><b>Kuroshio 諮詢問卷</b><span>免費，30 分鐘</span></div>
-      <iframe data-tally-src="https://tally.so/embed/LZrGDz?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
-              src="https://tally.so/embed/LZrGDz?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
-              loading="lazy" height="640" title="Kuroshio 諮詢問卷" data-en-attr="title|Kuroshio enquiry form"></iframe>
-      <p class="form-fb" data-en="If the form will not load, &lt;a href=&quot;https://tally.so/r/LZrGDz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;open the enquiry form in a new tab&lt;/a&gt;.">表單開不起來的話，<a href="https://tally.so/r/LZrGDz" target="_blank" rel="noopener">在新分頁開啟諮詢問卷</a>。</p>
+      <div class="form-top" data-en="&lt;b&gt;Kuroshio enquiry forms&lt;/b&gt;&lt;span&gt;NT$1,500, 60 minutes&lt;/span&gt;"><b>Kuroshio 諮詢問卷</b><span>NT$1,500，60 分鐘</span></div>
+      <div class="form-links">
+        <a class="btn primary" data-tally="parent" href="#" target="_blank" rel="noopener" data-en="For the parent&lt;small&gt;Parent version, about 8 minutes&lt;/small&gt;">家長填這份<small>家長版，約 8 分鐘</small></a>
+        <a class="btn quiet" data-tally="student" href="#" target="_blank" rel="noopener" data-en="For the player&lt;small&gt;Player version, about 10 minutes. Fill it in yourself.&lt;/small&gt;">選手填這份<small>選手版，約 10 分鐘，請本人填</small></a>
+      </div>
+      <p class="form-fb"><span data-en="Both forms open in a new tab.">兩份表單都會在新分頁開啟。</span> <span data-email hidden><span data-en="Questions first? Email ">有問題先寫信 </span><a href="#" data-email-link></a></span></p>
     </div>
   </div>
 </section>
@@ -1332,12 +1338,21 @@ footer .legal p+p{margin-top:4px}
 // 對外資料：填了才會顯示，空字串則整段隱藏
 var CONTACT_EMAIL = "support@pinchengcaptain.com";
 var TAX_ID = "95435096";
+// 諮詢問卷（Tally）連結。家長版與選手版建好之後填進來；空字串時按鈕顯示「準備中」。
+var TALLY_PARENT = "";
+var TALLY_STUDENT = "";
 
 (function(){
   if(CONTACT_EMAIL){
     document.querySelectorAll('[data-email-link]').forEach(function(a){a.href='mailto:'+CONTACT_EMAIL;a.textContent=CONTACT_EMAIL;});
     document.querySelectorAll('[data-email]').forEach(function(el){el.hidden=false;});
   }
+  // 諮詢問卷按鈕：連結還沒建好時顯示準備中、不可點
+  document.querySelectorAll('[data-tally]').forEach(function(a){
+    var u = a.getAttribute('data-tally')==='parent' ? TALLY_PARENT : TALLY_STUDENT;
+    if(u){ a.href=u; }
+    else { a.classList.add('is-pending'); a.setAttribute('aria-disabled','true'); a.removeAttribute('target'); a.addEventListener('click',function(e){e.preventDefault();}); }
+  });
   if(TAX_ID){
     document.querySelector('[data-taxid-value]').textContent=TAX_ID;
     document.querySelector('[data-taxid]').hidden=false;
@@ -1429,16 +1444,16 @@ var TAX_ID = "95435096";
 
   // ---- 六步驟 stepper ----
   var STEPS=[
-    ['諮詢','30 分鐘線上','免費','填寫一份約 5 分鐘的短問卷，接著進行 30 分鐘一對一線上會談。我們會了解選手目前的位置、說明整套服務怎麼運作，也回答你最在意的問題。不推銷。談完就停，由你決定要不要進入下一步。','會談後如果你回信說要做體檢，我們才寄出完整體檢問卷、付款資訊與下一步流程。收到款、問卷填完，才正式進入深度評估。'],
-    ['填寫體檢問卷','面談前 7 天','體檢從這裡開始','請提供國三起每學期的逐科成績單、班別、出生年月、UTR Profile 連結，加一場完整比賽影片。NCAA 對國際學生的資格審查本來就會涉及九年級起的學業紀錄，因此我們會從國三開始完整檢視。沒有比賽影片也沒關係，問卷內會附拍攝說明，手機固定架好，完整錄一場即可。','資料到齊，我們才安排面談。不是增加麻煩，而是希望 90 分鐘真正拿來做分析與判斷，而不是花時間補問基本資料。'],
+    ['諮詢','60 分鐘線上','NT$1,500','家長與選手各填一份短問卷，兩份都收到我們才回信安排時間。會談前我們先研究他的狀況，60 分鐘裡講三件事：他現在在哪、現在可以走哪幾條路、整套服務怎麼運作。不推銷。談完就停，由你決定要不要進入下一步。','會談當天你會收到一份兩頁的整理，把談到的路和接下來三個月該做的事寫下來。之後如果你回信說要做體檢，我們才寄出體檢問卷、付款資訊與下一步流程。收到款、問卷填完，才正式進入深度評估。'],
+    ['填寫體檢問卷','面談前 7 天','體檢從這裡開始','家長與選手各填一份。家長那份要附國三起每學期的逐科成績單，加一場完整比賽影片；選手那份問他自己。NCAA 對國際學生的資格審查本來就會涉及九年級起的學業紀錄，因此我們會從國三開始完整檢視。沒有比賽影片也沒關係，問卷內會附拍攝說明，手機固定架好，完整錄一場即可。','資料到齊，我們才安排面談。不是增加麻煩，而是希望 90 分鐘真正拿來做分析與判斷，而不是花時間補問基本資料。'],
     ['體檢報告準備','面談前 2 天','你不用做事','收到資料後，我們會先完成 NCAA 資格試算、UTR 落點分析、6 到 9 所初步選校、完整比賽影片分析與面談問題整理。NCAA 資格本身涉及核心課程、成績與學業紀錄的逐項確認，因此需要先完整檢視。','這段前置分析約 4 小時，你不會參與。因為我們先把功課做完，接下來的 90 分鐘，才能真正拿來幫助孩子。'],
     ['體檢面談','90 分鐘線上','選手與家長都要到','一起看那場完整比賽的影片、十分鐘英文、選手單獨談、家長單獨談、制度小測。分開談是刻意的，有些真話只有在爸媽不在的時候才會出現。','面談一結束就開始寫報告，48 小時內寄到你信箱。'],
     ['體檢報告出爐','面談後 48 小時內','家長版與選手版各一份','體檢報告包含 9 大分析加 2 項可行性判定。選手版先看強項，弱項轉成下一步可以執行的練習。時間可行性把四條升學路徑一起比較，看哪條還走得通。預算可行性參考各校 I‑20 所需財力與預估費用，換算四年所需的台幣區間。學校通常會要求國際學生在核發 I‑20 前提出至少第一學年的財力證明，而各校估算差異很大。','報告寄出後，再安排 60 分鐘 Debrief，一起逐項讀懂、確認下一步。不是寄一份 PDF 給你，就算服務結束。'],
     ['體檢報告回饋會議','60 分鐘線上','體檢到這裡結束','60 分鐘 Debrief，我們會一起確認未來 3 個月最重要的 3 件事、適合從哪個階段開始、現在是否適合啟動。如果我們判斷現在不適合，也會直接說，並提供一份「不加入我們，也能自己執行」的行動版本。','回家再決定要不要加入。我們不當場問、不催簽約。報告是幫你做決定，不是逼你做決定。']
   ];
   var STEPS_EN=[
-    ['Consultation','30 min online','Free','A short questionnaire, about five minutes, then a 30-minute one-to-one call online. We work out where the player currently stands, explain how the whole service runs, and answer whatever matters most to you. No pitch. We stop when the conversation stops, and you decide whether to take the next step.','If you reply after the call that you want the assessment, we send the full questionnaire, the payment details and the next steps. The deep evaluation only starts once payment is in and the questionnaire is filled in.'],
-    ['Fill in the questionnaire','7 days before the interview','This is where the assessment starts','Please provide subject-by-subject transcripts for every semester from Grade 9, the class track, date of birth, a link to the UTR profile, and one full match on video. NCAA eligibility review for international students already covers academic records from year nine, so we review from Grade 9 onward in full. No match film is fine: the questionnaire includes filming instructions, and a phone on a fixed mount recording one full match is enough.','We only schedule the interview once all of it is in. That is not to create work. It is so those 90 minutes go into analysis and judgement instead of chasing basic information.'],
+    ['Consultation','60 min online','NT$1,500','Two short questionnaires, one for the parent and one for the player. Once both are in we reply to schedule. We do the research before the call, and the hour covers three things: where he stands now, the roads open to him right now, and how the whole service runs. No pitch. We stop when the conversation stops, and you decide whether to take the next step.','The same day you receive a two-page summary of the roads we discussed and what to do in the next three months. If you then reply that you want the assessment, we send the assessment questionnaires, payment details and the next steps. Payment received and questionnaires in, the in-depth evaluation begins.'],
+    ['Fill in the questionnaire','7 days before the interview','This is where the assessment starts','One questionnaire for the parent and one for the player. The parent version carries subject-by-subject transcripts for every semester from Grade 9 and one full match on video; the player version asks about him. NCAA eligibility review for international students already covers academic records from year nine, so we review from Grade 9 onward in full. No match film is fine: the questionnaire includes filming instructions, and a phone on a fixed mount recording one full match is enough.','We only schedule the interview once all of it is in. That is not to create work. It is so those 90 minutes go into analysis and judgement instead of chasing basic information.'],
     ['Report preparation','2 days before the interview','Nothing for you to do','Once we have your material we complete the NCAA eligibility estimate, the UTR positioning, an initial direction of six to nine schools, a full analysis of the match film, and the list of questions for the interview. NCAA eligibility itself requires line-by-line confirmation of core courses, grades and academic records, so it has to be reviewed in full first.','This preparation takes about four hours and you are not part of it. Because we do the homework first, the 90 minutes that follow can actually be spent helping your child.'],
     ['Assessment interview','90 min online','Player and parents both attend','We watch that full match together, ten minutes in English, time with the player alone, time with the parents alone, and a short quiz on the rules. Splitting it is deliberate. Some honest answers only appear when the parents are out of the room.','Writing starts the moment the interview ends, and it reaches your inbox within 48 hours.'],
     ['Report delivered','within 48 hrs of the interview','One parent version, one player version','The report contains nine areas of analysis plus two feasibility verdicts. The player version leads with strengths and turns weaknesses into drills he can actually do next. Time feasibility compares four routes side by side to see which still works. Budget feasibility works from the financial capacity each school requires for the I-20 and the estimated costs, converted into a four-year NT$ range. Schools generally require international students to show proof of funds for at least the first academic year before issuing an I-20, and their estimates vary widely.','After the report goes out we schedule a 60-minute debrief to read it through together and confirm the next step. We do not send a PDF and call the service finished.'],
@@ -1641,7 +1656,6 @@ var TAX_ID = "95435096";
   applyLang(wanted==='en'?'en':'zh');
 })();
 </script>
-<script async src="https://tally.so/widgets/embed.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
