@@ -4,8 +4,28 @@
     {
       "name": "kuroshio-static",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8765", "--bind", "127.0.0.1"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8765",
+        "--bind",
+        "127.0.0.1"
+      ],
       "port": 8765
+    },
+    {
+      "name": "kuroshio-app-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/pinwang/Code/kuroshio-app",
+        "run",
+        "dev",
+        "--",
+        "-p",
+        "3011"
+      ],
+      "port": 3011
     }
   ]
 }
