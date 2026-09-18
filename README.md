@@ -1,3 +1,5 @@
+> **2026-09-18 起這個站已退役。** 官網併進選手平台 `~/Code/kuroshio-app`，正式網址是 https://kuroshioathletics.com （英文 /en）。這裡的 `index.html` 只剩一頁轉址（`?lang=en` 會轉去 `/en`），`CNAME` 保留讓 kuroshio.pinchengco.com 繼續指到 GitHub Pages。舊版完整頁面在 git 歷史（commit 66a20a6 以前）。文案的唯一來源改成 `kuroshio-app/content/home.{zh,en}.ts`。
+
 # kuroshio-site
 
 Kuroshio Athletics（黑潮運動）官網。靜態站，單一 HTML，零建置，GitHub Pages 從 main 根目錄發布。
